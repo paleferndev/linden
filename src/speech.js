@@ -8,7 +8,7 @@ export const muted = typeof location !== 'undefined' && /[?&]mute(?:[=&]|$)/.tes
 const PREFERRED = /natural|neural|premium|enhanced|serena|daniel|kate|sonia|libby|ryan|google uk/i;
 const NOVELTY = /bad news|bahh|bells|boing|bubbles|cellos|good news|jester|organ|superstar|trinoids|whisper|wobble|zarvox|albert|fred|junior|ralph|kathy|grandma|grandpa|eddy|flo|reed|rocko|sandy|shelley/i;
 
-const state = { accent: 'en-GB', voice: null, loaded: false };
+const state = { accent: 'en-GB', voice: null, pool: [], loaded: false };
 const listeners = new Set();
 const norm = lang => (lang || '').replace('_', '-').toLowerCase();
 
@@ -21,8 +21,13 @@ function pick() {
   const accent = usable.filter(v => norm(v.lang).startsWith(norm(state.accent)));
   const english = usable.filter(v => norm(v.lang).startsWith('en'));
   state.voice = accent.find(v => PREFERRED.test(v.name)) || accent.find(v => v.localService) || accent[0] || english[0] || null;
+  // Other English voices, for sound drills: hearing a word from several speakers trains the ear better than one.
+  state.pool = [state.voice, ...accent.filter(v => v !== state.voice && v.localService), ...english.filter(v => !accent.includes(v) && v.localService)].filter(Boolean).slice(0, 4);
   listeners.forEach(fn => fn(state.voice));
 }
+
+/** How many different English voices the sound drills can rotate through. */
+export const voiceCount = () => Math.max(1, state.pool.length);
 
 if (canSpeak) {
   pick();
@@ -38,8 +43,9 @@ export function onVoice(fn) {
 
 export function setAccent(accent) { state.accent = accent; pick(); }
 
-/** Speaks `text`; resolves when it's finished (or failed). Online-only voices fall back to a local one when offline. */
-export function speak(text, { rate = 0.95 } = {}) {
+/** Speaks `text`; resolves when it's finished (or failed). Online-only voices fall back to a local one when offline.
+ *  `variant` picks another English voice (sound drills). */
+export function speak(text, { rate = 0.95, variant = 0 } = {}) {
   if (muted) return new Promise(resolve => setTimeout(() => resolve(true), 300));
   if (!canSpeak) return Promise.resolve(false);
   return new Promise(resolve => {
@@ -58,7 +64,8 @@ export function speak(text, { rate = 0.95 } = {}) {
     };
     try {
       speechSynthesis.cancel();
-      say(state.voice, state.voice && !state.voice.localService);
+      const voice = variant ? state.pool[variant % state.pool.length] || state.voice : state.voice;
+      say(voice, voice && !voice.localService);
     } catch { done(false); }
     // Some engines never fire `end`; don't leave the caller hanging.
     setTimeout(() => done(true), Math.max(1500, text.length * 110 / rate));

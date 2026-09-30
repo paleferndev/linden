@@ -9,12 +9,21 @@ export const isSlow = () => slow;
 export const setSlow = v => { slow = !!v; };
 export { setAccent };
 
-/** Speaks English. `el` gets the .speaking class while it plays. Item ids speak their item. */
-export function say(text, { el, rate } = {}) {
+// Lines that play by themselves (a new step, a chat message) wait until the person has touched the page: opening the
+// app, or a reload, never starts talking on its own.
+let touched = false;
+addEventListener('pointerdown', () => { touched = true; }, true);
+addEventListener('keydown', () => { touched = true; }, true);
+const activated = () => touched || navigator.userActivation?.hasBeenActive === true;
+
+/** Speaks English. `el` gets the .speaking class while it plays. Item ids speak their item.
+ *  `auto` marks a line nobody asked for; it stays silent until the page has been touched. */
+export function say(text, { el, rate, variant = 0, auto = false } = {}) {
+  if (auto && !activated()) return Promise.resolve(false);
   const it = ITEMS[text];
   const spoken = it ? (it.tts || sub(it.en)) : sub(text);
   el?.classList.add('speaking');
-  return speak(spoken, { rate: rate ?? (slow ? 0.7 : 0.95) }).then(ok => { el?.classList.remove('speaking'); return ok; });
+  return speak(spoken, { rate: rate ?? (slow ? 0.7 : 0.95), variant }).then(ok => { el?.classList.remove('speaking'); return ok; });
 }
 
 // Three sounds only: a soft tap on a right answer, a two-note chime when a lesson ends, nothing on a wrong one.

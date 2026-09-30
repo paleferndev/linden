@@ -17,6 +17,7 @@ import { renderHome } from './screens/home.js';
 import { renderReviewTab, renderPhrases, renderProfile, renderOnboarding, applyTheme } from './screens/pages.js';
 import { openRun, closeRun, runOpen } from './screens/run.js';
 import { reviewSteps } from './screens/review.js';
+import { renderCatalog, samples, KINDS } from './screens/catalog.js';
 
 Store.load();
 applyTheme();
@@ -56,7 +57,7 @@ function exitRun() {
 
 function renderTab(tab) {
   closeSheet();
-  $$('.tab', app).forEach(a => a.classList.toggle('on', a.dataset.tab === tab));
+  $$('.tab', app).forEach(a => a.classList.toggle('on', a.dataset.tab === (tab === 'catalog' ? 'me' : tab)));
   const badge = $('[data-tab="review"] .badge', app), due = dueItems().length;
   badge.hidden = !due;
   badge.textContent = due > 9 ? '9+' : String(due);
@@ -65,6 +66,7 @@ function renderTab(tab) {
   if (tab === 'review') renderReviewTab(view);
   if (tab === 'phrases') renderPhrases(view);
   if (tab === 'me') renderProfile(view, { onReset: () => { current = null; route(true); } });
+  if (tab === 'catalog') renderCatalog(view);
   view.scrollTop = 0;
   window.scrollTo(0, 0);
 }
@@ -100,8 +102,17 @@ function route(force = false) {
     openRun({ kind: 'review', title: 'Recapitulare', steps, onExit: exitRun });
     return;
   }
+  if (a === 'exercitii' && b) {
+    const kind = KINDS.flatMap(g => g.items).find(([k]) => k === b);
+    const steps = kind ? samples(b) : [];
+    if (!steps.length) { nav('#/exercitii', { replace: true }); return; }
+    if (!prev || !prev.startsWith('#/exercitii')) renderTab('catalog');
+    if (runOpen()) closeRun();
+    openRun({ kind: 'demo', lessonId: steps[0].from, title: kind[1], steps: [...steps, { t: 'ddone' }], onExit: exitRun });
+    return;
+  }
   if (runOpen()) closeRun();
-  renderTab({ recapitulare: 'review', fraze: 'phrases', profil: 'me' }[a] || 'home');
+  renderTab({ recapitulare: 'review', fraze: 'phrases', profil: 'me', exercitii: 'catalog' }[a] || 'home');
 }
 
 addEventListener('popstate', () => { pushed = false; route(); });
@@ -114,6 +125,8 @@ document.addEventListener('click', e => {
   const l = e.target.closest('[data-lesson]');
   if (l && !e.target.closest('#layer')) { closeSheet(); nav('#/lectie/' + l.dataset.lesson); return; }
   if (e.target.closest('[data-review]')) { nav('#/recap'); return; }
+  const tr = e.target.closest('[data-try]');
+  if (tr) { nav('#/exercitii/' + tr.dataset.try); return; }
   const s = e.target.closest('[data-say]');
   if (s && !e.target.closest('#layer')) say(s.dataset.say, { el: s });
 });

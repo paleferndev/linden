@@ -10,6 +10,7 @@ import { Store, record, finishLesson, addDays, today, markDay, lessonDone } from
 import { $, $$, esc, reflow, shuffle, sub, respell, reduceMotion } from '../app/ui.js';
 import { say, tone, isSlow, setSlow } from '../app/sound.js';
 import { setBusy } from '../pwa.js';
+import { DRILL_VIEW, DRILL_BIND } from './drills.js';
 
 // The lesson runner. A run is a list of steps shown one screen at a time: a lesson's own steps, or the drills of a
 // review. Every step has the same frame: top bar (close, lamps, slow voice), the step, and the tray that rises with
@@ -23,7 +24,7 @@ const foot = (label, attrs = 'data-next') => `<div class="foot"><button type="bu
 const trapCard = id => {
   const x = TRAPS[id];
   if (!x) return '';
-  if (!Store.d.traps.includes(id)) { Store.d.traps.push(id); Store.save(); }
+  if (R?.kind !== 'demo' && !Store.d.traps.includes(id)) { Store.d.traps.push(id); Store.save(); }
   return `<div class="trap"><p class="trap-k">${ICONS.trap}Capcană pentru români</p>
     <p class="x ${x.badSay ? 'say-x' : 'en'}">${esc(x.bad)}</p><p class="v en">${esc(x.good)}</p><p class="why">${esc(x.why)}</p></div>`;
 };
@@ -127,6 +128,7 @@ function go(n) {
   R.cleanup?.(); R.cleanup = null;
   const el = document.createElement('div');
   el.className = `step s-${s.t}`;
+  el.dataset.orig = s.orig;
   el.innerHTML = VIEW[s.t](s);
   stage.appendChild(el);
   $$('[data-next]', el).forEach(b => b.addEventListener('click', next));
@@ -163,7 +165,7 @@ function hideTray() {
 function grade(s, ok) {
   R.total++;
   if (ok) R.right++;
-  if (s.again) return;
+  if (s.again || R.kind === 'demo') return;
   for (const id of s.ids || []) record(id, ok);
   if (!ok) {
     R.missed.push(...(s.ids || []));
@@ -181,7 +183,7 @@ const BIND = {};
 
 /* ---------- scene: a neighbour says one line */
 VIEW.scene = s => {
-  const L = LESSONS[R.lessonId], P = place(L.place), key = sceneKey(s.scene, s.set), S = SCENES[key];
+  const L = LESSONS[s.from || R.lessonId], P = place(L.place), key = sceneKey(s.scene, s.set), S = SCENES[key];
   const sp = S.speaker;
   return `<div class="scene" style="--wall:var(${S.wall})">${sceneSVG(key)}
       <button type="button" class="bubble" style="left:${sp.left};top:${sp.top};max-width:${sp.width}" data-line>${en(s.line.en)}${ICONS.speaker}</button>
@@ -198,13 +200,13 @@ VIEW.scene = s => {
 };
 BIND.scene = (el, s) => {
   const b = $('[data-line]', el), sc = $('.scene', el);
-  const play = () => {
+  const play = (auto = false) => {
     sc.classList.add('talking');
-    say(s.line.tts || s.line.en, { el: b }).then(() => sc.classList.remove('talking'));
-    $('[data-ro]', el).hidden = false;
+    say(s.line.tts || s.line.en, { el: b, auto }).then(() => sc.classList.remove('talking'));
+    if (!auto) $('[data-ro]', el).hidden = false;
   };
-  b.addEventListener('click', play);
-  play();
+  b.addEventListener('click', () => play());
+  play(true);
 };
 
 /* ---------- explore: tap the things in the picture */
@@ -369,7 +371,7 @@ BIND.pattern = (el, s) => {
     if (pic && s.slots[k].pic) pic.innerHTML = pickPic(s.slots[k].pic);
     sayIt();
   }));
-  setTimeout(() => { if (R && R.steps[R.i] === s) sayIt(); }, 450);
+  setTimeout(() => { if (R && R.steps[R.i] === s) say(`${a}${s.slots[k].en}${b}`, { el: $('[data-pat]', el), auto: true }); }, 450);
 };
 
 /* ---------- stress: where the weight of the word falls */
@@ -472,7 +474,7 @@ BIND.teenty = el => {
 
 /* ---------- excuse me / sorry */
 VIEW.compare = s => {
-  if (!Store.d.traps.includes(s.trap)) { Store.d.traps.push(s.trap); Store.save(); }
+  if (R.kind !== 'demo' && !Store.d.traps.includes(s.trap)) { Store.d.traps.push(s.trap); Store.save(); }
   return `<div class="body">
     <h2 class="q">Excuse me înainte, sorry după</h2>
     <div class="compare">
@@ -495,185 +497,23 @@ VIEW.thisthat = () => `<div class="body">
   </div>
   ${foot('Continuă')}`;
 
-/* ---------- drills: listen / pick */
-function optionsHTML(s) {
-  const lang = s.lang || 'en';
-  const grid = ['digit', 'letter', 'price'].includes(lang);
-  const pics = typeof s.options[0] === 'object';
-  const inner = o => {
-    if (pics) return `<span class="pics">${o.pics.map(pickPic).join('')}</span><span class="cap en">${t(o.cap)}</span>`;
-    if (lang === 'say') return `<span class="say">${respell(o, { force: true })}</span>`;
-    if (lang === 'ro') return `<span class="ro">${t(o)}</span>`;
-    if (lang === 'digit') return `<span class="digit">${esc(o)}</span>`;
-    if (lang === 'price') return `<span class="price en">${esc(o)}</span>`;
-    return `<span class="en">${t(o)}</span>`;
-  };
-  return `<div class="opts ${grid ? 'grid' : ''} ${pics ? 'pics-list' : ''}">${s.options.map((o, k) => `<button type="button" class="opt" data-opt="${k}">${inner(o)}</button>`).join('')}</div>`;
-}
-const audioOf = s => s.audio;
-const words = s => (s.transcript || (ITEMS[s.audio] ? ITEMS[s.audio].en : s.audio)).split(' ');
-
-VIEW.listen = s => {
-  const showTranscript = s.transcript || (!ITEMS[s.audio] && s.audio.split(' ').length > 1);
-  return `<div class="body">
-      <p class="kick">Ascultă</p>
-      <h2 class="q">${esc(s.q || 'Ce ai auzit?')}</h2>
-      <div class="mid">
-        <div class="listen-row"><button type="button" class="play-big" data-replay aria-label="Ascultă din nou">${ICONS.speaker}</button>
-          <div class="wave" data-wave>${Array.from({ length: 22 }, (_, k) => `<i style="height:${[30, 55, 40, 70, 35, 60, 45, 80, 50, 30, 65, 40, 75, 55, 35, 60, 45, 70, 30, 50, 40, 25][k]}%"></i>`).join('')}</div></div>
-        ${showTranscript ? `<div class="transcript" data-trans>${words(s).map(w => `<i style="width:${Math.max(3, w.length) * 7}px"></i>`).join('')}</div>` : ''}
-      </div>
-      ${optionsHTML(s)}
-    </div>
-    ${foot('Continuă', 'data-next disabled')}`;
+/* ---------- exercises: see drills.js */
+const X = {
+  showTray: o => showTray(o),
+  grade: (s, ok) => grade(s, ok),
+  next: () => next(),
+  onCleanup: fn => { const prev = R.cleanup; R.cleanup = () => { prev?.(); fn(); }; },
 };
-BIND.listen = (el, s) => {
-  const wave = $('[data-wave]', el), btn = $('[data-replay]', el);
-  const play = () => { wave.classList.add('on'); say(audioOf(s), { el: btn }).then(() => wave.classList.remove('on')); };
-  btn.addEventListener('click', play);
-  play();
-  bindOptions(el, s, () => {
-    const tr = $('[data-trans]', el);
-    if (tr) tr.innerHTML = words(s).map((w, j) => `<b style="animation-delay:${j * 40}ms">${esc(w)}</b>`).join(' ');
-  });
-};
-
-VIEW.pick = s => {
-  const sh = s.show;
-  const prompt = sh.en ? `<button type="button" class="prompt-en en" data-replay data-say="${esc(sh.en)}">${t(sh.en)}${ICONS.speaker}</button>`
-    : sh.digit ? `<p class="prompt-digit">${esc(sh.digit)}</p>`
-    : `<p class="prompt-ro">${t(sh.ro)}</p>`;
-  return `<div class="body">
-      <p class="kick">${sh.en ? 'Citește și ascultă' : 'Alege'}</p>
-      <h2 class="q">${esc(s.q || 'Alege:')}</h2>
-      <div class="mid">${prompt}</div>
-      ${optionsHTML(s)}
-    </div>
-    ${foot('Continuă', 'data-next disabled')}`;
-};
-BIND.pick = (el, s) => {
-  if (s.show.en) say(s.show.en);
-  bindOptions(el, s);
-};
-
-function bindOptions(el, s, onAnswer) {
-  let done = false;
-  const opts = $$('.opt', el);
-  const rightText = () => {
-    const o = s.options[s.answer];
-    if (typeof o === 'object') return en(o.cap);
-    if (s.lang === 'say') return respell(o, { force: true });
-    if (s.lang === 'ro') return t(o);
-    if (s.lang === 'digit') return `<b>${esc(o)}</b>`;
-    return en(o);
-  };
-  opts.forEach(b => b.addEventListener('click', () => {
-    if (done) return;
-    done = true;
-    const k = +b.dataset.opt, ok = k === s.answer;
-    $('.opts', el).classList.add('answered');
-    opts.forEach(o => { o.disabled = true; });
-    opts[s.answer].classList.add('right');
-    opts[s.answer].insertAdjacentHTML('beforeend', `<span class="tick">${ICONS.check}</span>`);
-    if (!ok) b.classList.add('wrong');
-    onAnswer?.();
-    $('.foot .act', el).disabled = false;
-    grade(s, ok);
-    const why = Array.isArray(s.why) ? s.why[k] : s.why;
-    if (ok) {
-      tone('ok');
-      if (s.lang === 'en' || (s.t === 'pick' && !s.lang)) say(s.options[s.answer]);
-      if (s.t === 'pick' && s.lang === 'say' && s.show.en) say(s.show.en);
-      showTray({ ok: true, title: 'Corect.', html: s.t === 'listen' && s.lang === 'ro' ? `${en(s.audio)} · ${t(s.options[s.answer])}` : '' });
-    } else {
-      showTray({ ok: false, title: 'Nu chiar.', html: `${why ? esc(why) + ' ' : ''}Corect: ${rightText()}.` });
-    }
-  }));
-}
-
-/* ---------- build: put the tiles in order */
-const norm = x => String(x).toLowerCase().replace(/[’']/g, "'").replace(/[.,!?]/g, '').replace(/\s+/g, ' ').trim();
-VIEW.build = s => {
-  const tiles = shuffle([...sub(s.answer).replace(/[.,!?]/g, '').split(' '), ...s.extra]);
-  return `<div class="body">
-      <p class="kick">Construiește</p>
-      <h2 class="q">Spune în engleză:</h2>
-      <div class="mid"><p class="prompt-ro">${t(s.ro)}</p>
-      <div class="answer-line" data-line aria-label="Răspunsul tău"></div></div>
-      <div class="bank" data-bank>${tiles.map((w, k) => `<button type="button" class="tile en" data-k="${k}" data-w="${esc(w)}">${esc(w)}</button>`).join('')}</div>
-    </div>
-    ${foot('Verifică', 'data-check disabled')}`;
-};
-BIND.build = (el, s) => {
-  const line = $('[data-line]', el), bank = $('[data-bank]', el), check = $('[data-check]', el);
-  let order = [];
-  const draw = () => {
-    line.innerHTML = order.map(k => `<button type="button" class="tile en in" data-k="${k}">${esc($(`.bank [data-k="${k}"]`, el).dataset.w)}</button>`).join('');
-    $$('.tile', bank).forEach(b => b.classList.toggle('used', order.includes(+b.dataset.k)));
-    check.disabled = !order.length;
-  };
-  bank.addEventListener('click', e => { const b = e.target.closest('.tile'); if (!b || b.classList.contains('used')) return; order.push(+b.dataset.k); draw(); });
-  line.addEventListener('click', e => { const b = e.target.closest('.tile'); if (!b) return; order = order.filter(k => k !== +b.dataset.k); draw(); });
-  check.addEventListener('click', () => {
-    const got = order.map(k => $(`.bank [data-k="${k}"]`, el).dataset.w).join(' ');
-    const ok = norm(got) === norm(sub(s.answer));
-    $$('.tile', el).forEach(b => { b.disabled = true; });
-    check.disabled = true;
-    grade(s, ok);
-    say(s.answer);
-    if (ok) { tone('ok'); line.classList.add('right'); showTray({ ok: true, title: 'Corect.', html: en(s.answer) }); }
-    else { line.classList.add('wrong'); showTray({ ok: false, title: 'Nu chiar.', html: `Corect: ${en(s.answer)}${s.why ? ' ' + esc(s.why) : ''}` }); }
-  });
-};
-
-/* ---------- match: pair English with its meaning */
-VIEW.match = s => {
-  const left = shuffle(s.pairs.map((p, k) => ({ k, x: p[0] }))), right = shuffle(s.pairs.map((p, k) => ({ k, x: p[1] })));
-  return `<div class="body">
-      <p class="kick">Potrivește</p>
-      <h2 class="q">Leagă fiecare cuvânt de sensul lui.</h2>
-      <div class="match">
-        <div class="mcol">${left.map(o => `<button type="button" class="mt en" data-side="l" data-k="${o.k}">${t(o.x)}</button>`).join('')}</div>
-        <div class="mcol">${right.map(o => `<button type="button" class="mt ${s.right === 'digit' ? 'digit' : ''}" data-side="r" data-k="${o.k}">${t(o.x)}</button>`).join('')}</div>
-      </div>
-    </div>
-    ${foot('Continuă', 'data-next disabled')}`;
-};
-BIND.match = (el, s) => {
-  let pick = null, left = s.pairs.length;
-  $$('.mt', el).forEach(b => b.addEventListener('click', () => {
-    if (b.classList.contains('done')) return;
-    if (b.dataset.side === 'l') say(s.pairs[+b.dataset.k][0]);
-    if (!pick || pick.dataset.side === b.dataset.side) {
-      pick?.classList.remove('sel');
-      pick = b; b.classList.add('sel');
-      return;
-    }
-    const a = pick; pick = null; a.classList.remove('sel');
-    if (a.dataset.k === b.dataset.k) {
-      [a, b].forEach(x => { x.classList.add('done'); x.disabled = true; });
-      tone('ok');
-      if (--left === 0) {
-        grade({ ...s, ids: [] }, true);
-        for (const id of s.ids || []) record(id, true);
-        Store.save();
-        $('.foot .act', el).disabled = false;
-        showTray({ ok: true, title: 'Gata.', html: '' });
-      }
-    } else {
-      [a, b].forEach(x => { x.classList.remove('wrong'); reflow(x); x.classList.add('wrong'); });
-    }
-  }));
-};
+for (const [k, view] of Object.entries(DRILL_VIEW)) { VIEW[k] = view; BIND[k] = (el, s) => DRILL_BIND[k](el, s, X); }
 
 /* ---------- talk: a short chat with the neighbour */
 VIEW.talk = s => `<div class="body chat-body">
-    <div class="chat" data-chat><p class="chat-k">${esc(place(LESSONS[R.lessonId].place).name)}</p></div>
+    <div class="chat" data-chat><p class="chat-k">${esc(place(LESSONS[s.from || R.lessonId].place).name)}</p></div>
     <div class="replies" data-replies></div>
   </div>
   <div class="foot" data-tfoot hidden><button type="button" class="btn act" data-next>Continuă</button></div>`;
 BIND.talk = (el, s) => {
-  const who = s.who || place(LESSONS[R.lessonId].place).who;
+  const who = s.who || place(LESSONS[s.from || R.lessonId].place).who;
   const chat = $('[data-chat]', el), replies = $('[data-replies]', el), footEl = $('[data-tfoot]', el);
   const removed = new Set();
   let stage = 0, first = true, busy = false, alive = true;
@@ -690,7 +530,7 @@ BIND.talk = (el, s) => {
     const b = $('.msg', row);
     b.addEventListener('click', () => { $('small', b).hidden = false; say(text, { el: b }); scroll(); });
     scroll();
-    say(text);
+    say(text, { auto: true });
   };
   const me = text => { chat.insertAdjacentHTML('beforeend', `<div class="msg-row me"><div class="msg me en">${t(text)}</div></div>`); scroll(); };
   const coach = text => { chat.insertAdjacentHTML('beforeend', `<p class="coach">${esc(sub(text))}</p>`); scroll(); };
@@ -788,3 +628,12 @@ BIND.rdone = el => {
   tone('done');
   $('[data-finish]', el).addEventListener('click', () => R.onExit());
 };
+
+/* ---------- the end of a try-out from the exercise list: nothing was saved */
+VIEW.ddone = () => `<div class="done-art">${ICONS.check}</div>
+  <div class="body center">
+    <h2 class="done-h">Gata.</h2>
+    <p class="sub">${R.total ? `${R.right} din ${R.total} corecte. ` : ''}Încercările de aici nu schimbă progresul.</p>
+  </div>
+  ${foot('Înapoi la exerciții', 'data-finish')}`;
+BIND.ddone = el => { $('[data-finish]', el).addEventListener('click', () => R.onExit()); };

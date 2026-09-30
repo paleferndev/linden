@@ -110,6 +110,11 @@ export function renderProfile(view, { onReset } = {}) {
       ${seg('theme', p.theme, [['auto', 'Automat'], ['light', 'Zi'], ['dark', 'Seară']])}
     </section>
 
+    <section class="group">
+      <h2>Exerciții</h2>
+      <a class="row-link" href="#/exercitii" data-nav="#/exercitii"><span><b>Toate tipurile de exerciții</b><small>Încearcă oricare, fără să schimbi progresul.</small></span>${ICONS.chev}</a>
+    </section>
+
     <section class="group" data-install-box>
       <h2>Instalare</h2>
       ${installHTML()}

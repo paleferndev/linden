@@ -279,6 +279,10 @@
 .msg.them{background:var(--card);border:1px solid var(--line);border-bottom-left-radius:6px;color:var(--ink)}
 .msg.them small{display:block;font:italic 400 13px/1.35 var(--f-ui);color:var(--muted);margin-top:3px}
 .msg.me{background:var(--pen);color:var(--on-pen);border-bottom-right-radius:6px}
+.msg.dots{display:flex;gap:4px;align-items:center;padding:13px 14px}
+.msg.dots i{width:7px;height:7px;border-radius:50%;background:var(--faint);animation:dot 1s ease-in-out infinite}
+.msg.dots i:nth-child(2){animation-delay:.15s}.msg.dots i:nth-child(3){animation-delay:.3s}
+@keyframes dot{0%,100%{opacity:.35;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
 .coach{align-self:center;max-width:94%;font-size:13px;line-height:1.4;background:var(--marker-soft);color:var(--ink);border-radius:12px;padding:8px 12px;animation:popIn .3s var(--ease-out) both}
 .replies{flex:none;display:grid;gap:7px;padding:10px 14px calc(14px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:var(--paper)}
 .reply-k{font:650 11px/1 var(--f-ui);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}

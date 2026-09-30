@@ -22,6 +22,8 @@
   --de-wall:#EAD9A8; --de-blue:#2F63B8; --de-green:#3C8A55; --de-red:#C8433A;
   /* inside No. 1 and Priya's */
   --room-wall:#E4ECEA; --room-wall-2:#D3E0DC; --floor:#C9A47C; --floor-line:#B28E67; --rug:#C9725A; --rug-2:#E3A688;
+  /* Pip and the signal */
+  --signal:#46D5C5; --signal-ink:#1E7B72; --signal-soft:#D6F3EF; --brass:#B98B3E; --pip-body:#F2E8D2; --screen:#18222F;
   --sofa:#6D8FA6; --sofa-dark:#587A91; --laptop:#3A4556; --shop-wall:#EDF0E2; --fridge:#E9EFF1; --egg:#FBF3E4; --choc:#6B3E2A; --choc-dark:#4E2C1D;
   --shadow-sm:0 1px 0 rgba(27,36,51,.05), 0 8px 18px -12px rgba(27,36,51,.35);
   --shadow:0 1px 0 rgba(27,36,51,.06), 0 24px 48px -26px rgba(27,36,51,.5);
@@ -51,6 +53,7 @@
     --pot:#4F7890; --pot-dark:#3A5B6E; --china:#E7E0D4; --china-line:#9C9387; --kraft:#A67E53;
     --shirt-1:#D6CDBD; --apron:#3A4A6C; --de-wall:#6B6040;
     --room-wall:#18222D; --room-wall-2:#141D27; --floor:#3F3226; --floor-line:#32281F; --rug:#6E3B2F; --rug-2:#83503F;
+    --signal:#6FF0E0; --signal-ink:#7FE8DA; --signal-soft:#15323A; --brass:#CFA55A; --pip-body:#DCD0B6; --screen:#0E151E;
     --sofa:#2F4557; --sofa-dark:#263948; --laptop:#0E131A; --shop-wall:#1A231D; --fridge:#243039; --egg:#D9CFBF; --choc:#4E2C1D; --choc-dark:#3A2015;
     --shadow-sm:0 1px 0 rgba(0,0,0,.3), 0 8px 18px -12px rgba(0,0,0,.8);
     --shadow:0 1px 0 rgba(0,0,0,.35), 0 24px 48px -24px rgba(0,0,0,.9);
@@ -72,6 +75,7 @@
   --pot:#4F7890; --pot-dark:#3A5B6E; --china:#E7E0D4; --china-line:#9C9387; --kraft:#A67E53;
   --shirt-1:#D6CDBD; --apron:#3A4A6C; --de-wall:#6B6040;
   --room-wall:#18222D; --room-wall-2:#141D27; --floor:#3F3226; --floor-line:#32281F; --rug:#6E3B2F; --rug-2:#83503F;
+  --signal:#6FF0E0; --signal-ink:#7FE8DA; --signal-soft:#15323A; --brass:#CFA55A; --pip-body:#DCD0B6; --screen:#0E151E;
   --sofa:#2F4557; --sofa-dark:#263948; --laptop:#0E131A; --shop-wall:#1A231D; --fridge:#243039; --egg:#D9CFBF; --choc:#4E2C1D; --choc-dark:#3A2015;
   --shadow-sm:0 1px 0 rgba(0,0,0,.3), 0 8px 18px -12px rgba(0,0,0,.8);
   --shadow:0 1px 0 rgba(0,0,0,.35), 0 24px 48px -24px rgba(0,0,0,.9);

@@ -6,6 +6,7 @@ export function person(o) {
   if (o.style === 'quiff') front = `<path d="M35 60C33 31 50 29 60 29c20 0 27 10 26 29-4-10-12-14-22-13-9-6-21-2-29 15z" fill="${h}"/>`;
   if (o.style === 'bun') { back = `<circle cx="60" cy="31" r="12" fill="${h}"/>`; front = `<path d="M35 66C32 44 44 36 60 36s28 8 25 30c-4-12-12-19-25-19s-21 7-25 19z" fill="${h}"/>`; }
   if (o.style === 'curls') front = [[37, 55, 9], [42, 43, 10], [52, 35, 10.5], [64, 33, 10.5], [75, 38, 10], [83, 50, 9], [47, 48, 6], [70, 45, 6]].map(([x, y, r]) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${h}"/>`).join('');
+  if (o.style === 'afro') back = `<circle cx="60" cy="52" r="33" fill="${h}"/><circle cx="38" cy="44" r="16" fill="${h}"/><circle cx="82" cy="44" r="16" fill="${h}"/>`;
   if (o.style === 'cap') front = `<path d="M36 58c-1 4 0 8 1 10M84 58c1 4 0 8-1 10" stroke="${h}" stroke-width="5" stroke-linecap="round"/><path d="M35 57c0-17 10-26 25-26s25 9 25 26z" fill="var(--b-navy)"/><rect x="35" y="48" width="50" height="7" fill="var(--postbox)"/><path d="M33 56h55c3 0 3 5-1 5H33z" fill="var(--b-navy)"/>`;
   return `<g>${back}<path d="M16 162v-38c0-19 16-30 44-30s44 11 44 30v38z" fill="var(${o.shirt})"/>${o.body || ''}
     <rect x="52" y="80" width="16" height="18" rx="6" fill="${s}"/>
@@ -24,6 +25,9 @@ export const CAST = {
     extra: `<circle cx="36" cy="71" r="2" fill="var(--sun)"/><circle cx="84" cy="71" r="2" fill="var(--sun)"/>` },
   sam: { name: 'Sam', skin: '--skin-3', hair: '--hair-3', style: 'cap', shirt: '--b-navy', bg: '--pen-soft',
     body: `<path d="M50 95l10 14 10-14z" fill="var(--china)"/><rect x="72" y="120" width="14" height="9" rx="2" fill="var(--sun)"/>` },
+  okafor: { name: 'Dr Okafor', skin: '--skin-3', hair: '--hair-3', style: 'afro', shirt: '--pen-soft', bg: '--leaf-soft',
+    body: `<path d="M40 104l20 12 20-12v58H40z" fill="var(--china)"/><rect x="66" y="120" width="12" height="16" rx="2" fill="var(--pen)"/><path d="M69 120v-4h6v4" stroke="var(--pen)" stroke-width="1.5" fill="none"/>`,
+    extra: `<g fill="none" stroke="var(--eye)" stroke-width="1.8"><rect x="43" y="58" width="14" height="11" rx="3"/><rect x="63" y="58" width="14" height="11" rx="3"/><path d="M57 63h6"/></g>` },
   hughes: { name: 'Mrs Hughes', skin: '--skin-1', hair: '--hair-2', style: 'curls', shirt: '--b-rose', bg: '--postbox-soft',
     body: `<g fill="var(--china)">${[48, 54, 60, 66, 72].map((x, i) => `<circle cx="${x}" cy="${[98, 100, 101, 100, 98][i]}" r="2.2"/>`).join('')}</g>`,
     extra: `<g fill="none" stroke="var(--eye)" stroke-width="1.7"><circle cx="51" cy="64" r="6.5"/><circle cx="69" cy="64" r="6.5"/><path d="M57.5 64h5"/></g>` },

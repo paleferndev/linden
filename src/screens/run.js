@@ -520,8 +520,14 @@ BIND.talk = (el, s) => {
   R.cleanup = () => { alive = false; };
   const scroll = () => { chat.scrollTop = chat.scrollHeight; };
   const wait = ms => new Promise(res => setTimeout(res, reduceMotion() ? Math.min(ms, 200) : ms));
+  // A reply comes after a short pause and a "typing" bubble, and only once the line before it has finished playing.
   const them = async (text, ro, delay) => {
-    await wait(delay);
+    await wait(Math.min(delay, 400));
+    if (!alive) return;
+    chat.insertAdjacentHTML('beforeend', `<div class="msg-row typing"><span class="ava" style="--c:var(${avatarBg(who)})">${avatar(who)}</span><span class="msg them dots" aria-label="scrie"><i></i><i></i><i></i></span></div>`);
+    scroll();
+    await wait(Math.min(1500, 450 + text.length * 20));
+    $('.typing', chat)?.remove();
     if (!alive) return;
     const row = document.createElement('div');
     row.className = 'msg-row';
@@ -530,7 +536,7 @@ BIND.talk = (el, s) => {
     const b = $('.msg', row);
     b.addEventListener('click', () => { $('small', b).hidden = false; say(text, { el: b }); scroll(); });
     scroll();
-    say(text, { auto: true });
+    await say(text, { auto: true });
   };
   const me = text => { chat.insertAdjacentHTML('beforeend', `<div class="msg-row me"><div class="msg me en">${t(text)}</div></div>`); scroll(); };
   const coach = text => { chat.insertAdjacentHTML('beforeend', `<p class="coach">${esc(sub(text))}</p>`); scroll(); };
@@ -555,7 +561,8 @@ BIND.talk = (el, s) => {
     const r = s.script[stage].replies[k];
     replies.innerHTML = '';
     me(r.en);
-    say(r.en);
+    await say(r.en); // your line plays to the end before anyone answers
+    if (!alive) return;
     if (!r.ok || r.stay) {
       removed.add(`${stage}:${k}`);
       await them(r.after, r.aro, 1000);

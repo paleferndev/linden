@@ -23,7 +23,7 @@ out('git -c core.autocrlf=false add --all --force .', { env, cwd: 'dist' });
 const tree = out('git write-tree', { env });
 let parent = '';
 try { parent = out('git rev-parse --verify --quiet refs/heads/gh-pages'); } catch {}
-if (parent && out(`git rev-parse ${parent}^{tree}`) === tree) {
+if (parent && out(`git log -1 --format=%T ${parent}`) === tree) {
   console.log('Nothing new to publish.');
 } else {
   const commit = out(`git commit-tree ${tree}${parent ? ` -p ${parent}` : ''} -m "Deploy ${head}"`);

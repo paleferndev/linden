@@ -4,7 +4,7 @@ If `HANDOFF.md` exists locally, read it first. It holds the full context, the de
 
 - **This repo is public.** Never commit private info: people's names or relationships, e-mail addresses, private links, local paths. `HANDOFF.md`, `design/` and `private/` are local-only and gitignored; keep notes like that there. Check staged files before every commit.
 - **The app** is an installable web app (PWA) built with Vite 6 (Node on this PC is 22.11; Vite 7+ needs 22.12). Live at https://paleferndev.github.io/linden/ from the `gh-pages` branch.
-  - `npm run dev` for development, `npm test` for the smoke test (layout at 320×568 / 390×844 / 1280×800 in light and dark, offline start, self-update from build A to B), `npm run deploy` to publish (it refuses uncommitted changes, runs the tests, builds, commits `dist/` to `gh-pages` and pushes).
+  - `npm run dev` for development, `npm test` for the smoke test (layout at 320×568 / 390×844 / 1280×800 in light and dark, offline start, self-update from build A to B), `npm run deploy` to publish (it refuses uncommitted changes, runs the tests, builds, commits `dist/` to `gh-pages`, pushes, and asks GitHub for a Pages build, since a push alone doesn't always trigger one).
   - `src/pwa.js` applies new builds on open or return to foreground, unless `setBusy(true)` (mid-lesson). Keep that guard when adding lesson screens.
   - `src/speech.js` wraps `speechSynthesis` (en-GB preferred). Every phrase goes through `speak()`, so recorded audio can replace it later.
   - `src/art/` holds the illustration kit ported from the design (`laneSVG`, `cat`, the leaf). `npm run icons` regenerates `public/icons/` from the leaf.

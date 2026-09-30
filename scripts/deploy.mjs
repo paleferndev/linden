@@ -32,4 +32,13 @@ if (parent && out(`git log -1 --format=%T ${parent}`) === tree) {
 fs.rmSync(env.GIT_INDEX_FILE, { force: true });
 
 run('git push origin main gh-pages');
-console.log('\nPublished. Live in about a minute at https://paleferndev.github.io/linden/');
+
+// GitHub doesn't always build Pages on a push to gh-pages, so ask for a build explicitly.
+const gh = fs.existsSync('C:/Program Files/GitHub CLI/gh.exe') ? '"C:/Program Files/GitHub CLI/gh.exe"' : 'gh';
+try {
+  const repo = out(`${gh} repo view --json nameWithOwner --jq .nameWithOwner`);
+  out(`${gh} api -X POST repos/${repo}/pages/builds`);
+  console.log('\nPublished. Live in about a minute at https://paleferndev.github.io/linden/');
+} catch {
+  console.log('\nPushed, but could not request a Pages build. Check the repo\'s Actions tab if the site does not update.');
+}

@@ -1,4 +1,4 @@
-import { person, CAST, cat, radio } from './people.js';
+import { person, CAST, cat, radio, blanket } from './people.js';
 import { glowDef, nextId } from './lane.js';
 
 // The places inside: The Kettle café, the living room at No. 1 and Priya's corner shop. Every scene is 360 × 250.
@@ -12,7 +12,7 @@ const chalkboard = `<rect x="236" y="54" width="110" height="68" rx="4" fill="va
   <text x="291" y="69" text-anchor="middle" class="chalk-h">MENU</text>
   <text x="246" y="85" class="chalk">tea</text><text x="336" y="85" text-anchor="end" class="chalk">£2.40</text>
   <text x="246" y="99" class="chalk">coffee</text><text x="336" y="99" text-anchor="end" class="chalk">£2.80</text>
-  <text x="246" y="113" class="chalk">croissant</text><text x="336" y="113" text-anchor="end" class="chalk">£1.90</text>`;
+  <text x="246" y="113" class="chalk">cake</text><text x="336" y="113" text-anchor="end" class="chalk">£2.90</text>`;
 
 /* ---------------------------------------------------------------- The Kettle */
 function cafeBg(gid, set) {
@@ -86,7 +86,7 @@ function roomBg(gid) {
   <path d="M16 184v8M138 184v8" stroke="var(--wood-line)" stroke-width="4" stroke-linecap="round"/>
   <rect x="152" y="166" width="180" height="7" rx="2" fill="var(--wood-top)"/><rect x="152" y="173" width="180" height="4" fill="var(--wood)"/>
   <rect x="162" y="177" width="7" height="32" fill="var(--wood)"/><rect x="315" y="177" width="7" height="32" fill="var(--wood)"/>
-  <g transform="translate(38 196) scale(.62)">${cat()}</g>`;
+  ${blanket(78, 146, 58, 30)}<g transform="translate(80 124) scale(.62)">${cat({ sleep: true })}</g>`;
 }
 
 const ROOM = {

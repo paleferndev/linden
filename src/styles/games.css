@@ -1,0 +1,161 @@
+/* ---------- every game: header, progress dots, board, feedback line, options */
+.game{position:absolute;inset:0;display:flex;flex-direction:column;gap:8px;padding:10px 14px calc(12px + env(safe-area-inset-bottom))}
+.g-head{flex:none;display:flex;align-items:center;gap:10px}
+.g-t{flex:1;min-width:0;font:700 15px/1.2 var(--f-ui);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.g-combo{font:800 13px var(--f-ui);color:var(--brass)}
+.g-combo.pop{animation:comboPop .45s var(--ease-out)}
+@keyframes comboPop{0%{transform:scale(.6)}60%{transform:scale(1.25)}100%{transform:none}}
+.g-score{font:700 14px var(--f-ui);font-variant-numeric:tabular-nums;color:var(--muted)}
+.g-dots{flex:none;display:flex;gap:4px}
+.g-dots i{flex:1;height:4px;border-radius:2px;background:var(--line);transition:background .3s}
+.g-dots i.ok{background:var(--leaf)}
+.g-dots i.no{background:var(--plum)}
+.g-board{flex:1;min-height:0;display:flex;flex-direction:column;gap:10px;justify-content:center;overflow:hidden}
+.g-msg{flex:none;min-height:21px;font-size:14px;line-height:1.4;color:var(--muted);text-align:center;display:flex;gap:6px;justify-content:center;align-items:flex-start}
+.g-msg.why{color:var(--ink)}
+.g-msg svg{width:17px;height:17px;flex:none;color:var(--plum);margin-top:1px}
+.g-opts{flex:none;display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.g-opts.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.g-opts .opt{text-align:center;justify-content:center}
+.g-opts:empty{display:none}
+.gb-line{flex:none;font:500 19px/1.4 var(--f-en);text-align:center;color:var(--ink);min-height:1.4em;padding-bottom:4px}
+.gb-line .fill{color:var(--pen);font-weight:700}
+.gb-art{flex:1 1 auto;min-height:110px;position:relative;border-radius:16px;overflow:hidden;background:var(--sky)}
+.gb-art>svg{position:absolute;inset:0;width:100%;height:100%}
+.ring{animation:ring 1.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes ring{0%,100%{opacity:1}50%{opacity:.45}}
+
+/* intro and result cards */
+.g-intro,.g-result{position:absolute;inset:0;z-index:3;display:grid;place-items:center;padding:16px;background:color-mix(in srgb,var(--paper) 94%,transparent);animation:rise .3s var(--ease-out) both}
+.gi-card{width:min(420px,100%);border-radius:22px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);padding:20px 18px 18px;display:grid;gap:8px;text-align:center}
+.gi-card h2{font:700 24px/1.15 var(--f-en)}
+.gi-teach{justify-self:center;font:650 13px var(--f-ui);color:var(--signal-ink);background:var(--signal-soft);border-radius:999px;padding:4px 11px}
+.gi-text{font-size:15px;line-height:1.5;color:var(--muted)}
+.gi-card .btn{margin-top:6px}
+.gi-card .big{font:800 46px/1 var(--f-ui);font-variant-numeric:tabular-nums}
+.gi-card .big span{font-size:18px;font-weight:600;color:var(--muted)}
+
+/* 1 · the lantern in the garden */
+.tappable{cursor:pointer}
+
+/* 2 · who saw the light */
+.gw-tom{display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px;align-items:end}
+.gw-tom .ava{width:44px;height:44px}
+.gw-tom .bub{border-radius:16px;border-bottom-left-radius:6px;background:var(--card);border:1px solid var(--line);padding:9px 12px;font:500 16px/1.4 var(--f-en);min-height:44px}
+.gw-tom .bub small{display:block;font:italic 400 13px var(--f-ui);color:var(--muted);margin-top:3px}
+.gw-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.gw-card{display:grid;justify-items:center;gap:4px;padding:8px 4px;border-radius:14px;background:var(--card);border:1.5px solid var(--line);transition:opacity .4s,filter .4s,transform .3s}
+.gw-card .ava{width:clamp(44px,13dvh,64px);height:clamp(44px,13dvh,64px)}
+.gw-card b{font:650 13px var(--f-ui)}
+.gw-card.out{opacity:.28;filter:grayscale(1);transform:scale(.94)}
+.gw-card.tappable:not(.out){border-color:var(--pen)}
+.gw-card.found{border-color:var(--leaf);background:var(--leaf-soft);opacity:1}
+.nope{animation:nudge .3s var(--ease-io)}
+
+/* 3 · photos */
+.polaroids{flex:1;min-height:0;display:flex;justify-content:center;align-items:center;gap:6px;overflow:hidden;padding:12px 0}
+.pol{margin:0;background:#FDFBF6;padding:7px 7px 4px;border-radius:4px;box-shadow:0 10px 24px -12px rgba(0,0,0,.5);transform:rotate(var(--r));animation:polIn .45s var(--ease-out) both;display:grid;height:min(100%,300px)}
+.pol svg{height:calc(100% - 22px);width:auto;aspect-ratio:120/150;border-radius:2px}
+.pol figcaption{font:600 15px/22px var(--f-hand);color:#3A3A3A;text-align:center}
+.polaroids.many .pol{height:min(80%,220px);margin:0 -10px}
+@keyframes polIn{from{opacity:0;transform:translateY(20px) rotate(0)}to{opacity:1;transform:rotate(var(--r))}}
+
+/* 4 · Sam's night in order */
+.ord-slots{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}
+.ord-slot{aspect-ratio:3/2;border-radius:8px;border:2px dashed var(--line);display:grid;place-items:center;overflow:hidden}
+.ord-slot i{font:700 14px var(--f-ui);font-style:normal;color:var(--faint)}
+.ord-slot.got{border:0;animation:pop .35s var(--ease-out)}
+.ord-slot svg{width:100%;height:100%}
+.ord-pile{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.ord-card{border-radius:10px;overflow:hidden;border:2px solid transparent;aspect-ratio:3/2}
+.ord-card svg{width:100%;height:100%;display:block}
+.ord-card.tappable{border-color:var(--pen)}
+.who-s{font:650 14px var(--f-ui);color:var(--muted)}
+
+/* 5 · Priya's shelves */
+.sh-item{align-self:center;display:grid;justify-items:center;gap:4px;padding:10px 22px;border-radius:18px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow-sm);min-width:160px}
+.sh-item.in{animation:drop .4s var(--ease-out)}
+@keyframes drop{from{opacity:0;transform:translateY(-24px) rotate(-4deg)}to{opacity:1;transform:none}}
+.sh-item .pic{height:clamp(52px,11dvh,78px);display:grid;place-items:center}
+.sh-item .pic svg{height:100%;width:auto;max-width:120px}
+.sh-item b{font:600 20px var(--f-en)}
+.baskets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.basket{border-radius:18px;border:2px dashed var(--line);background:var(--card);padding:12px 8px;display:grid;gap:4px;justify-items:center;min-height:clamp(96px,22dvh,150px);align-content:start;transition:border-color .2s,background .2s}
+.basket b{font:700 17px var(--f-en)}
+.basket small{font-size:12.5px;color:var(--muted)}
+.basket .got{display:flex;flex-wrap:wrap;gap:2px;justify-content:center;margin-top:4px}
+.basket .mini svg{height:24px;width:auto;max-width:36px}
+.basket.flash-ok{border-color:var(--leaf);background:var(--leaf-soft)}
+.basket.flash-no{border-color:var(--plum);background:var(--plum-soft)}
+
+/* 6 · the garden at No. 9 */
+.instr{flex:none;display:flex;gap:10px;align-items:center;border-radius:14px;background:var(--card);border:1px solid var(--line);padding:8px 12px;font:500 16.5px/1.35 var(--f-en)}
+.garden9{background:var(--sky);flex:1 1 auto}
+.garden9 svg{cursor:pointer}
+.mk{fill:none;stroke-width:3}
+.mk.ok{stroke:var(--leaf);fill:color-mix(in srgb,var(--leaf) 25%,transparent)}
+.mk.no{stroke:var(--plum)}
+.mk.show{stroke:var(--pen);animation:ring 1s ease-in-out infinite}
+
+/* 7 · the verb machine */
+.machine{display:grid;justify-items:center}
+.machine{flex:1;min-height:0;align-content:center}
+.machine svg{width:min(100%,420px);height:auto;max-height:100%}
+.win-t{font:700 24px var(--f-en)}
+.win-l{font:650 9px var(--f-ui);letter-spacing:.14em;fill:var(--muted)}
+.lever{transform-box:fill-box;transform-origin:50% 100%;transition:transform .35s var(--ease-out)}
+.pulled .lever{transform:rotate(36deg)}
+.bulb-on{filter:drop-shadow(0 0 5px var(--lit))}
+.jam{animation:nudge .35s var(--ease-io)}
+
+/* 8 · the timeline */
+.tl{display:grid;gap:8px}
+.tl-axis{width:100%;height:30px}
+.tl-zones{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.tl-zone{border-radius:14px;background:var(--card);border:1px solid var(--line);padding:8px;display:grid;gap:4px;align-content:start;min-height:clamp(96px,22dvh,160px)}
+.tl-zone b{font:700 14px var(--f-ui)}
+.tl-zone[data-z="then"] b{color:var(--postbox)}
+.tl-zone[data-z="until"] b{color:var(--signal-ink)}
+.tl-zone small{font-size:12px;color:var(--muted)}
+.tl-cards{display:grid;gap:4px}
+.tl-card{font-size:12.5px;line-height:1.35;border-radius:8px;background:var(--sunk);padding:5px 7px;animation:pop .35s var(--ease-out) both}
+
+/* 9 · the plan board */
+.cork{flex:0 1 auto;width:100%;aspect-ratio:4/3;max-height:100%;min-height:0;border-radius:16px;background:#C9A57A;box-shadow:inset 0 0 0 6px #A57F55;padding:12px;overflow:hidden}
+.notes{height:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:1fr;gap:8px}
+.slot{border-radius:6px;border:2px dashed rgba(255,255,255,.35)}
+.pin-note{position:relative;background:#FFF8DC;color:#1B2433;border-radius:3px;padding:14px 6px 6px;display:grid;justify-items:center;gap:2px;align-content:start;transform:rotate(var(--r));box-shadow:0 6px 12px -8px rgba(0,0,0,.6);animation:pinIn .4s var(--ease-out) both;overflow:hidden}
+.pin-note::before{content:"";position:absolute;top:4px;left:50%;width:9px;height:9px;margin-left:-4.5px;border-radius:50%;background:#CF4430}
+.pin-note svg{width:100%;height:clamp(18px,5dvh,34px)}
+.pin-note .en{font-size:clamp(10px,2.8vw,12px);line-height:1.25;text-align:center}
+.pin-note .fill{color:#27469A}
+@keyframes pinIn{from{opacity:0;transform:scale(1.3) rotate(0)}to{opacity:1;transform:rotate(var(--r))}}
+
+/* 10 · signs */
+.sign{flex:1;min-height:0;display:grid;place-items:center}
+.sign svg{height:min(100%,250px);width:auto;animation:pop .35s var(--ease-out)}
+
+/* 11 · compare */
+.cmp{flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;align-items:end}
+.cmp-it{height:100%;max-height:230px;border-radius:14px;background:var(--card);border:1.5px solid var(--line);display:grid;grid-template-rows:minmax(0,1fr) auto;padding:6px;justify-items:center}
+.cmp-it svg{height:100%;width:100%}
+.cmp-it small{font-size:12px;color:var(--muted)}
+.cmp-it.tappable{border-color:var(--pen)}
+.cmp-it.found{border-color:var(--leaf);background:var(--leaf-soft)}
+
+/* 12 · light up the lane */
+.gb-art.lane{flex:0 1 auto;aspect-ratio:520/330;min-height:0;width:100%;max-height:100%}
+
+@media (max-height:640px){
+  .game{gap:6px;padding-top:8px}
+  .gb-line{font-size:17px}
+  .opt{min-height:42px;padding:6px 12px}
+  .gi-card{padding:16px 14px 14px;gap:6px}
+  .gi-card h2{font-size:21px}
+  .gw-card{padding:5px 3px}
+  .gw-card .ava,.gw-tom .ava{width:36px;height:36px}
+  .gw-tom{grid-template-columns:36px minmax(0,1fr)}
+  .gw-tom .bub{font-size:15px;min-height:0;padding:7px 10px}
+  .gw-grid{gap:6px}
+  .g-opts .opt{font-size:14.5px}
+}

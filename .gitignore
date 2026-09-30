@@ -4,7 +4,7 @@ legacy/test/node_modules/
 legacy/test/shots/
 legacy/test/*.png
 tests/shots/
-tests/.dist/
+tests/.dist*/
 handoff/
 
 # Local only: this repo is public, and these hold private notes

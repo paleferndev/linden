@@ -1,7 +1,9 @@
 /* The test suite for the built app (headless Chromium via Playwright, always silent).
-   1. First open: welcome, name, straight into the first lesson, then home.
+   0. The season's content is well formed (tests/content.mjs).
+   1. First open: welcome, name, straight to the cover of episode 1, then home.
    2. The tabs at 320×568, 390×844 and 1280×800, light and dark: nothing scrolls sideways, no console errors.
-   3. Every lesson played end to end at 390×844 and 320×568 (tests/walk.mjs), then a review session.
+   3. All twelve episodes played end to end at 390×844 and 320×568 (tests/walk.mjs), then training, every game and
+      every entry of the exercise list.
    4. Offline: once installed, the app opens with the network off.
    5. Self-update: an installed copy of build A switches itself to build B once B is served, without a reinstall.
    Builds go to tests/.dist so they never clobber dist/. Screenshots land in tests/shots/. */
@@ -10,6 +12,7 @@ import { chromium } from 'playwright';
 import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { walk, silence } from './walk.mjs';
+import { checkContent } from './content.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const outDir = fileURLToPath(new URL('./.dist', import.meta.url));
@@ -17,8 +20,8 @@ const shots = fileURLToPath(new URL('./shots/', import.meta.url));
 fs.mkdirSync(shots, { recursive: true });
 const PORT = 4174;
 const URL_ = `http://localhost:${PORT}/linden/?mute`;
-const SEEDED = { v: 1, profile: { name: 'Alex', onboarded: true }, lessons: { 'h.known': { done: true, times: 1 }, 'k.order': { done: true, times: 1 } },
-  items: { 'w.hotel': { box: 1, due: '2000-01-01' }, 'p.can-i-have': { box: 2, due: '2000-01-01' } }, traps: ['trap.give-me'] };
+const SEEDED = { v: 2, profile: { name: 'Alex', onboarded: true }, eps: { 1: { done: true, lamps: 3, times: 1 }, 2: { done: true, lamps: 2, times: 1 } },
+  srs: { 'g:be': { box: 1, due: '2000-01-01' }, 'v:drink': { box: 2, due: '2000-01-01' } }, verbs: { be: '2026-09-30', drink: '2026-09-30' } };
 
 let checks = 0, failed = 0;
 const ok = (cond, msg) => { checks++; if (!cond) { failed++; console.log('  FAIL', msg); } };
@@ -40,6 +43,13 @@ async function newPage(browser, opts = {}, seed = SEEDED) {
   return { ctx, page, errors };
 }
 
+/* ---------- 0. content */
+console.log('content');
+{
+  const n = checkContent(() => {});
+  ok(n === 0, `content: ${n} problems (run node tests/content.mjs)`);
+}
+
 await buildAs('build-a');
 let server = await serve();
 const browser = await chromium.launch();
@@ -52,12 +62,12 @@ console.log('first open');
   await page.click('[data-start]');
   await page.fill('#onbName', 'Alex');
   await page.click('[data-form] button[type="submit"]');
-  await page.locator('.step.s-scene').waitFor();
-  ok(await page.textContent('.step .title') === 'Engleza pe care o știi deja', 'first open does not land in the first lesson');
+  await page.locator('.cover h1').waitFor();
+  ok(await page.textContent('.cover h1') === 'Something in the garden', 'first open does not land on episode 1');
   await page.click('[data-exit]');
   await page.locator('.layer').waitFor({ state: 'hidden' });
   ok(await page.locator('.hello').textContent().then(t => t.includes('Alex')), 'home does not greet by name');
-  ok(await page.locator('.tcard[data-lesson="h.known"]').count() === 1, 'home does not offer to continue the first lesson');
+  ok(await page.locator('.ep-card[data-nav="#/episod/1"]').count() === 1, 'home does not offer episode 1');
   ok(errors.length === 0, `first open: console errors: ${errors.join(' | ')}`);
   await ctx.close();
 }
@@ -68,7 +78,7 @@ for (const [w, h] of [[320, 568], [390, 844], [1280, 800]]) {
     const name = `${w}x${h}-${scheme}`;
     console.log(name);
     const { ctx, page, errors } = await newPage(browser, { viewport: { width: w, height: h }, colorScheme: scheme });
-    for (const [hash, tab] of [['#/', 'home'], ['#/recapitulare', 'review'], ['#/fraze', 'phrases'], ['#/profil', 'profile']]) {
+    for (const [hash, tab] of [['#/', 'home'], ['#/antrenament', 'training'], ['#/colectii', 'collections'], ['#/profil', 'profile']]) {
       await page.goto(URL_ + hash);
       await page.evaluate(() => document.fonts.ready);
       await page.waitForTimeout(100);
@@ -82,10 +92,10 @@ for (const [w, h] of [[320, 568], [390, 844], [1280, 800]]) {
   }
 }
 
-/* ---------- 3. every lesson, then a review */
+/* ---------- 3. the whole season, then training, games and the exercise list */
 const r = await walk(browser, URL_, { log: s => { if (s.startsWith('  FAIL')) console.log(s); } });
 checks += r.checks; failed += r.failed;
-console.log(`lessons walked: ${r.checks} checks`);
+console.log(`season walked: ${r.checks} checks`);
 
 /* ---------- 4 + 5. offline start, then self-update */
 console.log('offline + update');

@@ -5,25 +5,29 @@ import './styles/tokens.css';
 import './styles/base.css';
 import './styles/street.css';
 import './styles/home.css';
-import './styles/run.css';
-import { LESSONS } from './content/lessons.js';
+import './styles/chat.css';
+import './styles/games.css';
+import { EP } from './content/episodes.js';
+import { GAMES } from './content/games.js';
 import { ICONS } from './art/icons.js';
 import { LEAF } from './art/leaf.js';
-import { Store, dueItems } from './app/store.js';
+import { Store, dueItems, epOpen, epDone, epsDone } from './app/store.js';
 import { $, $$, toast, closeSheet } from './app/ui.js';
 import { say, setAccent } from './app/sound.js';
 import { initPWA, justUpdated } from './pwa.js';
 import { renderHome } from './screens/home.js';
-import { renderReviewTab, renderPhrases, renderProfile, renderOnboarding, applyTheme } from './screens/pages.js';
-import { openRun, closeRun, runOpen } from './screens/run.js';
-import { reviewSteps } from './screens/review.js';
-import { renderCatalog, samples, KINDS } from './screens/catalog.js';
+import { renderProfile, renderOnboarding, applyTheme } from './screens/pages.js';
+import { renderTraining, openTraining, openGame } from './screens/training.js';
+import { renderCollections } from './screens/collections.js';
+import { renderCatalog, tryKind } from './screens/catalog.js';
+import { openEpisode } from './screens/episode.js';
+import { closeFrame, frameOpen } from './screens/frame.js';
 
 Store.load();
 applyTheme();
 setAccent(Store.d.profile.voice);
 
-const TABS = [['home', '#/', ICONS.street, 'Acasă'], ['review', '#/recapitulare', ICONS.tea, 'Recapitulare'], ['phrases', '#/fraze', ICONS.phrases, 'Fraze'], ['me', '#/profil', ICONS.me, 'Profil']];
+const TABS = [['home', '#/', ICONS.street, 'Acasă'], ['train', '#/antrenament', ICONS.train, 'Antrenament'], ['coll', '#/colectii', ICONS.album, 'Colecții'], ['me', '#/profil', ICONS.me, 'Profil']];
 const app = $('#app');
 app.innerHTML = `<div class="shell">
     <nav class="nav" aria-label="Meniu">
@@ -37,9 +41,10 @@ app.innerHTML = `<div class="shell">
 const view = $('#view');
 
 /* ---------------------------------------------------------------- routing
-   Hash routes: #/ home · #/recapitulare · #/fraze · #/profil · #/lectie/<id> · #/recap (a review session).
-   In-app navigation pushes history and routes in the same tap, so the first English line can be spoken right away
-   (iOS only lets a page speak from inside a tap). The back gesture pops the history and closes a lesson. */
+   #/ home · #/antrenament · #/colectii[/album|verbe|lanterna] · #/profil · #/exercitii
+   Full screen: #/episod/<n> · #/antrenament/start · #/antrenament/liber · #/joc/<game> · #/incearca/<kind>
+   In-app navigation pushes history and routes in the same tap, so the first line can be spoken right away (iOS only
+   lets a page speak from inside a tap). The back gesture pops the history and closes whatever is full screen. */
 
 let current = null, pushed = false;
 
@@ -50,21 +55,22 @@ export function nav(hash, { replace = false } = {}) {
   route();
 }
 
-function exitRun() {
+function exitFull(to) {
+  if (to) { pushed = false; nav(to, { replace: true }); return; }
   if (pushed) { pushed = false; history.back(); }
   else nav('#/', { replace: true });
 }
 
-function renderTab(tab) {
+function renderTab(tab, sub) {
   closeSheet();
   $$('.tab', app).forEach(a => a.classList.toggle('on', a.dataset.tab === (tab === 'catalog' ? 'me' : tab)));
-  const badge = $('[data-tab="review"] .badge', app), due = dueItems().length;
+  const badge = $('[data-tab="train"] .badge', app), due = dueItems().length;
   badge.hidden = !due;
   badge.textContent = due > 9 ? '9+' : String(due);
   view.dataset.tab = tab;
   if (tab === 'home') renderHome(view);
-  if (tab === 'review') renderReviewTab(view);
-  if (tab === 'phrases') renderPhrases(view);
+  if (tab === 'train') renderTraining(view);
+  if (tab === 'coll') renderCollections(view, sub);
   if (tab === 'me') renderProfile(view, { onReset: () => { current = null; route(true); } });
   if (tab === 'catalog') renderCatalog(view);
   view.scrollTop = 0;
@@ -76,65 +82,59 @@ function route(force = false) {
   if (hash === current && !force) return;
   const prev = current;
   current = hash;
+  if (frameOpen()) closeFrame();
 
   if (!Store.d.profile.onboarded) {
-    if (runOpen()) closeRun();
     app.classList.add('first');
-    renderOnboarding(view, { onDone: () => { app.classList.remove('first'); current = null; nav('#/lectie/' + 'h.known', { replace: true }); } });
+    renderOnboarding(view, { onDone: () => { app.classList.remove('first'); current = null; nav('#/episod/1', { replace: true }); } });
     return;
   }
   app.classList.remove('first');
 
   const [, a = '', b] = hash.split('/');
-  if (a === 'lectie' && LESSONS[b]) {
-    if (!prev || prev.startsWith('#/lectie/') || prev === '#/recap') renderTab('home');
-    if (runOpen()) closeRun();
-    const L = LESSONS[b], r = Store.d.resume;
-    const start = r?.lesson === b && r.step > 0 && r.step < L.steps.length ? r.step : 0;
-    openRun({ kind: 'lesson', lessonId: b, title: L.title, steps: [...L.steps, { t: 'done' }], start, onExit: exitRun });
+  const under = tab => { if (!prev || prev.split('/')[1] !== ({ home: '', train: 'antrenament', me: 'profil', catalog: 'exercitii' }[tab] ?? tab)) renderTab(tab); };
+  if (a === 'episod' && EP[b] && epOpen(+b)) {
+    under('home');
+    openEpisode(+b, { onExit: r => exitFull(r?.finished ? '#/' : null) });
     return;
   }
-  if (a === 'recap') {
-    const steps = reviewSteps();
-    if (steps.length < 2) { toast('Nimic de repetat azi.'); nav('#/recapitulare', { replace: true }); return; }
-    if (!prev || prev.startsWith('#/lectie/')) renderTab('review');
-    if (runOpen()) closeRun();
-    openRun({ kind: 'review', title: 'Recapitulare', steps, onExit: exitRun });
+  if (a === 'antrenament' && (b === 'start' || b === 'liber')) {
+    if (b === 'start' && !dueItems().length && !epsDone()) { nav('#/antrenament', { replace: true }); return; }
+    under('train');
+    openTraining({ free: b === 'liber', onExit: () => exitFull() });
     return;
   }
-  if (a === 'exercitii' && b) {
-    const kind = KINDS.flatMap(g => g.items).find(([k]) => k === b);
-    const steps = kind ? samples(b) : [];
-    if (!steps.length) { nav('#/exercitii', { replace: true }); return; }
-    if (!prev || !prev.startsWith('#/exercitii')) renderTab('catalog');
-    if (runOpen()) closeRun();
-    openRun({ kind: 'demo', lessonId: steps[0].from, title: kind[1], steps: [...steps, { t: 'ddone' }], onExit: exitRun });
+  if (a === 'joc' && GAMES[b]) {
+    const n = Object.entries(EP).find(([, e]) => e.game === b)?.[0];
+    if (!n || !epDone(n)) { nav('#/antrenament', { replace: true }); return; }
+    under('train');
+    openGame(b, { onExit: () => exitFull() });
     return;
   }
-  if (runOpen()) closeRun();
-  renderTab({ recapitulare: 'review', fraze: 'phrases', profil: 'me', exercitii: 'catalog' }[a] || 'home');
+  if (a === 'incearca' && b) {
+    under('catalog');
+    if (!tryKind(b, { onExit: () => exitFull() })) nav('#/exercitii', { replace: true });
+    return;
+  }
+  const tab = { antrenament: 'train', colectii: 'coll', profil: 'me', exercitii: 'catalog' }[a] || 'home';
+  renderTab(tab, b);
 }
 
 addEventListener('popstate', () => { pushed = false; route(); });
 addEventListener('hashchange', () => route());
 
-// Links and buttons anywhere in the app: tabs, lesson cards, the review card, and the speaker buttons.
+// Links and buttons anywhere in the app, and the speaker buttons.
 document.addEventListener('click', e => {
   const n = e.target.closest('[data-nav]');
-  if (n) { e.preventDefault(); nav(n.dataset.nav); return; }
-  const l = e.target.closest('[data-lesson]');
-  if (l && !e.target.closest('#layer')) { closeSheet(); nav('#/lectie/' + l.dataset.lesson); return; }
-  if (e.target.closest('[data-review]')) { nav('#/recap'); return; }
-  const tr = e.target.closest('[data-try]');
-  if (tr) { nav('#/exercitii/' + tr.dataset.try); return; }
+  if (n && !n.disabled) { e.preventDefault(); if (n.closest('#sheet')) closeSheet(); nav(n.dataset.nav); return; }
   const s = e.target.closest('[data-say]');
-  if (s && !e.target.closest('#layer')) say(s.dataset.say, { el: s });
+  if (s && !e.target.closest('#layer')) say(s.dataset.say, { el: s, who: s.dataset.who || undefined });
 });
 
-// Coming back to the app on another day: the Today cards and the review badge need a fresh look.
+// Coming back to the app on another day: the next episode and the training badge need a fresh look.
 let lastDay = new Date().toDateString();
 document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState !== 'visible' || runOpen()) return;
+  if (document.visibilityState !== 'visible' || frameOpen()) return;
   const d = new Date().toDateString();
   if (d !== lastDay) { lastDay = d; route(true); }
 });

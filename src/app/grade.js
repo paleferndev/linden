@@ -6,9 +6,13 @@ const CONTRACTIONS = {
   "i'm": 'i am', "you're": 'you are', "we're": 'we are', "they're": 'they are', "he's": 'he is', "she's": 'she is', "it's": 'it is',
   "that's": 'that is', "what's": 'what is', "here's": 'here is', "there's": 'there is', "let's": 'let us', "i've": 'i have',
   "don't": 'do not', "doesn't": 'does not', "isn't": 'is not', "aren't": 'are not', "can't": 'cannot', "won't": 'will not', "i'll": 'i will',
+  "didn't": 'did not', "haven't": 'have not', "hasn't": 'has not', "wasn't": 'was not', "weren't": 'were not', "mustn't": 'must not',
+  "shouldn't": 'should not', "couldn't": 'could not', "we'll": 'we will', "you'll": 'you will', "she'll": 'she will', "he'll": 'he will',
+  "it'll": 'it will', "they'll": 'they will', "we've": 'we have', "you've": 'you have', "they've": 'they have',
 };
 const STRICT = new Set(['a', 'an', 'the', 'is', 'are', 'am', 'do', 'does', 'this', 'that', 'these', 'those', 'to', 'too', 'two', 'some', 'any',
-  'much', 'many', 'by', 'with', 'in', 'on', 'at', 'for', 'of', 'me', 'my', 'i', 'you', 'your', 'not', 'no', 'one']);
+  'much', 'many', 'by', 'with', 'in', 'on', 'at', 'for', 'of', 'me', 'my', 'i', 'you', 'your', 'not', 'no', 'one',
+  'was', 'were', 'has', 'have', 'had', 'did', 'will', 'can', 'must', 'since', 'than', 'then', 'there', 'their', 'its', 'it']);
 
 export const words = s => String(s ?? '').toLowerCase().normalize('NFKC').replace(/[’‘`´]/g, "'")
   .replace(/[.,!?;:"„”“()…–—-]/g, ' ').replace(/\s+/g, ' ').trim().split(' ').filter(Boolean)
@@ -26,13 +30,16 @@ export function lev(a, b) {
   return prev[n];
 }
 
-const typo = (got, want) => got === want || (!STRICT.has(want) && want.length >= 4 && lev(got, want) <= (want.length >= 8 ? 2 : 1));
+// A different ending is a different form (sleep / sleeps, walk / walked), never a typo.
+const ENDINGS = /^(s|es|d|ed|ing|er|est|n|en)$/;
+const otherForm = (a, b) => { const [s, l] = a.length < b.length ? [a, b] : [b, a]; return l.startsWith(s) && ENDINGS.test(l.slice(s.length)); };
+const typo = (got, want) => got === want || (!STRICT.has(want) && want.length >= 4 && !otherForm(got, want) && lev(got, want) <= (want.length >= 8 ? 2 : 1));
 
 /**
  * Compares an answer with the accepted ones. Returns { ok, exact, answer, typos: [[got, want]] }.
  * `answer` is the accepted form closest to what was given, for showing back.
  */
-export function check(given, accepted) {
+export function check(given, accepted, { strict = false } = {}) {
   const g = words(given);
   let best = null;
   for (const a of accepted) {
@@ -42,7 +49,7 @@ export function check(given, accepted) {
     let ok = true;
     for (let k = 0; k < w.length && ok; k++) {
       if (g[k] === w[k]) continue;
-      if (typo(g[k], w[k])) typos.push([g[k], w[k]]); else ok = false;
+      if (!strict && typo(g[k], w[k])) typos.push([g[k], w[k]]); else ok = false;
     }
     if (ok && (!best || typos.length < best.typos.length)) best = { ok: true, exact: !typos.length, answer: a, typos };
   }

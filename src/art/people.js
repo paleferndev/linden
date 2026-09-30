@@ -28,20 +28,54 @@ export const CAST = {
   okafor: { name: 'Dr Okafor', skin: '--skin-3', hair: '--hair-3', style: 'afro', shirt: '--pen-soft', bg: '--leaf-soft',
     body: `<path d="M40 104l20 12 20-12v58H40z" fill="var(--china)"/><rect x="66" y="120" width="12" height="16" rx="2" fill="var(--pen)"/><path d="M69 120v-4h6v4" stroke="var(--pen)" stroke-width="1.5" fill="none"/>`,
     extra: `<g fill="none" stroke="var(--eye)" stroke-width="1.8"><rect x="43" y="58" width="14" height="11" rx="3"/><rect x="63" y="58" width="14" height="11" rx="3"/><path d="M57 63h6"/></g>` },
+  lily: { name: 'Lily', skin: '--skin-2', hair: '--hair-1', style: 'bun', shirt: '--leaf-soft', bg: '--leaf-soft',
+    body: `<path d="M50 95l10 14 10-14z" fill="var(--china)"/><rect x="70" y="118" width="12" height="12" rx="2" fill="var(--china)"/><path d="M76 120v8M72 124h8" stroke="var(--postbox)" stroke-width="2"/>` },
+  ben: { name: 'Ben', skin: '--skin-1', hair: '--hair-3', style: 'curls', shirt: '--b-ochre', bg: '--marker-soft',
+    body: `<path d="M44 100q16 10 32 0" stroke="var(--pastry-dark)" stroke-width="3" fill="none"/>` },
   hughes: { name: 'Mrs Hughes', skin: '--skin-1', hair: '--hair-2', style: 'curls', shirt: '--b-rose', bg: '--postbox-soft',
     body: `<g fill="var(--china)">${[48, 54, 60, 66, 72].map((x, i) => `<circle cx="${x}" cy="${[98, 100, 101, 100, 98][i]}" r="2.2"/>`).join('')}</g>`,
     extra: `<g fill="none" stroke="var(--eye)" stroke-width="1.7"><circle cx="51" cy="64" r="6.5"/><circle cx="69" cy="64" r="6.5"/><path d="M57.5 64h5"/></g>` },
 };
 
-/** Mimi, the cat at No. 1. Drawn in an 80 × 60 box. */
-export function cat() {
-  return `<g><path class="cattail" d="M62 40c10-2 16-8 14-20" stroke="var(--cat)" stroke-width="5" fill="none" stroke-linecap="round"/>
-  <ellipse cx="42" cy="42" rx="23" ry="13" fill="var(--cat)"/>
-  <path d="M34 31c2 5 2 17 0 22M44 30c2 5 2 18 0 24M54 32c2 5 2 14 0 20" stroke="var(--cat-dark)" stroke-width="2.4" fill="none" opacity=".7"/>
-  <circle cx="20" cy="33" r="12" fill="var(--cat)"/><path d="M10 28 11 15l8 8zM21 22l9-8 1 13z" fill="var(--cat)"/>
-  <path d="M13 33q2.5-2.5 5 0M22 33q2.5-2.5 5 0" stroke="var(--eye)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-  <circle cx="20" cy="37" r="1.3" fill="var(--eye)"/>
-  <ellipse cx="30" cy="53" rx="6" ry="3" fill="var(--cat)"/><ellipse cx="52" cy="54" rx="6" ry="3" fill="var(--cat)"/></g>`;
+/** Mimi, the cat at No. 1: a brown mackerel tabby with a white chin, a pink nose, green eyes and big ears.
+ *  Lying down, head up. Drawn in an 80 × 60 box. `sleep` closes her eyes. */
+export function cat({ sleep = false } = {}) {
+  const eyes = sleep
+    ? `<path d="M14.4 31.6q2.6 1.8 5.2 0M24.4 31.6q2.6 1.8 5.2 0" stroke="var(--cat-dark)" stroke-width="1.5" fill="none" stroke-linecap="round"/>`
+    : [17, 27].map(x => `<ellipse cx="${x}" cy="31" rx="3" ry="2.4" fill="var(--cat-eye)" stroke="var(--cat-dark)" stroke-width=".9"/><ellipse cx="${x}" cy="31" rx=".9" ry="2" fill="var(--eye)"/><circle cx="${x + .9}" cy="30.1" r=".6" fill="#fff"/>`).join('');
+  return `<g class="cat">
+  <path class="cattail" d="M63 45c10-1 16-8 13-20" stroke="var(--cat)" stroke-width="5.2" fill="none" stroke-linecap="round"/>
+  <path class="cattail" d="M63 45c10-1 16-8 13-20" stroke="var(--cat-dark)" stroke-width="5.2" fill="none" stroke-dasharray="2.6 4.2" stroke-dashoffset="-2"/>
+  <ellipse cx="44" cy="43" rx="23" ry="13" fill="var(--cat)"/>
+  <path d="M30 31.5q15-5 31 2.5" stroke="var(--cat-dark)" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+  <path d="M36 32c-2.4 5-2.2 15 .6 21M44.5 31c-2.4 6-2.2 18 .2 24M52.5 32c-2 5-2 15 .8 21M59.5 35c-1.4 4-1.2 11 .8 15" stroke="var(--cat-dark)" stroke-width="2.3" fill="none" stroke-linecap="round" opacity=".85"/>
+  <ellipse cx="27" cy="54" rx="6.2" ry="3.2" fill="var(--cat)"/><ellipse cx="40" cy="55" rx="6.2" ry="3.2" fill="var(--cat)"/>
+  <path d="M25 52.6v2.6M29 52.6v2.6M38 53.6v2.6M42 53.6v2.6" stroke="var(--cat-dark)" stroke-width="1" opacity=".6"/>
+  <path d="M10.5 27 9 10.5l11.5 9.5zM23.5 20 35 10.5 33.5 27z" fill="var(--cat)"/>
+  <path d="M12.4 24.5 11.6 15l6 5zM26 20.4l6.6-5.4-.8 9.4z" fill="var(--cat-ear)"/>
+  <circle cx="22" cy="32.5" r="12.8" fill="var(--cat)"/>
+  <path d="M17.6 23.6l2 3.8 2.4-3.6 2.4 3.6 2-3.8" stroke="var(--cat-dark)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M9.6 32.4h4.2M9.8 35.6h4M30.2 32.4h4.2M30.2 35.6h4" stroke="var(--cat-dark)" stroke-width="1.4" stroke-linecap="round"/>
+  <ellipse cx="22" cy="39.2" rx="7" ry="5.6" fill="var(--cat-white)"/>
+  ${eyes}
+  <path d="M20.4 35.2h3.2l-1.6 2.2z" fill="var(--cat-nose)"/>
+  <path d="M22 37.4v1.2M22 38.6q-1.7 1.5-3.2.4M22 38.6q1.7 1.5 3.2.4" stroke="var(--cat-dark)" stroke-width=".9" fill="none" stroke-linecap="round"/>
+  <path d="M15.5 38.5l-7 -1.2M15.6 40.2l-6.8.6M28.5 38.5l7-1.2M28.4 40.2l6.8.6" stroke="var(--cat-white)" stroke-width=".7" opacity=".8"/></g>`;
+}
+
+/** Mimi's blanket: cream wool with black dashes and knotted fringes along the bottom. `w` × `h` at (x, y). */
+export function blanket(x, y, w, h) {
+  const rows = [];
+  for (let r = 0; r * 9 + 6 < h - 4; r++) {
+    const yy = y + 6 + r * 9;
+    for (let c = 0; c * 12 + 5 < w - 6; c++) rows.push(`M${x + 5 + c * 12 + (r % 2 ? 6 : 0)} ${yy}h4.5`);
+  }
+  const fringe = [];
+  for (let fx = x + 4; fx < x + w - 2; fx += 5) fringe.push(`M${fx} ${y + h}l${fx % 2 ? -.8 : .8} 7`);
+  return `<g class="blanket"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="3" fill="var(--blanket)"/>
+    <path d="${rows.join('')}" stroke="var(--blanket-line)" stroke-width="1.5" stroke-linecap="round" opacity=".8"/>
+    <path d="${fringe.join('')}" stroke="var(--blanket)" stroke-width="1.6" stroke-linecap="round"/>
+    ${Array.from({ length: Math.floor((w - 6) / 10) }, (_, k) => `<circle cx="${x + 6.5 + k * 10}" cy="${y + h + 2}" r="1.4" fill="var(--blanket)"/>`).join('')}</g>`;
 }
 
 /** The radio on the shelf at No. 1: the voice of the lessons at home. Drawn in a 70 × 52 box. */

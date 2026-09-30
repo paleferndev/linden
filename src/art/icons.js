@@ -25,5 +25,7 @@ export const ICONS = {
   download: I('<path d="M12 4v11M7.5 10.5 12 15l4.5-4.5"/><path d="M5 19.5h14"/>'),
   install: I('<rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M12 7.5v7M9 11.5l3 3 3-3"/>'),
   share: I('<path d="M12 14V3.5M8 7.5l4-4 4 4M8.5 10.5H6.5a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h11a1.5 1.5 0 0 0 1.5-1.5V12a1.5 1.5 0 0 0-1.5-1.5h-2"/>'),
+  train: I('<path d="M4.5 12a7.5 7.5 0 0 1 13-5.1"/><path d="M17.8 3.8v3.4h-3.4"/><path d="M19.5 12a7.5 7.5 0 0 1-13 5.1"/><path d="M6.2 20.2v-3.4h3.4"/><path d="M12 9.2l.9 1.9 2 .3-1.5 1.4.4 2-1.8-1-1.8 1 .4-2-1.5-1.4 2-.3z" fill="currentColor" stroke-width="1"/>'),
+  album: I('<rect x="7.5" y="4.5" width="12" height="15" rx="1.5"/><path d="M4.5 7.5v11a1.5 1.5 0 0 0 1.5 1.5h9"/><path d="M10 14l2.2-2.5 2 2 1.3-1.3 1.8 2"/><circle cx="11.2" cy="8.8" r="1.2"/>'),
   trap: I('<path d="M12 4.5 21 19.5H3z"/><path d="M12 10v4.5"/><circle cx="12" cy="17" r=".7" fill="currentColor"/>'),
 };

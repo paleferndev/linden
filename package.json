@@ -9,6 +9,7 @@
     "build": "vite build",
     "preview": "vite preview --port 4173 --strictPort",
     "test": "node tests/smoke.test.mjs",
+    "test:content": "node tests/content.mjs",
     "test:legacy": "npm --prefix legacy/test test",
     "icons": "node scripts/icons.mjs",
     "deploy": "node scripts/deploy.mjs"

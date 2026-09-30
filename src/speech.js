@@ -44,9 +44,9 @@ export function onVoice(fn) {
 export function setAccent(accent) { state.accent = accent; pick(); }
 
 /** Speaks `text`; resolves when it's finished (or failed). Online-only voices fall back to a local one when offline.
- *  `variant` picks another English voice (sound drills). */
-export function speak(text, { rate = 0.95, variant = 0 } = {}) {
-  if (muted) return new Promise(resolve => setTimeout(() => resolve(true), 300));
+ *  `pitch` gives each person in the story a voice of their own; `variant` picks another English voice. */
+export function speak(text, { rate = 0.95, pitch = 1, variant = 0 } = {}) {
+  if (muted) return new Promise(resolve => setTimeout(() => resolve(true), navigator.webdriver ? 5 : 300));
   if (!canSpeak) return Promise.resolve(false);
   return new Promise(resolve => {
     let finished = false;
@@ -55,6 +55,7 @@ export function speak(text, { rate = 0.95, variant = 0 } = {}) {
       const u = new SpeechSynthesisUtterance(text);
       if (voice) { u.voice = voice; u.lang = voice.lang; } else u.lang = state.accent;
       u.rate = rate;
+      u.pitch = pitch;
       u.onend = () => done(true);
       u.onerror = () => {
         const local = retry && speechSynthesis.getVoices().find(v => v.localService && norm(v.lang).startsWith('en') && !NOVELTY.test(v.name));
@@ -70,4 +71,13 @@ export function speak(text, { rate = 0.95, variant = 0 } = {}) {
     // Some engines never fire `end`; don't leave the caller hanging.
     setTimeout(() => done(true), Math.max(1500, text.length * 110 / rate));
   });
+}
+
+/** Stops whatever is being said. */
+export function hush() { try { if (canSpeak) speechSynthesis.cancel(); } catch {} }
+
+/** iOS only lets a page speak once it has spoken inside a tap: call this from the tap that starts an episode. */
+export function unlockSpeech() {
+  if (!canSpeak || muted) return;
+  try { const u = new SpeechSynthesisUtterance(' '); u.volume = 0; speechSynthesis.speak(u); } catch {}
 }

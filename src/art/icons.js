@@ -1,0 +1,29 @@
+// Interface icons: one stroke weight, rounded ends, a 24 px grid. They look the same on every phone and in both themes.
+const I = p => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${p}</svg>`;
+
+export const ICONS = {
+  street: I('<path d="M3 20h18"/><path d="M5 20v-9.5l5-4 5 4V20"/><path d="M15 20v-7.5h4V20"/><path d="M8.5 20v-4h3v4"/>'),
+  tea: I('<path d="M5 9.5h11V14a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z"/><path d="M16 11h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8.5 3.5c-.8 1 .8 2-.1 3.2M12 3.5c-.8 1 .8 2-.1 3.2"/>'),
+  phrases: I('<path d="M4 5h10a2 2 0 0 1 2 2v5.5a2 2 0 0 1-2 2H9l-3.5 3v-3H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/><path d="M19 9.5h.5a2 2 0 0 1 2 2V16a2 2 0 0 1-2 2H19v2.5L16 18h-3.5"/>'),
+  me: I('<circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20.5c1.3-3.8 4.2-5.8 7.5-5.8s6.2 2 7.5 5.8"/>'),
+  speaker: I('<path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4.2 4.2 0 0 1 0 6"/><path d="M18.2 6.3a8 8 0 0 1 0 11.4"/>'),
+  slow: I('<path d="M4 16.5a8 8 0 1 1 16 0"/><path d="M12 16.5 8.2 12"/><circle cx="12" cy="16.5" r="1.2" fill="currentColor"/>'),
+  check: I('<path d="M5 12.5l4.5 4.5L19 7.5"/>'),
+  close: I('<path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/>'),
+  hint: I('<circle cx="12" cy="12" r="9"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.4 2.4c-.7.3-1 .8-1 1.5v.6"/><circle cx="12" cy="16.9" r=".7" fill="currentColor"/>'),
+  window: I('<rect x="5.5" y="3.5" width="13" height="17" rx="1.5"/><path d="M12 3.5v17M5.5 12h13"/>'),
+  play: I('<path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/>'),
+  arrow: I('<path d="M5 12h14M13 6l6 6-6 6"/>'),
+  back: I('<path d="M19 12H5M11 6l-6 6 6 6"/>'),
+  replay: I('<path d="M4.5 12a7.5 7.5 0 1 0 2.3-5.4"/><path d="M4.5 4.5v4h4"/>'),
+  sun: I('<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/>'),
+  moon: I('<path d="M19.5 14.5A8 8 0 1 1 9.5 4.5a6.3 6.3 0 0 0 10 10z"/>'),
+  auto: I('<circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/>'),
+  chev: I('<path d="M9 5.5l6.5 6.5L9 18.5"/>'),
+  pin: I('<path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/>'),
+  copy: I('<rect x="8.5" y="8.5" width="11" height="11" rx="2"/><path d="M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5"/>'),
+  download: I('<path d="M12 4v11M7.5 10.5 12 15l4.5-4.5"/><path d="M5 19.5h14"/>'),
+  install: I('<rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M12 7.5v7M9 11.5l3 3 3-3"/>'),
+  share: I('<path d="M12 14V3.5M8 7.5l4-4 4 4M8.5 10.5H6.5a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h11a1.5 1.5 0 0 0 1.5-1.5V12a1.5 1.5 0 0 0-1.5-1.5h-2"/>'),
+  trap: I('<path d="M12 4.5 21 19.5H3z"/><path d="M12 10v4.5"/><circle cx="12" cy="17" r=".7" fill="currentColor"/>'),
+};

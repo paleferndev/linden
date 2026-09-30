@@ -1,0 +1,54 @@
+/* The drawings: Linden Lane and the scenes inside. Day and evening come from the tokens. */
+
+.clouds .cloud{animation:drift 60s linear infinite alternate}
+.clouds .c2{animation-duration:80s;animation-direction:alternate-reverse}
+.clouds .c3{animation-duration:95s}
+@keyframes drift{from{transform:translateX(-40px)}to{transform:translateX(60px)}}
+.stars{opacity:var(--star-o);transition:opacity .6s}
+.clouds{opacity:var(--cloud-o)}
+.glow{opacity:var(--glow-o);transition:opacity .6s}
+.bulb{opacity:var(--bulb-o)}
+.win{fill:var(--window);stroke:var(--win-frame);stroke-width:3;transition:fill .5s}
+.win.dot{stroke:none}
+.win.on{fill:var(--lit);filter:drop-shadow(0 0 7px var(--lit-glow))}
+.win.flick{animation:flick .7s steps(1) both}
+@keyframes flick{0%{fill:var(--window)}15%{fill:var(--lit)}25%{fill:var(--window)}40%{fill:var(--lit)}50%{fill:var(--window)}65%,100%{fill:var(--lit)}}
+.cattail{transform-box:fill-box;transform-origin:0% 100%;animation:tail 3.2s ease-in-out infinite}
+@keyframes tail{0%,100%{transform:rotate(0)}50%{transform:rotate(-14deg)}}
+.sign-t{font:700 11.5px var(--f-en);letter-spacing:.16em;fill:var(--sign-text)}
+.plate{font:700 11px var(--f-ui);fill:var(--ink)}
+.bus-t{font:800 10px var(--f-ui);fill:var(--awning-b);letter-spacing:.06em}
+.here-t{font:700 12.5px var(--f-ui);fill:var(--on-pen)}
+.here{animation:bob 2.4s var(--ease-io) infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.bld{cursor:pointer;transition:filter .2s}
+.chalk{font:600 13px var(--f-hand);fill:var(--chalk)}
+.chalk-h{font:700 10px var(--f-ui);letter-spacing:.18em;fill:var(--chalk)}
+.note-t{font:700 11px var(--f-en)}
+.steam path{animation:steam 2.6s ease-in-out infinite;opacity:0}
+.steam path+path{animation-delay:1.3s}
+@keyframes steam{0%{opacity:0;transform:translateY(4px)}40%{opacity:.8}100%{opacity:0;transform:translateY(-8px)}}
+.waves path{opacity:0}
+.speaking .waves path,.scene.talking .waves path{animation:wave 1s ease-out infinite}
+.scene.talking .waves path+path{animation-delay:.25s}
+@keyframes wave{0%{opacity:0}30%{opacity:.9}100%{opacity:0}}
+
+/* scenes */
+.scene{position:relative;flex:none;background:var(--wall);display:grid;place-items:center;overflow:hidden}
+.scene>svg{width:100%;height:auto;max-height:var(--scene-max,34dvh)}
+.obj{cursor:pointer;transform-box:fill-box;transform-origin:50% 100%}
+.obj:focus-visible .hit{stroke:var(--pen);stroke-width:2;stroke-dasharray:4 3}
+.obj.bump{animation:bump .42s var(--ease-out)}
+@keyframes bump{0%{transform:none}35%{transform:translateY(-7px) scale(1.06)}100%{transform:none}}
+.spot{position:absolute;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;pointer-events:none;border:2px solid var(--pen);opacity:0;animation:spot 2.2s var(--ease-out) infinite}
+@keyframes spot{0%{transform:scale(.5);opacity:.75}70%{transform:scale(1.3);opacity:0}100%{opacity:0}}
+.tag{position:absolute;z-index:3;transform:translate(-50%,calc(-100% - 8px));background:var(--card);border:1px solid var(--line);border-radius:11px;padding:5px 11px 6px;box-shadow:var(--shadow-sm);white-space:nowrap;text-align:center;pointer-events:none;animation:tagIn .3s var(--ease-out) both}
+.tag::after{content:"";position:absolute;left:50%;bottom:-5px;width:9px;height:9px;background:var(--card);border-right:1px solid var(--line);border-bottom:1px solid var(--line);transform:translateX(-50%) rotate(45deg)}
+.tag b{display:block;font:650 16px/1.2 var(--f-en);color:var(--ink)}
+.tag small{display:block;font-size:12px;color:var(--muted)}
+@keyframes tagIn{from{opacity:0;transform:translate(-50%,calc(-100% - 2px)) scale(.9)}to{opacity:1}}
+@keyframes popIn{from{opacity:0;transform:translateY(5px) scale(.96)}to{opacity:1;transform:none}}
+.bubble{position:absolute;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:9px 11px 10px 12px;box-shadow:var(--shadow-sm);display:flex;gap:8px;align-items:flex-start;animation:popIn .4s .25s var(--ease-out) both}
+.bubble::after{content:"";position:absolute;right:-7px;bottom:14px;width:12px;height:12px;background:var(--card);border-top:1px solid var(--line);border-right:1px solid var(--line);transform:rotate(45deg)}
+.bubble .en{font:600 15.5px/1.3 var(--f-en);color:var(--ink)}
+.bubble svg{width:18px;height:18px;flex:none;color:var(--pen);margin-top:1px}

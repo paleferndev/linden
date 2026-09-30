@@ -1,23 +1,20 @@
-// Linden Lane: the street. Each building is a unit and each window a lesson; `lit` says how many windows are on per unit,
-// e.g. laneSVG({home: 3, kettle: 1}). Colours come from the tokens, so the same drawing is the noon street and the evening street.
+import { cat } from './people.js';
+
+// Linden Lane: the street. Each building is a place and each window a lesson; `lit` lists the lit windows per place,
+// e.g. laneSVG({home: [0, 2], kettle: [1]}). `o.here` pins "Ești aici" over a building. Colours come from the tokens,
+// so the same drawing is the noon street and the evening street.
 
 let GID = 0; // gradient ids must be unique per SVG instance
+export const nextId = p => p + (++GID);
 
-const glowDef = id => `<defs><radialGradient id="${id}"><stop offset="0" style="stop-color:var(--lit);stop-opacity:.75"/><stop offset=".4" style="stop-color:var(--lit);stop-opacity:.28"/><stop offset="1" style="stop-color:var(--lit);stop-opacity:0"/></radialGradient></defs>`;
+export const glowDef = id => `<defs><radialGradient id="${id}"><stop offset="0" style="stop-color:var(--lit);stop-opacity:.75"/><stop offset=".4" style="stop-color:var(--lit);stop-opacity:.28"/><stop offset="1" style="stop-color:var(--lit);stop-opacity:0"/></radialGradient></defs>`;
 
-export function cat() {
-  return `<g><path class="cattail" d="M62 40c10-2 16-8 14-20" stroke="var(--cat)" stroke-width="5" fill="none" stroke-linecap="round"/>
-  <ellipse cx="42" cy="42" rx="23" ry="13" fill="var(--cat)"/>
-  <path d="M34 31c2 5 2 17 0 22M44 30c2 5 2 18 0 24M54 32c2 5 2 14 0 20" stroke="var(--cat-dark)" stroke-width="2.4" fill="none" opacity=".7"/>
-  <circle cx="20" cy="33" r="12" fill="var(--cat)"/><path d="M10 28 11 15l8 8zM21 22l9-8 1 13z" fill="var(--cat)"/>
-  <path d="M13 33q2.5-2.5 5 0M22 33q2.5-2.5 5 0" stroke="var(--eye)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-  <circle cx="20" cy="37" r="1.3" fill="var(--eye)"/>
-  <ellipse cx="30" cy="53" rx="6" ry="3" fill="var(--cat)"/><ellipse cx="52" cy="54" rx="6" ry="3" fill="var(--cat)"/></g>`;
-}
+// Where each building sits, for the pin, the sheet and scrolling the street to it: [centre x, top y].
+export const BUILDINGS = { home: [170, 66], kettle: [405, 162], shop: [700, 142], bus: [845, 176], no9: [1050, 58], office: [1265, 84] };
 
 export function laneSVG(lit = {}, o = {}) {
   const gid = 'lg' + (++GID);
-  const on = (u, i) => i < (lit[u] || 0) ? ' on' : '';
+  const on = (u, i) => (lit[u] || []).includes(i) ? ' on' : '';
   const W = (u, i, x, y, w, h) => `<rect class="win${on(u, i)}" data-u="${u}" data-i="${i}" x="${x}" y="${y}" width="${w}" height="${h}" rx="3"/>`;
   const awning = (x, y, w, a, b, n) => { let g = ''; const sw = w / n; for (let k = 0; k < n; k++) { const c = k % 2 ? b : a; g += `<rect x="${(x + k * sw).toFixed(1)}" y="${y}" width="${(sw + .6).toFixed(1)}" height="16" fill="${c}"/><circle cx="${(x + k * sw + sw / 2).toFixed(1)}" cy="${y + 16}" r="${(sw / 2).toFixed(1)}" fill="${c}"/>`; } return g; };
   const cloud = (x, y, k, c) => `<g class="cloud ${c}"><g transform="translate(${x} ${y}) scale(${k})" fill="var(--cloud)"><ellipse cx="0" cy="10" rx="46" ry="14"/><circle cx="-16" cy="2" r="16"/><circle cx="10" cy="-4" r="20"/><circle cx="30" cy="6" r="12"/></g></g>`;
@@ -84,5 +81,11 @@ export function laneSVG(lit = {}, o = {}) {
   <rect x="0" y="330" width="1440" height="22" fill="var(--pave)"/><rect x="0" y="350" width="1440" height="4" fill="var(--kerb)"/><rect x="0" y="354" width="1440" height="46" fill="var(--road)"/>
   <g fill="var(--dash)">${Array.from({ length: 18 }, (_, i) => `<rect x="${20 + i * 80}" y="375" width="40" height="4" rx="2"/>`).join('')}</g>
   <g transform="translate(316 304) scale(.56)">${cat()}</g>
+  ${o.here && BUILDINGS[o.here] ? pin(...BUILDINGS[o.here]) : ''}
   </svg>`;
+}
+
+function pin(x, top) {
+  const y = top - 12;
+  return `<g class="here"><rect x="${x - 46}" y="${y - 30}" width="92" height="24" rx="12" fill="var(--pen)"/><text x="${x}" y="${y - 13.5}" text-anchor="middle" class="here-t">Ești aici</text><path d="M${x - 6} ${y - 6.5}l6 7 6-7z" fill="var(--pen)"/></g>`;
 }

@@ -17,7 +17,7 @@ export default defineConfig({
   base: '/linden/',
   define: { __VERSION__: JSON.stringify(VERSION) },
   build: { target: ['es2020', 'safari14'] },
-  server: { port: 5173, strictPort: true },
+  server: { port: 5180, strictPort: true, watch: { usePolling: true, interval: 250 } }, // Windows drops quick successive saves otherwise
   plugins: [
     VitePWA({
       registerType: 'prompt', // src/pwa.js decides when to apply an update

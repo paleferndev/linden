@@ -2,6 +2,8 @@
 // recorded audio files can replace this later without touching the screens.
 
 export const canSpeak = typeof window !== 'undefined' && 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+// Tests and previews open the app with ?mute: everything behaves the same, without a sound.
+export const muted = typeof location !== 'undefined' && /[?&]mute(?:[=&]|$)/.test(location.search);
 
 const PREFERRED = /natural|neural|premium|enhanced|serena|daniel|kate|sonia|libby|ryan|google uk/i;
 const NOVELTY = /bad news|bahh|bells|boing|bubbles|cellos|good news|jester|organ|superstar|trinoids|whisper|wobble|zarvox|albert|fred|junior|ralph|kathy|grandma|grandpa|eddy|flo|reed|rocko|sandy|shelley/i;
@@ -38,6 +40,7 @@ export function setAccent(accent) { state.accent = accent; pick(); }
 
 /** Speaks `text`; resolves when it's finished (or failed). Online-only voices fall back to a local one when offline. */
 export function speak(text, { rate = 0.95 } = {}) {
+  if (muted) return new Promise(resolve => setTimeout(() => resolve(true), 300));
   if (!canSpeak) return Promise.resolve(false);
   return new Promise(resolve => {
     let finished = false;

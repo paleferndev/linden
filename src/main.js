@@ -10,7 +10,7 @@ import { initPWA, isStandalone, justUpdated, onInstallable, promptInstall } from
 /* global __VERSION__ */
 const $ = (sel, el = document) => el.querySelector(sel);
 
-const HELLO = { en: 'Hello! Welcome to Linden Lane.', ro: 'Bună! Bine ai venit pe Linden Lane.' };
+const HELLO = { en: "Hello again! The kettle's on.", ro: 'Bună din nou! Am pus de un ceai.' };
 const ICON = {
   play: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.6v12.8a1 1 0 0 0 1.53.85l10.1-6.4a1 1 0 0 0 0-1.7L9.53 4.75A1 1 0 0 0 8 5.6z" fill="currentColor"/></svg>',
   share: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14V3.5M8 7.5l4-4 4 4M8.5 10.5H6.5a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h11a1.5 1.5 0 0 0 1.5-1.5V12a1.5 1.5 0 0 0-1.5-1.5h-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',

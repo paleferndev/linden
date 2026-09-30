@@ -19,7 +19,7 @@ fs.writeFileSync('dist/.nojekyll', '');
 const head = out('git rev-parse --short HEAD');
 const env = { ...process.env, GIT_INDEX_FILE: path.resolve('.git/deploy-index'), GIT_WORK_TREE: path.resolve('dist') };
 fs.rmSync(env.GIT_INDEX_FILE, { force: true });
-out('git add --all --force .', { env, cwd: 'dist' });
+out('git -c core.autocrlf=false add --all --force .', { env, cwd: 'dist' });
 const tree = out('git write-tree', { env });
 let parent = '';
 try { parent = out('git rev-parse --verify --quiet refs/heads/gh-pages'); } catch {}

@@ -1,0 +1,1886 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Engleză">
+<meta name="theme-color" content="#E9EBE2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#171A16" media="(prefers-color-scheme: dark)">
+<title>Engleză pas cu pas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;1,400&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E9EBE2;
+  --surface:#F6F7F0;
+  --raised:#FFFFFF;
+  --ink:#1C221B;
+  --muted:#6E7669;
+  --line:#D6DACB;
+  --accent:#C8912F;
+  --accent-soft:#F2E4C4;
+  --accent-ink:#2A1F06;
+  --good:#3C7A4C;
+  --good-bg:#DEEBDC;
+  --off:#8E5567;
+  --off-bg:#F1DFE4;
+  --shadow:0 2px 0 rgba(28,34,27,.07), 0 8px 24px -14px rgba(28,34,27,.35);
+  --font-ro:'Alegreya','Iowan Old Style','Palatino','Charter',Georgia,'Times New Roman',serif;
+  --font-en:'Alegreya Sans',-apple-system,BlinkMacSystemFont,'Helvetica Neue','Segoe UI',system-ui,sans-serif;
+  --r:18px;
+  --r-sm:12px;
+  --tab-h:60px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#171A16;
+    --surface:#20241E;
+    --raised:#272C25;
+    --ink:#EDEFE6;
+    --muted:#9AA394;
+    --line:#333A2F;
+    --accent:#E3B357;
+    --accent-soft:#3B331D;
+    --accent-ink:#1B1505;
+    --good:#7FC28E;
+    --good-bg:#23331F;
+    --off:#D28FA0;
+    --off-bg:#3A2028;
+    --shadow:0 2px 0 rgba(0,0,0,.25), 0 8px 24px -14px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#171A16;
+  --surface:#20241E;
+  --raised:#272C25;
+  --ink:#EDEFE6;
+  --muted:#9AA394;
+  --line:#333A2F;
+  --accent:#E3B357;
+  --accent-soft:#3B331D;
+  --accent-ink:#1B1505;
+  --good:#7FC28E;
+  --good-bg:#23331F;
+  --off:#D28FA0;
+  --off-bg:#3A2028;
+  --shadow:0 2px 0 rgba(0,0,0,.25), 0 8px 24px -14px rgba(0,0,0,.8);
+}
+
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%;background:var(--bg)}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--font-ro);font-size:17px;line-height:1.5;
+  overscroll-behavior-y:none;touch-action:manipulation;
+  overflow-wrap:break-word;
+}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;touch-action:manipulation;padding:0;margin:0}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+/* Romanian is serif, English is sans: a glance tells him which language he is reading */
+.en{font-family:var(--font-en)}
+.ro{font-family:var(--font-ro)}
+
+/* ---------- shell ---------- */
+.shell{
+  max-width:470px;margin:0 auto;min-height:100vh;min-height:100dvh;
+  display:flex;flex-direction:column;position:relative;background:var(--bg);
+}
+.screen{
+  flex:1;padding:calc(env(safe-area-inset-top) + 18px) 18px calc(var(--tab-h) + env(safe-area-inset-bottom) + 24px);
+}
+.screen.noTabs{padding-bottom:calc(env(safe-area-inset-bottom) + 24px);display:flex;flex-direction:column}
+
+/* ---------- type ---------- */
+h1{font-family:var(--font-ro);font-size:1.7rem;font-weight:700;line-height:1.2;margin:0 0 .2em;letter-spacing:-.01em}
+h2{font-family:var(--font-ro);font-size:1.18rem;font-weight:700;margin:0 0 .4em;line-height:1.25}
+p{margin:0 0 .8em}
+.lead{color:var(--muted);font-size:1.02rem;margin:0 0 1.4em}
+.small{font-size:.87rem;color:var(--muted)}
+.kicker{font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;font-family:var(--font-en)}
+.say{font-family:var(--font-ro);font-weight:500;letter-spacing:.01em}
+.th{color:var(--accent);font-weight:700}
+.ipa{font-family:var(--font-en);color:var(--muted);font-size:.92rem}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:.5em;
+  width:100%;min-height:54px;padding:.7em 1em;border-radius:var(--r);
+  background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:1.05rem;
+  box-shadow:0 3px 0 rgba(28,34,27,.18);
+}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(28,34,27,.18)}
+.btn[disabled]{opacity:.42;box-shadow:none;pointer-events:none}
+.btn.ghost{background:transparent;color:var(--muted);box-shadow:none;font-weight:500;min-height:46px}
+.btn.good{background:var(--good);color:#fff}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.good{color:#15200F}}
+:root[data-theme="dark"] .btn.good{color:#15200F}
+
+/* ---------- cards ---------- */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.card.raised{background:var(--raised);box-shadow:var(--shadow)}
+.card h2{margin-bottom:.3em}
+
+/* ---------- home ---------- */
+.week{display:flex;gap:9px;margin:4px 0 24px;align-items:center}
+.dot{width:19px;height:19px;border-radius:50%;border:1.5px solid var(--line);background:transparent;flex:none}
+.dot.on{background:var(--accent);border-color:var(--accent)}
+.dot.today{box-shadow:0 0 0 3px var(--accent-soft)}
+.week .lbl{font-size:.82rem;color:var(--muted);margin-left:6px}
+.unitHead{margin:22px 0 8px;display:flex;align-items:baseline;gap:10px}
+.unitHead h2{margin:0}
+.path{list-style:none;margin:0;padding:0}
+.lrow{
+  display:flex;align-items:center;gap:12px;width:100%;min-height:48px;padding:6px 4px;
+  text-align:left;border-bottom:1px solid var(--line);
+}
+.lrow .pip{
+  width:22px;height:22px;border-radius:50%;flex:none;border:1.5px solid var(--line);
+  display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--muted);font-family:var(--font-en)
+}
+.lrow.done .pip{background:var(--good);border-color:var(--good);color:var(--bg)}
+.lrow.locked{opacity:.5}
+.lrow .t{flex:1;font-size:1rem;min-width:0}
+.lrow .r{font-size:.8rem;color:var(--muted);flex:none}
+.now{
+  background:var(--raised);border:1px solid var(--accent);border-radius:var(--r);
+  padding:18px;margin:12px 0 16px;box-shadow:var(--shadow);
+}
+.now .kicker{color:var(--accent);margin-bottom:6px}
+.now h2{font-size:1.45rem;margin:0 0 .25em}
+.now .g{color:var(--muted);margin:0 0 16px}
+
+/* ---------- tabs ---------- */
+.tabs{
+  position:fixed;bottom:0;left:0;right:0;z-index:40;max-width:470px;margin:0 auto;
+  display:flex;background:var(--surface);border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom);
+}
+.tabs button{
+  flex:1;height:var(--tab-h);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  color:var(--muted);font-size:.76rem;font-weight:500;position:relative;
+}
+.tabs button .ic{font-size:1.25rem;line-height:1}
+.tabs button.on{color:var(--ink)}
+.badge{
+  position:absolute;top:8px;left:calc(50% + 8px);
+  background:var(--accent);color:var(--accent-ink);border-radius:9px;
+  font-size:.66rem;font-weight:700;padding:1px 6px;font-family:var(--font-en);
+}
+
+/* ---------- lesson player ---------- */
+.lesson{position:fixed;inset:0;z-index:60;background:var(--bg);display:flex;flex-direction:column;max-width:470px;margin:0 auto}
+.lbar{display:flex;align-items:center;gap:12px;padding:calc(env(safe-area-inset-top) + 10px) 12px 8px 8px;flex:none}
+.lbar .x{width:44px;height:44px;font-size:1.4rem;line-height:1;color:var(--muted);display:flex;align-items:center;justify-content:center;flex:none}
+.lbar .k{width:44px;height:44px;font-size:1.05rem;color:var(--accent);font-weight:700;display:flex;align-items:center;justify-content:center;flex:none}
+.prog{flex:1;height:9px;border-radius:5px;background:var(--line);overflow:hidden}
+.prog i{display:block;height:100%;background:var(--accent);border-radius:5px}
+/* min-height:0 is what lets the body scroll instead of pushing the footer off screen */
+.lbody{flex:1;min-height:0;display:flex;flex-direction:column;overflow-y:auto;overscroll-behavior:contain;padding:6px 18px 18px;-webkit-overflow-scrolling:touch}
+.lfoot{flex:none;padding:12px 18px calc(env(safe-area-inset-bottom) + 14px);background:var(--bg)}
+
+.qlabel{color:var(--muted);font-size:.95rem;margin-bottom:10px}
+.qtext{font-size:1.5rem;font-weight:700;line-height:1.3;margin-bottom:6px}
+.qtext.en{letter-spacing:.005em}
+.qsub{margin:0 0 6px;font-size:1.05rem;color:var(--muted)}
+
+.opts{display:flex;flex-direction:column;gap:10px;margin-top:auto;padding-top:20px;flex:none}
+.opt{
+  display:flex;align-items:center;gap:12px;width:100%;text-align:left;
+  min-height:56px;padding:12px 15px;border-radius:var(--r-sm);
+  background:var(--surface);border:1.5px solid var(--line);font-size:1.08rem;line-height:1.3;
+}
+.opt .k{
+  width:24px;height:24px;flex:none;border-radius:6px;border:1.5px solid var(--line);font-family:var(--font-en);
+  font-size:.75rem;display:flex;align-items:center;justify-content:center;color:var(--muted);
+}
+.opt .v{flex:1;min-width:0}
+.opt.sel{border-color:var(--accent);background:var(--accent-soft)}
+.opt.sel .k{border-color:var(--accent);background:var(--accent);color:var(--accent-ink)}
+.opt.ok{border-color:var(--good);background:var(--good-bg)}
+.opt.ok .k{background:var(--good);border-color:var(--good);color:var(--bg)}
+.opt.no{border-color:var(--off);background:var(--off-bg)}
+.opt.no .k{background:var(--off);border-color:var(--off);color:var(--bg)}
+.opt[disabled]{pointer-events:none}
+.opt.fade{opacity:.4}
+
+.syls{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:20px;flex:none}
+.syl{
+  flex:1 1 0;min-width:64px;min-height:66px;font-family:var(--font-en);font-size:1.5rem;font-weight:500;
+  border-radius:var(--r-sm);background:var(--surface);border:1.5px solid var(--line);
+}
+.syl.sel{border-color:var(--accent);background:var(--accent-soft)}
+.syl.ok{border-color:var(--good);background:var(--good-bg);font-weight:700}
+.syl.no{border-color:var(--off);background:var(--off-bg)}
+.syl[disabled]{pointer-events:none}
+.syl.fade{opacity:.4}
+
+.slot{
+  min-height:58px;border-bottom:2px dashed var(--line);margin:18px 0 22px;
+  display:flex;flex-wrap:wrap;gap:9px;align-content:flex-start;padding-bottom:10px;
+}
+.bank{margin-top:auto;padding-top:14px;flex:none}
+.tiles{display:flex;flex-wrap:wrap;gap:9px}
+.tile{
+  padding:9px 14px;border-radius:10px;background:var(--raised);font-family:var(--font-en);
+  border:1.5px solid var(--line);box-shadow:0 2px 0 var(--line);font-size:1.05rem;min-height:44px;min-width:44px;
+}
+.tile:active{transform:translateY(2px);box-shadow:none}
+.tile.used{opacity:.3;pointer-events:none;background:transparent;box-shadow:none;border-style:dashed;color:transparent}
+.tile[disabled]{pointer-events:none}
+
+.pairs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:auto;padding-top:16px;flex:none}
+.pair{
+  min-height:58px;display:flex;align-items:center;justify-content:center;text-align:center;
+  padding:8px 10px;border-radius:var(--r-sm);background:var(--surface);
+  border:1.5px solid var(--line);font-size:1rem;line-height:1.25;
+}
+.pair.sel{border-color:var(--accent);background:var(--accent-soft)}
+.pair.gone{opacity:.25;pointer-events:none;border-style:dashed}
+.pair.miss{border-color:var(--off);background:var(--off-bg)}
+
+/* intro card */
+.intro{text-align:center;padding-top:5vh}
+.intro .emoji{font-size:3.2rem;line-height:1;margin-bottom:10px}
+.intro .word{font-family:var(--font-en);font-size:2.1rem;font-weight:700;letter-spacing:.005em;line-height:1.15}
+.intro .word.letter{font-size:4rem}
+.intro .sayline{display:flex;align-items:center;justify-content:center;gap:8px;margin:6px 0 0}
+.intro .sayline .say{font-size:1.5rem}
+.intro .ipa{margin-bottom:12px}
+.intro .mean{font-size:1.25rem;margin:8px 0 18px}
+.intro .ex{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:13px;text-align:left}
+.intro .ex .e{font-family:var(--font-en);font-weight:500;margin-bottom:2px}
+.intro .ex .r{color:var(--muted);font-size:.95rem}
+
+/* note + pitfall */
+.note{padding-top:8px}
+.note .body{font-size:1.05rem}
+.note table{width:100%;border-collapse:collapse;margin:12px 0}
+.note td{padding:7px 9px;border-bottom:1px solid var(--line);font-size:1rem;vertical-align:top}
+.note td:first-child{color:var(--muted);width:42%}
+.note td .en{font-weight:500}
+.pit{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--off);border-radius:var(--r-sm);padding:13px;margin:14px 0}
+.pit .bad{color:var(--off);text-decoration:line-through;text-decoration-thickness:1px;font-family:var(--font-en)}
+.pit .ok{color:var(--good);font-weight:600;font-family:var(--font-en)}
+.pit .why{font-size:.95rem;color:var(--muted);margin-top:6px}
+
+/* dialogue */
+.dlg{display:flex;flex-direction:column;gap:12px;margin-top:14px}
+.line{max-width:88%;padding:11px 14px;border-radius:16px;background:var(--surface);border:1px solid var(--line);text-align:left}
+.line.b{align-self:flex-end;background:var(--accent-soft);border-color:var(--accent-soft)}
+.line .who{font-size:.72rem;color:var(--muted);margin-bottom:3px;font-family:var(--font-en)}
+.line .tx{font-family:var(--font-en);font-size:1.05rem}
+.line .tr{color:var(--muted);font-size:.92rem;margin-top:5px;display:none}
+.line.open .tr{display:block}
+
+/* feedback sheet: the one thing that moves */
+.sheet{
+  position:fixed;left:0;right:0;bottom:0;z-index:70;max-width:470px;margin:0 auto;
+  background:var(--good-bg);border-top:2px solid var(--good);
+  padding:16px 18px calc(env(safe-area-inset-bottom) + 16px);
+  transform:translateY(100%);transition:transform .22s cubic-bezier(.2,.8,.3,1);
+  visibility:hidden;
+}
+.sheet.no{background:var(--off-bg);border-top-color:var(--off)}
+.sheet.up{transform:translateY(0);visibility:visible}
+.sheet .verdict{font-weight:700;font-size:1.15rem;display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.sheet .corr{font-family:var(--font-en);font-size:1.1rem;font-weight:600;margin:4px 0}
+.sheet .corr.say{font-family:var(--font-ro)}
+.sheet .why{font-size:.95rem;color:var(--muted);margin:6px 0 0}
+.sheet .btn{margin-top:14px}
+
+/* results */
+.result{text-align:center;padding-top:24px;flex:1;display:flex;flex-direction:column}
+.result .big{font-size:3rem;line-height:1;margin-bottom:12px}
+.resultActions{margin-top:auto;padding-top:24px}
+.stats{display:flex;gap:10px;margin:22px 0}
+.stat{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:12px 6px;min-width:0}
+.stat .v{font-size:1.5rem;font-weight:700;line-height:1}
+.stat .l{font-size:.78rem;color:var(--muted);margin-top:3px}
+
+/* lists */
+.row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.row .g{flex:1;min-width:0}
+.row .g .a{font-family:var(--font-en);font-weight:600}
+.row .g .b{color:var(--muted);font-size:.92rem}
+.row .g .s{font-size:.95rem}
+.strength{font-family:var(--font-en);font-size:.7rem;letter-spacing:2px;color:var(--accent);flex:none}
+.strength .e{color:var(--line)}
+.chip{display:inline-block;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--ink);font-size:.76rem;font-weight:600;font-family:var(--font-en);vertical-align:middle}
+
+/* sound key */
+.key h3{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:22px 0 6px;font-family:var(--font-en)}
+.krow{display:flex;gap:14px;padding:9px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.krow .kg{flex:none;width:56px;font-size:1.25rem;font-weight:700;font-family:var(--font-ro)}
+.krow .kb{flex:1;min-width:0}
+.krow .kd{font-size:.95rem}
+.krow .ke{font-size:.92rem;color:var(--muted)}
+.krow .ke .en{color:var(--ink);font-weight:500}
+.overlay{
+  position:fixed;inset:0;z-index:90;background:var(--bg);overflow-y:auto;-webkit-overflow-scrolling:touch;
+  max-width:470px;margin:0 auto;padding:calc(env(safe-area-inset-top) + 10px) 18px calc(env(safe-area-inset-bottom) + 28px);
+}
+.obar{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.obar h1{margin:0;font-size:1.4rem}
+
+input[type=text]{
+  width:100%;font:inherit;padding:11px;border-radius:var(--r-sm);
+  border:1.5px solid var(--line);background:var(--raised);color:var(--ink);min-height:48px;
+}
+label{display:block;margin-bottom:6px}
+
+.hint{background:var(--accent-soft);border-radius:var(--r-sm);padding:12px 14px;font-size:.95rem;margin:18px 0 0}
+.center{text-align:center}
+.mt{margin-top:18px}
+.mb{margin-bottom:18px}
+.hide{display:none!important}
+
+@media (prefers-reduced-motion: reduce){
+  .sheet{transition:none}
+}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ==========================================================================
+   Engleză pas cu pas — v1 (units 0 and 1)
+   One file. No dependencies. No audio. Progress in localStorage.
+
+   The script has two halves. Everything between the @engine markers is
+   pure: content, storage, scheduler, exercise generator and grader. It
+   never touches the DOM, so the Node harness in test/ can load it alone.
+   The second half renders screens and handles taps.
+   ========================================================================== */
+/* @engine-start */
+'use strict';
+
+/* ---------------------------------------------------------------- CONTENT */
+/* Every id here is permanent. Progress is stored against ids, so text can be
+   edited freely but an id must never be renamed or reused.
+
+   `say` is the Romanian respelling from the sound key (no guillemets, syllables
+   joined with hyphens, stressed syllable in capitals). `syl` is the English
+   word split into the same number of syllables, for the stress exercise. */
+
+const ITEMS = {};
+function W(id, en, ro, o){ ITEMS[id] = Object.assign({id, en, ro:[].concat(ro), pos:'word'}, o||{}); }
+function P(id, en, ro, o){ ITEMS[id] = Object.assign({id, en, ro:[].concat(ro), pos:'phrase'}, o||{}); }
+
+/* --- u00.l01  words he already knows, that do not sound the way he thinks -- */
+W('w.hotel','hotel','hotel',{emoji:'🏨',ipa:'/hoʊˈtel/',say:'hou-TEL',syl:'ho-tel',tags:['travel'],
+  ex:{en:'The hotel is near the park.',ro:'Hotelul e lângă parc.'}});
+W('w.taxi','taxi','taxi',{emoji:'🚕',ipa:'/ˈtæksi/',say:'TAC-si',syl:'ta-xi',tags:['travel'],
+  ex:{en:'I need a taxi.',ro:'Am nevoie de un taxi.'}});
+W('w.doctor','doctor','doctor',{emoji:'🩺',ipa:'/ˈdɑːktər/',say:'DOC-tăr',syl:'doc-tor',tags:['health'],
+  ex:{en:'My doctor is very good.',ro:'Doctorul meu e foarte bun.'}});
+W('w.problem','problem','problemă',{emoji:'⚠️',ipa:'/ˈprɑːbləm/',say:'PRO-blăm',syl:'prob-lem',
+  ex:{en:'No problem!',ro:'Nicio problemă!'}});
+W('w.pizza','pizza','pizza',{emoji:'🍕',ipa:'/ˈpiːtsə/',say:'PIT-să',syl:'piz-za',tags:['food'],
+  ex:{en:'This pizza is very good.',ro:'Pizza asta e foarte bună.'}});
+W('w.music','music','muzică',{emoji:'🎵',ipa:'/ˈmjuːzɪk/',say:'MIU-zic',syl:'mu-sic',
+  ex:{en:'I listen to music every day.',ro:'Ascult muzică în fiecare zi.'}});
+W('w.restaurant','restaurant','restaurant',{emoji:'🍽️',ipa:'/ˈrestrɑːnt/',say:'RES-trănt',tags:['food'],
+  ex:{en:'A restaurant in Bucharest.',ro:'Un restaurant în București.'}});
+W('w.football','football','fotbal',{emoji:'⚽',ipa:'/ˈfʊtbɔːl/',say:'FUT-bool',syl:'foot-ball',
+  ex:{en:'I watch football on Sunday.',ro:'Mă uit la fotbal duminica.'}});
+W('w.coffee','coffee','cafea',{emoji:'☕',ipa:'/ˈkɔːfi/',say:'CO-fi',syl:'cof-fee',tags:['food'],
+  ex:{en:'A coffee, please.',ro:'O cafea, te rog.'}});
+W('w.internet','internet','internet',{emoji:'🌐',ipa:'/ˈɪntərnet/',say:'IN-tăr-net',syl:'in-ter-net',
+  ex:{en:'The internet is slow today.',ro:'Internetul e lent azi.'}});
+
+/* --- u00.l02  the sound key: one word for each sound Romanian lacks ------- */
+W('w.this','this','asta, acesta',{ipa:'/ðɪs/',say:'dhis',
+  ex:{en:'This is my cat.',ro:'Asta e pisica mea.'}});
+W('w.that','that','aia, acela',{ipa:'/ðæt/',say:'dhet',
+  ex:{en:'What is that?',ro:'Ce e aia?'}});
+W('w.think','think','a crede, a gândi',{emoji:'💭',ipa:'/θɪŋk/',say:'think',
+  ex:{en:'I think so.',ro:'Cred că da.'}});
+W('w.cat','cat','pisică',{emoji:'🐈',ipa:'/kæt/',say:'chet',
+  ex:{en:'Mimi is a cat.',ro:'Mimi e o pisică.'}});
+W('w.water','water','apă',{emoji:'💧',ipa:'/ˈwɔːtər/',say:'UO-tăr',syl:'wa-ter',tags:['travel'],
+  ex:{en:'Water, please.',ro:'Apă, te rog.'}});
+W('w.bus','bus','autobuz',{emoji:'🚌',ipa:'/bʌs/',say:'bas',tags:['travel'],
+  ex:{en:'The bus is late.',ro:'Autobuzul întârzie.'}});
+
+/* --- u00.l03 / l04  the alphabet ---------------------------------------- */
+/* letter, how its name is said, a word that starts with it */
+const LETTERS = [
+  ['a','ei','apple'], ['b','bii','bus'], ['c','sii','cat'], ['d','dii','dog'],
+  ['e','ii','egg'], ['f','ef','fish'], ['g','gii','good'], ['h','eici','hat'],
+  ['i','ai','ice'], ['j','gei','jam'], ['k','chei','key'], ['l','el','lemon'],
+  ['m','em','map'], ['n','en','no'], ['o','ou','orange'], ['p','pii','pizza'],
+  ['q','chiu','queen'], ['r','aar','red'], ['s','es','sun'], ['t','tii','tea'],
+  ['u','iu','umbrella'], ['v','vii','van'], ['w','DA-băl-iu','water'],
+  ['x','ecs','box'], ['y','uai','yes'], ['z','zii','zero']
+];
+LETTERS.forEach(function(L){
+  const up = L[0].toUpperCase();
+  W('w.l-'+L[0], up, '«'+L[1]+'»', {
+    pos:'letter', light:true, say:L[1],
+    ex:{en:up+' — '+L[2], ro:'ca în „'+L[2]+'”'}
+  });
+});
+
+/* --- u00.l05  spelling ---------------------------------------------------- */
+P('p.how-spell-that','How do you spell that?','Cum se scrie?',{say:'hau du iu spel dhet',
+  ex:{en:'How do you spell that?',ro:'Cum se scrie?'}});
+P('p.how-spell-name','How do you spell your name?','Cum se scrie numele tău?',{say:'hau du iu spel iur neim',
+  ex:{en:'How do you spell your name?',ro:'Cum se scrie numele tău?'}});
+W('w.double','double','dublu, doi de',{ipa:'/ˈdʌbəl/',say:'DA-băl',syl:'dou-ble',
+  ex:{en:'Hello — H, E, double L, O.',ro:'Hello — H, E, doi de L, O.'}});
+P('p.write-it-down','Can you write it down?','Poți să scrii, te rog?',{say:'chen iu rait it daun',
+  ex:{en:'Can you write it down?',ro:'Poți să scrii, te rog?'}});
+
+/* --- u00.l06  numbers 0-10 ---------------------------------------------- */
+[['zero','zero','0','ZI-rou','/ˈzɪroʊ/','ze-ro'],['one','unu','1','uan','/wʌn/'],['two','doi','2','tuu','/tuː/'],
+ ['three','trei','3','thrii','/θriː/'],['four','patru','4','foor','/fɔːr/'],['five','cinci','5','faiv','/faɪv/'],
+ ['six','șase','6','sics','/sɪks/'],['seven','șapte','7','SE-văn','/ˈsevən/','sev-en'],['eight','opt','8','eit','/eɪt/'],
+ ['nine','nouă','9','nain','/naɪn/'],['ten','zece','10','ten','/ten/']].forEach(function(n){
+  W('w.n-'+n[2], n[0], n[1], {pos:'number', light:true, emoji:n[2], say:n[3], ipa:n[4], syl:n[5],
+    ex:{en:n[0]+' — '+n[2], ro:n[1]+' — '+n[2]}});
+});
+
+/* --- u00.l07  survival phrases ------------------------------------------ */
+P('p.dont-understand',"Sorry, I don't understand.",'Scuze, nu înțeleg.',{emoji:'🤷',say:'SO-ri ai dount an-dăr-STEND',
+  ex:{en:"Sorry, I don't understand.",ro:'Scuze, nu înțeleg.'}});
+P('p.repeat','Can you repeat that, please?','Poți repeta, te rog?',{say:'chen iu ri-PIIT dhet pliiz',
+  ex:{en:'Can you repeat that, please?',ro:'Poți repeta, te rog?'}});
+P('p.slowly','More slowly, please.','Mai rar, te rog.',{say:'moor SLOU-li pliiz',
+  ex:{en:'More slowly, please.',ro:'Mai rar, te rog.'}});
+P('p.what-does-mean','What does that mean?','Ce înseamnă asta?',{say:'uot daz dhet miin',
+  ex:{en:'What does that mean?',ro:'Ce înseamnă asta?'}});
+P('p.how-say','How do you say this in English?','Cum se spune asta în engleză?',{say:'hau du iu sei dhis in IN-gliș',
+  ex:{en:'How do you say this in English?',ro:'Cum se spune asta în engleză?'}});
+P('p.im-learning',"I'm learning English.",'Învăț engleză.',{emoji:'📖',say:'aim LĂR-ning IN-gliș',
+  ex:{en:"I'm learning English.",ro:'Învăț engleză.'}});
+P('p.speak-romanian','Do you speak Romanian?','Vorbești română?',{say:'du iu spiic rou-MEI-ni-ăn',
+  ex:{en:'Do you speak Romanian?',ro:'Vorbești română?'}});
+P('p.no-english',"I don't speak English very well.",'Nu vorbesc engleza foarte bine.',{say:'ai dount spiic IN-gliș VE-ri uel',
+  ex:{en:"I don't speak English very well.",ro:'Nu vorbesc engleza foarte bine.'}});
+
+/* --- u01.l01  hello and goodbye ----------------------------------------- */
+W('w.hello','hello','salut, bună',{emoji:'👋',ipa:'/həˈloʊ/',say:'hă-LOU',syl:'hel-lo',
+  ex:{en:'Hello! How are you?',ro:'Salut! Ce mai faci?'}});
+W('w.hi','hi','salut',{emoji:'👋',ipa:'/haɪ/',say:'hai',
+  ex:{en:'Hi, Mimi!',ro:'Salut, Mimi!'}});
+P('p.good-morning','good morning','bună dimineața',{emoji:'🌅',say:'gud MOOR-ning',
+  ex:{en:'Good morning! Coffee?',ro:'Bună dimineața! Cafea?'}});
+P('p.good-afternoon','good afternoon','bună ziua',{emoji:'☀️',say:'gud ef-tăr-NUUN',
+  ex:{en:'Good afternoon, doctor.',ro:'Bună ziua, domnule doctor.'}});
+P('p.good-evening','good evening','bună seara',{emoji:'🌆',say:'gud IIV-ning',
+  ex:{en:'Good evening!',ro:'Bună seara!'}});
+P('p.good-night','good night','noapte bună',{emoji:'🌙',say:'gud nait',
+  ex:{en:'Good night, sleep well.',ro:'Noapte bună, somn ușor.'}});
+W('w.goodbye','goodbye','la revedere',{emoji:'👋',ipa:'/ˌɡʊdˈbaɪ/',say:'gud-BAI',syl:'good-bye',
+  ex:{en:'Goodbye, see you tomorrow.',ro:'La revedere, ne vedem mâine.'}});
+W('w.bye','bye','pa',{ipa:'/baɪ/',say:'bai',
+  ex:{en:'Bye, Grasu!',ro:'Pa, Grasu!'}});
+P('p.see-you-later','See you later.','Pe mai târziu.',{say:'sii iu LEI-tăr',
+  ex:{en:'See you later!',ro:'Pe mai târziu!'}});
+P('p.see-you-tomorrow','See you tomorrow.','Ne vedem mâine.',{say:'sii iu tă-MO-rou',
+  ex:{en:'See you tomorrow!',ro:'Ne vedem mâine!'}});
+
+/* --- u01.l02  my name is ------------------------------------------------ */
+W('w.name','name','nume',{emoji:'🪪',ipa:'/neɪm/',say:'neim',
+  ex:{en:'My name is {name}.',ro:'Mă numesc {name}.'}});
+W('w.my','my','meu, mea',{ipa:'/maɪ/',say:'mai',
+  ex:{en:'My cat is called Mimi.',ro:'Pisica mea se numește Mimi.'}});
+W('w.your','your','tău, ta',{ipa:'/jʊr/',say:'iur',
+  ex:{en:'What is your name?',ro:'Cum te cheamă?'}});
+W('w.i-am',"I'm",'eu sunt',{ipa:'/aɪm/',say:'aim',
+  ex:{en:"I'm from Bucharest.",ro:'Sunt din București.'}});
+W('w.you-are',"you're",'tu ești',{ipa:'/jʊr/',say:'iur',
+  ex:{en:"You're a good teacher.",ro:'Ești un profesor bun.'}});
+P('p.whats-your-name',"What's your name?",'Cum te cheamă?',{say:'uots iur neim',
+  ex:{en:"What's your name?",ro:'Cum te cheamă?'}});
+P('p.my-name-is','My name is {name}.','Mă numesc {name}.',{say:'mai neim iz {name}',
+  ex:{en:'My name is {name}.',ro:'Mă numesc {name}.'}});
+P('p.nice-to-meet-you','Nice to meet you.','Îmi pare bine.',{emoji:'🤝',say:'nais tu miit iu',
+  ex:{en:'Nice to meet you.',ro:'Îmi pare bine (de cunoștință).'}});
+P('p.nice-to-meet-you-too','Nice to meet you too.','Și mie îmi pare bine.',{say:'nais tu miit iu tuu',
+  ex:{en:'Nice to meet you too.',ro:'Și mie îmi pare bine.'}});
+P('p.this-is','This is Mimi.','Ea e Mimi.',{emoji:'🐈',say:'dhis iz MI-mi',
+  ex:{en:'This is my cat, Mimi.',ro:'Ea e pisica mea, Mimi.'}});
+
+/* --- u01.l03  how are you ----------------------------------------------- */
+P('p.how-are-you','How are you?','Ce mai faci?',{say:'hau aar iu',
+  ex:{en:'Hi! How are you?',ro:'Salut! Ce mai faci?'}});
+P('p.im-fine-thanks',"I'm fine, thanks.",'Bine, mulțumesc.',{say:'aim fain thencs',
+  ex:{en:"I'm fine, thanks.",ro:'Bine, mulțumesc.'}});
+P('p.and-you','And you?','Tu?',{say:'end iu',
+  ex:{en:"I'm fine. And you?",ro:'Sunt bine. Tu?'}});
+W('w.fine','fine','bine',{ipa:'/faɪn/',say:'fain',
+  ex:{en:"I'm fine.",ro:'Sunt bine.'}});
+W('w.great','great','super, grozav',{emoji:'🎉',ipa:'/ɡreɪt/',say:'greit',
+  ex:{en:"I'm great today!",ro:'Sunt super azi!'}});
+W('w.tired','tired','obosit',{emoji:'😴',ipa:'/ˈtaɪərd/',say:'TAI-ărd',syl:'ti-red',
+  ex:{en:"I'm tired.",ro:'Sunt obosit.'}});
+W('w.ok','OK','ok, în regulă',{ipa:'/ˌoʊˈkeɪ/',say:'ou-CHEI',syl:'O-K',
+  ex:{en:"I'm OK, thanks.",ro:'Sunt ok, mulțumesc.'}});
+P('p.not-bad','Not bad.','Nu-i rău.',{say:'not bed',
+  ex:{en:'Not bad, and you?',ro:'Nu-i rău, tu?'}});
+
+/* --- u01.l04  please and thank you -------------------------------------- */
+W('w.please','please','te rog',{emoji:'🙏',ipa:'/pliːz/',say:'pliiz',
+  ex:{en:'A coffee, please.',ro:'O cafea, te rog.'}});
+P('p.thank-you','thank you','mulțumesc',{say:'thenc iu',
+  ex:{en:'Thank you very much.',ro:'Mulțumesc mult.'}});
+W('w.thanks','thanks','mersi',{ipa:'/θæŋks/',say:'thencs',
+  ex:{en:'Thanks!',ro:'Mersi!'}});
+P('p.youre-welcome',"You're welcome.",'Cu plăcere.',{say:'iur UEL-căm',
+  ex:{en:"You're welcome.",ro:'Cu plăcere.'}});
+W('w.sorry','sorry','scuze, îmi pare rău',{ipa:'/ˈsɒri/',say:'SO-ri',syl:'sor-ry',
+  ex:{en:'Sorry, I forgot.',ro:'Scuze, am uitat.'}});
+P('p.excuse-me','excuse me','mă scuzați, nu vă supărați',{say:'ic-SCHIUZ mi',
+  ex:{en:'Excuse me, where is the hotel?',ro:'Nu vă supărați, unde e hotelul?'}});
+W('w.yes','yes','da',{ipa:'/jes/',say:'ies',ex:{en:'Yes, please.',ro:'Da, te rog.'}});
+W('w.no','no','nu',{ipa:'/noʊ/',say:'nou',ex:{en:'No, thank you.',ro:'Nu, mulțumesc.'}});
+
+/* --- u01.l05  dialogue -------------------------------------------------- */
+W('w.friend','friend','prieten',{emoji:'🧑‍🤝‍🧑',ipa:'/frend/',say:'frend',
+  ex:{en:'This is my friend.',ro:'El e prietenul meu.'}});
+P('p.have-to-go','I have to go.','Trebuie să plec.',{say:'ai hev tu gou',
+  ex:{en:'Sorry, I have to go.',ro:'Scuze, trebuie să plec.'}});
+
+/* ------------------------------------------------------------- SOUND KEY */
+/* The respelling specification. Shown whole on the Sunete screen, taught in
+   u00.l02. Every `say` in ITEMS follows it. */
+const SOUND_KEY = [
+  {h:'Vocale'},
+  {g:'ii', ipa:'/iː/', d:'i lung', ex:[['see','sii']]},
+  {g:'i', ipa:'/ɪ/', d:'i scurt', ex:[['sit','sit']]},
+  {g:'e', ipa:'/e/', d:'e, ca al nostru', ex:[['bed','bed']]},
+  {g:'e', ipa:'/æ/', d:'un „a” deschis, între e și a; îl scriem tot e', ex:[['cat','chet'],['man','men']]},
+  {g:'a', ipa:'/ʌ/', d:'a scurt', ex:[['bus','bas'],['cup','cap']]},
+  {g:'aa', ipa:'/ɑː/', d:'a lung', ex:[['car','caar']]},
+  {g:'o', ipa:'/ɒ/', d:'o scurt', ex:[['dog','dog']]},
+  {g:'oo', ipa:'/ɔː/', d:'o lung', ex:[['four','foor']]},
+  {g:'u', ipa:'/ʊ/', d:'u scurt', ex:[['book','buc']]},
+  {g:'uu', ipa:'/uː/', d:'u lung', ex:[['blue','bluu']]},
+  {g:'ă', ipa:'/ə/', d:'vocala leneșă, ca în „măr”; apare în aproape orice silabă neapăsată', ex:[['about','ă-BAUT']]},
+  {g:'ăr', ipa:'/ɜːr/', d:'ă lung, cu r', ex:[['bird','bărd']]},
+  {h:'Vocale duble'},
+  {g:'ei', ipa:'/eɪ/', d:'ca în „vrei”', ex:[['day','dei']]},
+  {g:'ai', ipa:'/aɪ/', d:'ca în „mai”', ex:[['five','faiv']]},
+  {g:'au', ipa:'/aʊ/', d:'ca în „sau”', ex:[['now','nau']]},
+  {g:'ou', ipa:'/oʊ/', d:'ca în „ou”', ex:[['go','gou']]},
+  {g:'oi', ipa:'/ɔɪ/', d:'ca în „noi”', ex:[['boy','boi']]},
+  {h:'Consoane'},
+  {g:'th', ipa:'/θ/', d:'vârful limbii între dinți, doar aer', ex:[['think','think']], th:true},
+  {g:'dh', ipa:'/ð/', d:'la fel, dar cu voce', ex:[['this','dhis']], th:true},
+  {g:'u', ipa:'/w/', d:'înainte de o vocală: ca „u” din „ziua”', ex:[['water','UO-tăr'],['we','uii']]},
+  {g:'i', ipa:'/j/', d:'înainte de o vocală: ca „i” din „iar”', ex:[['yes','ies'],['you','iu']]},
+  {g:'gi', ipa:'/dʒ/', d:'ca în „gem”', ex:[['jam','giam']]},
+  {g:'ci', ipa:'/tʃ/', d:'ca în „cine”', ex:[['chair','cear']]},
+  {g:'ș', ipa:'/ʃ/', d:'ca al nostru', ex:[['she','șii']]},
+  {g:'j', ipa:'/ʒ/', d:'ca în „joc”', ex:[['vision','VI-jăn']]},
+  {g:'ng', ipa:'/ŋ/', d:'n din fundul gurii; g-ul abia se aude', ex:[['sing','sing']]},
+  {g:'h', ipa:'/h/', d:'se aude mereu, nu e mut ca în franceză', ex:[['hotel','hou-TEL']]},
+  {g:'r', ipa:'/r/', d:'nu se rostogolește; limba nu atinge cerul gurii', ex:[['red','red']]},
+  {g:'c, g', ipa:'', d:'ca în română: che, chi, ghe, ghi sunt tari', ex:[['cat','chet'],['key','chii']]}
+];
+
+/* ------------------------------------------------------------------ NOTES */
+/* Concept cards. Bodies are authored HTML. */
+const NOTES = {
+  'g.stress':{
+    title:'Le știi, dar nu sună așa',
+    body:[
+      'Cuvintele astea le ai deja. Problema nu e sensul, e sunetul.',
+      'În română, o literă = un sunet. Citești exact ce vezi. În engleză, nu. Aceeași literă poate suna în mai multe feluri, iar unele litere nu se aud deloc: <b class="en">know</b> se zice «nou», <b class="en">write</b> se zice «rait», <b class="en">hour</b> se zice «AU-ăr».',
+      'Și accentul cade des în alt loc decât la noi. <b class="en">problem</b> nu e „pro-BLE-mă”, e «PRO-blăm». <b class="en">restaurant</b> nu e „res-ta-u-RANT”, e «RES-trănt». <b class="en">hotel</b> ține accentul, dar o-ul devine «ou»: «hou-TEL».',
+      'De asta, în aplicație, fiecare cuvânt vine și scris „pe românește”, între «ghilimele», cu silaba apăsată cu MAJUSCULE. Lecția următoare îți dă cheia.'
+    ]
+  },
+  'g.sound-key':{
+    title:'Cheia sunetelor',
+    body:[
+      'De acum, fiecare cuvânt englezesc vine cu o a doua scriere, între «ghilimele». Nu e engleză, e o hartă: o citești exact ca pe română și iese aproape bine.',
+      'Trei lucruri de ținut minte:'
+    ],
+    table:[
+      ['<span class="say">«hou-<b>TEL</b>»</span>','Silabele sunt despărțite cu liniuță. Cea cu MAJUSCULE e cea pe care apeși.'],
+      ['<span class="say">«DOC-t<b>ă</b>r»</span>','«ă» e vocala leneșă, ca în „măr”. Engleza e plină de ea: aproape orice silabă neapăsată sună așa.'],
+      ['<span class="say">«<b class="th">th</b>ink» «<b class="th">dh</b>is»</span>','Două sunete pe care româna nu le are. Vârful limbii între dinți: sufli pentru «th», pui voce pentru «dh». Le vezi mereu cu galben.']
+    ],
+    after:[
+      'Restul se citește ca în română: «chet» chiar e „chet”, «giam» chiar e „giam”. Tabelul întreg îl ai oricând la Recapitulare, sub „Sunete”.'
+    ]
+  },
+  'g.alphabet':{
+    title:'Literele au alte nume',
+    body:[
+      'Literele sunt aceleași ca în română, dar se <i>numesc</i> altfel. „A” se zice «ei», „E” se zice «ii», „I” se zice «ai».',
+      'Ai nevoie de ele mai des decât crezi: la hotel, la aeroport, când dai o adresă de email sau îți spui numele la telefon.'
+    ],
+    table:[['<span class="en">A</span>','<span class="say">«ei»</span>'],['<span class="en">E</span>','<span class="say">«ii»</span>'],['<span class="en">I</span>','<span class="say">«ai»</span>'],['<span class="en">G</span>','<span class="say">«gii»</span>'],['<span class="en">J</span>','<span class="say">«gei»</span>'],['<span class="en">Y</span>','<span class="say">«uai»</span>'],['<span class="en">W</span>','<span class="say">«DA-băl-iu»</span>']]
+  },
+  'g.to-be-i-you':{
+    title:'I am, you are',
+    body:[
+      'În română spui doar „sunt obosit”. În engleză verbul „a fi” nu se poate lăsa deoparte niciodată: <b class="en">I am tired</b>.',
+      'În vorbire aproape nimeni nu zice forma lungă. Se zice <b class="en">I\'m</b> și <b class="en">you\'re</b>.'
+    ],
+    table:[['eu sunt','<span class="en">I am → I\'m</span>'],['tu ești','<span class="en">you are → you\'re</span>'],['eu nu sunt','<span class="en">I\'m not</span>'],['tu ești...?','<span class="en">are you...?</span>']]
+  },
+  'g.greetings-when':{
+    title:'Care salut, când',
+    body:['Englezii schimbă salutul după ora din zi. „Good night” nu e un salut de întâlnire, e doar la plecare sau la culcare.'],
+    table:[['dimineața','<span class="en">good morning</span>'],['de la prânz','<span class="en">good afternoon</span>'],['de pe la 18','<span class="en">good evening</span>'],['la plecare / la culcare','<span class="en">good night</span>'],['oricând, între prieteni','<span class="en">hi / hello</span>']]
+  }
+};
+
+/* --------------------------------------------------------------- PITFALLS */
+const PITFALLS = {
+  'pf.one-you':{
+    bad:'—', good:'you',
+    title:'Un singur „you”',
+    why:'Engleza are un singur cuvânt pentru „tu” și „dumneavoastră”: <b class="en">you</b>. Politețea nu vine din verb, ci din cuvinte ca <i class="en">please</i>, <i class="en">excuse me</i>, <i class="en">could you</i>.'
+  },
+  'pf.good-night':{
+    bad:'Good night! (când ajungi undeva seara)',
+    good:'Good evening!',
+    title:'Good night ≠ bună seara',
+    why:'„Good night” înseamnă <b>noapte bună</b>. Se zice doar când pleci sau te culci. Când ajungi undeva seara, zici <i class="en">good evening</i>.'
+  },
+  'pf.how-are-you':{
+    bad:'How are you? → o poveste de 5 minute',
+    good:"How are you? → I'm fine, thanks. And you?",
+    title:'„How are you?” e tot un salut',
+    why:'De cele mai multe ori nu e o întrebare reală despre viața ta. Răspunsul așteptat e scurt, și apoi întorci întrebarea.'
+  },
+  'pf.excuse-sorry':{
+    bad:'Sorry, where is the hotel?',
+    good:'Excuse me, where is the hotel?',
+    title:'Excuse me înainte, sorry după',
+    why:'<b class="en">Excuse me</b> = „nu vă supărați”, îl folosești ca să atragi atenția. <b class="en">Sorry</b> = „îmi pare rău”, după ce ai greșit ceva.'
+  },
+  'pf.three-tree':{
+    bad:'tree (copac)', good:'three (trei)',
+    title:'Three, nu „tri”',
+    why:'„Th” nu există în română. Pui vârful limbii între dinți și sufli: «<b class="th">th</b>rii». Dacă zici „tri”, se aude <i class="en">tree</i> = copac.'
+  }
+};
+
+/* ------------------------------------------------------------------ UNITS */
+/* Authored exercises are hand-written and always included. `ids` says which
+   items an authored exercise trains, so the scheduler hears about the answer. */
+const UNITS = [
+{
+  id:'u00', title:'Început', sub:'Sunetele, literele, primele cuvinte',
+  lessons:[
+  { id:'u00.l01', title:'Engleza pe care o știi deja', goal:'Cuvinte pe care le știi. Dar nu sună cum crezi.',
+    note:'g.stress', count:11,
+    items:['w.hotel','w.taxi','w.doctor','w.problem','w.pizza','w.music','w.restaurant','w.football','w.coffee','w.internet'],
+    authored:[
+      {type:'word_bank', ids:['w.problem'], ro:'Nicio problemă!', answers:['No problem!','No problem'], distract:['not','the']},
+      {type:'word_bank', ids:['w.coffee'], ro:'O cafea, te rog.', answers:['A coffee, please.','A coffee please'], distract:['the','tea']},
+      {type:'pick_sound', ids:['w.restaurant'], en:'restaurant', options:['RES-trănt','res-ta-u-RANT','res-TRĂNT','RES-tau-rant'], answer:'RES-trănt'}
+    ]},
+  { id:'u00.l02', title:'Cheia sunetelor', goal:'Cum citești scrierea „pe românește” a fiecărui cuvânt.',
+    note:'g.sound-key', count:12,
+    items:['w.this','w.that','w.think','w.cat','w.water','w.bus'],
+    authored:[
+      {type:'pick_stress', ids:['w.hotel']},
+      {type:'pick_sound', ids:['w.doctor'], en:'doctor', options:['DOC-tăr','doc-TOR','DOC-tor','DOC-țăr'], answer:'DOC-tăr'},
+      {type:'pick_sound', ids:['w.think'], en:'think', options:['think','tinc','sinc','fink'], answer:'think'},
+      {type:'pick_sound', ids:['w.this'], en:'this', options:['dhis','dis','zis','tis'], answer:'dhis'}
+    ]},
+  { id:'u00.l03', title:'Alfabetul: A – M', goal:'Cum se numesc literele.',
+    note:'g.alphabet', count:10,
+    items:['w.l-a','w.l-b','w.l-c','w.l-d','w.l-e','w.l-f','w.l-g','w.l-h','w.l-i','w.l-j','w.l-k','w.l-l','w.l-m'] },
+  { id:'u00.l04', title:'Alfabetul: N – Z', goal:'Restul alfabetului.',
+    count:10,
+    items:['w.l-n','w.l-o','w.l-p','w.l-q','w.l-r','w.l-s','w.l-t','w.l-u','w.l-v','w.l-w','w.l-x','w.l-y','w.l-z'] },
+  { id:'u00.l05', title:'Se scrie cu...', goal:'Îți poți spune numele pe litere și poți cere să ți se scrie.',
+    count:12,
+    items:['p.how-spell-that','p.how-spell-name','w.double','p.write-it-down'],
+    authored:[
+      {type:'pick_english', ids:['w.l-m','w.l-i'], label:'Ce nume se spune pe litere aici?', q:'em – ai – em – ai', qKind:'say', options:['Mimi','Nimi','Mini','Mimy'], answer:'Mimi'},
+      {type:'pick_english', ids:['w.l-g','w.l-r','w.l-a','w.l-s','w.l-u'], label:'Ce nume se spune pe litere aici?', q:'gii – aar – ei – es – iu', qKind:'say', options:['Grasu','Krasu','Grasa','Grassu'], answer:'Grasu'},
+      {type:'pick_english', ids:['w.l-t','w.l-x'], label:'Ce cuvânt se spune pe litere aici?', q:'tii – ei – ecs – ai', qKind:'say', options:['taxi','taksi','toxi','taxy'], answer:'taxi'},
+      {type:'pick_english', ids:['w.l-c','w.l-t'], label:'Ce cuvânt se spune pe litere aici?', q:'sii – ei – tii', qKind:'say', options:['cat','cut','cap','kit'], answer:'cat'},
+      {type:'pick_english', ids:['w.l-b','w.l-u','w.l-s'], label:'Ce cuvânt se spune pe litere aici?', q:'bii – iu – es', qKind:'say', options:['bus','box','buzz','bis'], answer:'bus'},
+      {type:'pick_sound', ids:['w.l-m','w.l-i'], label:'Cum spui pe litere?', en:'MIMI', options:['em – ai – em – ai','em – i – em – i','en – ai – en – ai','em – ii – em – ii'], answer:'em – ai – em – ai'},
+      {type:'pick_sound', ids:['w.l-g','w.l-r','w.l-a','w.l-s','w.l-u'], label:'Cum spui pe litere?', en:'GRASU', options:['gii – aar – ei – es – iu','ge – ar – a – es – u','gii – aar – ei – es – uu','gii – aar – a – es – iu'], answer:'gii – aar – ei – es – iu'},
+      {type:'word_bank', ids:['p.how-spell-that'], ro:'Cum se scrie?', answers:['How do you spell that?','How do you spell that'], distract:['write','name']}
+    ]},
+  { id:'u00.l06', title:'Numere 0 – 10', goal:'Numeri până la zece și le recunoști când le vezi.',
+    count:10, pitfalls:['pf.three-tree'],
+    items:['w.n-0','w.n-1','w.n-2','w.n-3','w.n-4','w.n-5','w.n-6','w.n-7','w.n-8','w.n-9','w.n-10'] },
+  { id:'u00.l07', title:'„Nu înțeleg”', goal:'Cele mai utile opt propoziții când ești blocat.',
+    count:12,
+    items:['p.dont-understand','p.repeat','p.slowly','p.what-does-mean','p.how-say','p.im-learning','p.speak-romanian','p.no-english'],
+    authored:[
+      {type:'word_bank', ids:['p.dont-understand'], ro:'Scuze, nu înțeleg.', answers:["Sorry, I don't understand.","Sorry I don't understand"], distract:['not','no']},
+      {type:'word_bank', ids:['p.im-learning'], ro:'Învăț engleză.', answers:["I'm learning English.","I am learning English"], distract:['learn','the']}
+    ]}
+  ]
+},
+{
+  id:'u01', title:'Salut!', sub:'Să te prezinți și să porți primul schimb de vorbe',
+  lessons:[
+  { id:'u01.l01', title:'Salut și la revedere', goal:'Saluți potrivit la orice oră și pleci frumos.',
+    note:'g.greetings-when', pitfalls:['pf.good-night'], count:12,
+    items:['w.hello','w.hi','p.good-morning','p.good-afternoon','p.good-evening','p.good-night','w.goodbye','w.bye','p.see-you-later','p.see-you-tomorrow'],
+    authored:[
+      {type:'word_bank', ids:['p.see-you-tomorrow'], ro:'Ne vedem mâine!', answers:['See you tomorrow!','See you tomorrow'], distract:['later','me']}
+    ]},
+  { id:'u01.l02', title:'Mă numesc...', goal:'Te prezinți și întrebi pe cineva cum îl cheamă.',
+    note:'g.to-be-i-you', pitfalls:['pf.one-you'], count:12,
+    items:['w.name','w.my','w.your','w.i-am','w.you-are','p.whats-your-name','p.my-name-is','p.nice-to-meet-you','p.nice-to-meet-you-too','p.this-is'],
+    authored:[
+      {type:'word_bank', ids:['p.whats-your-name'], ro:'Cum te cheamă?', answers:['What is your name?',"What's your name?"], distract:['you','my']},
+      {type:'word_bank', ids:['p.nice-to-meet-you'], ro:'Îmi pare bine.', answers:['Nice to meet you.','Nice to meet you'], distract:['see','me']},
+      {type:'pick_english', ids:['p.this-is'], ro:'Ea e pisica mea, Mimi.', options:['This is my cat, Mimi.','This is your cat, Mimi.','This my cat is, Mimi.','She is cat my, Mimi.'], answer:'This is my cat, Mimi.'}
+    ]},
+  { id:'u01.l03', title:'Ce mai faci?', goal:'Întrebi ce mai face cineva și răspunzi scurt.',
+    pitfalls:['pf.how-are-you'], count:12,
+    items:['p.how-are-you','p.im-fine-thanks','p.and-you','w.fine','w.great','w.tired','w.ok','p.not-bad'],
+    authored:[
+      {type:'word_bank', ids:['p.im-fine-thanks','p.and-you'], ro:'Bine, mulțumesc. Tu?', answers:["I'm fine, thanks. And you?","I'm fine thanks and you?"], distract:['am','tired']},
+      {type:'pick_english', ids:['w.tired'], ro:'Sunt obosit.', options:["I'm tired.",'I have tired.','I am tire.','Me tired.'], answer:"I'm tired."}
+    ]},
+  { id:'u01.l04', title:'Te rog, mulțumesc, scuze', goal:'Cele patru cuvinte care te fac politicos oriunde.',
+    pitfalls:['pf.excuse-sorry'], count:12,
+    items:['w.please','p.thank-you','w.thanks','p.youre-welcome','w.sorry','p.excuse-me','w.yes','w.no'],
+    authored:[
+      {type:'word_bank', ids:['p.excuse-me'], ro:'Nu vă supărați, unde e hotelul?', answers:['Excuse me, where is the hotel?','Excuse me where is the hotel?'], distract:['Sorry','a']},
+      {type:'pick_english', ids:['w.no','p.thank-you'], ro:'Nu, mulțumesc.', options:['No, thank you.','Not, thank you.','No, thanks you.','Now, thank you.'], answer:'No, thank you.'}
+    ]},
+  { id:'u01.l05', title:'Dialog: o cunoștință nouă', goal:'Toată unitatea, într-o conversație reală.',
+    count:10, items:['w.friend','p.have-to-go'],
+    dialogue:{
+      title:'În fața blocului',
+      lines:[
+        {who:'{name}', side:'a', en:"Hello! I'm {name}.", ro:'Salut! Eu sunt {name}.'},
+        {who:'Sofia', side:'b', en:'Hi, {name}. Nice to meet you. I\'m Sofia.', ro:'Bună, {name}. Îmi pare bine. Eu sunt Sofia.'},
+        {who:'{name}', side:'a', en:'Nice to meet you too. How are you?', ro:'Și mie îmi pare bine. Ce mai faci?'},
+        {who:'Sofia', side:'b', en:"I'm fine, thanks. And you?", ro:'Bine, mulțumesc. Tu?'},
+        {who:'{name}', side:'a', en:"I'm great. This is my cat, Mimi.", ro:'Sunt super. Ea e pisica mea, Mimi.'},
+        {who:'Sofia', side:'b', en:'Oh, hello Mimi! Is she your cat?', ro:'O, salut, Mimi! E pisica ta?'},
+        {who:'{name}', side:'a', en:'Yes. Sorry, I have to go. See you later!', ro:'Da. Scuze, trebuie să plec. Pe mai târziu!'},
+        {who:'Sofia', side:'b', en:'Bye, {name}! Good night.', ro:'Pa, {name}! Noapte bună.'}
+      ]
+    },
+    authored:[
+      {type:'pick_english', ids:['p.nice-to-meet-you-too'], ro:'Ce zice Sofia după „Nice to meet you”?', options:["Nice to meet you too.",'Thank you very much.','See you tomorrow.','How do you spell that?'], answer:'Nice to meet you too.'},
+      {type:'word_bank', ids:['p.have-to-go'], ro:'Scuze, trebuie să plec.', answers:['Sorry, I have to go.','Sorry I have to go'], distract:['am','going']},
+      {type:'pick_english', ids:['p.good-night'], ro:'Pleci seara de la cineva. Ce zici?', options:['Good night!','Good evening!','Good morning!','Good afternoon!'], answer:'Good night!'}
+    ]},
+  { id:'u01.cp', title:'Test: Unitatea 1', goal:'14 întrebări din tot ce ai învățat. Treci cu 11 din 14.',
+    type:'checkpoint', count:14, pass:11, items:[] }
+  ]
+}];
+
+/* phrases pinned in the Recapitulare tab, available from day one */
+const SURVIVAL = ['p.dont-understand','p.repeat','p.slowly','p.what-does-mean','p.how-say',
+  'p.im-learning','p.speak-romanian','p.no-english','p.write-it-down','p.how-spell-that'];
+
+const LESSONS = {};
+UNITS.forEach(function(u){ u.lessons.forEach(function(l){ l.unitId=u.id; LESSONS[l.id]=l; }); });
+const LESSON_ORDER = Object.keys(LESSONS);
+
+/* ---------------------------------------------------------------- HELPERS */
+function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+function sample(a,n){ return shuffle(a).slice(0,n); }
+function isoDate(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function today(){ return isoDate(new Date()); }
+function addDays(iso,n){ const d=new Date(iso+'T12:00:00'); d.setDate(d.getDate()+n); return isoDate(d); }
+function daysBack(n){ const d=new Date(); d.setDate(d.getDate()-n); return isoDate(d); }
+function stripDia(s){ return String(s).normalize('NFD').replace(/[̀-ͯ]/g,''); }
+
+const CONTRACTIONS = {"i'm":"i am","you're":"you are","he's":"he is","she's":"she is","it's":"it is",
+  "we're":"we are","they're":"they are","don't":"do not","doesn't":"does not","isn't":"is not",
+  "aren't":"are not","what's":"what is","that's":"that is","let's":"let us","i've":"i have","can't":"cannot"};
+/* answers and options compare through this: case, curly apostrophes, punctuation,
+   whitespace and contractions all fold away */
+function norm(s){
+  let t = String(s||'').normalize('NFC').toLowerCase().replace(/[‘’ʼ]/g,"'").replace(/\s+/g,' ').trim();
+  t = t.replace(/[.,!?;:"„”“]/g,' ').replace(/\s+/g,' ').trim();
+  return t.split(' ').map(function(w){ return CONTRACTIONS[w] || w; }).join(' ');
+}
+function same(a,b){ return norm(a)===norm(b); }
+/* respellings keep their case: the capitals are the stress */
+function normSay(s){ return String(s||'').normalize('NFC').replace(/\s+/g,' ').trim(); }
+
+/* word-bank tiles: words, with trailing punctuation as its own tile */
+function tokens(s){
+  const out=[];
+  String(s||'').split(/\s+/).forEach(function(w){
+    if(!w) return;
+    const m = w.match(/^(.*?)([.,!?]+)$/);
+    if(m && m[1]){ out.push(m[1]); m[2].split('').forEach(function(p){ out.push(p); }); }
+    else out.push(w);
+  });
+  return out;
+}
+
+/* ------------------------------------------------------------------ STORE */
+/* One JSON blob in localStorage. Every read tolerates a missing or corrupt
+   value; migrate() is forward-only and never discards progress. */
+const Store = {
+  KEY:'epcp', LEGACY:['epcp.v1'], VERSION:2,
+  d:null,
+  fresh(){
+    return { v:this.VERSION,
+      profile:{ name:'', started:today(), onboarded:false },
+      days:{}, lessons:{}, items:{}, pitfalls:[], units:{} };
+  },
+  readRaw(key){ try{ return localStorage.getItem(key); }catch(e){ return null; } },
+  load(){
+    let raw = this.readRaw(this.KEY);
+    for(let i=0; raw==null && i<this.LEGACY.length; i++) raw = this.readRaw(this.LEGACY[i]);
+    let p = null;
+    if(raw){ try{ p = JSON.parse(raw); }catch(e){ p = null; } }
+    this.d = (p && typeof p==='object' && !Array.isArray(p) && typeof p.v==='number') ? this.migrate(p) : this.fresh();
+    return this.d;
+  },
+  migrate(p){
+    if(p.v < 2){
+      /* v1 (the reference build) had no sound-key lesson: unit 0 ids shift by one */
+      const moved = {'u00.l02':'u00.l03','u00.l03':'u00.l04','u00.l04':'u00.l05','u00.l05':'u00.l06','u00.l06':'u00.l07'};
+      const L = {};
+      Object.keys(p.lessons||{}).forEach(function(k){ L[moved[k]||k] = p.lessons[k]; });
+      p.lessons = L;
+      if(p.profile && typeof p.profile==='object'){ delete p.profile.accent; delete p.profile.sound; }
+      delete p.lastNudge;
+      p.v = 2;
+    }
+    return this.repair(p);
+  },
+  /* shape guard: whatever came out of storage, every field has the right type */
+  repair(p){
+    const base = this.fresh();
+    const obj = function(x){ return (x && typeof x==='object' && !Array.isArray(x)) ? x : {}; };
+    const iso = function(s){ return /^\d{4}-\d{2}-\d{2}$/.test(String(s)); };
+    p.v = this.VERSION;
+    p.profile = Object.assign(base.profile, obj(p.profile));
+    p.profile.name = String(p.profile.name==null?'':p.profile.name).slice(0,20);
+    p.profile.onboarded = !!p.profile.onboarded;
+    if(!iso(p.profile.started)) p.profile.started = today();
+    const days = obj(p.days); p.days = {};
+    Object.keys(days).forEach(function(k){ if(iso(k)) p.days[k] = Math.max(1, parseInt(days[k],10)||1); });
+    const lessons = obj(p.lessons); p.lessons = {};
+    Object.keys(lessons).forEach(function(k){
+      const r = obj(lessons[k]);
+      p.lessons[k] = { done:!!r.done, times:parseInt(r.times,10)||0, acc:Math.min(1,Math.max(0,Number(r.acc)||0)), last: iso(r.last)?r.last:'' };
+    });
+    const items = obj(p.items); p.items = {};
+    Object.keys(items).forEach(function(id){
+      const it = obj(items[id]);
+      const box = Math.min(5, Math.max(0, parseInt(it.box,10)||0));
+      p.items[id] = { box:box, due: iso(it.due)?it.due:today(), seen:parseInt(it.seen,10)||0, wrong:parseInt(it.wrong,10)||0 };
+    });
+    p.pitfalls = Array.isArray(p.pitfalls) ? p.pitfalls.filter(function(x){ return typeof x==='string'; }) : [];
+    p.units = obj(p.units);
+    return p;
+  },
+  save(){ try{ localStorage.setItem(this.KEY, JSON.stringify(this.d)); }catch(e){ /* full or blocked: keep going in memory */ } },
+  reset(){ this.d = this.fresh(); this.save(); }
+};
+
+/* -------------------------------------------------------------------- SRS */
+/* Leitner boxes 0-5. A wrong answer drops to box 1, not 0, so the word is
+   still "met". Light items (letters, numbers) enter at box 2 so the alphabet
+   does not flood the review queue. */
+const BOX_DAYS = [0,1,3,7,14,30];
+function itemProg(id){
+  if(!Store.d.items[id]) Store.d.items[id] = {box:0,due:today(),seen:0,wrong:0};
+  return Store.d.items[id];
+}
+function box(id){ const p = Store.d.items[id]; return p ? p.box : 0; }
+function record(id, correct){
+  if(!ITEMS[id]) return;
+  const p = itemProg(id);
+  p.seen++;
+  if(correct){
+    if(p.box===0 && ITEMS[id].light) p.box = 2;
+    else p.box = Math.min(5, p.box+1);
+  } else {
+    p.wrong++;
+    p.box = 1;
+  }
+  p.due = addDays(today(), BOX_DAYS[p.box]);
+}
+/* weakest first, then longest overdue */
+function dueItems(){
+  const t = today();
+  return Object.keys(Store.d.items).filter(function(id){
+    const p = Store.d.items[id];
+    return ITEMS[id] && p.box>0 && p.due <= t;
+  }).sort(function(a,b){
+    const A=Store.d.items[a], B=Store.d.items[b];
+    return (A.box - B.box) || (A.due < B.due ? -1 : A.due > B.due ? 1 : 0);
+  });
+}
+function wordsSeen(){ return Object.keys(Store.d.items).filter(function(id){ return ITEMS[id]; }).length; }
+function wordsKnown(){ return Object.keys(Store.d.items).filter(function(id){ return ITEMS[id] && Store.d.items[id].box>=3; }).length; }
+
+function lessonState(id){
+  const i = LESSON_ORDER.indexOf(id);
+  if((Store.d.lessons[id]||{}).done) return 'done';
+  for(let k=0;k<i;k++){ if(!(Store.d.lessons[LESSON_ORDER[k]]||{}).done) return 'locked'; }
+  return 'now';
+}
+function nextLessonId(){
+  for(let i=0;i<LESSON_ORDER.length;i++){ if(!(Store.d.lessons[LESSON_ORDER[i]]||{}).done) return LESSON_ORDER[i]; }
+  return null;
+}
+function unlockedItems(){
+  const out=[];
+  LESSON_ORDER.forEach(function(id){
+    if((Store.d.lessons[id]||{}).done) (LESSONS[id].items||[]).forEach(function(x){ if(ITEMS[x]) out.push(x); });
+  });
+  return out;
+}
+function unitItems(unitId){
+  const out=[];
+  (UNITS.find(function(u){return u.id===unitId;})||{lessons:[]}).lessons.forEach(function(l){
+    (l.items||[]).forEach(function(x){ if(ITEMS[x]) out.push(x); });
+  });
+  return out;
+}
+function learned(ids){ return ids.filter(function(id){ return box(id)>0; }); }
+
+/* --------------------------------------------------------- RESPELLING OPS */
+/* Distractors for the sound exercise come from perturbing the right respelling:
+   move the stress, swap one vowel for its neighbour in the key, or replace
+   th/dh with the sound a Romanian would substitute. Never random strings. */
+const SAY_VOWELS = ['ii','aa','oo','uu','ei','ai','au','ou','oi','a','e','i','o','u','ă'];
+const VOWEL_NEIGHBOURS = {
+  ii:['i','ei'], i:['ii','e'], e:['a','i','ei'], a:['e','ă','aa'], aa:['a','o'],
+  o:['oo','a','ou'], oo:['o','ou'], u:['uu','o'], uu:['u','iu'], 'ă':['a','e','o'],
+  ei:['e','ai'], ai:['ei','a'], au:['ou','a'], ou:['o','au'], oi:['ou','ai']
+};
+const TH_SUBS = { th:['t','s','f'], dh:['d','z'] };
+
+function vowelAt(low, i){
+  for(let k=0;k<SAY_VOWELS.length;k++){ const g=SAY_VOWELS[k]; if(low.substr(i,g.length)===g) return g; }
+  return null;
+}
+/* positions of vowel graphemes; a lone u or i right before a vowel is a
+   consonant (water «UO-tăr», you «iu») and is skipped */
+function vowelSpots(say){
+  const low = String(say).toLowerCase(), out=[];
+  let i=0;
+  while(i<low.length){
+    const g = vowelAt(low, i);
+    if(!g){ i++; continue; }
+    if((g==='u'||g==='i') && vowelAt(low, i+1)){ i++; continue; }
+    out.push({i:i, len:g.length, g:g});
+    i += g.length;
+  }
+  return out;
+}
+function hasUpper(s){ return s !== s.toLowerCase(); }
+function replaceAt(s, i, len, rep){
+  const slice = s.substr(i,len);
+  return s.slice(0,i) + (hasUpper(slice) ? rep.toUpperCase() : rep) + s.slice(i+len);
+}
+function saySyllables(word){ return String(word).split('-'); }
+function stressIndex(word){
+  const syl = saySyllables(word);
+  for(let i=0;i<syl.length;i++){ if(hasUpper(syl[i])) return i; }
+  return -1;
+}
+function stressMoves(say){
+  const words = String(say).split(' '), out=[];
+  words.forEach(function(w, wi){
+    const syl = saySyllables(w);
+    if(syl.length<2) return;
+    const k = stressIndex(w);
+    for(let j=0;j<syl.length;j++){
+      if(j===k) continue;
+      const nw = syl.map(function(s,i){ return i===j ? s.toUpperCase() : s.toLowerCase(); }).join('-');
+      out.push(words.map(function(x,i){ return i===wi ? nw : x; }).join(' '));
+    }
+  });
+  return out;
+}
+function vowelSwaps(say){
+  const out=[];
+  vowelSpots(say).forEach(function(sp){
+    (VOWEL_NEIGHBOURS[sp.g]||[]).forEach(function(rep){ out.push(replaceAt(say, sp.i, sp.len, rep)); });
+  });
+  return out;
+}
+function thSubs(say){
+  const low = String(say).toLowerCase(), out=[];
+  Object.keys(TH_SUBS).forEach(function(d){
+    let i = low.indexOf(d);
+    while(i>=0){
+      TH_SUBS[d].forEach(function(rep){ out.push(replaceAt(say, i, 2, rep)); });
+      i = low.indexOf(d, i+1);
+    }
+  });
+  return out;
+}
+function soundDistractors(say, n){
+  const seen = {}; seen[normSay(say)] = true;
+  const out = [];
+  const take = function(s){ const k=normSay(s); if(seen[k]) return false; seen[k]=true; out.push(s); return true; };
+  /* round-robin over the three kinds of error so a set mixes them */
+  const buckets = [shuffle(stressMoves(say)), shuffle(thSubs(say)), shuffle(vowelSwaps(say))];
+  let guard = 0;
+  while(out.length < n && guard++ < 40){
+    let any = false;
+    for(let b=0;b<buckets.length && out.length<n;b++){
+      while(buckets[b].length){ if(take(buckets[b].shift())){ any=true; break; } }
+    }
+    if(!any) break;
+  }
+  /* short respellings run out of single edits: stack a vowel swap on a variant */
+  if(out.length < n){
+    const seeds = out.slice().concat(stressMoves(say));
+    for(let s=0; s<seeds.length && out.length<n; s++){
+      const v = shuffle(vowelSwaps(seeds[s]));
+      for(let k=0;k<v.length && out.length<n;k++) take(v[k]);
+    }
+  }
+  return out.slice(0,n);
+}
+
+/* ------------------------------------------------- EXERCISE CONSTRUCTION */
+function meanings(it){
+  const m = {};
+  (it.ro||[]).forEach(function(r){ String(r).split(',').forEach(function(x){ const k=norm(x); if(k) m[k]=true; }); });
+  return m;
+}
+/* the Romanian and the English are the same word (hotel, taxi, OK): asking
+   what it means teaches nothing, so these get sound work instead */
+function isCognate(it){
+  if(it.pos==='letter') return false;
+  return stripDia(norm(it.en)) === stripDia(norm(String(it.ro[0]).split(',')[0]));
+}
+function conflicts(a, b){
+  if(norm(a.en)===norm(b.en)) return true;
+  const ma = meanings(a), mb = meanings(b);
+  return Object.keys(ma).some(function(k){ return mb[k]; });
+}
+/* plausible wrong answers: same part of speech, same unit first, and never a
+   value that is also a correct answer for this prompt */
+function distract(item, n, field, scope){
+  const inScope = {}; (scope||[]).forEach(function(id){ inScope[id]=true; });
+  const all = Object.keys(ITEMS).filter(function(id){ return id!==item.id; });
+  const tiers = [
+    shuffle(all.filter(function(id){ return inScope[id] && ITEMS[id].pos===item.pos; })),
+    shuffle(all.filter(function(id){ return !inScope[id] && ITEMS[id].pos===item.pos; })),
+    shuffle(all.filter(function(id){ return ITEMS[id].pos!==item.pos; }))
+  ];
+  const used = {}; used[norm(field==='ro' ? item.ro[0] : item.en)] = true;
+  const vals = [];
+  tiers.forEach(function(tier){
+    tier.forEach(function(id){
+      if(vals.length>=n) return;
+      const c = ITEMS[id];
+      if(conflicts(item, c)) return;
+      const v = field==='ro' ? c.ro[0] : c.en;
+      const k = norm(v);
+      if(used[k]) return;
+      used[k]=true; vals.push(v);
+    });
+  });
+  return vals;
+}
+function canSound(it){ return !!it.say && it.say.split(' ').length <= 2; }
+function canStress(it){
+  if(!it.syl || !it.say || it.say.indexOf(' ')>=0) return false;
+  const a = it.syl.split('-').length, b = saySyllables(it.say).length;
+  return a===b && a>=2 && stressIndex(it.say)>=0;
+}
+function canBank(it){
+  if(!it.ex || !it.ex.en || it.ex.en.indexOf('—')>=0) return false;
+  const n = it.ex.en.split(/\s+/).length;
+  return n>=3 && n<=7;
+}
+
+function exPickMeaning(id, scope){
+  const it = ITEMS[id];
+  return { type:'pick_meaning', ids:[id], label:'Ce înseamnă?', q:it.en, qKind:'en', qSay:it.say,
+    options: shuffle([it.ro[0]].concat(distract(it,3,'ro',scope))), answer:it.ro[0], optKind:'ro' };
+}
+function exPickEnglish(id, scope){
+  const it = ITEMS[id];
+  const letter = it.pos==='letter';
+  return { type:'pick_english', ids:[id], label: letter ? 'Ce literă se numește așa?' : 'Cum se spune în engleză?',
+    q: letter ? it.say : it.ro[0], qKind: letter ? 'say' : 'ro',
+    options: shuffle([it.en].concat(distract(it,3,'en',scope))), answer:it.en, optKind:'en' };
+}
+function exPickSound(id){
+  const it = ITEMS[id];
+  return { type:'pick_sound', ids:[id], label: it.pos==='letter' ? 'Cum se numește litera?' : 'Cum sună?',
+    q:it.en, qKind:'en', options: shuffle([it.say].concat(soundDistractors(it.say,3))), answer:it.say, optKind:'say' };
+}
+function exPickStress(id){
+  const it = ITEMS[id];
+  return { type:'pick_stress', ids:[id], label:'Pe care silabă apeși?', q:it.en, qKind:'en',
+    syllables: it.syl.split('-'), answer: stressIndex(it.say) };
+}
+/* a cognate pairs with its own word (hotel ↔ hotel), which teaches nothing:
+   sets are drawn from the real translations first, and a set that still holds
+   a cognate matches every word with its respelling instead */
+function exMatch(ids){
+  const n = Math.min(5, ids.length);
+  const cog = ids.filter(function(id){ return isCognate(ITEMS[id]); });
+  let pick = sample(ids.filter(function(id){ return cog.indexOf(id)<0; }), n);
+  if(pick.length < n) pick = pick.concat(sample(cog, n - pick.length));
+  const bySound = pick.some(function(id){ return isCognate(ITEMS[id]); });
+  return { type:'match_pairs', ids:pick, bySound:bySound, label: bySound ? 'Potrivește cuvântul cu sunetul lui' : 'Potrivește perechile',
+    pairs: pick.map(function(id){ return {id:id, en:ITEMS[id].en, ro: bySound ? ITEMS[id].say : ITEMS[id].ro[0]}; }) };
+}
+function bankDistractors(answer, scope, n){
+  const have = {}; tokens(answer).forEach(function(t){ have[norm(t)]=true; });
+  const pool = [];
+  ((scope && scope.length) ? scope : Object.keys(ITEMS)).forEach(function(id){
+    const it = ITEMS[id]; if(!it || it.pos==='letter' || it.pos==='number') return;
+    String(it.en+' '+(it.ex && it.ex.en ? it.ex.en : '')).split(/\s+/).forEach(function(w){
+      w = w.replace(/[.,!?—]/g,'');
+      if(!w || w.indexOf('{')>=0 || have[norm(w)]) return;
+      have[norm(w)]=true; pool.push(w);
+    });
+  });
+  return sample(pool, n);
+}
+function wordBank(ro, answers, ids, extra){
+  return { type:'word_bank', ids:ids||[], label:'Tradu în engleză', q:ro, qKind:'ro',
+    answers:answers, answer:answers[0], tiles: shuffle(tokens(answers[0]).concat(extra||[])) };
+}
+function exWordBankFromExample(id, scope){
+  const it = ITEMS[id];
+  return wordBank(it.ex.ro, [it.ex.en], [id], bankDistractors(it.ex.en, scope, 2));
+}
+
+/* Box 0-1 recognise, 2-3 mixed, 4+ produce. */
+function exFor(id, scope, mode){
+  const it = ITEMS[id];
+  const rec=[], pro=[];
+  if(it.pos==='letter'){
+    rec.push(function(){ return exPickSound(id); });
+    pro.push(function(){ return exPickEnglish(id, scope); });
+  } else {
+    const twin = isCognate(it);
+    if(canSound(it)) rec.push(function(){ return exPickSound(id); });
+    if(canStress(it)) rec.push(function(){ return exPickStress(id); });
+    if(!twin) rec.push(function(){ return exPickMeaning(id, scope); });
+    if(!twin) pro.push(function(){ return exPickEnglish(id, scope); });
+    if(canBank(it)) pro.push(function(){ return exWordBankFromExample(id, scope); });
+  }
+  if(!rec.length) rec.push.apply(rec, pro);
+  if(!pro.length) pro.push.apply(pro, rec);
+  const list = mode==='recognise' ? rec : (mode==='produce' ? pro : rec.concat(pro));
+  return list[Math.floor(Math.random()*list.length)]();
+}
+function exForItem(id, scope){
+  const b = box(id);
+  return exFor(id, scope, b<=1 ? 'recognise' : (b<=3 ? 'mixed' : 'produce'));
+}
+function authoredToEx(a, scope){
+  const ids = a.ids||[];
+  if(a.type==='word_bank') return wordBank(a.ro, a.answers, ids, a.distract||[]);
+  if(a.type==='pick_stress') return exPickStress(ids[0]);
+  if(a.type==='pick_sound') return { type:'pick_sound', ids:ids, label:a.label||'Cum sună?', q:a.en, qKind:'en',
+    options:shuffle(a.options), answer:a.answer, optKind:'say', note:a.note, authored:true };
+  if(a.type==='pick_meaning') return { type:'pick_meaning', ids:ids, label:a.label||'Ce înseamnă?', q:a.en, qKind:'en',
+    options:shuffle(a.options), answer:a.answer, optKind:'ro', note:a.note };
+  return { type:'pick_english', ids:ids, label:a.label||'Cum se spune în engleză?', q:a.q||a.ro, qKind:a.qKind||'ro',
+    options:shuffle(a.options), answer:a.answer, optKind:'en', note:a.note };
+}
+
+/* ---------------------------------------------------------- LESSON BUILD */
+function shares(a,b){ return (a||[]).some(function(x){ return (b||[]).indexOf(x)>=0; }); }
+/* a match of five pairs is not "the same item again"; single-item exercises are */
+function adjIds(e){ return (!e || e.type==='match_pairs') ? [] : (e.ids||[]); }
+/* order exercises so the same item never lands twice in a row */
+function spread(list, prevIds){
+  const out=[], rest=list.slice();
+  const before = function(i){ return i===0 ? (prevIds||[]) : adjIds(out[i-1]); };
+  while(rest.length){
+    let k = -1;
+    for(let i=0;i<rest.length;i++){ if(!shares(adjIds(rest[i]), before(out.length))){ k=i; break; } }
+    if(k<0){
+      const e = rest.shift(); let placed=false;
+      for(let i=out.length-1;i>=0;i--){
+        if(!shares(adjIds(e),before(i)) && !shares(adjIds(e),adjIds(out[i]))){ out.splice(i,0,e); placed=true; break; }
+      }
+      if(!placed) out.push(e);
+    } else {
+      out.push(rest.splice(k,1)[0]);
+    }
+  }
+  return out;
+}
+/* balanced groups of at most `size`: 13 letters become 5, 4, 4 */
+function batches(ids, size){
+  if(!ids.length) return [];
+  const n = Math.ceil(ids.length/size), base = Math.floor(ids.length/n), extra = ids.length % n, out=[];
+  let i=0;
+  for(let b=0;b<n;b++){ const len = base + (b<extra?1:0); out.push(ids.slice(i,i+len)); i+=len; }
+  return out;
+}
+
+function buildLesson(lesson){
+  if(lesson.type==='checkpoint') return buildCheckpoint(lesson);
+  const steps=[];
+  const ids = (lesson.items||[]).filter(function(id){ return ITEMS[id]; });
+  const news = ids.filter(function(id){ return box(id)===0; });
+  const olds = ids.filter(function(id){ return box(id)>0; });
+  const scope = unitItems(lesson.unitId);
+  const light = news.length>0 && news.every(function(id){ return ITEMS[id].light; });
+
+  /* 1. warm-up from earlier lessons */
+  dueItems().filter(function(id){ return ids.indexOf(id)<0; }).slice(0,3).forEach(function(id){
+    steps.push({kind:'ex', warm:true, ex: exForItem(id, unlockedItems())});
+  });
+  /* 2. the idea behind the lesson */
+  if(lesson.note && NOTES[lesson.note]) steps.push({kind:'note', id:lesson.note});
+  (lesson.pitfalls||[]).forEach(function(p){ if(PITFALLS[p]) steps.push({kind:'pitfall', id:p}); });
+  if(lesson.dialogue) steps.push({kind:'dialogue', id:lesson.id});
+  /* 3. meet the new words a few at a time, and use each batch straight away.
+        Letters and numbers are light: five at a time, matched as a group. */
+  batches(news, light ? 5 : 3).forEach(function(grp){
+    grp.forEach(function(id){ steps.push({kind:'intro', id:id}); });
+    if(light && grp.length>=3) steps.push({kind:'ex', ex: exMatch(grp)});
+    else shuffle(grp).forEach(function(id){ steps.push({kind:'ex', ex: exFor(id, scope, 'recognise')}); });
+  });
+  /* 4. mixed practice: hand-written first, then generated up to `count` */
+  const practised = steps.filter(function(s){ return s.kind==='ex' && !s.warm; }).length;
+  let mixed = (lesson.authored||[]).map(function(a){ return authoredToEx(a, scope); });
+  if(news.length>=4) mixed.push(exMatch(news));
+  const room = Math.max(0, (lesson.count||12) - practised - mixed.length);
+  let pool = shuffle(news.concat(olds)).map(function(id){ return exForItem(id, scope); });
+  if(pool.length < room){
+    const more = shuffle(learned(scope).filter(function(id){ return ids.indexOf(id)<0; }));
+    pool = pool.concat(more.slice(0, room - pool.length).map(function(id){ return exForItem(id, scope); }));
+  }
+  mixed = mixed.concat(pool.slice(0, room));
+  const lastEx = steps.filter(function(s){ return s.kind==='ex'; }).pop();
+  spread(shuffle(mixed), adjIds(lastEx ? lastEx.ex : null)).forEach(function(e){ steps.push({kind:'ex', ex:e}); });
+  return steps;
+}
+
+function buildCheckpoint(lesson){
+  const scope = unitItems(lesson.unitId);
+  const count = lesson.count||14;
+  const authored=[];
+  (UNITS.find(function(u){return u.id===lesson.unitId;})||{lessons:[]}).lessons.forEach(function(l){
+    (l.authored||[]).forEach(function(a){ authored.push(a); });
+  });
+  const ex = sample(authored, Math.min(4, authored.length)).map(function(a){ return authoredToEx(a, scope); });
+  const usedIds = {}; ex.forEach(function(e){ (e.ids||[]).forEach(function(id){ usedIds[id]=true; }); });
+  shuffle(scope.filter(function(id){ return !usedIds[id]; })).slice(0, count - ex.length).forEach(function(id){
+    ex.push(exFor(id, scope, 'mixed'));
+  });
+  return spread(shuffle(ex).slice(0,count), []).map(function(e){ return {kind:'ex', ex:e}; });
+}
+
+/* at most 12 a day, weakest first */
+function buildReview(){
+  const due = dueItems().slice(0,12);
+  const scope = unlockedItems();
+  return spread(shuffle(due).map(function(id){ return exForItem(id, scope); }), []).map(function(e){ return {kind:'ex', ex:e}; });
+}
+
+/* ------------------------------------------------------------- GRADING */
+function grade(ex, answer){
+  if(ex.type==='match_pairs') return {ok:true};
+  if(ex.type==='pick_stress') return {ok: Number(answer)===ex.answer, correct: ex.syllables[ex.answer]};
+  if(ex.type==='pick_sound') return {ok: normSay(answer)===normSay(ex.answer), correct: ex.answer};
+  if(ex.type==='word_bank'){
+    const ok = (ex.answers||[ex.answer]).some(function(a){ return same(a, answer); });
+    return {ok:ok, correct: ex.answers ? ex.answers[0] : ex.answer};
+  }
+  return {ok: same(ex.answer, answer), correct: ex.answer};
+}
+
+const Engine = { ITEMS, UNITS, LESSONS, LESSON_ORDER, NOTES, PITFALLS, SOUND_KEY, SURVIVAL, Store, BOX_DAYS,
+  today, addDays, daysBack, norm, normSay, same, tokens, shuffle,
+  itemProg, box, record, dueItems, wordsSeen, wordsKnown, lessonState, nextLessonId, unlockedItems, unitItems,
+  vowelSpots, stressIndex, saySyllables, stressMoves, vowelSwaps, thSubs, soundDistractors,
+  isCognate, distract, canSound, canStress, canBank, exFor, exForItem, exPickSound, exPickStress, exMatch, wordBank, authoredToEx,
+  buildLesson, buildCheckpoint, buildReview, grade };
+/* @engine-end */
+
+/* ================================================================== VIEWS */
+/* One render function per screen and per exercise type. Screens are built
+   as HTML strings; anything that could come from him (his name) goes through
+   T() which substitutes and escapes. Taps are handled by one delegated
+   listener keyed on data-act. */
+const App = { session:null, result:null, step:null };
+const root = document.getElementById('app');
+const $ = function(s){ return document.querySelector(s); };
+
+function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+/* {name} becomes what he typed, at render time only */
+function sub(s){ return String(s==null?'':s).replace(/\{name\}/g, Store.d.profile.name || 'Alex'); }
+function T(s){ return esc(sub(s)); }
+/* a respelling: serif, in guillemets, th/dh in the accent colour */
+function sayHTML(say, bare){
+  const t = T(say).replace(/(th|dh)/gi, function(m){ return '<b class="th">'+m+'</b>'; });
+  return '<span class="say">'+(bare?'':'«')+t+(bare?'':'»')+'</span>';
+}
+function textHTML(v, kind){
+  if(kind==='say') return sayHTML(v);
+  return '<span class="'+(kind==='en'?'en':'ro')+'">'+T(v)+'</span>';
+}
+function plural(n, one, many){ return n===1 ? one : many; }
+function strengthHTML(b){
+  let h='<span class="strength" aria-label="cât de bine îl știi">';
+  for(let i=1;i<=5;i++) h += i<=b ? '●' : '<span class="e">●</span>';
+  return h+'</span>';
+}
+function shell(inner, tab){
+  return '<div class="shell"><div class="screen'+(tab?'':' noTabs')+'">'+inner+'</div>'+(tab?tabsHTML(tab):'')+'</div>';
+}
+function tabsHTML(active){
+  const due = Math.min(12, dueItems().length);
+  const b = function(id, ic, label, badge){
+    return '<button data-act="go" data-to="#/'+id+'" class="'+(active===id?'on':'')+'" aria-label="'+label+'"><span class="ic">'+ic+'</span>'+label+
+      (badge ? '<span class="badge">'+badge+'</span>' : '')+'</button>';
+  };
+  return '<nav class="tabs">'+b('home','🏠','Acasă')+b('review','🔁','Recapitulare', due)+b('me','🐈','Eu')+'</nav>';
+}
+function greeting(){
+  const h = new Date().getHours();
+  const n = Store.d.profile.name ? ', '+esc(Store.d.profile.name) : '';
+  if(h<11) return 'Bună dimineața'+n;
+  if(h<18) return 'Bună ziua'+n;
+  return 'Bună seara'+n;
+}
+function weekHTML(){
+  let h = '<div class="week" aria-label="ultimele șapte zile">';
+  for(let i=6;i>=0;i--){
+    const d = daysBack(i);
+    h += '<span class="dot'+(Store.d.days[d]?' on':'')+(i===0?' today':'')+'"></span>';
+  }
+  const n = Object.keys(Store.d.days).length;
+  h += '<span class="lbl">'+(n===0?'prima zi':(n===1?'o zi de engleză':n+' zile de engleză'))+'</span></div>';
+  return h;
+}
+function isSafariNotStandalone(){
+  const ios = /iPhone|iPad|iPod/.test(navigator.userAgent||'');
+  const top = window.self === window.top;
+  return ios && top && !navigator.standalone;
+}
+
+/* ---------------------------------------------------------- onboarding */
+function renderOnboard(){
+  root.innerHTML = shell(
+    '<div style="height:8vh"></div>'+
+    '<h1>Engleză pas cu pas</h1>'+
+    '<p class="lead">Câte cinci minute, când ai chef. Explicațiile sunt în română, cuvintele în engleză. Nu ai ce pierde și nimic nu te blochează.</p>'+
+    '<div class="card"><label class="small" for="nm">Cum te cheamă? (poți sări peste)</label>'+
+    '<input type="text" id="nm" autocomplete="given-name" autocapitalize="words" maxlength="20" placeholder="Numele tău" value="'+esc(Store.d.profile.name)+'"></div>'+
+    '<button class="btn" data-act="onboard">Începem</button>'
+  );
+}
+
+/* ---------------------------------------------------------------- home */
+function renderHome(){
+  let h = '<h1>'+greeting()+'</h1>' + weekHTML();
+  let allDone = true;
+  UNITS.forEach(function(u, ui){
+    h += '<div class="unitHead"><span class="kicker">Unitatea '+ui+'</span><h2>'+esc(u.title)+'</h2></div><ul class="path">';
+    u.lessons.forEach(function(l){
+      const st = lessonState(l.id);
+      if(st==='now'){
+        allDone = false;
+        h += '<li><div class="now"><div class="kicker">'+(l.type==='checkpoint'?'Test':'Lecția următoare')+'</div>'+
+          '<h2>'+esc(l.title)+'</h2><p class="g">'+esc(l.goal||'')+'</p>'+
+          '<button class="btn" data-act="lesson" data-id="'+l.id+'">Începe</button></div></li>';
+      } else if(st==='done'){
+        h += '<li><button class="lrow done" data-act="lesson" data-id="'+l.id+'"><span class="pip">✓</span>'+
+          '<span class="t">'+esc(l.title)+'</span><span class="r">din nou</span></button></li>';
+      } else {
+        allDone = false;
+        h += '<li><div class="lrow locked"><span class="pip"></span><span class="t">'+esc(l.title)+'</span></div></li>';
+      }
+    });
+    h += '</ul>';
+  });
+  if(allDone) h += '<div class="card raised mt"><h2>Asta e tot, deocamdată</h2><p class="small" style="margin:0">Restul vine pe același link. Până atunci, cuvintele te așteaptă la Recapitulare.</p></div>';
+  if(isSafariNotStandalone()) h += '<div class="hint">Pune-l pe ecranul principal (<b>Share</b> → <b>Add to Home Screen</b>) și deschide-l mereu de acolo: progresul stă separat în Safari și în aplicație.</div>';
+  root.innerHTML = shell(h, 'home');
+  const now = $('.now');
+  if(now){
+    const r = now.getBoundingClientRect();
+    if(r.bottom > window.innerHeight - 70 || r.top < 0) now.scrollIntoView({block:'center'});
+  }
+}
+
+/* -------------------------------------------------------------- review */
+function renderReview(){
+  const due = dueItems();
+  let h = '<h1>Recapitulare</h1>';
+  h += '<div class="card raised">';
+  if(due.length){
+    h += '<h2>'+Math.min(12, due.length)+' pentru azi</h2><p class="small" style="margin:0 0 12px">Cuvintele revin exact înainte să le uiți. Trei minute.</p>'+
+      '<button class="btn" data-act="go" data-to="#/practice">Începe</button>';
+  } else {
+    h += '<h2>Nimic de recapitulat azi</h2><p class="small" style="margin:0">Cuvintele revin singure. Fă o lecție nouă.</p>';
+  }
+  h += '</div>';
+
+  h += '<div class="card"><h2>Fraze de urgență</h2><p class="small" style="margin:0 0 6px">Pentru când ești blocat. Le ai de la început.</p>';
+  SURVIVAL.forEach(function(id){
+    const it = ITEMS[id]; if(!it) return;
+    h += '<div class="row"><div class="g"><div class="a">'+T(it.en)+'</div>'+
+      (it.say?'<div class="s">'+sayHTML(it.say)+'</div>':'')+'<div class="b">'+T(it.ro[0])+'</div></div></div>';
+  });
+  h += '</div>';
+
+  h += '<button class="card" style="width:100%;text-align:left;display:block" data-act="go" data-to="#/sounds"><h2>Sunete</h2>'+
+    '<p class="small" style="margin:0">Cum se citește scrierea „pe românește”. Mereu aici, niciodată test.</p></button>';
+
+  const pits = Store.d.pitfalls||[];
+  if(pits.length){
+    h += '<div class="card"><h2>Capcane pentru români</h2>';
+    pits.forEach(function(p){ if(PITFALLS[p]) h += pitfallHTML(PITFALLS[p], true); });
+    h += '</div>';
+  }
+
+  const known = Object.keys(Store.d.items).filter(function(id){ return ITEMS[id]; });
+  if(known.length){
+    h += '<div class="card"><h2>Cuvintele mele <span class="chip">'+known.length+'</span></h2>';
+    known.sort(function(a,b){ return sub(ITEMS[a].en).localeCompare(sub(ITEMS[b].en)); }).forEach(function(id){
+      const it = ITEMS[id];
+      h += '<div class="row"><div class="g"><div class="a">'+(it.emoji?it.emoji+' ':'')+T(it.en)+'</div>'+
+        (it.say?'<div class="s">'+sayHTML(it.say)+'</div>':'')+
+        (it.pos==='letter'?'':'<div class="b">'+T(it.ro.join(', '))+'</div>')+'</div>'+strengthHTML(box(id))+'</div>';
+    });
+    h += '</div>';
+  }
+  root.innerHTML = shell(h, 'review');
+}
+function pitfallHTML(P, small){
+  return '<div class="pit">'+(small?'<div class="small" style="margin-bottom:4px"><b>'+esc(P.title)+'</b></div>':'')+
+    (P.bad!=='—'?'<div class="bad">'+T(P.bad)+'</div>':'')+
+    '<div class="ok">'+T(P.good)+'</div><div class="why">'+P.why+'</div></div>';
+}
+
+/* -------------------------------------------------------------- sounds */
+function soundKeyHTML(){
+  let h = '<p class="lead">Scrierea „pe românește” e o aproximare. Te face înțeles, și pentru început e tot ce-ți trebuie. Sunetul adevărat îl iei de la un om sau dintr-un film.</p>';
+  h += '<div class="card"><b>MAJUSCULELE</b> = silaba pe care apeși. <span class="en">hotel</span> → '+sayHTML('hou-TEL')+'. Silabele sunt despărțite cu liniuță, cuvintele cu spațiu.</div>';
+  h += '<div class="key">';
+  SOUND_KEY.forEach(function(r){
+    if(r.h){ h += '<h3>'+esc(r.h)+'</h3>'; return; }
+    h += '<div class="krow"><div class="kg'+(r.th?' th':'')+'">'+esc(r.g)+'</div><div class="kb">'+
+      '<div class="kd">'+esc(r.d)+(r.ipa?' <span class="ipa">'+esc(r.ipa)+'</span>':'')+'</div>'+
+      '<div class="ke">'+r.ex.map(function(e){ return '<span class="en">'+esc(e[0])+'</span> → '+sayHTML(e[1]); }).join(' · ')+'</div></div></div>';
+  });
+  h += '</div>';
+  return h;
+}
+function renderSounds(){ root.innerHTML = shell('<h1>Sunete</h1>'+soundKeyHTML(), 'review'); }
+function openOverlay(){
+  if($('#overlay')) return;
+  const o = document.createElement('div'); o.className='overlay'; o.id='overlay';
+  o.innerHTML = '<div class="obar"><h1>Sunete</h1><button class="x" data-act="closeOverlay" aria-label="Închide" style="width:44px;height:44px;font-size:1.4rem;color:var(--muted)">✕</button></div>'+soundKeyHTML();
+  document.body.appendChild(o);
+}
+function closeOverlay(){ const o=$('#overlay'); if(o) o.remove(); }
+
+/* ------------------------------------------------------------------ me */
+function renderMe(){
+  const doneLessons = Object.keys(Store.d.lessons).filter(function(k){ return Store.d.lessons[k].done; }).length;
+  let h = '<h1>'+(Store.d.profile.name?esc(Store.d.profile.name):'Eu')+'</h1>'+
+    '<div class="stats">'+
+    '<div class="stat"><div class="v">'+wordsSeen()+'</div><div class="l">'+plural(wordsSeen(),'cuvânt','cuvinte')+'</div></div>'+
+    '<div class="stat"><div class="v">'+doneLessons+'</div><div class="l">'+plural(doneLessons,'lecție','lecții')+'</div></div>'+
+    '<div class="stat"><div class="v">'+Object.keys(Store.d.days).length+'</div><div class="l">'+plural(Object.keys(Store.d.days).length,'zi','zile')+'</div></div>'+
+    '</div>';
+  h += '<button class="btn ghost mt" data-act="reset">Șterge tot progresul</button>';
+  h += '<p class="small center mt">Făcut cu mâna, pentru tine. 🐈 Mimi &amp; Grasu 🐈</p>';
+  root.innerHTML = shell(h, 'me');
+}
+
+/* --------------------------------------------------------- lesson player */
+function startLesson(id){
+  const l = LESSONS[id];
+  if(!l){ go('#/home'); return; }
+  const steps = buildLesson(l);
+  if(!steps.length){ go('#/home'); return; }
+  App.session = { id:id, title:l.title, isCheckpoint:l.type==='checkpoint', pass:l.pass||11, isReview:false,
+    steps:steps, i:0, wrong:[], right:0, total:0, retried:false, pendingRetry:false };
+  renderLesson();
+}
+function startReview(){
+  const steps = buildReview();
+  if(!steps.length){ go('#/review'); return; }
+  App.session = { id:null, title:'Recapitulare', isCheckpoint:false, isReview:true,
+    steps:steps, i:0, wrong:[], right:0, total:0, retried:false, pendingRetry:false };
+  renderLesson();
+}
+function renderLesson(){
+  root.innerHTML =
+    '<div class="lesson"><div class="lbar">'+
+      '<button class="x" data-act="quit" aria-label="Închide">✕</button>'+
+      '<div class="prog"><i id="pbar"></i></div>'+
+      '<button class="k" data-act="sounds" aria-label="Cheia sunetelor">«»</button></div>'+
+    '<div class="lbody" id="lbody"></div>'+
+    '<div class="lfoot"><button class="btn" id="act" data-act="act" disabled>Verifică</button></div>'+
+    '<div class="sheet" id="sheet" aria-live="polite"></div></div>';
+  renderStep();
+}
+function setAct(label, enabled){ const a=$('#act'); if(a){ a.textContent=label; a.disabled=!enabled; } }
+
+function renderStep(){
+  const s = App.session;
+  const body = $('#lbody');
+  hideSheet();
+  App.step = { answer:null, checked:false, placed:[], sel:null, missed:{}, left:0 };
+  $('#pbar').style.width = Math.round(100 * s.i / s.steps.length) + '%';
+  if(s.i >= s.steps.length){ endOrRetry(); return; }
+  const step = s.steps[s.i];
+  let out;
+  if(step.kind==='ex') out = EX_VIEWS[step.ex.type](step.ex);
+  else out = STEP_VIEWS[step.kind](step);
+  body.style.paddingBottom = '';
+  body.innerHTML = out.html; body.scrollTop = 0;
+  setAct(out.button, !!out.ready);
+}
+
+const STEP_VIEWS = {
+  note(step){
+    const n = NOTES[step.id];
+    let h = '<div class="note"><h2>'+esc(n.title)+'</h2><div class="body">';
+    (n.body||[]).forEach(function(p){ h += '<p>'+p+'</p>'; });
+    if(n.table) h += '<table>'+n.table.map(function(r){ return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>'; }).join('')+'</table>';
+    (n.after||[]).forEach(function(p){ h += '<p>'+p+'</p>'; });
+    h += '</div></div>';
+    return {html:h, button:'Am înțeles', ready:true};
+  },
+  pitfall(step){
+    const P = PITFALLS[step.id];
+    if(Store.d.pitfalls.indexOf(step.id)<0){ Store.d.pitfalls.push(step.id); Store.save(); }
+    return {html:'<div class="note"><div class="kicker">Capcană pentru români</div><h2>'+esc(P.title)+'</h2>'+pitfallHTML(P)+'</div>', button:'Am înțeles', ready:true};
+  },
+  dialogue(step){
+    const d = LESSONS[step.id].dialogue;
+    let h = '<div class="note"><h2>'+T(d.title)+'</h2><p class="small">Apasă pe o replică pentru traducere.</p><div class="dlg">';
+    d.lines.forEach(function(L){
+      h += '<button class="line '+(L.side==='b'?'b':'')+'" data-act="line"><div class="who">'+T(L.who)+'</div>'+
+        '<div class="tx">'+T(L.en)+'</div><div class="tr">'+T(L.ro)+'</div></button>';
+    });
+    return {html:h+'</div></div>', button:'Continuă', ready:true};
+  },
+  intro(step){
+    const it = ITEMS[step.id];
+    const letter = it.pos==='letter';
+    let h = '<div class="intro">'+
+      (it.emoji?'<div class="emoji">'+it.emoji+'</div>':'')+
+      '<div class="word'+(letter?' letter':'')+'">'+T(it.en)+'</div>'+
+      (it.say?'<div class="sayline">'+sayHTML(it.say)+'</div>':'')+
+      (it.ipa?'<div class="ipa">'+esc(it.ipa)+'</div>':'')+
+      (letter?'':'<div class="mean">'+T(it.ro.join(', '))+'</div>')+
+      (it.ex?'<div class="ex'+(letter?' mt':'')+'"><div class="e">'+T(it.ex.en)+'</div><div class="r">'+T(it.ex.ro)+'</div></div>':'')+
+      '</div>';
+    return {html:h, button:'Continuă', ready:true};
+  }
+};
+
+function optionsHTML(ex){
+  return '<div class="opts">'+ex.options.map(function(o,i){
+    return '<button class="opt" data-act="opt" data-i="'+i+'"><span class="k">'+(i+1)+'</span><span class="v">'+textHTML(o, ex.optKind)+'</span></button>';
+  }).join('')+'</div>';
+}
+function pickView(ex){
+  let h = '<div class="qlabel">'+esc(ex.label)+'</div><div class="qtext '+(ex.qKind==='en'?'en':'')+'">'+textHTML(ex.q, ex.qKind)+'</div>';
+  if(ex.type==='pick_meaning' && ex.qSay) h += '<div class="qsub">'+sayHTML(ex.qSay)+'</div>';
+  return {html: h+optionsHTML(ex), button:'Verifică', ready:false};
+}
+const EX_VIEWS = {
+  pick_meaning: pickView,
+  pick_english: pickView,
+  pick_sound: pickView,
+  pick_stress(ex){
+    const h = '<div class="qlabel">'+esc(ex.label)+'</div><div class="qtext en">'+T(ex.q)+'</div>'+
+      '<div class="syls">'+ex.syllables.map(function(s,i){ return '<button class="syl" data-act="syl" data-i="'+i+'">'+T(s)+'</button>'; }).join('')+'</div>';
+    return {html:h, button:'Verifică', ready:false};
+  },
+  word_bank(ex){
+    const h = '<div class="qlabel">'+esc(ex.label)+'</div><div class="qtext">„'+T(ex.q)+'”</div>'+
+      '<div class="slot" id="slot"></div>'+
+      '<div class="bank"><div class="tiles" id="bank">'+ex.tiles.map(function(t,i){
+        return '<button class="tile" data-act="tile" data-i="'+i+'">'+T(t)+'</button>';
+      }).join('')+'</div></div>';
+    return {html:h, button:'Verifică', ready:false};
+  },
+  match_pairs(ex){
+    const left = ex.pairs, right = shuffle(ex.pairs);
+    let h = '<div class="qlabel">'+esc(ex.label)+'</div><div class="pairs">';
+    left.forEach(function(p,i){
+      h += '<button class="pair en" data-act="pair" data-side="l" data-id="'+p.id+'">'+T(p.en)+'</button>'+
+        '<button class="pair" data-act="pair" data-side="r" data-id="'+right[i].id+'">'+(ex.bySound ? sayHTML(right[i].ro) : T(right[i].ro))+'</button>';
+    });
+    App.step.left = left.length;
+    return {html:h+'</div>', button:'Continuă', ready:false};
+  }
+};
+
+function currentEx(){ const s=App.session; const st = s && s.steps[s.i]; return st && st.kind==='ex' ? st.ex : null; }
+
+function onAct(){
+  const s = App.session; if(!s) return;
+  if(s.pendingRetry){ s.pendingRetry=false; renderStep(); return; }
+  if(s.i >= s.steps.length){ endOrRetry(); return; }
+  const step = s.steps[s.i];
+  if(step.kind!=='ex'){ s.i++; renderStep(); return; }
+  const ex = step.ex;
+  if(ex.type==='match_pairs'){ if(App.step.left>0) return; s.i++; renderStep(); return; }
+  if(!App.step.checked){
+    if(App.step.answer==null) return;
+    const r = grade(ex, App.step.answer);
+    App.step.checked = true;
+    if(!step.isRetry) (ex.ids||[]).forEach(function(id){ record(id, r.ok); });
+    s.total++; if(r.ok) s.right++;
+    if(!r.ok && !step.isRetry) s.wrong.push(step);
+    Store.save();
+    showSheet(r, ex);
+  } else {
+    s.i++; renderStep();
+  }
+}
+
+const PRAISE = ['Exact.','Corect.','Așa e.','Bravo.'];
+const SOFT = ['Aproape.','Nu chiar.'];
+function showSheet(r, ex){
+  const sh = $('#sheet'), body = $('#lbody');
+  body.querySelectorAll('.tile').forEach(function(t){ t.disabled = true; });
+  body.querySelectorAll('.opt').forEach(function(o){
+    o.disabled = true;
+    const v = ex.options[Number(o.dataset.i)];
+    const hit = ex.type==='pick_sound' ? normSay(v)===normSay(ex.answer) : same(v, ex.answer);
+    if(hit) o.classList.add('ok');
+    else if(o.classList.contains('sel')) o.classList.add('no');
+    else o.classList.add('fade');
+  });
+  body.querySelectorAll('.syl').forEach(function(b){
+    b.disabled = true;
+    const i = Number(b.dataset.i);
+    if(i===ex.answer) b.classList.add('ok');
+    else if(b.classList.contains('sel')) b.classList.add('no');
+    else b.classList.add('fade');
+  });
+  const it = (ex.ids||[]).length===1 ? ITEMS[ex.ids[0]] : null;
+  let corr = '';
+  if(!r.ok){
+    if(ex.type==='pick_sound') corr = '<div class="corr say">'+sayHTML(r.correct)+'</div>';
+    else if(ex.type==='pick_stress') corr = '<div class="corr">'+T(ex.q)+' → '+(it&&it.say?sayHTML(it.say):T(r.correct))+'</div>';
+    else if(ex.type==='pick_meaning') corr = '<div class="corr ro">'+T(r.correct)+'</div>';
+    else corr = '<div class="corr">'+T(r.correct)+'</div>'+(it&&it.say?'<div class="small">'+sayHTML(it.say)+'</div>':'');
+  }
+  sh.className = 'sheet' + (r.ok ? '' : ' no');
+  sh.innerHTML = '<div class="verdict">'+(r.ok ? '✓ '+PRAISE[Math.floor(Math.random()*PRAISE.length)] : '↻ '+SOFT[Math.floor(Math.random()*SOFT.length)])+'</div>'+
+    corr + (ex.note ? '<div class="why">'+ex.note+'</div>' : '') +
+    '<button class="btn'+(r.ok?' good':'')+'" id="cont" data-act="act">Continuă</button>';
+  setAct('Continuă', true);
+  requestAnimationFrame(function(){
+    sh.classList.add('up');
+    body.style.paddingBottom = (sh.offsetHeight + 8) + 'px';
+    body.scrollTop = body.scrollHeight;
+  });
+}
+function hideSheet(){ const sh=$('#sheet'); if(sh){ sh.className='sheet'; sh.innerHTML=''; } }
+
+/* a copy with fresh shuffles, for the retry round */
+function refreshEx(ex){
+  const c = Object.assign({}, ex);
+  if(c.options) c.options = shuffle(c.options);
+  if(c.tiles) c.tiles = shuffle(c.tiles);
+  return c;
+}
+function endOrRetry(){
+  const s = App.session;
+  if(s.wrong.length && !s.retried && !s.isCheckpoint){
+    s.retried = true;
+    s.steps = s.steps.concat(s.wrong.map(function(st){ return {kind:'ex', ex:refreshEx(st.ex), isRetry:true}; }));
+    s.wrong = [];
+    $('#lbody').innerHTML = '<div class="center" style="padding-top:16vh"><div style="font-size:2.4rem">↻</div>'+
+      '<h2 style="margin-top:10px">Încă o dată</h2>'+
+      '<p class="lead">Doar cele care nu au ieșit. Lecția nu se termină pe o greșeală.</p></div>';
+    s.pendingRetry = true;
+    setAct('Hai', true);
+    $('#pbar').style.width = '100%';
+    return;
+  }
+  finish();
+}
+function finish(){
+  const s = App.session;
+  const acc = s.total ? s.right/s.total : 1;
+  const passed = !s.isCheckpoint || s.right >= s.pass;
+  const newWords = (LESSONS[s.id]||{items:[]}).items || [];
+  if(!s.isReview && passed){
+    const rec = Store.d.lessons[s.id] || {done:false, times:0, acc:0, last:''};
+    rec.done = true; rec.times = (rec.times||0)+1;
+    rec.acc = Math.max(rec.acc||0, acc); rec.last = today();
+    Store.d.lessons[s.id] = rec;
+  }
+  Store.d.days[today()] = (Store.d.days[today()]||0) + 1;
+  Store.save();
+  App.result = { id:s.id, title:s.title, acc:acc, total:s.total, right:s.right, passed:passed, pass:s.pass,
+    isReview:s.isReview, isCheckpoint:s.isCheckpoint, words:newWords.length };
+  App.session = null;
+  go('#/done');
+}
+
+/* ------------------------------------------------------------- results */
+function renderDone(){
+  const r = App.result;
+  if(!r){ go('#/home'); return; }
+  let head, line;
+  if(r.isCheckpoint && !r.passed){
+    head = '🐈'; line = 'Aproape: '+r.right+' din '+r.total+'. Mai treci o dată prin el. Nu se pierde nimic și poți încerca de câte ori vrei.';
+  } else if(r.isCheckpoint){
+    head = '🌟'; line = 'Trecut, cu '+r.right+' din '+r.total+'. Unitatea 1 e a ta.';
+  } else if(r.acc>=0.999){
+    head = '🌟'; line = 'Tot. Fără nicio ezitare.';
+  } else if(r.acc>=0.8){
+    head = '🎉'; line = 'Bine mers. Ce nu a ieșit revine peste câteva zile.';
+  } else {
+    head = '🌱'; line = 'Ai trecut prin ea, și asta contează. Cuvintele astea revin curând.';
+  }
+  const h = '<div class="result">'+
+    '<div class="big">'+head+'</div>'+
+    '<h1>'+(r.isReview?'Recapitulare gata':esc(r.title))+'</h1>'+
+    '<p class="lead">'+line+'</p>'+
+    '<div class="stats">'+
+      '<div class="stat"><div class="v">'+r.total+'</div><div class="l">'+plural(r.total,'răspuns','răspunsuri')+'</div></div>'+
+      '<div class="stat"><div class="v">'+(r.isReview? r.total : r.words)+'</div><div class="l">'+(r.isReview?plural(r.total,'cuvânt reluat','cuvinte reluate'):plural(r.words,'cuvânt','cuvinte'))+'</div></div>'+
+      '<div class="stat"><div class="v">'+Object.keys(Store.d.days).length+'</div><div class="l">'+plural(Object.keys(Store.d.days).length,'zi','zile')+'</div></div>'+
+    '</div>'+
+    '<div class="resultActions">'+
+    (r.isCheckpoint && !r.passed
+      ? '<button class="btn" data-act="lesson" data-id="'+r.id+'">Mai încerc o dată</button><button class="btn ghost" data-act="go" data-to="#/home">Înapoi acasă</button>'
+      : '<button class="btn" data-act="go" data-to="#/home">Gata pe azi</button><button class="btn ghost" data-act="next">Încă o lecție</button>')+
+    '</div></div>';
+  root.innerHTML = shell(h);
+}
+
+/* -------------------------------------------------------------- ACTIONS */
+const ACTIONS = {
+  go(el){ go(el.dataset.to); },
+  lesson(el){ go('#/lesson/'+el.dataset.id); },
+  next(){ const id = nextLessonId(); if(id) go('#/lesson/'+id); else go('#/review'); },
+  onboard(){
+    const nm = $('#nm');
+    Store.d.profile.name = (nm ? nm.value : '').trim().slice(0,20);
+    Store.d.profile.onboarded = true; Store.save(); go('#/home');
+  },
+  sounds(){ if(App.session) openOverlay(); else go('#/sounds'); },
+  closeOverlay(){ closeOverlay(); },
+  quit(){
+    const s = App.session;
+    if(s && s.i > 1 && s.i < s.steps.length && !confirm('Ieși din lecție? Ce ai făcut până acum rămâne salvat.')) return;
+    App.session = null; Store.save(); go('#/home');
+  },
+  act(){ onAct(); },
+  opt(el){
+    if(App.step.checked) return;
+    const ex = currentEx(); if(!ex) return;
+    document.querySelectorAll('.opt').forEach(function(o){ o.classList.remove('sel'); });
+    el.classList.add('sel');
+    App.step.answer = ex.options[Number(el.dataset.i)];
+    setAct('Verifică', true);
+  },
+  syl(el){
+    if(App.step.checked) return;
+    document.querySelectorAll('.syl').forEach(function(o){ o.classList.remove('sel'); });
+    el.classList.add('sel');
+    App.step.answer = Number(el.dataset.i);
+    setAct('Verifică', true);
+  },
+  tile(el){
+    if(App.step.checked || el.classList.contains('used')) return;
+    App.step.placed.push(Number(el.dataset.i));
+    el.classList.add('used');
+    refreshSlot();
+  },
+  placed(el){
+    if(App.step.checked) return;
+    const i = Number(el.dataset.i);
+    const k = App.step.placed.indexOf(i);
+    if(k>-1) App.step.placed.splice(k,1);
+    const t = document.querySelector('#bank .tile[data-i="'+i+'"]'); if(t) t.classList.remove('used');
+    refreshSlot();
+  },
+  pair(el){ onPair(el); },
+  line(el){ el.classList.toggle('open'); },
+  reset(){
+    if(confirm('Sigur? Se șterge tot și o iei de la capăt.')){ Store.reset(); go('#/home'); }
+  }
+};
+function refreshSlot(){
+  const ex = currentEx(); const slot = $('#slot'); if(!ex || !slot) return;
+  slot.innerHTML = App.step.placed.map(function(i){ return '<button class="tile" data-act="placed" data-i="'+i+'">'+T(ex.tiles[i])+'</button>'; }).join('');
+  App.step.answer = App.step.placed.length ? App.step.placed.map(function(i){ return ex.tiles[i]; }).join(' ') : null;
+  setAct('Verifică', App.step.placed.length>0);
+}
+function onPair(b){
+  const st = App.step, s = App.session;
+  if(b.classList.contains('gone')) return;
+  if(!st.sel){ st.sel = b; b.classList.add('sel'); return; }
+  if(st.sel === b){ b.classList.remove('sel'); st.sel=null; return; }
+  if(st.sel.dataset.side === b.dataset.side){ st.sel.classList.remove('sel'); st.sel=b; b.classList.add('sel'); return; }
+  const a = st.sel; st.sel = null;
+  if(a.dataset.id === b.dataset.id){
+    a.classList.remove('sel'); a.classList.add('gone'); b.classList.add('gone');
+    const id = b.dataset.id, ok = !st.missed[id];
+    const step = s.steps[s.i];
+    if(!step.isRetry) record(id, ok);
+    s.total++; if(ok) s.right++;
+    st.left--;
+    if(st.left===0){
+      if(Object.keys(st.missed).length && !step.isRetry) s.wrong.push(step);
+      Store.save(); setAct('Continuă', true);
+      setTimeout(function(){ if(App.session===s && s.steps[s.i]===step){ s.i++; renderStep(); } }, 380);
+    }
+  } else {
+    st.missed[a.dataset.id]=true; st.missed[b.dataset.id]=true;
+    a.classList.add('miss'); b.classList.add('miss');
+    setTimeout(function(){ a.classList.remove('miss','sel'); b.classList.remove('miss'); }, 420);
+  }
+}
+
+document.addEventListener('click', function(e){
+  const el = e.target.closest('[data-act]');
+  if(!el) return;
+  const fn = ACTIONS[el.dataset.act];
+  if(fn) fn(el, e);
+});
+document.addEventListener('keydown', function(e){
+  if(e.key==='Enter' && e.target && e.target.id==='nm'){ e.preventDefault(); ACTIONS.onboard(); }
+});
+
+/* -------------------------------------------------------------- ROUTER */
+function go(hash){ if(location.hash===hash) route(); else location.hash = hash; }
+function route(){
+  closeOverlay();
+  const h = location.hash || '#/home';
+  if(!Store.d.profile.onboarded){ renderOnboard(); return; }
+  if(h.indexOf('#/lesson/')===0){ startLesson(h.slice(9)); return; }
+  if(h==='#/practice'){ startReview(); return; }
+  if(h==='#/done'){ renderDone(); return; }
+  if(h==='#/review'){ App.session=null; renderReview(); return; }
+  if(h==='#/sounds'){ App.session=null; renderSounds(); return; }
+  if(h==='#/me'){ App.session=null; renderMe(); return; }
+  App.session=null; renderHome();
+}
+window.addEventListener('hashchange', route);
+window.addEventListener('pagehide', function(){ Store.save(); });
+
+Store.load();
+if(!location.hash) history.replaceState(null, '', '#/home');
+route();
+/* the test harness reads session state through this; nothing else uses it */
+window.__epcp = { Engine:Engine, App:App, Store:Store, go:go };
+</script>
+</body>
+</html>

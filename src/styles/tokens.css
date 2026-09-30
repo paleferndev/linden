@@ -1,0 +1,71 @@
+/* Design tokens, from the Linden Lane design. Day is the street at noon; evening (dark) is the same street with the lamps on.
+   Each colour has one job: pen = actions, marker = notice this, leaf = right + brand, plum = not quite, postbox = Romanian trap. */
+:root{
+  /* interface */
+  --paper:#F6F3EC; --card:#FFFDF8; --sunk:#EEEAE0; --ink:#1B2433; --muted:#5B6472; --faint:#8C939C; --line:#E1DBCE;
+  /* meaning */
+  --pen:#27469A; --pen-soft:#E3E9F8; --on-pen:#FFFFFF;
+  --marker:#FFD447; --marker-a:rgba(255,212,71,.62); --marker-soft:#FFF3C2;
+  --leaf:#3A7853; --leaf-soft:#E0EEDF; --plum:#9E4462; --plum-soft:#F6E2E8; --postbox:#CF4430; --postbox-soft:#FBE4DE;
+  /* the street */
+  --sky:#CDE2E6; --sun:#F5C24E; --cloud:#FFFFFF; --cloud-o:.92; --star-o:0; --glow-o:0; --bulb-o:.55;
+  --b-ochre:#E2B461; --b-sage:#A3C29D; --b-blue:#94B8CC; --b-rose:#E8B4A6; --b-cream:#F0E3C6; --b-navy:#33415E;
+  --roof:#5B4B47; --door:#33415E; --door-2:#3A7853; --window:#E4EFF1; --win-frame:#FFFFFF; --lit:#FFD36B; --lit-glow:rgba(255,211,107,0);
+  --pave:#DAD3C4; --kerb:#C4BCAC; --road:#B8B1A5; --dash:#EFEAE0; --tree:#5F9562; --tree-2:#86B375; --trunk:#6B503B;
+  --awning-a:#CF4430; --awning-b:#FFF8EC; --awning-c:#3A7853; --sign:#33415E; --sign-text:#FFF8EC;
+  --skin-1:#F1C6A4; --skin-2:#C58B62; --skin-3:#8A5A3E; --hair-1:#4A3226; --hair-2:#C4BDB2; --hair-3:#1F1B1A;
+  --eye:#1E1B1A; --cheek:rgba(214,96,80,.28); --cat:#E0934D; --cat-dark:#B96D2E;
+  --cafe-wall:#F2E2C3; --cafe-trim:#FFFBF2; --wood:#B98A5E; --wood-top:#D2A57A; --wood-line:#A1754D;
+  --pot:#6E9EB8; --pot-dark:#4E7D97; --china:#FFFFFF; --china-line:#CBC3B5; --tea-brown:#B7773E;
+  --pastry:#E3A44D; --pastry-dark:#B6762F; --kraft:#C99B69; --chalk-bg:#2F3C37; --chalk:#F4F1E8;
+  --shirt-1:#F4F0E7; --apron:#33415E; --mouth:#5A2A33; --tooth:#FFFFFF; --tongue:#E07F8C; --lip:#C66A72;
+  --de-wall:#EAD9A8; --de-blue:#2F63B8; --de-green:#3C8A55; --de-red:#C8433A;
+  --shadow-sm:0 1px 0 rgba(27,36,51,.05), 0 8px 18px -12px rgba(27,36,51,.35);
+  --shadow:0 1px 0 rgba(27,36,51,.06), 0 24px 48px -26px rgba(27,36,51,.5);
+  /* type: the serif is for English only; if it's in Besley, it's English */
+  --f-en:'Besley Variable','Iowan Old Style','Palatino Linotype',Georgia,serif;
+  --f-ui:'Figtree Variable','Segoe UI',system-ui,-apple-system,'Helvetica Neue',sans-serif;
+  /* shape + motion */
+  --r-lg:22px; --r:14px; --r-sm:10px;
+  --ease-out:cubic-bezier(.22,1,.36,1); --ease-io:cubic-bezier(.65,0,.35,1);
+  --t-tap:90ms; --t-state:180ms; --t-enter:300ms; --t-party:700ms;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151D; --card:#18202B; --sunk:#131A23; --ink:#F0E9DB; --muted:#A2AAB5; --faint:#76808C; --line:#28313D;
+    --pen:#9EB7FF; --pen-soft:#1D2944; --on-pen:#0C1631;
+    --marker:#F2C94C; --marker-a:rgba(242,201,76,.44); --marker-soft:#3A331C;
+    --leaf:#80CB9D; --leaf-soft:#1B3427; --plum:#E698AF; --plum-soft:#3B202B; --postbox:#F07B64; --postbox-soft:#3C201A;
+    --sky:#15233A; --sun:#F1E4BF; --cloud:#2B3B57; --cloud-o:.55; --star-o:1; --glow-o:.95; --bulb-o:1;
+    --b-ochre:#8C6A38; --b-sage:#4E6A55; --b-blue:#3E5B73; --b-rose:#7F5750; --b-cream:#6B604E; --b-navy:#222C44;
+    --roof:#27212A; --door:#1C243A; --door-2:#2C5540; --window:#26344B; --win-frame:#3A4861; --lit:#FFC857; --lit-glow:rgba(255,200,87,.85);
+    --pave:#262C35; --kerb:#303843; --road:#1B2028; --dash:#3A424E; --tree:#2E4B39; --tree-2:#3B5C45; --trunk:#3A2C22;
+    --awning-a:#B8503E; --awning-b:#D9CFBF; --awning-c:#2C5540; --sign:#1C243A; --sign-text:#F3E4C0;
+    --cat:#C98040; --cat-dark:#9A5D27;
+    --cafe-wall:#3B3129; --cafe-trim:#4B4036; --wood:#6A4A32; --wood-top:#80603F; --wood-line:#553A26;
+    --pot:#4F7890; --pot-dark:#3A5B6E; --china:#E7E0D4; --china-line:#9C9387; --kraft:#A67E53;
+    --shirt-1:#D6CDBD; --apron:#3A4A6C; --de-wall:#6B6040;
+    --shadow-sm:0 1px 0 rgba(0,0,0,.3), 0 8px 18px -12px rgba(0,0,0,.8);
+    --shadow:0 1px 0 rgba(0,0,0,.35), 0 24px 48px -24px rgba(0,0,0,.9);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151D; --card:#18202B; --sunk:#131A23; --ink:#F0E9DB; --muted:#A2AAB5; --faint:#76808C; --line:#28313D;
+  --pen:#9EB7FF; --pen-soft:#1D2944; --on-pen:#0C1631;
+  --marker:#F2C94C; --marker-a:rgba(242,201,76,.44); --marker-soft:#3A331C;
+  --leaf:#80CB9D; --leaf-soft:#1B3427; --plum:#E698AF; --plum-soft:#3B202B; --postbox:#F07B64; --postbox-soft:#3C201A;
+  --sky:#15233A; --sun:#F1E4BF; --cloud:#2B3B57; --cloud-o:.55; --star-o:1; --glow-o:.95; --bulb-o:1;
+  --b-ochre:#8C6A38; --b-sage:#4E6A55; --b-blue:#3E5B73; --b-rose:#7F5750; --b-cream:#6B604E; --b-navy:#222C44;
+  --roof:#27212A; --door:#1C243A; --door-2:#2C5540; --window:#26344B; --win-frame:#3A4861; --lit:#FFC857; --lit-glow:rgba(255,200,87,.85);
+  --pave:#262C35; --kerb:#303843; --road:#1B2028; --dash:#3A424E; --tree:#2E4B39; --tree-2:#3B5C45; --trunk:#3A2C22;
+  --awning-a:#B8503E; --awning-b:#D9CFBF; --awning-c:#2C5540; --sign:#1C243A; --sign-text:#F3E4C0;
+  --cat:#C98040; --cat-dark:#9A5D27;
+  --cafe-wall:#3B3129; --cafe-trim:#4B4036; --wood:#6A4A32; --wood-top:#80603F; --wood-line:#553A26;
+  --pot:#4F7890; --pot-dark:#3A5B6E; --china:#E7E0D4; --china-line:#9C9387; --kraft:#A67E53;
+  --shirt-1:#D6CDBD; --apron:#3A4A6C; --de-wall:#6B6040;
+  --shadow-sm:0 1px 0 rgba(0,0,0,.3), 0 8px 18px -12px rgba(0,0,0,.8);
+  --shadow:0 1px 0 rgba(0,0,0,.35), 0 24px 48px -24px rgba(0,0,0,.9);
+  color-scheme:dark;
+}

@@ -1,0 +1,14 @@
+node_modules/
+dist/
+legacy/test/node_modules/
+legacy/test/shots/
+legacy/test/*.png
+tests/shots/
+tests/.dist/
+handoff/
+
+# Local only: this repo is public, and these hold private notes
+HANDOFF.md
+design/
+private/
+.claude/settings.local.json

@@ -1,0 +1,2 @@
+// The Linden leaf: the logo. Colours come from the page's tokens.
+export const LEAF = `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 55C18 46 6 36 8 22 10 12 20 8 28 13c1.8 1.2 3.3 3 4 5 1-4 6-9 13-9 10 1 15 11 11 23-4 12-14 18-24 23z" fill="var(--leaf)"/><path d="M32 55c0-14 2-26 8-38M33 43c-6-3-12-7-17-13M34 35c6-3 12-6 18-10M34 27c-4-2-9-5-13-9" stroke="var(--paper)" stroke-width="2" fill="none" stroke-linecap="round" opacity=".8"/><path d="M32 55c-1 3-3 5-6 6.5" stroke="var(--leaf)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>`;

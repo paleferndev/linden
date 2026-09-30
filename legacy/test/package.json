@@ -1,0 +1,15 @@
+{
+  "name": "engleza-tests",
+  "private": true,
+  "type": "module",
+  "description": "Test harness for engleza.html. The app itself has no dependencies; these are dev-only.",
+  "scripts": {
+    "postinstall": "playwright install chromium",
+    "engine": "node engine.test.mjs",
+    "browser": "node browser.test.mjs",
+    "test": "node engine.test.mjs && node browser.test.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.47.0"
+  }
+}

@@ -15,7 +15,8 @@ import { walk, silence } from './walk.mjs';
 import { checkContent } from './content.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
-const outDir = fileURLToPath(new URL('./.dist', import.meta.url));
+const outBase = fileURLToPath(new URL('./.dist', import.meta.url));
+let outDir = outBase;
 const shots = fileURLToPath(new URL('./shots/', import.meta.url));
 fs.mkdirSync(shots, { recursive: true });
 const PORT = 4174;
@@ -26,11 +27,12 @@ const SEEDED = { v: 2, profile: { name: 'Alex', onboarded: true }, eps: { 1: { d
 let checks = 0, failed = 0;
 const ok = (cond, msg) => { checks++; if (!cond) { failed++; console.log('  FAIL', msg); } };
 
-// Windows can hold on to files a moment after the server that sent them closes, so clear the folder with retries.
-const clearOut = () => fs.rmSync(outDir, { recursive: true, force: true, maxRetries: 10, retryDelay: 300 });
+// Each build gets its own folder: on Windows the files build A served can stay open until the run ends.
+const clear = dir => { try { fs.rmSync(dir, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 }); } catch {} };
 async function buildAs(tag) {
   process.env.LINDEN_BUILD_TAG = tag;
-  clearOut();
+  outDir = `${outBase}-${tag}`;
+  clear(outDir);
   await build({ root, logLevel: 'silent', build: { outDir, emptyOutDir: false } });
 }
 const serve = () => preview({ root, logLevel: 'silent', build: { outDir }, preview: { port: PORT, strictPort: true } });
@@ -165,7 +167,7 @@ console.log('offline + update');
 
 await browser.close();
 await server.close();
-clearOut();
+for (const t of ['build-a', 'build-b']) clear(`${outBase}-${t}`);
 
 console.log(`\n${checks} checks, ${failed} failed`);
 process.exit(failed ? 1 : 0);

@@ -1,4 +1,34 @@
 {
+ "0036ab78": {
+  "who": "tom",
+  "say": "Are you awake? I can see a light in your window. What’s happening?",
+  "mood": "ask",
+  "take": 1
+ },
+ "02ae8f6c": {
+  "who": "sam",
+  "say": "Footprints! The little man went into her garden. I told you!",
+  "mood": "excited",
+  "take": 1
+ },
+ "02ce4699": {
+  "who": "priya",
+  "say": "Someone came in very late on Monday night and bought all my candles. And paid with these.",
+  "mood": "warm",
+  "take": 1
+ },
+ "06f4ff31": {
+  "who": "stranger",
+  "say": "A spark! But it’s his spark, not mine.",
+  "mood": "excited",
+  "take": 1
+ },
+ "077c85bb": {
+  "who": "stranger",
+  "say": "Good morning. Is there a walking light in your shop?",
+  "mood": "ask",
+  "take": 1
+ },
  "07eb6e8b": {
   "who": "stranger",
   "say": "And Tom make very good tea.",
@@ -21,6 +51,12 @@
   "who": "tom",
   "say": "Your spark? What are you, a firefly?",
   "mood": "ask",
+  "take": 1
+ },
+ "0cf5eae9": {
+  "who": "hughes",
+  "say": "I have lived on Linden Lane since 1966.",
+  "mood": "warm",
   "take": 1
  },
  "0e1919a3": {
@@ -53,9 +89,33 @@
   "mood": "wonder",
   "take": 1
  },
+ "112a1324": {
+  "who": "stranger",
+  "say": "My name is Aster. I remember it now.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "18d69d00": {
+  "who": "priya",
+  "say": "A walking light? No. But there’s something strange. Look at these coins.",
+  "mood": "ask",
+  "take": 1
+ },
+ "191f2212": {
+  "who": "priya",
+  "say": "Wait! There are some rose petals on the floor.",
+  "mood": "excited",
+  "take": 1
+ },
  "1b28499d": {
   "who": "stranger",
   "say": "What do I do? I look for sparks. But now…",
+  "mood": "ask",
+  "take": 1
+ },
+ "213c8707": {
+  "who": "stranger",
+  "say": "Yes, please. What happened that night?",
   "mood": "ask",
   "take": 1
  },
@@ -71,9 +131,33 @@
   "mood": "wonder",
   "take": 1
  },
+ "2533ff7e": {
+  "who": "voice",
+  "say": "There is someone in the garden at No. 9. Someone old.",
+  "mood": "radio",
+  "take": 1
+ },
  "25f1fa43": {
   "who": "stranger",
   "say": "Where am I? Is this a garden?",
+  "mood": "ask",
+  "take": 1
+ },
+ "264a3b93": {
+  "who": "moss",
+  "say": "Thank you. Now, let’s write the plan. The whole street is going to help.",
+  "mood": "warm",
+  "take": 1
+ },
+ "270dbcb0": {
+  "who": "priya",
+  "say": "All of them! Twenty candles. And he didn’t want any change.",
+  "mood": "excited",
+  "take": 1
+ },
+ "28377f46": {
+  "who": "stranger",
+  "say": "Mrs Hughes, did a light fall in your garden?",
   "mood": "ask",
   "take": 1
  },
@@ -83,10 +167,40 @@
   "mood": "wonder",
   "take": 1
  },
+ "2a2fc393": {
+  "who": "priya",
+  "say": "Good morning! Sam called me. So this is your famous friend?",
+  "mood": "ask",
+  "take": 1
+ },
+ "2a7c0643": {
+  "who": "narrator",
+  "say": "Mrs Hughes has kept a secret for sixty years.",
+  "mood": "teach",
+  "take": 1
+ },
+ "2bd31b5c": {
+  "who": "moss",
+  "say": "I don’t know yet. I will decide on Friday.",
+  "mood": "warm",
+  "take": 1
+ },
+ "2c0b02c7": {
+  "who": "tom",
+  "say": "Right. So Mr Moss arrived in 1966, and Aster arrived last week.",
+  "mood": "warm",
+  "take": 1
+ },
  "2d5260b0": {
   "who": "tom",
   "say": "Sam! Of course. He comes here at six every morning, after work.",
   "mood": "excited",
+  "take": 1
+ },
+ "2ec2b663": {
+  "who": "priya",
+  "say": "The note said: “Thank you for the candles.” In very old-fashioned handwriting.",
+  "mood": "warm",
   "take": 1
  },
  "2fbf191a": {
@@ -107,6 +221,18 @@
   "mood": "ask",
   "take": 1
  },
+ "33bc02fe": {
+  "who": "hughes",
+  "say": "Oh, that’s Mr Moss. He’s very old. He’s been in my garden for a long time.",
+  "mood": "warm",
+  "take": 1
+ },
+ "344f071c": {
+  "who": "hughes",
+  "say": "I met him on a Tuesday. He was cold, so I gave him my husband’s old coat.",
+  "mood": "warm",
+  "take": 1
+ },
  "35128354": {
   "who": "stranger",
   "say": "What is your name?",
@@ -119,10 +245,64 @@
   "mood": "wonder",
   "take": 1
  },
+ "37019b06": {
+  "who": "narrator",
+  "say": "The gnome had the same hat.",
+  "mood": "teach",
+  "take": 1
+ },
  "37bdcef5": {
   "who": "voice",
   "say": "Can you hear us? Look for your next spark near the tea.",
   "mood": "radio",
+  "take": 1
+ },
+ "37ddc9b1": {
+  "who": "stranger",
+  "say": "He? Did you see him?",
+  "mood": "ask",
+  "take": 1
+ },
+ "39e2d125": {
+  "who": "moss",
+  "say": "Now. Where is a high place on this street?",
+  "mood": "ask",
+  "take": 1
+ },
+ "3ae0cc58": {
+  "who": "moss",
+  "say": "Hello… Aster. Hello, young one.",
+  "mood": "warm",
+  "take": 1
+ },
+ "3d0d7493": {
+  "who": "moss",
+  "say": "Good. First, we need a clear sky.",
+  "mood": "warm",
+  "take": 1
+ },
+ "3ef6f2a9": {
+  "who": "stranger",
+  "say": "I have not got a plan.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "416b798c": {
+  "who": "moss",
+  "say": "Your light woke me. I will not sleep again. Not now.",
+  "mood": "warm",
+  "take": 1
+ },
+ "420a9238": {
+  "who": "priya",
+  "say": "Only his hat. A big old hat. Like yours, actually.",
+  "mood": "warm",
+  "take": 1
+ },
+ "42113b54": {
+  "who": "stranger",
+  "say": "I remember a friend. He came here before me.",
+  "mood": "wonder",
   "take": 1
  },
  "424671db": {
@@ -143,10 +323,88 @@
   "mood": "wonder",
   "take": 1
  },
+ "431f1eae": {
+  "who": "priya",
+  "say": "Oh! What’s that? There’s something bright in the coin box.",
+  "mood": "ask",
+  "take": 1
+ },
+ "43cb2ee6": {
+  "who": "sam",
+  "say": "Ha. Fair enough. Oh, and I found this on the back seat the next morning.",
+  "mood": "warm",
+  "take": 1
+ },
+ "442d0cde": {
+  "who": "stranger",
+  "say": "Sixty years. And he has never gone home.",
+  "mood": "gentle",
+  "take": 1
+ },
+ "44b1b20b": {
+  "who": "priya",
+  "say": "Batteries… yes, there are some on the top shelf. How many do you need?",
+  "mood": "ask",
+  "take": 2
+ },
+ "44f1df91": {
+  "who": "sam",
+  "say": "I saw a little man in a hat. He went to Priya’s shop, then to No. 9.",
+  "mood": "warm",
+  "take": 5
+ },
+ "48762937": {
+  "who": "hughes",
+  "say": "He said: “Keep it for the next one.” I think you are the next one, dear.",
+  "mood": "warm",
+  "take": 1
+ },
+ "49cd6d42": {
+  "who": "stranger",
+  "say": "No. 9. Let’s go.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "4a0b41f3": {
+  "who": "sam",
+  "say": "Evening. Tom told me about you two. You want to know about the light, right?",
+  "mood": "ask",
+  "take": 1
+ },
+ "4b4a3ced": {
+  "who": "hughes",
+  "say": "Every day. He never answers. But I think he listens.",
+  "mood": "gentle",
+  "take": 2
+ },
+ "4bc1b3f6": {
+  "who": "hughes",
+  "say": "Hello, dears! Come in, come in. Mind the roses.",
+  "mood": "excited",
+  "take": 1
+ },
+ "4d3c17c9": {
+  "who": "stranger",
+  "say": "I remember the way home. Up, past the moon, then left.",
+  "mood": "wonder",
+  "take": 1
+ },
  "4e1745af": {
   "who": "stranger",
   "say": "I don’t drink tea. I drink light.",
   "mood": "wonder",
+  "take": 1
+ },
+ "4e4c2abe": {
+  "who": "moss",
+  "say": "Three more. Where are they, young one?",
+  "mood": "ask",
+  "take": 1
+ },
+ "506bf818": {
+  "who": "priya",
+  "say": "Look at the date: 1966!",
+  "mood": "excited",
   "take": 1
  },
  "5106db0b": {
@@ -155,9 +413,39 @@
   "mood": "gentle",
   "take": 1
  },
+ "51b1b21f": {
+  "who": "sam",
+  "say": "No. I didn’t see his face. Just two little lights.",
+  "mood": "warm",
+  "take": 1
+ },
+ "52985c9d": {
+  "who": "moss",
+  "say": "Yes. And I am going to miss her. That is the problem.",
+  "mood": "gentle",
+  "take": 1
+ },
+ "54968dfa": {
+  "who": "narrator",
+  "say": "Mr Moss woke up.",
+  "mood": "teach",
+  "take": 1
+ },
+ "559d928c": {
+  "who": "sam",
+  "say": "Well. It was Monday. I arrived at this stop at midnight, like every night.",
+  "mood": "warm",
+  "take": 1
+ },
  "573feb62": {
   "who": "stranger",
   "say": "But Mimi isn’t sleeping either. Look. What is she doing?",
+  "mood": "ask",
+  "take": 1
+ },
+ "5755f830": {
+  "who": "stranger",
+  "say": "So the walking light had my spark. Why?",
   "mood": "ask",
   "take": 1
  },
@@ -167,10 +455,82 @@
   "mood": "ask",
   "take": 1
  },
+ "5830d035": {
+  "who": "stranger",
+  "say": "Everyone, look. In the shed I found an old machine. It knows a lot of verbs.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "5b44f467": {
+  "who": "tom",
+  "say": "And you? What did you do last night?",
+  "mood": "ask",
+  "take": 1
+ },
+ "5c3371b2": {
+  "who": "stranger",
+  "say": "I remember my home. It is dark there, and very quiet.",
+  "mood": "gentle",
+  "take": 1
+ },
+ "5c708b7e": {
+  "who": "narrator",
+  "say": "Sam saw two lights that night.",
+  "mood": "teach",
+  "take": 1
+ },
+ "5ecefe65": {
+  "who": "tom",
+  "say": "At 2 a.m.? Funny friend. OK, good night!",
+  "mood": "ask",
+  "take": 1
+ },
+ "61757d7d": {
+  "who": "priya",
+  "say": "A bit of everything. Do you need anything?",
+  "mood": "ask",
+  "take": 1
+ },
+ "61e47443": {
+  "who": "stranger",
+  "say": "My fourth spark! Thank you, Sam.",
+  "mood": "excited",
+  "take": 1
+ },
+ "62d9ee4d": {
+  "who": "hughes",
+  "say": "Your tea is on the table, next to the roses.",
+  "mood": "warm",
+  "take": 1
+ },
  "62e08433": {
   "who": "stranger",
   "say": "The moon! I know the moon. And those? The small lights?",
   "mood": "ask",
+  "take": 1
+ },
+ "640660b6": {
+  "who": "priya",
+  "say": "I did! At three in the morning somebody left a note under my door.",
+  "mood": "excited",
+  "take": 1
+ },
+ "6438d03b": {
+  "who": "hughes",
+  "say": "And I have seen this light before. Once. In the autumn of 1966.",
+  "mood": "warm",
+  "take": 1
+ },
+ "673ad13d": {
+  "who": "moss",
+  "say": "So. You want to go home. What is your plan?",
+  "mood": "ask",
+  "take": 1
+ },
+ "68a194da": {
+  "who": "hughes",
+  "say": "Sorry, it’s a mess. I lose everything these days. My glasses, my key…",
+  "mood": "gentle",
   "take": 1
  },
  "6deb0f62": {
@@ -191,6 +551,12 @@
   "mood": "gentle",
   "take": 1
  },
+ "71fa8da0": {
+  "who": "tom",
+  "say": "Wait. Let me get this right. I’ll write it all down.",
+  "mood": "warm",
+  "take": 1
+ },
  "74ddad99": {
   "who": "stranger",
   "say": "May I stay in your garden tonight?",
@@ -203,10 +569,28 @@
   "mood": "ask",
   "take": 1
  },
+ "76583365": {
+  "who": "sam",
+  "say": "You?! Hang on. Let me tell it properly, from the start.",
+  "mood": "ask",
+  "take": 1
+ },
  "7946a134": {
   "who": "hughes",
   "say": "Tom, love! What time does the café close today? I want a cake.",
   "mood": "ask",
+  "take": 1
+ },
+ "796d7585": {
+  "who": "stranger",
+  "say": "Went, took, gave, told… Your language is full of surprises.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "796f8099": {
+  "who": "voice",
+  "say": "Aster. Aster, can you hear us?",
+  "mood": "radio",
   "take": 1
  },
  "79909a93": {
@@ -215,10 +599,22 @@
   "mood": "ask",
   "take": 1
  },
+ "79c71d72": {
+  "who": "stranger",
+  "say": "Mr Moss.",
+  "mood": "wonder",
+  "take": 1
+ },
  "7a026ee1": {
   "who": "tom",
   "say": "Morning! Who’s your little friend?",
   "mood": "ask",
+  "take": 1
+ },
+ "7a332420": {
+  "who": "priya",
+  "say": "No, there aren’t. It’s an old shop. There’s only me and the cat next door.",
+  "mood": "warm",
   "take": 1
  },
  "7b29eea6": {
@@ -227,9 +623,45 @@
   "mood": "wonder",
   "take": 1
  },
+ "7b856e80": {
+  "who": "voice",
+  "say": "We have heard about the old one. He can come home too.",
+  "mood": "radio",
+  "take": 1
+ },
+ "7c1dffc5": {
+  "who": "okafor",
+  "say": "Hello. You must be Aster. Mrs Hughes told me everything.",
+  "mood": "warm",
+  "take": 1
+ },
+ "7dd0a0a0": {
+  "who": "stranger",
+  "say": "My fifth spark! It was with the old coins.",
+  "mood": "excited",
+  "take": 1
+ },
  "7eb72aea": {
   "who": "stranger",
   "say": "Have you got a lantern?",
+  "mood": "ask",
+  "take": 1
+ },
+ "80b8e4bf": {
+  "who": "hughes",
+  "say": "Footprints? Oh dear. Small ones. They go from the gnome to the gate.",
+  "mood": "ask",
+  "take": 1
+ },
+ "80c3e452": {
+  "who": "tom",
+  "say": "Morning, everyone! Did anyone see anything last night?",
+  "mood": "ask",
+  "take": 1
+ },
+ "80c70cca": {
+  "who": "stranger",
+  "say": "And then?",
   "mood": "ask",
   "take": 1
  },
@@ -239,10 +671,28 @@
   "mood": "excited",
   "take": 1
  },
+ "8294a939": {
+  "who": "stranger",
+  "say": "Can you tell me what the people are doing?",
+  "mood": "ask",
+  "take": 1
+ },
  "840fe9d1": {
   "who": "stranger",
   "say": "Where are my sparks? Sorry. My English is from the radio. The radio is old.",
   "mood": "ask",
+  "take": 1
+ },
+ "850e4b90": {
+  "who": "sam",
+  "say": "That’s it. My wife laughed. But I know what I saw.",
+  "mood": "warm",
+  "take": 1
+ },
+ "87ba142c": {
+  "who": "stranger",
+  "say": "That was me. I think.",
+  "mood": "wonder",
   "take": 1
  },
  "8875c2c3": {
@@ -251,9 +701,51 @@
   "mood": "radio",
   "take": 1
  },
+ "8b568c00": {
+  "who": "stranger",
+  "say": "Hello, Mr Moss. Can you hear me?",
+  "mood": "ask",
+  "take": 1
+ },
+ "8b72bf3a": {
+  "who": "hughes",
+  "say": "Aster… Oh my. I haven’t heard a name like that for a long, long time.",
+  "mood": "warm",
+  "take": 1
+ },
+ "8b8b2c2d": {
+  "who": "hughes",
+  "say": "I have never felt so happy. Thank you, my dears.",
+  "mood": "gentle",
+  "take": 1
+ },
+ "8d1f1a8e": {
+  "who": "stranger",
+  "say": "Your shop is very nice. What do you sell?",
+  "mood": "ask",
+  "take": 1
+ },
  "8fa72ecf": {
   "who": "stranger",
   "say": "Thank you. You are a very good teacher.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "902c4bfb": {
+  "who": "stranger",
+  "say": "Hello, Dr Okafor. We need a high place. Can we go up on your roof?",
+  "mood": "ask",
+  "take": 1
+ },
+ "90f7a8b3": {
+  "who": "tom",
+  "say": "So why is he a garden gnome now?",
+  "mood": "ask",
+  "take": 1
+ },
+ "9156218c": {
+  "who": "stranger",
+  "say": "Mrs Hughes… your gnome has got the same hat as me.",
   "mood": "wonder",
   "take": 1
  },
@@ -263,10 +755,82 @@
   "mood": "ask",
   "take": 1
  },
+ "9346df02": {
+  "who": "hughes",
+  "say": "But first, can you help me? I can’t find my things. I put them somewhere…",
+  "mood": "ask",
+  "take": 1
+ },
  "947224fb": {
   "who": "stranger",
   "say": "I remember music. It came from a little box.",
   "mood": "wonder",
+  "take": 1
+ },
+ "9477e60e": {
+  "who": "stranger",
+  "say": "I understand. Usually she sleeps. Tonight she is playing.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "956a914c": {
+  "who": "stranger",
+  "say": "Aster… That is my name. I remember it!",
+  "mood": "excited",
+  "take": 1
+ },
+ "968d7a83": {
+  "who": "narrator",
+  "say": "Mimi was playing with something bright.",
+  "mood": "teach",
+  "take": 1
+ },
+ "99a2e15e": {
+  "who": "hughes",
+  "say": "Never. Who would believe an old lady? But I have never forgotten that night.",
+  "mood": "ask",
+  "take": 1
+ },
+ "9aef05a3": {
+  "who": "priya",
+  "say": "Can you help me? A delivery just arrived, and I’m alone today.",
+  "mood": "ask",
+  "take": 1
+ },
+ "9c504373": {
+  "who": "stranger",
+  "say": "Did Mr Moss move?",
+  "mood": "ask",
+  "take": 1
+ },
+ "9c58b5a5": {
+  "who": "hughes",
+  "say": "But… yesterday he was behind the roses. And today he’s next to the birdbath.",
+  "mood": "warm",
+  "take": 1
+ },
+ "9edaba77": {
+  "who": "stranger",
+  "say": "Listen! The radio is working. Someone is talking!",
+  "mood": "excited",
+  "take": 1
+ },
+ "9f38e6de": {
+  "who": "stranger",
+  "say": "I remember others. Many small lights, like me.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "a0588c9a": {
+  "who": "voice",
+  "say": "Friday, midnight, the highest place. We will see your light.",
+  "mood": "radio",
+  "take": 2
+ },
+ "a07130c9": {
+  "who": "moss",
+  "say": "Yes. And we will need a high place. Very high.",
+  "mood": "warm",
   "take": 1
  },
  "a39c10f2": {
@@ -275,16 +839,88 @@
   "mood": "ask",
   "take": 1
  },
+ "a59fd541": {
+  "who": "stranger",
+  "say": "I am learning your English very fast.",
+  "mood": "wonder",
+  "take": 1
+ },
  "a7ba28d3": {
   "who": "narrator",
   "say": "Something came down in the garden.",
   "mood": "teach",
   "take": 1
  },
+ "aa59f1c4": {
+  "who": "priya",
+  "say": "Only Mrs Hughes has got roses on Linden Lane. At No. 9.",
+  "mood": "warm",
+  "take": 3
+ },
+ "ac0bd37a": {
+  "who": "hughes",
+  "say": "That coat! Yes! He had two hats. One is on his head. The other one is on yours!",
+  "mood": "excited",
+  "take": 1
+ },
  "ac770dbd": {
   "who": "narrator",
   "say": "There was a spark in Tom’s teapot.",
   "mood": "teach",
+  "take": 1
+ },
+ "ae147c52": {
+  "who": "sam",
+  "say": "No. Nobody. The street was empty. It was very quiet.",
+  "mood": "gentle",
+  "take": 1
+ },
+ "afba59f9": {
+  "who": "hughes",
+  "say": "A light? Oh, lots of things fall in my garden. Leaves, apples, cats…",
+  "mood": "ask",
+  "take": 1
+ },
+ "aff83210": {
+  "who": "stranger",
+  "say": "Priya’s shop. The walking light went there.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "affed9cd": {
+  "who": "voice",
+  "say": "Aster, we are waiting for you. Remember the way home.",
+  "mood": "radio",
+  "take": 1
+ },
+ "b0bb6553": {
+  "who": "stranger",
+  "say": "The others are coming on Friday, at midnight. I can feel it.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "b23b31f5": {
+  "who": "hughes",
+  "say": "Yes. He lived at No. 1 for a year. Your house, dear. He was my best friend.",
+  "mood": "warm",
+  "take": 1
+ },
+ "b3112c9f": {
+  "who": "stranger",
+  "say": "It is a good plan.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "b54b911b": {
+  "who": "sam",
+  "say": "On the back seat. But there’s one more thing. I didn’t see just one light that night.",
+  "mood": "warm",
+  "take": 3
+ },
+ "b5bad1a3": {
+  "who": "sam",
+  "say": "And you? Where were you on Monday night?",
+  "mood": "ask",
   "take": 1
  },
  "b61d2b99": {
@@ -311,16 +947,70 @@
   "mood": "ask",
   "take": 1
  },
+ "ba7d9983": {
+  "who": "tom",
+  "say": "Show us!",
+  "mood": "excited",
+  "take": 1
+ },
+ "ba9f425d": {
+  "who": "stranger",
+  "say": "Thank you. People on Linden Lane do a lot of things.",
+  "mood": "wonder",
+  "take": 1
+ },
  "bcc61336": {
   "who": "stranger",
   "say": "Oh! It is very small. And that? Up there?",
   "mood": "ask",
   "take": 1
  },
+ "bf195725": {
+  "who": "sam",
+  "say": "This one did. Like an old man with a lantern.",
+  "mood": "warm",
+  "take": 1
+ },
  "bf202cf0": {
   "who": "stranger",
   "say": "Stars. Yes… I think I know them too.",
   "mood": "wonder",
+  "take": 1
+ },
+ "c02ce9dc": {
+  "who": "narrator",
+  "say": "The radio said a name: Aster.",
+  "mood": "teach",
+  "take": 1
+ },
+ "c06b14ea": {
+  "who": "hughes",
+  "say": "Tea! Who wants tea? I’ll put the kettle on.",
+  "mood": "ask",
+  "take": 1
+ },
+ "c06eae47": {
+  "who": "sam",
+  "say": "I called Priya. She wants to talk to you.",
+  "mood": "warm",
+  "take": 1
+ },
+ "c21440f8": {
+  "who": "stranger",
+  "say": "My seventh spark. It came back with my name.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "c2377f8f": {
+  "who": "hughes",
+  "say": "Were they? Oh. I forget things. I’m old.",
+  "mood": "ask",
+  "take": 1
+ },
+ "c24cc1a0": {
+  "who": "moss",
+  "say": "It is. Now, a question for me. Am I going to go home too?",
+  "mood": "ask",
   "take": 1
  },
  "c3c242f1": {
@@ -341,17 +1031,41 @@
   "mood": "ask",
   "take": 1
  },
+ "c80740eb": {
+  "who": "tom",
+  "say": "Early! Lucky you. Mrs Hughes, what about you?",
+  "mood": "ask",
+  "take": 1
+ },
+ "c85378e4": {
+  "who": "stranger",
+  "say": "Mr Moss! You are awake!",
+  "mood": "excited",
+  "take": 1
+ },
  "ca911042": {
   "who": "stranger",
   "say": "I think so. But I am very cold.",
   "mood": "wonder",
   "take": 1
  },
+ "ce242711": {
+  "who": "sam",
+  "say": "Then I saw it. A light. It moved across the sky and dropped behind the houses.",
+  "mood": "warm",
+  "take": 5
+ },
  "ceb74faf": {
   "who": "tom",
   "say": "In the big blue teapot. I make fifty cups a day in it.",
   "mood": "warm",
   "take": 1
+ },
+ "cf455585": {
+  "who": "sam",
+  "say": "It stayed warm all week. I used it as a night light.",
+  "mood": "warm",
+  "take": 2
  },
  "cf795f58": {
   "who": "stranger",
@@ -365,10 +1079,112 @@
   "mood": "ask",
   "take": 1
  },
+ "d2ad9222": {
+  "who": "stranger",
+  "say": "Yes. She knows something.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "d2e5fc73": {
+  "who": "stranger",
+  "say": "And twelve sparks. I have got eight.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "d33b8a21": {
+  "who": "voice",
+  "say": "Our old friend is sleeping in that garden. Wake him gently.",
+  "mood": "radio",
+  "take": 1
+ },
+ "d428a580": {
+  "who": "voice",
+  "say": "The other light is old. It stopped here a long time ago.",
+  "mood": "radio",
+  "take": 1
+ },
+ "d5dadc72": {
+  "who": "priya",
+  "say": "Four pounds. And do you want any candles? Oh wait, I haven’t got any!",
+  "mood": "ask",
+  "take": 1
+ },
+ "d6a25d77": {
+  "who": "tom",
+  "say": "Aster! Beautiful name. Welcome to Linden Lane, Aster.",
+  "mood": "excited",
+  "take": 1
+ },
+ "d8de1ecc": {
+  "who": "narrator",
+  "say": "Someone paid with coins from 1966.",
+  "mood": "teach",
+  "take": 1
+ },
+ "d9389a9e": {
+  "who": "priya",
+  "say": "Hello, Aster!",
+  "mood": "excited",
+  "take": 1
+ },
  "da30b639": {
   "who": "tom",
   "say": "What…?! There’s a little light in my teapot!",
   "mood": "ask",
+  "take": 1
+ },
+ "dadfc4a9": {
+  "who": "stranger",
+  "say": "This coat?",
+  "mood": "ask",
+  "take": 2
+ },
+ "db206a2e": {
+  "who": "stranger",
+  "say": "Look. I took some photos today, with an old camera from the shed.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "db890709": {
+  "who": "stranger",
+  "say": "And my sixth spark. It was in front of your gnome.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "dcc8b175": {
+  "who": "hughes",
+  "say": "Come for tea tomorrow. All of you. I’ve got a story to tell.",
+  "mood": "warm",
+  "take": 2
+ },
+ "de6ac01b": {
+  "who": "priya",
+  "say": "Brilliant! Thank you. You’re faster than my nephew.",
+  "mood": "excited",
+  "take": 1
+ },
+ "de706645": {
+  "who": "voice",
+  "say": "We can see you. Ask the night bus driver. He saw us.",
+  "mood": "radio",
+  "take": 1
+ },
+ "df707926": {
+  "who": "stranger",
+  "say": "Walked? Lights don’t walk.",
+  "mood": "ask",
+  "take": 1
+ },
+ "e0fa995f": {
+  "who": "sam",
+  "say": "Lucky you. I stayed on the bus and waited.",
+  "mood": "warm",
+  "take": 1
+ },
+ "e1c0d1ae": {
+  "who": "stranger",
+  "say": "I don’t know. But I promise I will find them.",
+  "mood": "wonder",
   "take": 1
  },
  "e3766fb3": {
@@ -377,10 +1193,22 @@
   "mood": "wonder",
   "take": 1
  },
+ "e681ed5c": {
+  "who": "sam",
+  "say": "The second one was on the street. A small light. It walked slowly to Priya’s shop.",
+  "mood": "warm",
+  "take": 1
+ },
  "e69a47b7": {
   "who": "stranger",
   "say": "Where is my sparks? Are they far?",
   "mood": "ask",
+  "take": 1
+ },
+ "e72d67fc": {
+  "who": "hughes",
+  "say": "No, I looked in my bag. Oh, I don’t know. Let’s look in the garden.",
+  "mood": "warm",
   "take": 1
  },
  "e7bcea94": {
@@ -395,6 +1223,24 @@
   "mood": "ask",
   "take": 1
  },
+ "ead32b08": {
+  "who": "stranger",
+  "say": "Today I am knowing a lot of new words.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "eb8dad72": {
+  "who": "tom",
+  "say": "Hmm. Your lights were on at three in the morning, Mrs Hughes.",
+  "mood": "warm",
+  "take": 1
+ },
+ "eea52227": {
+  "who": "hughes",
+  "say": "And I have kept this for sixty years. He gave it to me.",
+  "mood": "warm",
+  "take": 1
+ },
  "eebbe420": {
   "who": "tom",
   "say": "No… it doesn’t. Never. Hang on, let me look inside.",
@@ -407,16 +1253,70 @@
   "mood": "ask",
   "take": 1
  },
+ "f469c71a": {
+  "who": "hughes",
+  "say": "Neither have I, love. And I lived it.",
+  "mood": "warm",
+  "take": 1
+ },
+ "f56559bc": {
+  "who": "stranger",
+  "say": "This hat is not mine. I found it. It belongs to someone.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "f648eeca": {
+  "who": "sam",
+  "say": "I saw two.",
+  "mood": "warm",
+  "take": 1
+ },
+ "f7de4ed4": {
+  "who": "sam",
+  "say": "Then the lights on the bus went off. All of them.",
+  "mood": "warm",
+  "take": 6
+ },
  "f853effd": {
   "who": "tom",
   "say": "Tea with milk. Good choice. You know, my tea is always hot now. It’s strange.",
   "mood": "warm",
   "take": 1
  },
+ "f8e705ae": {
+  "who": "hughes",
+  "say": "A light came down. And in the morning, there was a little man in a big hat in my garden.",
+  "mood": "warm",
+  "take": 1
+ },
+ "f940b780": {
+  "who": "stranger",
+  "say": "I remember why I came. I wanted to hear you talk.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "f9ea8d2f": {
+  "who": "stranger",
+  "say": "Nine! This one was inside your radio all this time.",
+  "mood": "excited",
+  "take": 1
+ },
  "fa3f139c": {
   "who": "tom",
   "say": "Ha! Oh, a voice message from Mrs Hughes. She’s my best customer.",
   "mood": "excited",
+  "take": 1
+ },
+ "fa9dc1d3": {
+  "who": "sam",
+  "say": "Me? No way. I stayed on my bus and locked the doors!",
+  "mood": "ask",
+  "take": 1
+ },
+ "fadd9f66": {
+  "who": "hughes",
+  "say": "His light was too weak to go home. So he decided to stay. And to sleep, in my garden, near me.",
+  "mood": "gentle",
   "take": 1
  },
  "fbd94393": {
@@ -431,6 +1331,12 @@
   "mood": "wonder",
   "take": 1
  },
+ "fd27a9f7": {
+  "who": "hughes",
+  "say": "Don’t be silly, dear. Gnomes don’t move.",
+  "mood": "warm",
+  "take": 1
+ },
  "fd281645": {
   "who": "stranger",
   "say": "Look! Your small animal is looking at the gate. Is that a spark?",
@@ -440,6 +1346,12 @@
  "fe486477": {
   "who": "stranger",
   "say": "Have I… what? Hungry?",
+  "mood": "ask",
+  "take": 1
+ },
+ "fe5bf549": {
+  "who": "hughes",
+  "say": "Me? I didn’t see anything, dears. I was asleep.",
   "mood": "ask",
   "take": 1
  }

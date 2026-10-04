@@ -1,0 +1,446 @@
+{
+ "07eb6e8b": {
+  "who": "stranger",
+  "say": "And Tom make very good tea.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "0a31dcaa": {
+  "who": "stranger",
+  "say": "And I am building an antenna. With a fork.",
+  "mood": "wonder",
+  "take": 2
+ },
+ "0ac434f5": {
+  "who": "stranger",
+  "say": "Then we need Sam.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "0af66c80": {
+  "who": "tom",
+  "say": "Your spark? What are you, a firefly?",
+  "mood": "ask",
+  "take": 1
+ },
+ "0e1919a3": {
+  "who": "tom",
+  "say": "Glow? I don’t know. I don’t come here at night.",
+  "mood": "ask",
+  "take": 1
+ },
+ "10421f92": {
+  "who": "stranger",
+  "say": "Look. This is my lantern. It has got room for twelve sparks.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "108f0656": {
+  "who": "stranger",
+  "say": "Three sparks! Thank you, Mimi. You are a very clever cat.",
+  "mood": "excited",
+  "take": 1
+ },
+ "108fffe1": {
+  "who": "tom",
+  "say": "Drinks? Who drinks? You?",
+  "mood": "ask",
+  "take": 1
+ },
+ "112763d7": {
+  "who": "stranger",
+  "say": "Oh. Hello. Excuse me.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "1b28499d": {
+  "who": "stranger",
+  "say": "What do I do? I look for sparks. But now…",
+  "mood": "ask",
+  "take": 1
+ },
+ "241f05e1": {
+  "who": "stranger",
+  "say": "Sorry. Tom makes very good tea. Even I know that.",
+  "mood": "gentle",
+  "take": 1
+ },
+ "243abef3": {
+  "who": "stranger",
+  "say": "Mimi. I like Mimi.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "25f1fa43": {
+  "who": "stranger",
+  "say": "Where am I? Is this a garden?",
+  "mood": "ask",
+  "take": 1
+ },
+ "2965900b": {
+  "who": "stranger",
+  "say": "Thank you. It is warm. A little big, but warm.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "2d5260b0": {
+  "who": "tom",
+  "say": "Sam! Of course. He comes here at six every morning, after work.",
+  "mood": "excited",
+  "take": 1
+ },
+ "2fbf191a": {
+  "who": "stranger",
+  "say": "Thank you. It is a little big.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "31ea2772": {
+  "who": "tom",
+  "say": "So, what do you drink? Tea? Coffee?",
+  "mood": "ask",
+  "take": 1
+ },
+ "32f53aa3": {
+  "who": "tom",
+  "say": "So, where do you work?",
+  "mood": "ask",
+  "take": 1
+ },
+ "35128354": {
+  "who": "stranger",
+  "say": "What is your name?",
+  "mood": "ask",
+  "take": 1
+ },
+ "365d00ae": {
+  "who": "stranger",
+  "say": "I look for sparks. That is my work.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "37bdcef5": {
+  "who": "voice",
+  "say": "Can you hear us? Look for your next spark near the tea.",
+  "mood": "radio",
+  "take": 1
+ },
+ "424671db": {
+  "who": "stranger",
+  "say": "Good night. Wait… listen. Your radio.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "4277d389": {
+  "who": "stranger",
+  "say": "Oh! Hello. Sorry. Am I making a noise?",
+  "mood": "ask",
+  "take": 1
+ },
+ "43083a9b": {
+  "who": "stranger",
+  "say": "Maybe it is in my sparks.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "4e1745af": {
+  "who": "stranger",
+  "say": "I don’t drink tea. I drink light.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "5106db0b": {
+  "who": "tom",
+  "say": "At six. Sam’s asleep now, but he comes in every morning at six.",
+  "mood": "gentle",
+  "take": 1
+ },
+ "573feb62": {
+  "who": "stranger",
+  "say": "But Mimi isn’t sleeping either. Look. What is she doing?",
+  "mood": "ask",
+  "take": 1
+ },
+ "57ce8aa1": {
+  "who": "stranger",
+  "say": "Does the teapot glow at night?",
+  "mood": "ask",
+  "take": 1
+ },
+ "62e08433": {
+  "who": "stranger",
+  "say": "The moon! I know the moon. And those? The small lights?",
+  "mood": "ask",
+  "take": 1
+ },
+ "6deb0f62": {
+  "who": "stranger",
+  "say": "But now it is empty. It has got no sparks.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "6e6be900": {
+  "who": "stranger",
+  "say": "My spark! Thank you, Tom.",
+  "mood": "excited",
+  "take": 2
+ },
+ "711ca0ee": {
+  "who": "tom",
+  "say": "Poor thing. Hmm, wait. One of my regulars saw a light in the sky that night.",
+  "mood": "gentle",
+  "take": 1
+ },
+ "74ddad99": {
+  "who": "stranger",
+  "say": "May I stay in your garden tonight?",
+  "mood": "ask",
+  "take": 1
+ },
+ "752b19f9": {
+  "who": "stranger",
+  "say": "A phone? What is that?",
+  "mood": "ask",
+  "take": 1
+ },
+ "7946a134": {
+  "who": "hughes",
+  "say": "Tom, love! What time does the café close today? I want a cake.",
+  "mood": "ask",
+  "take": 1
+ },
+ "79909a93": {
+  "who": "tom",
+  "say": "Nice. And your friend? Does it work?",
+  "mood": "ask",
+  "take": 1
+ },
+ "7a026ee1": {
+  "who": "tom",
+  "say": "Morning! Who’s your little friend?",
+  "mood": "ask",
+  "take": 1
+ },
+ "7b29eea6": {
+  "who": "stranger",
+  "say": "And thank you, small animal.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "7eb72aea": {
+  "who": "stranger",
+  "say": "Have you got a lantern?",
+  "mood": "ask",
+  "take": 1
+ },
+ "81b1bd69": {
+  "who": "tom",
+  "say": "Ha! Hello, stranger. Nice hat.",
+  "mood": "excited",
+  "take": 1
+ },
+ "840fe9d1": {
+  "who": "stranger",
+  "say": "Where are my sparks? Sorry. My English is from the radio. The radio is old.",
+  "mood": "ask",
+  "take": 1
+ },
+ "8875c2c3": {
+  "who": "voice",
+  "say": "Well done. Now watch your cat. She is playing with something bright.",
+  "mood": "radio",
+  "take": 1
+ },
+ "8fa72ecf": {
+  "who": "stranger",
+  "say": "Thank you. You are a very good teacher.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "929918eb": {
+  "who": "stranger",
+  "say": "Is this your coat? It was in the little wooden house in your garden.",
+  "mood": "ask",
+  "take": 1
+ },
+ "947224fb": {
+  "who": "stranger",
+  "say": "I remember music. It came from a little box.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "a39c10f2": {
+  "who": "stranger",
+  "say": "My name? I… I don’t know. I have forgotten it.",
+  "mood": "ask",
+  "take": 1
+ },
+ "a7ba28d3": {
+  "who": "narrator",
+  "say": "Something came down in the garden.",
+  "mood": "teach",
+  "take": 1
+ },
+ "ac770dbd": {
+  "who": "narrator",
+  "say": "There was a spark in Tom’s teapot.",
+  "mood": "teach",
+  "take": 1
+ },
+ "b61d2b99": {
+  "who": "stranger",
+  "say": "I am fixing your radio. I am trying to hear the voice again.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "b765b34e": {
+  "who": "stranger",
+  "say": "I don’t know what I am. That is my problem.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "b8438d15": {
+  "who": "stranger",
+  "say": "A spark! My lantern isn’t dark now. Thank you.",
+  "mood": "excited",
+  "take": 1
+ },
+ "b92f5587": {
+  "who": "stranger",
+  "say": "Always hot? Tom, where do you make the tea?",
+  "mood": "ask",
+  "take": 1
+ },
+ "bcc61336": {
+  "who": "stranger",
+  "say": "Oh! It is very small. And that? Up there?",
+  "mood": "ask",
+  "take": 1
+ },
+ "bf202cf0": {
+  "who": "stranger",
+  "say": "Stars. Yes… I think I know them too.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "c3c242f1": {
+  "who": "stranger",
+  "say": "I don’t sleep. I never sleep.",
+  "mood": "gentle",
+  "take": 1
+ },
+ "c5ca44aa": {
+  "who": "tom",
+  "say": "Ha! See you later, you two.",
+  "mood": "excited",
+  "take": 1
+ },
+ "c7882be8": {
+  "who": "tom",
+  "say": "Light. Right… And you? What do you drink in the morning?",
+  "mood": "ask",
+  "take": 1
+ },
+ "ca911042": {
+  "who": "stranger",
+  "say": "I think so. But I am very cold.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "ceb74faf": {
+  "who": "tom",
+  "say": "In the big blue teapot. I make fifty cups a day in it.",
+  "mood": "warm",
+  "take": 1
+ },
+ "cf795f58": {
+  "who": "stranger",
+  "say": "Something bright… Mimi, is that my spark?",
+  "mood": "ask",
+  "take": 1
+ },
+ "d1221d2d": {
+  "who": "stranger",
+  "say": "Does Mimi usually play at night?",
+  "mood": "ask",
+  "take": 1
+ },
+ "da30b639": {
+  "who": "tom",
+  "say": "What…?! There’s a little light in my teapot!",
+  "mood": "ask",
+  "take": 1
+ },
+ "e3766fb3": {
+  "who": "stranger",
+  "say": "I remember falling. It was cold, and very fast.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "e69a47b7": {
+  "who": "stranger",
+  "say": "Where is my sparks? Are they far?",
+  "mood": "ask",
+  "take": 1
+ },
+ "e7bcea94": {
+  "who": "tom",
+  "say": "Tea. Very strong, with three sugars. Every morning.",
+  "mood": "warm",
+  "take": 1
+ },
+ "ea65d53c": {
+  "who": "stranger",
+  "say": "Hungry? No. I don’t eat. I only need light.",
+  "mood": "ask",
+  "take": 1
+ },
+ "eebbe420": {
+  "who": "tom",
+  "say": "No… it doesn’t. Never. Hang on, let me look inside.",
+  "mood": "gentle",
+  "take": 1
+ },
+ "eed21e5d": {
+  "who": "stranger",
+  "say": "Can you help me? I want to learn the names of things.",
+  "mood": "ask",
+  "take": 1
+ },
+ "f853effd": {
+  "who": "tom",
+  "say": "Tea with milk. Good choice. You know, my tea is always hot now. It’s strange.",
+  "mood": "warm",
+  "take": 1
+ },
+ "fa3f139c": {
+  "who": "tom",
+  "say": "Ha! Oh, a voice message from Mrs Hughes. She’s my best customer.",
+  "mood": "excited",
+  "take": 1
+ },
+ "fbd94393": {
+  "who": "tom",
+  "say": "But who? I don’t remember. I know what people drink, not what they say!",
+  "mood": "ask",
+  "take": 1
+ },
+ "fc987228": {
+  "who": "stranger",
+  "say": "Thank you, Tom. Your tea is warm, and so are you.",
+  "mood": "wonder",
+  "take": 1
+ },
+ "fd281645": {
+  "who": "stranger",
+  "say": "Look! Your small animal is looking at the gate. Is that a spark?",
+  "mood": "ask",
+  "take": 1
+ },
+ "fe486477": {
+  "who": "stranger",
+  "say": "Have I… what? Hungry?",
+  "mood": "ask",
+  "take": 1
+ }
+}

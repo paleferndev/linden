@@ -26,9 +26,12 @@ const SEEDED = { v: 2, profile: { name: 'Alex', onboarded: true }, eps: { 1: { d
 let checks = 0, failed = 0;
 const ok = (cond, msg) => { checks++; if (!cond) { failed++; console.log('  FAIL', msg); } };
 
+// Windows can hold on to files a moment after the server that sent them closes, so clear the folder with retries.
+const clearOut = () => fs.rmSync(outDir, { recursive: true, force: true, maxRetries: 10, retryDelay: 300 });
 async function buildAs(tag) {
   process.env.LINDEN_BUILD_TAG = tag;
-  await build({ root, logLevel: 'silent', build: { outDir, emptyOutDir: true } });
+  clearOut();
+  await build({ root, logLevel: 'silent', build: { outDir, emptyOutDir: false } });
 }
 const serve = () => preview({ root, logLevel: 'silent', build: { outDir }, preview: { port: PORT, strictPort: true } });
 
@@ -162,7 +165,7 @@ console.log('offline + update');
 
 await browser.close();
 await server.close();
-fs.rmSync(outDir, { recursive: true, force: true });
+clearOut();
 
 console.log(`\n${checks} checks, ${failed} failed`);
 process.exit(failed ? 1 : 0);

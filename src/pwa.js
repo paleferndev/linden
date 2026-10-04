@@ -9,7 +9,7 @@ let pending = null;
 let installPrompt = null;
 const installListeners = new Set();
 
-export const isStandalone = () => matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+export const isStandalone = () => matchMedia('(display-mode: standalone), (display-mode: fullscreen)').matches || navigator.standalone === true;
 
 export function setBusy(value) {
   busy = value;

@@ -25,7 +25,6 @@ export function openFrame({ label, onExit }) {
   layer.hidden = false;
   document.body.classList.add('in-run');
   setBusy(true);
-  enterFullscreen();
   $('[data-exit]', layer).onclick = () => F?.onExit();
   $('[data-voice]', layer).onclick = e => {
     const p = Store.d.profile;
@@ -57,7 +56,6 @@ export function closeFrame() {
   layer.innerHTML = '';
   document.body.classList.remove('in-run');
   setBusy(false);
-  exitFullscreen();
 }
 
 export const frameOpen = () => !!F;
@@ -77,13 +75,4 @@ function onKey(e) {
     const b = $$('[data-enter]:not([disabled])', F.main).filter(x => x.offsetParent).pop();
     if (b) { e.preventDefault(); b.click(); }
   }
-}
-
-/* Android: episodes run full screen, the status bar comes back on the street. */
-const canFullscreen = () => /Android/i.test(navigator.userAgent) && matchMedia('(display-mode: standalone)').matches && document.fullscreenEnabled;
-function enterFullscreen() {
-  if (canFullscreen() && !document.fullscreenElement) document.documentElement.requestFullscreen?.({ navigationUI: 'hide' }).catch(() => {});
-}
-function exitFullscreen() {
-  if (document.fullscreenElement) document.exitFullscreen?.().catch(() => {});
 }

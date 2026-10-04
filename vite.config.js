@@ -31,7 +31,7 @@ export default defineConfig({
         lang: 'ro',
         start_url: '/linden/',
         scope: '/linden/',
-        display: 'standalone',
+        display: 'fullscreen',
         background_color: PAPER,
         theme_color: SKY,
         icons: [

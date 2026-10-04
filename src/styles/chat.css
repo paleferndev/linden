@@ -28,10 +28,11 @@
 .ava svg{width:100%;height:100%}
 
 /* ---------- the cover of an episode */
-.cover{position:absolute;inset:0;display:flex;flex-direction:column;overflow-y:auto}
+.cover{position:absolute;inset:0;display:flex;flex-direction:column;overflow:hidden}
+.cv-scroll{flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column}
 .cv-art{flex:none;aspect-ratio:36/25;max-height:46dvh;position:relative;overflow:hidden;background:var(--sky)}
 .cv-art svg{position:absolute;inset:0;width:100%;height:100%}
-.cv-body{flex:1;display:flex;flex-direction:column;gap:8px;padding:18px 18px calc(16px + env(safe-area-inset-bottom));animation:rise .4s var(--ease-out) both}
+.cv-body{flex:1;display:flex;flex-direction:column;gap:8px;padding:18px 18px 6px;animation:rise .4s var(--ease-out) both}
 .cv-learn{margin:2px 0 0;display:grid;gap:6px}
 .cv-learn div{display:grid;grid-template-columns:86px minmax(0,1fr);gap:8px;font-size:14px;line-height:1.35}
 .cv-learn dt{font:650 11.5px/1.6 var(--f-ui);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
@@ -40,7 +41,7 @@
 .cv-ro{font-size:15px;color:var(--muted);margin-top:-4px}
 .cv-prev{font-size:14.5px;line-height:1.45;border-radius:14px;background:var(--sunk);padding:10px 12px}
 .cv-prev b{font-weight:700}
-.cv-act{display:grid;gap:8px;margin-top:auto;padding-top:10px;position:sticky;bottom:0;background:linear-gradient(transparent,var(--paper) 10px)}
+.cv-act{flex:none;display:grid;gap:8px;padding:10px 18px calc(14px + env(safe-area-inset-bottom));background:var(--paper);border-top:1px solid var(--line)}
 
 /* ---------- the chat */
 .chat{position:absolute;inset:0;display:flex;flex-direction:column}

@@ -35,16 +35,17 @@ export function openEpisode(n, { onExit, demo = false }) {
   F.head(`Episodul ${n}`);
   F.bar(true);
   const prev = EP[n - 1];
-  F.main.innerHTML = `<div class="cover">
+  F.main.innerHTML = `<div class="cover"><div class="cv-scroll">
     ${artBox('ep:' + n, 'cv-art')}
     <div class="cv-body">
       <p class="kick">Episodul ${n} din 12${epDone(n) ? ' · terminat' : ''}</p>
       <h1 class="en">${esc(e.title)}</h1><p class="cv-ro">${esc(e.ro)}</p>
       ${prev ? `<p class="cv-prev"><b>Data trecută.</b> ${esc(prev.hook)}</p>` : ''}
       <dl class="cv-learn"><div><dt>Gramatică</dt><dd>${e.points.map(p => esc(GRAMMAR[p].title)).join(' · ')}</dd></div><div><dt>Joc</dt><dd>${esc(GAMES[e.game].title)}</dd></div></dl>
-      <div class="cv-act">${r ? `<button type="button" class="btn" data-go="resume" data-enter>Continuă</button><button type="button" class="btn ghost" data-go="start">De la început</button>`
+    </div></div>
+    <div class="cv-act">${r ? `<button type="button" class="btn" data-go="resume" data-enter>Continuă</button><button type="button" class="btn ghost" data-go="start">De la început</button>`
         : `<button type="button" class="btn" data-go="start" data-enter>${epDone(n) ? 'Joacă din nou' : 'Începe'}</button>`}</div>
-    </div></div>`;
+  </div>`;
   hook({ act: 'go', sel: '.cover [data-go]' });
   F.main.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => {
     unlockSpeech();

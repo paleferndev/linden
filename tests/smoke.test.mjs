@@ -72,6 +72,24 @@ console.log('first open');
   await ctx.close();
 }
 
+/* ---------- 1a. the first screen and an episode's cover fit a small phone: no scrolling, the button in view */
+console.log('fit');
+for (const [w, h] of [[320, 568], [360, 640]]) {
+  const { ctx, page, errors } = await newPage(browser, { viewport: { width: w, height: h } }, null);
+  await page.goto(URL_);
+  await page.locator('[data-start]').waitFor();
+  const first = await page.evaluate(() => ({ scroll: document.scrollingElement.scrollHeight - innerHeight, btn: document.querySelector('[data-start]').getBoundingClientRect().bottom, vh: innerHeight }));
+  ok(first.scroll <= 0 && first.btn <= first.vh, `${w}x${h} first screen: scrolls by ${first.scroll}px, button ends at ${Math.round(first.btn)} of ${first.vh}`);
+  await page.click('[data-start]');
+  await page.fill('#onbName', 'Alex');
+  await page.click('[data-form] button[type="submit"]');
+  await page.locator('.cover [data-go]').waitFor();
+  const cover = await page.evaluate(() => { const r = document.querySelector('.cover [data-go]').getBoundingClientRect(); return { top: r.top, bottom: r.bottom, vh: innerHeight }; });
+  ok(cover.bottom <= cover.vh && cover.top >= 0, `${w}x${h} episode cover: button at ${Math.round(cover.top)}–${Math.round(cover.bottom)} of ${cover.vh}`);
+  ok(errors.length === 0, `${w}x${h} fit: console errors: ${errors.join(' | ')}`);
+  await ctx.close();
+}
+
 /* ---------- 1b. the voice: a line of the story asks for its recording, and the recording is there */
 console.log('voice');
 {

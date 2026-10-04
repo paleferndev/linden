@@ -178,13 +178,14 @@
 .ver .leaf svg{width:16px;height:16px}
 
 /* ---------- first open */
-.onb{min-height:100dvh;display:flex;flex-direction:column;background:var(--paper);color:var(--ink)}
-.onb-sky{flex:1;background:var(--sky);padding-top:calc(40px + env(safe-area-inset-top));display:flex;flex-direction:column;gap:18px}
+.onb{height:100dvh;overflow:hidden;display:flex;flex-direction:column;background:var(--paper);color:var(--ink)}
+.onb.name{height:auto;min-height:100dvh;overflow:visible}
+.onb-sky{flex:1;min-height:0;background:var(--sky);padding-top:calc(32px + env(safe-area-inset-top));display:flex;flex-direction:column;gap:14px}
 .onb-sky .onb-lane{margin-top:auto}
 .wordmark{display:flex;align-items:center;gap:.12em;font:800 clamp(56px,15vw,104px)/.9 var(--f-en);letter-spacing:-.035em}
 .wordmark svg{width:.64em;height:.64em;flex:none;transform:rotate(-8deg);margin-top:.04em}
 .tagline{font:500 clamp(17px,2.4vw,20px)/1.4 var(--f-ui);margin-top:12px;opacity:.8}
-.onb-lane{height:clamp(230px,34vh,420px);overflow:hidden}
+.onb-lane{flex:1 1 auto;min-height:110px;max-height:420px;overflow:hidden}
 .onb-lane svg{width:100%;height:100%}
 .onb-body{flex:none;display:grid;padding-bottom:calc(24px + env(safe-area-inset-bottom));padding-top:20px;max-width:520px}
 .onb.name{justify-content:center}

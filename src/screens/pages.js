@@ -121,7 +121,7 @@ export function renderOnboarding(root, { onDone }) {
   root.innerHTML = `<div class="onb night" data-onb>
     <div class="onb-sky">
       <div class="wrap"><h1 class="wordmark">${LEAF}<span class="en">Linden</span></h1><p class="tagline">Engleză, câte un episod pe seară.</p></div>
-      <div class="onb-lane">${streetSVG('0 30 1440 370')}</div>
+      <div class="onb-lane">${streetSVG('0 30 1440 370', 'xMinYMax slice')}</div>
     </div>
     <div class="onb-body wrap"><button type="button" class="btn" data-start>Începe</button></div>
   </div>`;

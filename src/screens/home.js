@@ -19,11 +19,11 @@ export function litWindows() {
 }
 
 /** The street, with the Stranger by the door of No. 1 and the linden glowing a little more with every spark. */
-export function streetSVG(vb = '0 30 1440 370') {
+export function streetSVG(vb = '0 30 1440 370', par) {
   const n = epsDone();
   const over = n >= 12 ? '' : `<g transform="translate(200 246) scale(.52)">${stranger(n ? 'happy' : 'calm', { light: .08 + n / 12 * .9 })}</g>`;
   const mr = n >= 9 ? `<g transform="translate(1136 278) scale(.34)">${moss({ awake: n < 12 })}</g>` : '';
-  return laneSVG(litWindows(), { vb }).replace(/<\/svg>\s*$/, `<circle class="treeglow" cx="546" cy="206" r="${70 + n * 6}" fill="var(--spark)" opacity="${.06 + n * .02}"/>${[[530, 196], [560, 222], [536, 236], [566, 186], [512, 222], [548, 168]].slice(0, Math.ceil(n / 2)).map(([x, y]) => `<circle cx="${x}" cy="${y + 8}" r="2.6" fill="var(--spark)"/>`).join('')}${over}${mr}</svg>`);
+  return laneSVG(litWindows(), { vb, par }).replace(/<\/svg>\s*$/, `<circle class="treeglow" cx="546" cy="206" r="${70 + n * 6}" fill="var(--spark)" opacity="${.06 + n * .02}"/>${[[530, 196], [560, 222], [536, 236], [566, 186], [512, 222], [548, 168]].slice(0, Math.ceil(n / 2)).map(([x, y]) => `<circle cx="${x}" cy="${y + 8}" r="2.6" fill="var(--spark)"/>`).join('')}${over}${mr}</svg>`);
 }
 
 const greeting = () => { const h = new Date().getHours(); return h < 5 ? 'Bună seara' : h < 12 ? 'Bună dimineața' : h < 18 ? 'Bună ziua' : 'Bună seara'; };

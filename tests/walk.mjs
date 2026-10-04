@@ -15,11 +15,19 @@ import { EPISODES } from '../src/content/episodes.js';
 import { GAMES } from '../src/content/games.js';
 import { KINDS } from '../src/content/kinds.js';
 
-/** Tests never make a sound: the system voice and the little tones are replaced with silent stand-ins. */
+/** Tests never make a sound: the system voice, the recordings and the little tones are replaced with silent
+ *  stand-ins. Recordings asked for are listed in window.__played. */
 export function silence() {
   if (window.speechSynthesis) window.speechSynthesis.speak = u => setTimeout(() => u.onend?.(new Event('end')), 5);
   window.AudioContext = window.webkitAudioContext = undefined;
   navigator.vibrate = () => true;
+  window.__played = [];
+  HTMLMediaElement.prototype.play = function () {
+    const src = this.src || '';
+    if (!src.startsWith('data:')) window.__played.push(src);
+    setTimeout(() => this.dispatchEvent(new Event('ended')), 5);
+    return Promise.resolve();
+  };
 }
 
 const css = s => s.replace(/"/g, '\\"');

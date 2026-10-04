@@ -72,6 +72,23 @@ console.log('first open');
   await ctx.close();
 }
 
+/* ---------- 1b. the voice: a line of the story asks for its recording, and the recording is there */
+console.log('voice');
+{
+  const { ctx, page, errors } = await newPage(browser, { viewport: { width: 390, height: 844 } });
+  await page.goto(URL_.replace('?mute', '') + '#/episod/1');
+  await page.click('.cover [data-go]');
+  await page.locator('[data-next]').click();
+  const played = await page.waitForFunction(() => window.__played.find(s => s.includes('/voices/')), null, { timeout: 8000 }).then(h => h.jsonValue(), () => null);
+  ok(!!played, 'the first line of episode 1 did not ask for its recording');
+  if (played) {
+    const res = await page.evaluate(async u => { const r = await fetch(u); return [r.status, r.headers.get('content-type'), (await r.arrayBuffer()).byteLength]; }, played);
+    ok(res[0] === 200 && /audio/.test(res[1] || '') && res[2] > 2000, `recording ${played} is not served (${res.join(', ')})`);
+  }
+  ok(errors.length === 0, `voice: console errors: ${errors.join(' | ')}`);
+  await ctx.close();
+}
+
 /* ---------- 2. the tabs */
 for (const [w, h] of [[320, 568], [390, 844], [1280, 800]]) {
   for (const scheme of ['light', 'dark']) {

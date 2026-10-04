@@ -26,7 +26,7 @@ export function playEnding(host, n, { lamps, verbs, demo = false }) {
     <div class="en-foot"><button type="button" class="btn" data-done data-enter>Gata</button></div>
   </div>`;
   $$('[data-v]', host).forEach(b => b.addEventListener('click', () => say(b.dataset.v, { el: b })));
-  $('[data-mem]', host).addEventListener('click', e => say(e.currentTarget.querySelector('.en').textContent.replace(/[„”]/g, ''), { who: 'stranger', el: e.currentTarget }));
+  $('[data-mem]', host).addEventListener('click', ev => say(e.memory[0], { who: 'stranger', el: ev.currentTarget }));
   (async () => {
     const quick = reduceMotion();
     $('.en-panel', host).classList.add('show');

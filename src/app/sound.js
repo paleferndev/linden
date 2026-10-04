@@ -1,14 +1,52 @@
-import { speak, setAccent, muted, hush, unlockSpeech } from '../speech.js';
+import { speak, setAccent, muted, hush as hushSpeech, unlockSpeech as unlockSynth } from '../speech.js';
 import { CAST } from '../content/cast.js';
+import { VOICED } from '../content/voices.js';
+import { voiceKey } from './voicekey.js';
 import { Store } from './store.js';
 import { sub } from './ui.js';
 
 // Everything the app says goes through here: each person's voice at normal or slow speed, and a few small sounds.
+// Lines of the story are recordings (public/voices/, see scripts/voices/); anything without one, or a recording that
+// fails to play, is read by the phone's own voice.
 
 let slow = false;
 export const isSlow = () => slow;
 export const setSlow = v => { slow = !!v; };
-export { setAccent, hush, unlockSpeech, muted };
+export { setAccent, muted };
+
+// One player for every recording: iOS lets a page play sound only from an element first started inside a tap.
+const SILENT = 'data:audio/wav;base64,UklGRrQBAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YZABAACAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA';
+const player = typeof Audio !== 'undefined' ? new Audio() : null;
+let current = null;
+function stopFile() {
+  if (!player || !current) return;
+  const c = current;
+  current = null;
+  player.pause();
+  c(false);
+}
+function playFile(key, rate) {
+  return new Promise(resolve => {
+    stopFile();
+    let settled = false;
+    const done = ok => { if (settled) return; settled = true; if (current === done) current = null; resolve(ok); };
+    current = done;
+    player.onended = () => done(true);
+    player.onerror = () => done(false);
+    player.src = `${import.meta.env.BASE_URL}voices/${key}.mp3`;
+    player.preservesPitch = true;
+    player.playbackRate = rate;
+    player.play().catch(() => done(false));
+  });
+}
+/** Stops whatever is being said, recording or voice. */
+export function hush() { stopFile(); hushSpeech(); }
+/** Call from inside a tap: lets later lines play by themselves, on iOS too. */
+export function unlockSpeech() {
+  unlockSynth();
+  if (!player || muted) return;
+  try { player.src = SILENT; player.play().catch(() => {}); } catch {}
+}
 
 // Lines that play by themselves (a chat message) wait until the person has touched the page, and stay quiet when the
 // automatic voice is off in Profil. A tap on a message always plays it.
@@ -18,14 +56,20 @@ addEventListener('keydown', () => { touched = true; }, true);
 const activated = () => touched || navigator.userActivation?.hasBeenActive === true;
 export const autoVoice = () => Store.d.profile.autoVoice !== false;
 
-/** Speaks English as `who` (a CAST key). `el` gets .speaking while it plays. `auto`: a line nobody tapped. */
+/** Speaks English as `who` (a CAST key; none means the narrator). `el` gets .speaking while it plays.
+ *  `auto`: a line nobody tapped. `rate` below 0.9 asks for the slow version. */
 export function say(text, { who, el, auto = false, rate } = {}) {
   if (auto && (!activated() || !autoVoice())) return Promise.resolve(false);
   const v = CAST[who]?.voice || { pitch: 1, rate: .95 };
+  const slowly = slow || (rate != null && rate < 0.9);
+  const viaSpeech = () => speak(sub(text), { rate: rate ?? v.rate * (slow ? .72 : 1), pitch: v.pitch });
+  const key = voiceKey(who, text);
   el?.classList.add('speaking');
-  return speak(sub(text), { rate: rate ?? v.rate * (slow ? .72 : 1), pitch: v.pitch })
-    .then(ok => { el?.classList.remove('speaking'); return ok; });
+  const p = !muted && player && VOICED.has(key) ? playFile(key, slowly ? 0.78 : 1).then(ok => ok || viaSpeech()) : viaSpeech();
+  return p.then(ok => { el?.classList.remove('speaking'); return ok; });
 }
+/** Whether a line has a recording (for tests and the voice check). */
+export const isRecorded = (text, who) => VOICED.has(voiceKey(who, text));
 
 // The small sounds: a tap for a right answer, a rising run for a combo, a chime for a spark or a decoded signal, and
 // two notes when an episode ends. Nothing on a wrong answer.

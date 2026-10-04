@@ -7,6 +7,8 @@ import { GRAMMAR } from '../src/content/grammar.js';
 import { VERBS } from '../src/content/verbs.js';
 import { CAST } from '../src/content/cast.js';
 import { TASKS } from '../src/content/dsl.js';
+import { VOICED } from '../src/content/voices.js';
+import { voiceKey } from '../src/app/voicekey.js';
 
 let problems = 0;
 const bad = (where, msg) => { problems++; console.log(`  ${where}: ${msg}`); };
@@ -56,6 +58,14 @@ export function checkContent(log = console.log) {
     }
   }
   for (const v of VERBS) if (!v.ro || !v.ex) bad(`verb ${v.base}`, 'missing Romanian or example');
+  // every line of the episodes has a recording (lines without one fall back to the phone's voice)
+  const missing = [];
+  for (const e of EPISODES) for (const x of e.script) {
+    const who = x.t === 'signal' ? 'voice' : x.who;
+    if (['msg', 'voice', 'signal'].includes(x.t) && !VOICED.has(voiceKey(who, x.en))) missing.push(`episode ${e.n}: ${x.en}`);
+  }
+  log(`recordings: ${missing.length ? `${missing.length} lines of the episodes have none and use the phone's voice` : 'every line of the episodes has one'}`);
+  for (const m of missing.slice(0, 10)) log('  no recording: ' + m);
   return problems;
 }
 

@@ -1,13 +1,16 @@
-// The verb book: a page for every verb of the season, like a page in a grammar book. Opened by tapping a verb in the
-// chat, in the episode's ending or in the verb album. Romanian text marks English with `backticks`.
+// The verb book: a page for every verb of the season, read at a glance. Opened by tapping a verb in the chat, in the
+// episode's ending or in the verb album (screens/book.js). Romanian is kept short and marks English with `backticks`;
+// English marks the verb with **x**.
 //   s, ing: the he/she/it and -ing forms (past and past participle are in verbs.js)
-//   use: what it means and how it's used · ex: [tense, English, Romanian] × 5 (tenses: TENSES in screens/book.js)
-//   phrases: [English, Romanian] · traps: [wrong, right, why]: the mistakes Romanian speakers make
+//   means: [meaning, example] × 1–3 · tip: the one thing worth knowing (optional)
+//   ex: [tense, English, Romanian] × 5 (tenses: TENSES in screens/book.js) · phrases: [English, Romanian]
+//   traps: [wrong, right, why]: the mistakes Romanian speakers make
 
 export const VERB_BOOK = {
   be: {
     s: 'am / is / are', ing: 'being',
-    use: 'A fi. Cu `be` spui cine ești, cum ești, unde ești și câți ani ai: `I’m thirty`. La trecut are două forme: `was` (cu `I`, `he`, `she`, `it`) și `were` (cu `you`, `we`, `they`).',
+    means: [['a fi', 'The tea **is** too hot.'], ['a se afla', 'Priya **is** in her shop.']],
+    tip: 'Vârsta, foamea, frigul: cu `be`, nu `have`.',
     ex: [
       ['ps', 'Is Tom at the café today?', 'E Tom la cafenea azi?'],
       ['past', 'We were at home all evening.', 'Am fost acasă toată seara.'],
@@ -17,15 +20,16 @@ export const VERB_BOOK = {
     ],
     phrases: [['How are you?', 'Ce mai faci?'], ['I’m hungry.', 'Mi-e foame.'], ['Be careful!', 'Ai grijă.']],
     traps: [
-      ['I have thirty years.', 'I’m thirty.', 'Vârsta se spune cu `be`, nu cu `have`.'],
-      ['Where you are?', 'Where are you?', 'La întrebare, `are` trece înaintea subiectului.'],
-      ['Is very cold today.', 'It’s very cold today.', 'Propoziția are mereu subiect: aici, `it`.'],
+      ['I have thirty years.', 'I’m thirty.', 'Vârsta: cu `be`.'],
+      ['Where you are?', 'Where are you?', '`Are` trece înaintea lui `you`.'],
+      ['Is very cold today.', 'It’s very cold today.', 'Lipsește subiectul: `it`.'],
     ],
   },
 
   have: {
     s: 'has', ing: 'having',
-    use: 'A avea. Cu același sens, mai ales în vorbire, se spune des `have got`: `I’ve got a cat`, `she’s got a car`. `Have` apare și în expresii ca `have breakfast` (a lua micul dejun) sau `have a shower` (a face duș).',
+    means: [['a avea', 'I **have** two brothers.'], ['a mânca, a bea', 'We **have** lunch at one.']],
+    tip: 'În vorbire: `I’ve got` = `I have`.',
     ex: [
       ['ps', 'Mrs Hughes has got a garden with roses.', 'Mrs Hughes are o grădină cu trandafiri.'],
       ['past', 'We had breakfast at Tom’s café.', 'Am luat micul dejun la cafeneaua lui Tom.'],
@@ -35,15 +39,16 @@ export const VERB_BOOK = {
     ],
     phrases: [['have breakfast', 'a lua micul dejun'], ['have a shower', 'a face duș'], ['have a good time', 'a se distra'], ['Have a good weekend!', 'Weekend plăcut.']],
     traps: [
-      ['She have got a cat.', 'She has got a cat.', 'Cu `he`, `she`, `it`: `has got`.'],
-      ['Do you have got a pen?', 'Have you got a pen?', 'Ori `Have you got…?`, ori `Do you have…?`, nu amândouă.'],
-      ['I make a shower every morning.', 'I have a shower every morning.', 'Dușul se face cu `have`: `have a shower`.'],
+      ['She have got a cat.', 'She has got a cat.', 'Cu `she`: `has got`.'],
+      ['Do you have got a pen?', 'Have you got a pen?', 'Cu `got`, fără `do`.'],
+      ['I make a shower every morning.', 'I have a shower every morning.', 'Dușul: `have a shower`.'],
     ],
   },
 
   look: {
     s: 'looks', ing: 'looking',
-    use: 'A se uita, cu intenție: `look at` (la ceva), `look for` (a căuta). Cu un adjectiv înseamnă „a arăta”: `You look tired`.',
+    means: [['a se uita', 'Mimi **looks at** the birds.'], ['a arăta (bine, rău)', 'This cake **looks** good.']],
+    tip: 'Te uiți la ceva: `look at`. Cauți: `look for`.',
     ex: [
       ['ps', 'Tom looks tired today.', 'Tom arată obosit azi.'],
       ['pc', 'I’m looking for my keys.', 'Îmi caut cheile.'],
@@ -53,15 +58,16 @@ export const VERB_BOOK = {
     ],
     phrases: [['look at', 'a se uita la'], ['look for', 'a căuta'], ['look after', 'a avea grijă de'], ['look like', 'a semăna cu']],
     traps: [
-      ['Look this photo.', 'Look at this photo.', 'Te uiți la ceva: `look at`, cu `at`.'],
-      ['I’m looking after my keys.', 'I’m looking for my keys.', '„Mă uit după” = `look for`. `Look after` înseamnă „a avea grijă de”.'],
-      ['You look like tired.', 'You look tired.', 'Înaintea unui adjectiv, fără `like`: `look tired`.'],
+      ['Look this photo.', 'Look at this photo.', 'Lipsește `at`: `look at`.'],
+      ['I’m looking after my keys.', 'I’m looking for my keys.', '`Look after` = a avea grijă de.'],
+      ['You look like tired.', 'You look tired.', 'Înainte de adjectiv, fără `like`.'],
     ],
   },
 
   see: {
     s: 'sees', ing: 'seeing',
-    use: 'A vedea: ce observi cu ochii. `I see` înseamnă și „înțeleg”. Nu se pune la prezentul continuu: pentru ce vezi chiar acum se spune `I can see`.',
+    means: [['a vedea', 'I can **see** the sea.'], ['a înțelege', 'Oh, I **see**.']],
+    tip: 'Ce vezi acum: `I can see`, nu `I’m seeing`.',
     ex: [
       ['ps', 'Mimi sees everything from the window.', 'Mimi vede totul de la fereastră.'],
       ['can', 'I can’t see the moon tonight.', 'Nu văd luna în seara asta.'],
@@ -71,15 +77,16 @@ export const VERB_BOOK = {
     ],
     phrases: [['I see.', 'Înțeleg.'], ['See you later!', 'Ne vedem mai târziu.'], ['Let’s see.', 'Să vedem.']],
     traps: [
-      ['I am seeing the moon.', 'I can see the moon.', 'Ce vezi acum: `can see`, nu `am seeing`.'],
-      ['I saw at the picture.', 'I looked at the picture.', 'Când te uiți la ceva: `look at`. `See` nu se folosește cu `at`.'],
-      ['I have saw this film.', 'I have seen this film.', 'După `have` vine participiul: `seen`, nu `saw`.'],
+      ['I am seeing the moon.', 'I can see the moon.', 'Acum: `can see`.'],
+      ['I saw at the picture.', 'I looked at the picture.', 'Te uiți la ceva: `look at`.'],
+      ['I have saw this film.', 'I have seen this film.', 'După `have`: `seen`.'],
     ],
   },
 
   open: {
     s: 'opens', ing: 'opening',
-    use: 'A deschide: o ușă, o fereastră, o sticlă, o scrisoare. Despre magazine înseamnă „a se deschide”: `The café opens at seven`. Pentru „e deschis” se folosește adjectivul: `The shop is open`.',
+    means: [['a deschide', 'Mimi can’t **open** the door.'], ['a se deschide', 'Priya’s shop **opens** at eight.']],
+    tip: 'Lumina, televizorul: `turn on`, nu `open`.',
     ex: [
       ['ps', 'What time does the shop open?', 'La ce oră se deschide magazinul?'],
       ['past', 'Priya opened her shop ten years ago.', 'Priya și-a deschis magazinul acum zece ani.'],
@@ -89,14 +96,15 @@ export const VERB_BOOK = {
     ],
     phrases: [['The shop is open.', 'Magazinul e deschis.'], ['open a bank account', 'a deschide un cont în bancă'], ['open a present', 'a desface un cadou']],
     traps: [
-      ['Can you open the light?', 'Can you turn on the light?', 'Lumina și televizorul nu se „deschid”: `turn on`.'],
-      ['The shop is opened now.', 'The shop is open now.', 'Starea, „e deschis”: `is open`, fără -ed.'],
+      ['Can you open the light?', 'Can you turn on the light?', 'Lumina se aprinde: `turn on`.'],
+      ['The shop is opened now.', 'The shop is open now.', '„E deschis”: `is open`.'],
     ],
   },
 
   help: {
     s: 'helps', ing: 'helping',
-    use: 'A ajuta pe cineva: `help someone`, fără prepoziție. La ce ajuți: `help with` (`help me with my bags`). Poate urma un verb, cu sau fără `to`: `help me carry`, `help me to carry`.',
+    means: [['a ajuta', 'Can you **help** me **with** the bags?']],
+    tip: 'Fără prepoziție: `help me`. La ceva: `help with`.',
     ex: [
       ['ps', 'My sister often helps me with my English.', 'Sora mea mă ajută des la engleză.'],
       ['past', 'You helped me a lot yesterday. Thank you.', 'M-ai ajutat mult ieri. Mulțumesc.'],
@@ -106,15 +114,16 @@ export const VERB_BOOK = {
     ],
     phrases: [['Can I help you?', 'Cu ce vă pot ajuta?'], ['Help yourself.', 'Servește-te.'], ['I can’t help it.', 'Nu mă pot abține.']],
     traps: [
-      ['Can you help me at my homework?', 'Can you help me with my homework?', 'Ajuți pe cineva la ceva: `help with`, nu `at`.'],
-      ['Can you help to me?', 'Can you help me?', 'Fără prepoziție: `help me`.'],
-      ['Wait, I help you.', 'Wait, I’ll help you.', 'Când te oferi chiar acum: `I’ll help`.'],
+      ['Can you help me at my homework?', 'Can you help me with my homework?', 'La ceva: `help with`, nu `at`.'],
+      ['Can you help to me?', 'Can you help me?', 'Fără `to`: `help me`.'],
+      ['Wait, I help you.', 'Wait, I’ll help you.', 'Te oferi acum: `I’ll help`.'],
     ],
   },
 
   drink: {
     s: 'drinks', ing: 'drinking',
-    use: 'A bea. Fără complement înseamnă de obicei „a bea alcool”: `I don’t drink`. Când comanzi ceva se spune mai des `have`: `I’ll have a coffee, please`.',
+    means: [['a bea', 'Sam **drinks** a lot of coffee.'], ['a bea alcool', 'No wine for me. I don’t **drink**.']],
+    tip: 'Când comanzi: `I’ll have a coffee, please`.',
     ex: [
       ['ps', 'I don’t drink coffee in the evening.', 'Seara nu beau cafea.'],
       ['pc', 'Mimi is drinking from my glass again.', 'Mimi bea iar din paharul meu.'],
@@ -125,14 +134,15 @@ export const VERB_BOOK = {
     phrases: [['something to drink', 'ceva de băut'], ['go for a drink', 'a ieși la un pahar'], ['Drink up.', 'Bea tot.']],
     traps: [
       ['I drinked all the milk.', 'I drank all the milk.', '`Drink` e neregulat: `drank`.'],
-      ['I have drank the tea.', 'I have drunk the tea.', 'După `have` vine participiul: `drunk`.'],
-      ['I drink a pill every morning.', 'I take a pill every morning.', 'Pastilele se iau: `take`, nu `drink`.'],
+      ['I have drank the tea.', 'I have drunk the tea.', 'După `have`: `drunk`.'],
+      ['I drink a pill every morning.', 'I take a pill every morning.', 'Pastilele se iau: `take`.'],
     ],
   },
 
   like: {
     s: 'likes', ing: 'liking',
-    use: 'A-i plăcea. În engleză subiectul e persoana căreia îi place: „îmi place cafeaua” = `I like coffee`. După `like` vine des un verb cu -ing (`I like reading`); nu se pune la prezentul continuu.',
+    means: [['a-i plăcea', 'I **like** your coat.'], ['a vrea (politicos)', 'I**’d like** two tickets, please.']],
+    tip: '„Îmi place cafeaua” = `I like coffee`.',
     ex: [
       ['ps', 'My brother doesn’t like cats.', 'Fratelui meu nu-i plac pisicile.'],
       ['past', 'Did you like the film?', 'Ți-a plăcut filmul?'],
@@ -142,15 +152,16 @@ export const VERB_BOOK = {
     ],
     phrases: [['Would you like some tea?', 'Vrei niște ceai?'], ['I’d like a coffee, please.', 'Aș vrea o cafea, vă rog.'], ['I like it here.', 'Îmi place aici.']],
     traps: [
-      ['I like very much tea.', 'I like tea very much.', '`Very much` nu stă între verb și complement: vine la sfârșit.'],
-      ['Do you like?', 'Do you like it?', '`Like` cere complement: `Do you like it?`'],
-      ['She doesn’t likes milk.', 'She doesn’t like milk.', 'După `doesn’t`, verbul e fără -s.'],
+      ['I like very much tea.', 'I like tea very much.', '`Very much` vine la sfârșit.'],
+      ['Do you like?', 'Do you like it?', 'Lipsește complementul: `it`.'],
+      ['She doesn’t likes milk.', 'She doesn’t like milk.', 'După `doesn’t`, fără `-s`.'],
     ],
   },
 
   want: {
     s: 'wants', ing: 'wanting',
-    use: 'A vrea; cu alt verb vine `to`: `I want to go home`. Când vrei ca altcineva să facă ceva: `I want you to stay`. Când ceri ceva într-un magazin, `I’d like` sună mai politicos.',
+    means: [['a vrea', 'Mimi **wants** her dinner.']],
+    tip: '„Vreau să stai” = `I want you to stay`.',
     ex: [
       ['ps', 'What do you want for dinner?', 'Ce vrei la cină?'],
       ['past', 'Sorry, I didn’t want to wake you.', 'Scuze, n-am vrut să te trezesc.'],
@@ -160,15 +171,16 @@ export const VERB_BOOK = {
     ],
     phrases: [['if you want', 'dacă vrei'], ['Do you want a lift?', 'Vrei să te duc cu mașina?'], ['I just wanted to say thank you.', 'Voiam doar să-ți mulțumesc.']],
     traps: [
-      ['I want that you stay.', 'I want you to stay.', 'Nu `want that`, ci `want someone to do something`.'],
-      ['I want go home.', 'I want to go home.', 'Între `want` și verb vine `to`.'],
-      ['No, I don’t want.', 'No, I don’t want to.', 'Când verbul nu se repetă, `to` rămâne: `I don’t want to`.'],
+      ['I want that you stay.', 'I want you to stay.', 'Fără `that`: `want you to`.'],
+      ['I want go home.', 'I want to go home.', 'Cu alt verb: `want to`.'],
+      ['No, I don’t want.', 'No, I don’t want to.', '`To` rămâne, chiar fără verb.'],
     ],
   },
 
   need: {
     s: 'needs', ing: 'needing',
-    use: 'A avea nevoie de ceva: `I need help`, fără `of`. Cu alt verb vine `to`: `I need to go`. Nu se pune la prezentul continuu.',
+    means: [['a avea nevoie de', 'I **need** a new phone.'], ['a trebui (să)', 'We **need to** leave at six.']],
+    tip: '„Am nevoie de” = `need`, fără `of`.',
     ex: [
       ['ps', 'Do you need anything from the shop?', 'Ai nevoie de ceva de la magazin?'],
       ['past', 'We needed help, so I called Tom.', 'Aveam nevoie de ajutor, așa că l-am sunat pe Tom.'],
@@ -178,14 +190,15 @@ export const VERB_BOOK = {
     ],
     phrases: [['You don’t need to.', 'Nu e nevoie.'], ['I need a break.', 'Am nevoie de o pauză.'], ['if you need anything', 'dacă ai nevoie de ceva']],
     traps: [
-      ['I have need of a pen.', 'I need a pen.', '„Am nevoie de” e un singur verb: `need`, fără `have` și fără `of`.'],
+      ['I have need of a pen.', 'I need a pen.', 'Un singur verb: `need`.'],
       ['I need go now.', 'I need to go now.', 'Cu alt verb: `need to`.'],
     ],
   },
 
   work: {
     s: 'works', ing: 'working',
-    use: 'A lucra, a munci: `work at` (un loc), `work for` (o firmă), `work as` (o meserie). Despre aparate înseamnă „a merge, a funcționa”: `The lift doesn’t work`.',
+    means: [['a lucra', 'My sister **works** in a hospital.'], ['a merge, a funcționa', 'The heating doesn’t **work**.']],
+    tip: 'Meseria: `work as`. Firma: `work for`.',
     ex: [
       ['ps', 'Priya works six days a week.', 'Priya lucrează șase zile pe săptămână.'],
       ['pc', 'My phone isn’t working again.', 'Iar nu-mi merge telefonul.'],
@@ -196,14 +209,15 @@ export const VERB_BOOK = {
     phrases: [['go to work', 'a merge la serviciu'], ['at work', 'la serviciu'], ['work hard', 'a munci din greu'], ['It doesn’t work.', 'Nu merge.']],
     traps: [
       ['I work like a teacher.', 'I work as a teacher.', 'Meseria: `work as`, nu `like`.'],
-      ['I go to the work at eight.', 'I go to work at eight.', 'Serviciul, fără `the`: `go to work`, `at work`.'],
-      ['The lift doesn’t function.', 'The lift doesn’t work.', 'Despre aparate se spune `work`; `function` sună prea tehnic.'],
+      ['I go to the work at eight.', 'I go to work at eight.', 'Fără `the`: `go to work`.'],
+      ['The lift doesn’t function.', 'The lift doesn’t work.', 'Aparatele: `work`, nu `function`.'],
     ],
   },
 
   make: {
     s: 'makes', ing: 'making',
-    use: 'A face, în sensul de a produce, a crea, a prepara: `make tea`, `make a cake`. Pentru activități și treburi în general se folosește `do`. Multe expresii cu `make` se învață ca atare.',
+    means: [['a face, a prepara', 'Tom **makes** very good tea.'], ['a produce, a construi', 'They **make** cars here.']],
+    tip: 'Ceai, prăjituri, greșeli: `make`. Teme, treburi: `do`.',
     ex: [
       ['ps', 'Who makes the coffee in your office?', 'Cine face cafeaua la voi la birou?'],
       ['pc', 'I’m making a cake for Sunday.', 'Fac un tort pentru duminică.'],
@@ -213,15 +227,16 @@ export const VERB_BOOK = {
     ],
     phrases: [['make a mistake', 'a greși'], ['make friends', 'a-și face prieteni'], ['make a decision', 'a lua o hotărâre'], ['make a phone call', 'a da un telefon']],
     traps: [
-      ['I make my homework in the evening.', 'I do my homework in the evening.', 'Temele se fac cu `do`: `do homework`.'],
-      ['I made a photo of the garden.', 'I took a photo of the garden.', 'Pozele se fac cu `take`: `take a photo`.'],
-      ['How much does it make?', 'How much is it?', '„Cât face?” se spune `How much is it?`'],
+      ['I make my homework.', 'I do my homework.', 'Temele: `do`.'],
+      ['I made a photo.', 'I took a photo.', 'Pozele: `take`.'],
+      ['How much does it make?', 'How much is it?', '„Cât face?” = `How much is it?`'],
     ],
   },
 
   do: {
     s: 'does', ing: 'doing',
-    use: 'A face, pentru activități și treburi în general: `do homework`, `do the shopping`. Ca verb auxiliar, `do` și `does` formează întrebarea și negația la prezentul simplu (`Do you work?`, `She doesn’t work`), iar `did` la trecut. Când e și verb principal, apare de două ori: `What do you do?`',
+    means: [['a face', 'What are you **doing**?'], ['în întrebări și negații', '**Do** you like tea? — No, I **don’t**.']],
+    tip: 'Teme, treburi: `do`. Greșeli: `make`.',
     ex: [
       ['ps', 'What do you do on Sundays?', 'Ce faci duminica?'],
       ['pc', 'I’m doing the washing-up.', 'Spăl vasele.'],
@@ -231,15 +246,16 @@ export const VERB_BOOK = {
     ],
     phrases: [['What do you do?', 'Cu ce te ocupi?'], ['do the cleaning', 'a face curat'], ['do your best', 'a face tot ce poți'], ['do some exercise', 'a face mișcare']],
     traps: [
-      ['Where you work?', 'Where do you work?', 'La întrebare, la prezentul simplu, ai nevoie de `do`.'],
-      ['Does she works here?', 'Does she work here?', 'După `does`, verbul e fără -s.'],
-      ['I did a mistake.', 'I made a mistake.', 'Greșeala se face cu `make`: `make a mistake`.'],
+      ['Where you work?', 'Where do you work?', 'Întrebarea, la prezent: cu `do`.'],
+      ['Does she works here?', 'Does she work here?', 'După `does`, fără `-s`.'],
+      ['I did a mistake.', 'I made a mistake.', 'Greșeala: `make a mistake`.'],
     ],
   },
 
   try: {
     s: 'tries', ing: 'trying',
-    use: 'A încerca. `Try to` + verb: faci un efort (`I’ll try to come`). `Try` + un lucru: îl guști sau îl probezi (`Try this cake`); hainele se probează cu `try on`.',
+    means: [['a încerca', 'Please **try to** come early.'], ['a gusta', '**Try** Tom’s carrot cake.']],
+    tip: 'Hainele se probează: `try on`.',
     ex: [
       ['ps', 'Mimi tries to catch birds every day.', 'Mimi încearcă în fiecare zi să prindă păsări.'],
       ['pc', 'I’m trying to sleep. Please be quiet.', 'Încerc să dorm. Te rog, fă liniște.'],
@@ -249,7 +265,7 @@ export const VERB_BOOK = {
     ],
     phrases: [['try on', 'a proba (haine)'], ['Try again.', 'Mai încearcă.'], ['try hard', 'a se strădui']],
     traps: [
-      ['I tryed to call you.', 'I tried to call you.', 'Consoană + `y`: la trecut `tried`.'],
+      ['I tryed to call you.', 'I tried to call you.', 'Consoană + `y`: `tried`.'],
       ['I try to come tomorrow.', 'I’ll try to come tomorrow.', 'Pentru viitor: `I’ll try`.'],
       ['Try to don’t worry.', 'Try not to worry.', 'Negația: `try not to`.'],
     ],
@@ -257,7 +273,8 @@ export const VERB_BOOK = {
 
   fix: {
     s: 'fixes', ing: 'fixing',
-    use: 'A repara ceva stricat: `fix the radio`, `fix a bike`. În vorbire se spune mai des decât `repair`. La `he`, `she`, `it`: `fixes`, cu -es.',
+    means: [['a repara', 'Can you **fix** my chair?'], ['a rezolva', 'We can **fix** this problem.']],
+    tip: 'În vorbire, mai des decât `repair`.',
     ex: [
       ['ps', 'My dad fixes everything in the house.', 'Tata repară tot prin casă.'],
       ['pc', 'Tom is fixing the coffee machine.', 'Tom repară aparatul de cafea.'],
@@ -267,14 +284,15 @@ export const VERB_BOOK = {
     ],
     phrases: [['fix a problem', 'a rezolva o problemă'], ['get something fixed', 'a da ceva la reparat'], ['It’s easy to fix.', 'Se repară ușor.']],
     traps: [
-      ['I fixed my phone at a shop.', 'I got my phone fixed at a shop.', 'Dacă l-a reparat altcineva: `get something fixed`.'],
-      ['He fixs bikes in his garage.', 'He fixes bikes in his garage.', 'După `x`, la `he`, `she`, `it` se adaugă -es: `fixes`.'],
+      ['I fixed my phone at a shop.', 'I got my phone fixed at a shop.', 'Dacă repară altcineva: `get it fixed`.'],
+      ['He fixs bikes in his garage.', 'He fixes bikes in his garage.', 'După `x`, cu `-es`: `fixes`.'],
     ],
   },
 
   build: {
     s: 'builds', ing: 'building',
-    use: 'A construi: o casă, un zid, un pod, un model din bucăți. Despre clădiri se folosește des la pasiv: `The house was built in 1900`.',
+    means: [['a construi', 'Who **built** this wall?']],
+    tip: 'Clădirile, des la pasiv: `was built`.',
     ex: [
       ['ps', 'Birds build their nests in spring.', 'Păsările își fac cuiburi primăvara.'],
       ['pc', 'They’re building a new school near us.', 'Construiesc o școală nouă lângă noi.'],
@@ -285,14 +303,15 @@ export const VERB_BOOK = {
     phrases: [['build a snowman', 'a face un om de zăpadă'], ['build a sandcastle', 'a face un castel de nisip'], ['build a fire', 'a face un foc']],
     traps: [
       ['My grandfather builded this house.', 'My grandfather built this house.', '`Build` e neregulat: `built`.'],
-      ['This house was build in 1900.', 'This house was built in 1900.', 'La pasiv, după `was` vine participiul: `built`.'],
-      ['We made a house in the village.', 'We built a house in the village.', 'Casa se construiește: `build`, nu `make`.'],
+      ['This house was build in 1900.', 'This house was built in 1900.', 'După `was`: `built`.'],
+      ['We made a house in the village.', 'We built a house in the village.', 'Casa se construiește: `build`.'],
     ],
   },
 
   watch: {
     s: 'watches', ing: 'watching',
-    use: 'A privi, a urmări ceva care se mișcă sau se schimbă: `watch TV`, `watch a film`, `watch a match`. Pentru o poză sau ceva care stă pe loc se spune `look at`. `Watch out` înseamnă „ai grijă”.',
+    means: [['a privi, a urmări', 'Sam **watches** football on Sundays.'], ['a avea grijă de', 'Can you **watch** the children tonight?']],
+    tip: 'Film, meci: `watch`. Poză: `look at`.',
     ex: [
       ['ps', 'Do you watch the news every evening?', 'Te uiți la știri în fiecare seară?'],
       ['pc', 'Mimi is watching the rain.', 'Mimi se uită la ploaie.'],
@@ -302,15 +321,16 @@ export const VERB_BOOK = {
     ],
     phrases: [['watch TV', 'a se uita la televizor'], ['Watch out!', 'Ai grijă.'], ['Watch your step.', 'Ai grijă pe unde calci.']],
     traps: [
-      ['I watched the photo.', 'I looked at the photo.', 'O poză stă pe loc: `look at`. `Watch` e pentru ce se mișcă.'],
-      ['We watched at TV all evening.', 'We watched TV all evening.', '`Watch` nu cere prepoziție: `watch TV`.'],
+      ['I watched the photo.', 'I looked at the photo.', 'Poza stă pe loc: `look at`.'],
+      ['We watched at TV all evening.', 'We watched TV all evening.', 'Fără prepoziție: `watch TV`.'],
       ['I looked at a film last night.', 'I watched a film last night.', 'Un film îl urmărești: `watch`.'],
     ],
   },
 
   carry: {
     s: 'carries', ing: 'carrying',
-    use: 'A căra, a duce ceva cu tine: în mâini, în brațe, în geantă (`carry a bag`, `carry a baby`). Pentru haine și ochelari, „a purta” e `wear`, nu `carry`.',
+    means: [['a căra, a duce', 'Let me **carry** your bag.'], ['a avea la tine', 'I never **carry** much money.']],
+    tip: 'Haine, ochelari: `wear`, nu `carry`.',
     ex: [
       ['ps', 'I always carry a book in my bag.', 'Am mereu o carte în geantă.'],
       ['pc', 'Why are you carrying an umbrella? It’s sunny.', 'De ce ai umbrelă la tine? E soare.'],
@@ -320,14 +340,15 @@ export const VERB_BOOK = {
     ],
     phrases: [['carry on', 'a continua'], ['carry a baby', 'a ține un copil în brațe'], ['carry the shopping', 'a căra cumpărăturile']],
     traps: [
-      ['I carry glasses.', 'I wear glasses.', 'Ochelarii și hainele se poartă: `wear`.'],
-      ['He carrys the bags.', 'He carries the bags.', 'Consoană + `y`: `carries`, `carried`.'],
+      ['I carry glasses.', 'I wear glasses.', 'Ochelarii se poartă: `wear`.'],
+      ['He carrys the bags.', 'He carries the bags.', 'Consoană + `y`: `carries`.'],
     ],
   },
 
   happen: {
     s: 'happens', ing: 'happening',
-    use: 'A se întâmpla. Subiectul e întâmplarea, nu omul: `It happened yesterday.` Cui i se întâmplă ceva: `happen to` cineva.',
+    means: [['a se întâmpla', 'It all **happened** very quickly.']],
+    tip: 'Cui i se întâmplă: `happen to`, nu `with`.',
     ex: [
       ['ps', 'It happens to everyone.', 'I se întâmplă oricui.'],
       ['pc', 'What’s happening in the street?', 'Ce se întâmplă pe stradă?'],
@@ -337,14 +358,15 @@ export const VERB_BOOK = {
     ],
     phrases: [['What happened?', 'Ce s-a întâmplat?'], ['What happened to you?', 'Ce ți s-a întâmplat?'], ['These things happen.', 'Se mai întâmplă.']],
     traps: [
-      ['It was happened yesterday.', 'It happened yesterday.', '`Happen` nu are pasiv: „s-a întâmplat” e simplu `happened`.'],
-      ['What happened with you?', 'What happened to you?', 'Ceva i se întâmplă cuiva: `happen to`, nu `with`.'],
-      ['What did happen?', 'What happened?', 'Când `what` e subiectul, întrebarea se face fără `did`.'],
+      ['It was happened yesterday.', 'It happened yesterday.', 'Nu are pasiv: doar `happened`.'],
+      ['What happened with you?', 'What happened to you?', 'Cuiva: `happen to`, nu `with`.'],
+      ['What did happen?', 'What happened?', '`What` e subiect: fără `did`.'],
     ],
   },
   stop: {
     s: 'stops', ing: 'stopping',
-    use: 'A (se) opri. Ceva se oprește singur (`The bus stops here.`) sau oprești tu ceva. Când nu mai faci un lucru: `stop` + verbul cu `-ing` (`stop talking`).',
+    means: [['a (se) opri', 'Sam **stops** the bus by the café.'], ['a nu mai face', 'The baby **stopped** crying.']],
+    tip: 'Nu mai faci ceva: `stop` + `-ing`.',
     ex: [
       ['ps', 'Does this bus stop near the station?', 'Autobuzul ăsta oprește lângă gară?'],
       ['imp', 'Please stop talking and listen.', 'Vă rog, nu mai vorbiți și ascultați.'],
@@ -354,14 +376,15 @@ export const VERB_BOOK = {
     ],
     phrases: [['Stop it!', 'Încetează.'], ['stop smoking', 'a se lăsa de fumat'], ['stop for a coffee', 'a se opri la o cafea']],
     traps: [
-      ['I stopped to smoke last year.', 'I stopped smoking last year.', 'Când te lași de ceva: `stop` + `-ing`. `Stop to smoke` înseamnă că te oprești ca să fumezi.'],
-      ['Can you stop the TV?', 'Can you turn off the TV?', 'Aparatele se opresc cu `turn off`, nu cu `stop`.'],
-      ['The bus stoped at the corner.', 'The bus stopped at the corner.', 'Vocală scurtă și o consoană la final: consoana se dublează (`stopped`, `stopping`).'],
+      ['I stopped to smoke last year.', 'I stopped smoking last year.', 'Te lași de ceva: `-ing`.'],
+      ['Can you stop the TV?', 'Can you turn off the TV?', 'Aparatele: `turn off`.'],
+      ['The bus stoped at the corner.', 'The bus stopped at the corner.', 'Se dublează `p`: `stopped`.'],
     ],
   },
   arrive: {
     s: 'arrives', ing: 'arriving',
-    use: 'A sosi, a ajunge undeva. Într-un oraș sau o țară: `arrive in` (`arrive in London`); într-un loc anume: `arrive at` (`arrive at the station`). Cu `home` nu se pune prepoziție: `arrive home`.',
+    means: [['a sosi, a ajunge', 'We **arrived** in London at night.']],
+    tip: 'Oraș, țară: `in`. Gară, hotel: `at`. Nu `to`.',
     ex: [
       ['ps', 'The train arrives at ten past six.', 'Trenul sosește la șase și zece.'],
       ['pc', 'Hurry up, the guests are arriving.', 'Grăbește-te, sosesc musafirii.'],
@@ -371,13 +394,15 @@ export const VERB_BOOK = {
     ],
     phrases: [['arrive home', 'a ajunge acasă'], ['arrive on time', 'a ajunge la timp'], ['arrive at work', 'a ajunge la serviciu']],
     traps: [
-      ['We arrived to the hotel at nine.', 'We arrived at the hotel at nine.', 'După `arrive` nu vine `to`: „la hotel” e `at the hotel`.'],
-      ['We arrived at Paris on Monday.', 'We arrived in Paris on Monday.', 'La orașe și țări: `arrive in`.'],
+      ['We arrived to the hotel at nine.', 'We arrived at the hotel at nine.', 'La hotel: `at`, nu `to`.'],
+      ['We arrived at Paris on Monday.', 'We arrived in Paris on Monday.', 'Orașe și țări: `in`.'],
+      ['We arrived to home late.', 'We arrived home late.', 'Cu `home`: fără prepoziție.'],
     ],
   },
   walk: {
     s: 'walks', ing: 'walking',
-    use: 'A merge pe jos. Spre un loc: `walk to` (`walk to work`); acasă: `walk home`, fără `to`. Plimbarea e `a walk`: `go for a walk`.',
+    means: [['a merge pe jos', 'Let’s **walk**. It’s not far.'], ['a plimba', 'I **walk** the dog every morning.']],
+    tip: 'Spre un loc: `walk to`. Acasă: `walk home`.',
     ex: [
       ['ps', 'I walk to work every day.', 'Merg pe jos la serviciu în fiecare zi.'],
       ['pc', 'I’m not walking in this rain.', 'Nu merg pe jos pe ploaia asta.'],
@@ -387,13 +412,14 @@ export const VERB_BOOK = {
     ],
     phrases: [['go for a walk', 'a ieși la plimbare'], ['walk the dog', 'a plimba câinele'], ['walk to school', 'a merge pe jos la școală']],
     traps: [
-      ['We walked to home.', 'We walked home.', 'Cu `home` nu se pune `to`: `walk home`.'],
-      ['Let’s make a walk.', 'Let’s go for a walk.', '„A face o plimbare” se spune `go for a walk`, nu `make a walk`.'],
+      ['We walked to home.', 'We walked home.', 'Cu `home`: fără `to`.'],
+      ['Let’s make a walk.', 'Let’s go for a walk.', 'Plimbarea: `go for a walk`.'],
     ],
   },
   call: {
     s: 'calls', ing: 'calling',
-    use: 'A suna pe cineva la telefon sau a chema pe cineva. Persoana vine direct după verb, fără prepoziție: `call Tom`. Mai înseamnă „a numi”: `We call her Mimi.`',
+    means: [['a suna', 'Tom **called** me this morning.'], ['a chema', '**Call** the children for dinner.'], ['a numi', 'We **call** the cat Mimi.']],
+    tip: 'Suni pe cineva: `call Tom`, fără `to`.',
     ex: [
       ['ps', 'My mum calls me every Sunday.', 'Mama mă sună în fiecare duminică.'],
       ['past', 'I called you twice yesterday.', 'Te-am sunat de două ori ieri.'],
@@ -403,13 +429,14 @@ export const VERB_BOOK = {
     ],
     phrases: [['call someone back', 'a suna pe cineva înapoi'], ['call a taxi', 'a chema un taxi'], ['What’s it called?', 'Cum se numește?']],
     traps: [
-      ['I called to Tom yesterday.', 'I called Tom yesterday.', 'Pe cine suni vine direct după `call`, fără `to`.'],
-      ['How do you call this in English?', 'What do you call this in English?', '„Cum îi spui?” se spune `What do you call…?`, nu `How`.'],
+      ['I called to Tom yesterday.', 'I called Tom yesterday.', 'Fără `to`: `call Tom`.'],
+      ['How do you call this in English?', 'What do you call this in English?', '„Cum îi spui?”: `What`, nu `How`.'],
     ],
   },
   stay: {
     s: 'stays', ing: 'staying',
-    use: 'A rămâne undeva sau a sta undeva o vreme: `stay at home`, `stay at a hotel`, `stay with friends`. Nu înseamnă „a sta jos” (`sit`) și nici „a locui” (`live`).',
+    means: [['a rămâne', 'Can you **stay** for dinner?'], ['a sta (o vreme)', 'We’re **staying** at a small hotel.']],
+    tip: 'A sta jos e `sit`. A locui e `live`.',
     ex: [
       ['ps', 'We usually stay with my aunt in summer.', 'Vara stăm de obicei la mătușa mea.'],
       ['past', 'I stayed at home all weekend.', 'Am stat acasă tot weekendul.'],
@@ -419,13 +446,14 @@ export const VERB_BOOK = {
     ],
     phrases: [['stay in bed', 'a sta în pat'], ['stay up late', 'a sta treaz până târziu'], ['stay in touch', 'a păstra legătura']],
     traps: [
-      ['I stay in London with my family.', 'I live in London with my family.', 'Unde locuiești: `live`. `Stay` e doar pentru o vreme.'],
-      ['Stay down, please.', 'Sit down, please.', '„Stai jos” se spune `sit down`. `Stay` înseamnă „a rămâne”.'],
+      ['I stay in London with my family.', 'I live in London with my family.', 'Unde locuiești: `live`.'],
+      ['Stay down, please.', 'Sit down, please.', '„Stai jos”: `sit down`.'],
     ],
   },
   buy: {
     s: 'buys', ing: 'buying',
-    use: 'A cumpăra. De la cineva: `buy from`; pentru cineva: `buy something for someone` sau `buy someone something`. Trecutul e neregulat: `bought`.',
+    means: [['a cumpăra', 'Tom **bought** a new coffee machine.']],
+    tip: '`Bought` = cumpărat. `Brought` = adus.',
     ex: [
       ['ps', 'I buy bread at Priya’s shop.', 'Cumpăr pâine de la magazinul lui Priya.'],
       ['past', 'I bought a new coat last week.', 'Mi-am cumpărat o haină nouă săptămâna trecută.'],
@@ -435,14 +463,15 @@ export const VERB_BOOK = {
     ],
     phrases: [['buy a ticket', 'a cumpăra un bilet'], ['buy someone a present', 'a-i cumpăra cuiva un cadou'], ['buy something online', 'a cumpăra ceva online']],
     traps: [
-      ['I buyed a jacket.', 'I bought a jacket.', '`Buy` e neregulat: `buy – bought – bought`.'],
-      ['I bought for my sister a present.', 'I bought my sister a present.', 'Persoana vine imediat după verb, sau la sfârșit cu `for`: `a present for my sister`.'],
-      ['I brought it for ten pounds.', 'I bought it for ten pounds.', '`Bought` e trecutul lui `buy`; `brought` vine de la `bring` (a aduce).'],
+      ['I buyed a jacket.', 'I bought a jacket.', 'Trecutul: `bought`.'],
+      ['I bought for my sister a present.', 'I bought my sister a present.', 'Întâi persoana, apoi lucrul.'],
+      ['I brought it for ten pounds.', 'I bought it for ten pounds.', 'Cumpărat: `bought`, nu `brought`.'],
     ],
   },
   sell: {
     s: 'sells', ing: 'selling',
-    use: 'A vinde. Cui vinzi: `sell something to someone` sau `sell someone something`. Prețul vine cu `for`: `sell it for ten pounds`.',
+    means: [['a vinde', 'Priya **sells** bread and milk.']],
+    tip: 'Prețul vine cu `for`: `for ten pounds`.',
     ex: [
       ['ps', 'The shop on the corner doesn’t sell stamps.', 'Magazinul din colț nu vinde timbre.'],
       ['pc', 'Our neighbours are selling their house.', 'Vecinii noștri își vând casa.'],
@@ -452,14 +481,15 @@ export const VERB_BOOK = {
     ],
     phrases: [['for sale', 'de vânzare'], ['sold out', 'epuizat, s-a vândut tot'], ['sell well', 'a se vinde bine']],
     traps: [
-      ['I selled my car.', 'I sold my car.', '`Sell` e neregulat: `sell – sold – sold`.'],
-      ['I sold my bike with fifty pounds.', 'I sold my bike for fifty pounds.', '„Cu cincizeci de lire” se spune `for fifty pounds`, nu `with`.'],
-      ['She sold to me a lamp.', 'She sold me a lamp.', 'Când persoana vine imediat după verb, nu se pune `to`: `sold me a lamp`.'],
+      ['I selled my car.', 'I sold my car.', 'Trecutul: `sold`.'],
+      ['I sold my bike with fifty pounds.', 'I sold my bike for fifty pounds.', 'Prețul: `for`, nu `with`.'],
+      ['She sold to me a lamp.', 'She sold me a lamp.', 'Persoana după verb: fără `to`.'],
     ],
   },
   cost: {
     s: 'costs', ing: 'costing',
-    use: 'A costa. Întrebi prețul cu `How much does it cost?` sau, mai simplu, `How much is it?`. Are aceeași formă la trecut și la participiu (`cost`) și nu se folosește la prezentul continuu.',
+    means: [['a costa', 'A coffee **costs** two pounds at Tom’s.']],
+    tip: 'Întrebi prețul: `How much is it?`',
     ex: [
       ['ps', 'How much does this lamp cost?', 'Cât costă lampa asta?'],
       ['past', 'My new phone cost a lot of money.', 'Telefonul meu nou a costat mulți bani.'],
@@ -469,14 +499,15 @@ export const VERB_BOOK = {
     ],
     phrases: [['How much is it?', 'Cât costă?'], ['cost a lot', 'a costa mult'], ['It doesn’t cost anything.', 'Nu costă nimic.']],
     traps: [
-      ['How much it costs?', 'How much does it cost?', 'La întrebare e nevoie de `does`; după el, `cost` e fără `-s`.'],
-      ['It costed ten pounds.', 'It cost ten pounds.', '`Cost` nu se schimbă: `cost – cost – cost`.'],
-      ['This coat costs very expensive.', 'This coat is very expensive.', '„Costă scump” se spune `is expensive` sau `costs a lot`.'],
+      ['How much it costs?', 'How much does it cost?', 'Întrebarea: cu `does`, fără `-s`.'],
+      ['It costed ten pounds.', 'It cost ten pounds.', 'Trecutul: tot `cost`.'],
+      ['This coat costs very expensive.', 'This coat is very expensive.', '„Costă scump”: `is expensive`.'],
     ],
   },
   pay: {
     s: 'pays', ing: 'paying',
-    use: 'A plăti. Suma, persoana sau factura vin direct după verb: `pay ten pounds`, `pay Tom`, `pay the bill`. Lucrul pe care îl cumperi vine cu `for`: `pay for the coffee`.',
+    means: [['a plăti', 'I’ll **pay** for the tickets.']],
+    tip: 'Ce cumperi: `pay for`. Nota, chiria: doar `pay`.',
     ex: [
       ['ps', 'I usually pay by card.', 'De obicei plătesc cu cardul.'],
       ['past', 'Who paid for the coffee?', 'Cine a plătit cafeaua?'],
@@ -486,13 +517,14 @@ export const VERB_BOOK = {
     ],
     phrases: [['pay the bill', 'a plăti nota'], ['pay attention', 'a fi atent'], ['pay someone back', 'a-i da cuiva banii înapoi']],
     traps: [
-      ['I paid the coffee.', 'I paid for the coffee.', 'Pentru lucrul cumpărat: `pay for`.'],
-      ['I payed ten pounds.', 'I paid ten pounds.', 'Trecutul se scrie `paid`, nu `payed`.'],
+      ['I paid the coffee.', 'I paid for the coffee.', 'Ce cumperi: `pay for`.'],
+      ['I payed ten pounds.', 'I paid ten pounds.', 'Se scrie `paid`.'],
     ],
   },
   find: {
     s: 'finds', ing: 'finding',
-    use: 'A găsi. Cât timp cauți, folosești `look for`; `find` e momentul în care ai dat de ce căutai. `Find out` înseamnă „a afla”.',
+    means: [['a găsi', 'I **found** a nice café near the station.']],
+    tip: 'Cauți: `look for`. Ai găsit: `find`.',
     ex: [
       ['ps', 'Mimi always finds the warmest place in the house.', 'Mimi găsește mereu cel mai cald loc din casă.'],
       ['past', 'I found some money in my old coat.', 'Am găsit niște bani în haina veche.'],
@@ -502,13 +534,14 @@ export const VERB_BOOK = {
     ],
     phrases: [['find out', 'a afla'], ['find the way', 'a găsi drumul'], ['find time', 'a-și face timp']],
     traps: [
-      ['I’m finding my keys.', 'I’m looking for my keys.', 'Cât timp cauți: `look for`. `Find` înseamnă că ai găsit.'],
-      ['I finded it under the bed.', 'I found it under the bed.', '`Find` e neregulat: `find – found – found`.'],
+      ['I’m finding my keys.', 'I’m looking for my keys.', 'Cât timp cauți: `look for`.'],
+      ['I finded it under the bed.', 'I found it under the bed.', 'Trecutul: `found`.'],
     ],
   },
   bring: {
     s: 'brings', ing: 'bringing',
-    use: 'A aduce ceva sau pe cineva spre locul în care ești tu (sau în care va fi cel cu care vorbești). Când duci ceva de aici în altă parte, folosești `take`.',
+    means: [['a aduce', 'Tom **brought** us some tea.']],
+    tip: 'Spre tine: `bring`. Spre alt loc: `take`.',
     ex: [
       ['ps', 'The postman brings the letters at ten.', 'Poștașul aduce scrisorile la zece.'],
       ['past', 'My sister brought a cake to the party.', 'Sora mea a adus un tort la petrecere.'],
@@ -518,14 +551,15 @@ export const VERB_BOOK = {
     ],
     phrases: [['bring something back', 'a aduce ceva înapoi'], ['bring a friend', 'a veni cu un prieten'], ['bring someone something', 'a-i aduce cuiva ceva']],
     traps: [
-      ['Can you bring this letter to the post office?', 'Can you take this letter to the post office?', 'Spre alt loc, nu spre tine: `take`. `Bring` înseamnă spre tine.'],
-      ['She bringed some flowers.', 'She brought some flowers.', '`Bring` e neregulat: `bring – brought – brought`.'],
-      ['I bought my laptop to work.', 'I brought my laptop to work.', '`Brought` vine de la `bring`; `bought` e trecutul lui `buy`.'],
+      ['Can you bring this letter to the post office?', 'Can you take this letter to the post office?', 'Spre alt loc: `take`.'],
+      ['She bringed some flowers.', 'She brought some flowers.', 'Trecutul: `brought`.'],
+      ['I bought my laptop to work.', 'I brought my laptop to work.', 'Adus: `brought`, nu `bought`.'],
     ],
   },
   put: {
     s: 'puts', ing: 'putting',
-    use: 'A pune ceva undeva. După `put` vin lucrul și locul: `put the cup on the table`. Are o singură formă: `put – put – put`.',
+    means: [['a pune', '**Put** the cups on the table.']],
+    tip: 'După `put` vine și locul: `put it here`.',
     ex: [
       ['ps', 'I always put sugar in my tea.', 'Pun mereu zahăr în ceai.'],
       ['pc', 'Tom is putting the chairs outside.', 'Tom scoate scaunele afară.'],
@@ -535,13 +569,14 @@ export const VERB_BOOK = {
     ],
     phrases: [['put on a coat', 'a-și pune o haină'], ['put away', 'a pune la loc'], ['put the kettle on', 'a pune apa la fiert']],
     traps: [
-      ['I putted the book on the shelf.', 'I put the book on the shelf.', '`Put` nu se schimbă: `put – put – put`.'],
-      ['Put your coat. It’s cold.', 'Put your coat on. It’s cold.', 'Pentru haine: `put on`. Fără `on`, după `put` trebuie un loc.'],
+      ['I putted the book on the shelf.', 'I put the book on the shelf.', 'Trecutul: tot `put`.'],
+      ['Put your coat. It’s cold.', 'Put your coat on. It’s cold.', 'Hainele: `put on`.'],
     ],
   },
   leave: {
     s: 'leaves', ing: 'leaving',
-    use: 'Are două sensuri: a pleca (`leave home`, `leave at six`) și a lăsa ceva undeva (`leave your bag here`). Locul din care pleci vine direct după verb (`leave the office`); spre un loc: `leave for London`.',
+    means: [['a pleca', 'Tom **left** the café at ten.'], ['a lăsa', '**Leave** your coat by the door.']],
+    tip: 'Ai uitat ceva undeva: `leave`, nu `forget`.',
     ex: [
       ['ps', 'My train leaves at half past seven.', 'Trenul meu pleacă la șapte și jumătate.'],
       ['pc', 'Are you leaving already?', 'Pleci deja?'],
@@ -551,14 +586,15 @@ export const VERB_BOOK = {
     ],
     phrases: [['leave a message', 'a lăsa un mesaj'], ['leave someone alone', 'a lăsa pe cineva în pace'], ['leave for work', 'a pleca la serviciu']],
     traps: [
-      ['I forgot my keys at home.', 'I left my keys at home.', 'Când spui unde ai uitat ceva: `leave`. `Forget` nu merge cu locul.'],
-      ['Leave me to pay.', 'Let me pay.', '„Lasă-mă să…” se spune `let me`, nu `leave me`.'],
-      ['We’re leaving to Paris on Friday.', 'We’re leaving for Paris on Friday.', 'Spre un loc: `leave for`, nu `to`.'],
+      ['I forgot my keys at home.', 'I left my keys at home.', 'Cu locul: `leave`, nu `forget`.'],
+      ['Leave me to pay.', 'Let me pay.', '„Lasă-mă să…”: `let me`.'],
+      ['We’re leaving to Paris on Friday.', 'We’re leaving for Paris on Friday.', 'Spre un loc: `leave for`.'],
     ],
   },
   hide: {
     s: 'hides', ing: 'hiding',
-    use: 'A ascunde ceva (`hide the money`) sau a se ascunde. Pentru „a se ascunde” e de ajuns `hide`: `Mimi is hiding.` De cineva: `hide from someone`.',
+    means: [['a ascunde', 'He **hid** the letter in a drawer.'], ['a se ascunde', 'Mimi is **hiding** behind the sofa.']],
+    tip: 'Te ascunzi de cineva: `hide from`.',
     ex: [
       ['ps', 'Mimi hides under the bed when there’s a storm.', 'Mimi se ascunde sub pat când e furtună.'],
       ['pc', 'Why are you hiding behind the door?', 'De ce te ascunzi după ușă?'],
@@ -568,13 +604,14 @@ export const VERB_BOOK = {
     ],
     phrases: [['hide from someone', 'a se ascunde de cineva'], ['hide something from someone', 'a ascunde ceva de cineva'], ['play hide-and-seek', 'a se juca de-a v-ați ascunselea']],
     traps: [
-      ['I hided the key.', 'I hid the key.', '`Hide` e neregulat: `hide – hid – hidden`.'],
-      ['Where have you hid the money?', 'Where have you hidden the money?', 'După `have` vine participiul: `hidden`.'],
+      ['I hided the key.', 'I hid the key.', 'Trecutul: `hid`.'],
+      ['Where have you hid the money?', 'Where have you hidden the money?', 'După `have`: `hidden`.'],
     ],
   },
   lose: {
     s: 'loses', ing: 'losing',
-    use: 'A pierde: un lucru (`lose your keys`), un meci, kilograme (`lose weight`). Un autobuz sau o ocazie nu le pierzi cu `lose`, ci le ratezi: `miss`.',
+    means: [['a pierde', 'I’ve **lost** my keys again.']],
+    tip: 'Autobuzul, trenul: `miss`, nu `lose`.',
     ex: [
       ['ps', 'My brother often loses his gloves.', 'Fratele meu își pierde des mănușile.'],
       ['past', 'We lost the match on Saturday.', 'Am pierdut meciul de sâmbătă.'],
@@ -584,14 +621,15 @@ export const VERB_BOOK = {
     ],
     phrases: [['lose weight', 'a slăbi'], ['lose your way', 'a te rătăci'], ['lose touch', 'a pierde legătura']],
     traps: [
-      ['I lost the bus this morning.', 'I missed the bus this morning.', 'Autobuzul, trenul sau o ocazie: `miss`, nu `lose`.'],
-      ['I losed my wallet.', 'I lost my wallet.', '`Lose` e neregulat: `lose – lost – lost`.'],
-      ['I don’t want to loose my job.', 'I don’t want to lose my job.', 'Verbul se scrie `lose`; `loose` înseamnă „larg”.'],
+      ['I lost the bus this morning.', 'I missed the bus this morning.', 'Autobuz, tren, ocazie: `miss`.'],
+      ['I losed my wallet.', 'I lost my wallet.', 'Trecutul: `lost`.'],
+      ['I don’t want to loose my job.', 'I don’t want to lose my job.', '`Lose` = a pierde. `Loose` = larg.'],
     ],
   },
   move: {
     s: 'moves', ing: 'moving',
-    use: 'A (se) mișca și a muta ceva din loc (`move the table`). Mai înseamnă „a se muta” în altă casă sau în alt oraș: `move house`, `move to London`.',
+    means: [['a (se) mișca', 'Mimi didn’t **move** all morning.'], ['a muta (ceva)', 'Can you **move** your car, please?'], ['a se muta', 'My sister **moved** to Scotland.']],
+    tip: 'Te muți într-un oraș: `move to`.',
     ex: [
       ['ps', 'The queue moves very slowly.', 'Coada înaintează foarte încet.'],
       ['past', 'We moved to a bigger flat last year.', 'Anul trecut ne-am mutat într-un apartament mai mare.'],
@@ -601,13 +639,14 @@ export const VERB_BOOK = {
     ],
     phrases: [['move house', 'a se muta'], ['move in', 'a se muta (într-o locuință)'], ['move out', 'a se muta (dintr-o locuință)']],
     traps: [
-      ['We moved in London last year.', 'We moved to London last year.', 'Te muți într-un oraș: `move to`.'],
-      ['I moved myself to a new flat.', 'I moved to a new flat.', '„A se muta” e doar `move`, fără `myself`.'],
+      ['We moved in London last year.', 'We moved to London last year.', 'Într-un oraș: `move to`.'],
+      ['I moved myself to a new flat.', 'I moved to a new flat.', 'Fără `myself`: doar `move`.'],
     ],
   },
   fall: {
     s: 'falls', ing: 'falling',
-    use: 'A cădea: `fall off` (de pe ceva), `fall down` (jos), `fall into` (în ceva). `Fall asleep` înseamnă „a adormi”. Când scapi ceva din mână, folosești `drop`.',
+    means: [['a cădea', 'The cup **fell** off the table.']],
+    tip: 'Scapi ceva din mână: `drop`, nu `fall`.',
     ex: [
       ['ps', 'The leaves fall in autumn.', 'Frunzele cad toamna.'],
       ['past', 'I fell off my bike yesterday.', 'Ieri am căzut de pe bicicletă.'],
@@ -617,15 +656,16 @@ export const VERB_BOOK = {
     ],
     phrases: [['fall asleep', 'a adormi'], ['fall in love', 'a se îndrăgosti'], ['fall over', 'a cădea (împiedicându-te)']],
     traps: [
-      ['I falled down the stairs.', 'I fell down the stairs.', '`Fall` e neregulat: `fall – fell – fallen`.'],
-      ['I fell my phone.', 'I dropped my phone.', 'Ce scapi din mână: `drop`. `Fall` nu are obiect.'],
-      ['I felt off the chair.', 'I fell off the chair.', '`Fell` e trecutul lui `fall`; `felt` e trecutul lui `feel`.'],
+      ['I falled down the stairs.', 'I fell down the stairs.', 'Trecutul: `fell`.'],
+      ['I fell my phone.', 'I dropped my phone.', 'Ce scapi din mână: `drop`.'],
+      ['I felt off the chair.', 'I fell off the chair.', 'Căzut: `fell`. Simțit: `felt`.'],
     ],
   },
 
   go: {
     s: 'goes', ing: 'going',
-    use: 'Înseamnă „a merge”, „a se duce”. Locul vine cu `to` (`go to work`), dar `home` nu ia `to`: `go home`. Cu activități: `go shopping`, `go for a walk`.',
+    means: [['a merge', 'We **go** to the café on Fridays.'], ['a pleca', 'Sorry, I have to **go** now.']],
+    tip: 'Spre un loc: `go to`. Dar `go home`.',
     ex: [
       ['ps', 'Mimi doesn’t go out when it rains.', 'Mimi nu iese afară când plouă.'],
       ['pc', 'Where are you going?', 'Unde te duci?'],
@@ -635,14 +675,15 @@ export const VERB_BOOK = {
     ],
     phrases: [['go home', 'a merge acasă'], ['go shopping', 'a merge la cumpărături'], ['go to bed', 'a merge la culcare'], ['go for a walk', 'a merge la plimbare']],
     traps: [
-      ['I went to home.', 'I went home.', 'Înainte de `home` nu se pune `to`.'],
-      ['We go to shopping on Saturdays.', 'We go shopping on Saturdays.', 'Cu activitățile în `-ing` nu se pune `to`: `go shopping`, `go swimming`.'],
-      ['Have you ever gone to Scotland?', 'Have you ever been to Scotland?', '„Ai fost vreodată” se spune cu `been`, nu cu `gone`.'],
+      ['I went to home.', 'I went home.', 'Fără `to` înainte de `home`.'],
+      ['We go to shopping on Saturdays.', 'We go shopping on Saturdays.', '`Go shopping`, `go swimming`: fără `to`.'],
+      ['Have you ever gone to Scotland?', 'Have you ever been to Scotland?', '„Ai fost vreodată”: `been`, nu `gone`.'],
     ],
   },
   take: {
     s: 'takes', ing: 'taking',
-    use: 'Înseamnă „a lua”: iei ceva cu mâna sau duci ceva cu tine în alt loc (spre tine e `bring`). Se folosește și pentru transport (`take the bus`) și pentru timp (`it takes an hour` = durează o oră).',
+    means: [['a lua', 'I **take** the bus to work.'], ['a duce undeva', '**Take** these flowers to Mrs Hughes.'], ['a dura', 'The journey **takes** two hours.']],
+    tip: 'Spre tine: `bring`. În altă parte: `take`.',
     ex: [
       ['ps', 'It takes ten minutes to walk to the café.', 'Până la cafenea faci zece minute pe jos.'],
       ['past', 'Who took my umbrella?', 'Cine mi-a luat umbrela?'],
@@ -652,13 +693,14 @@ export const VERB_BOOK = {
     ],
     phrases: [['take a photo', 'a face o poză'], ['take the bus', 'a lua autobuzul'], ['take a break', 'a lua o pauză'], ['It takes an hour.', 'Durează o oră.']],
     traps: [
-      ['Can you take me a glass of water?', 'Can you bring me a glass of water?', 'Ce vine spre tine: `bring`. Ce duci în altă parte: `take`.'],
-      ['I made a photo of the garden.', 'I took a photo of the garden.', 'Poza se face cu `take`: `take a photo`, nu `make`.'],
+      ['Can you take me a glass of water?', 'Can you bring me a glass of water?', 'Spre tine: `bring`, nu `take`.'],
+      ['I made a photo of the garden.', 'I took a photo of the garden.', 'Pozele: `take a photo`.'],
     ],
   },
   get: {
     s: 'gets', ing: 'getting',
-    use: 'Are multe sensuri: „a primi” (`get a message`), „a ajunge” (`get home`, `get to work`), „a lua, a cumpăra” (`get some milk`) și „a deveni” (`get cold`, `get tired`). Trecutul și participiul sunt `got`.',
+    means: [['a primi', 'I **got** a postcard from Priya.'], ['a ajunge', 'We **got** to the café at nine.'], ['a deveni', 'The days **are getting** shorter.']],
+    tip: 'Spre un loc: `get to`. Dar `get home`.',
     ex: [
       ['ps', 'I usually get home at six.', 'De obicei ajung acasă la șase.'],
       ['pc', 'It’s getting dark outside.', 'Afară se întunecă.'],
@@ -668,13 +710,14 @@ export const VERB_BOOK = {
     ],
     phrases: [['get up', 'a se scula'], ['get home', 'a ajunge acasă'], ['get on the bus', 'a urca în autobuz'], ['get better', 'a se face bine']],
     traps: [
-      ['How do I get at the station?', 'How do I get to the station?', 'Ajungi undeva: `get to`, nu `get at`.'],
-      ['It makes cold.', 'It’s getting cold.', '„Se face frig” e `it’s getting cold`, nu `it makes`.'],
+      ['How do I get at the station?', 'How do I get to the station?', 'Ajungi undeva: `get to`.'],
+      ['It makes cold.', 'It’s getting cold.', '„Se face frig”: `it’s getting cold`.'],
     ],
   },
   give: {
     s: 'gives', ing: 'giving',
-    use: 'Înseamnă „a da”. Persoana poate veni direct după verb, fără `to` (`give Tom the key`), sau la sfârșit, cu `to` (`give the key to Tom`).',
+    means: [['a da', 'Can you **give** me your number?']],
+    tip: '`Give me the key` = `give the key to me`.',
     ex: [
       ['ps', 'Mrs Hughes gives me roses every summer.', 'Doamna Hughes îmi dă trandafiri în fiecare vară.'],
       ['past', 'My dad gave me this watch.', 'Ceasul ăsta mi l-a dat tata.'],
@@ -684,13 +727,14 @@ export const VERB_BOOK = {
     ],
     phrases: [['give someone a hand', 'a da cuiva o mână de ajutor'], ['give up', 'a renunța'], ['give back', 'a da înapoi'], ['give someone a call', 'a da cuiva un telefon']],
     traps: [
-      ['Give to me the key.', 'Give me the key.', 'Persoana vine direct după `give`, fără `to`.'],
-      ['I gave the exam yesterday.', 'I took the exam yesterday.', '„A da un examen” se spune `take an exam`.'],
+      ['Give to me the key.', 'Give me the key.', 'Fără `to`: `give me`.'],
+      ['I gave the exam yesterday.', 'I took the exam yesterday.', 'Examenul: `take an exam`.'],
     ],
   },
   say: {
     s: 'says', ing: 'saying',
-    use: 'Înseamnă „a spune”, „a zice”: contează ce spui, nu cui. Când spui și cui, se folosește de obicei `tell`: `tell me`, `tell Tom`.',
+    means: [['a spune, a zice', 'What did Priya **say**?']],
+    tip: 'Spui ceva: `say`. Spui cuiva: `tell`.',
     ex: [
       ['ps', 'Tom always says hello to Mimi.', 'Tom o salută mereu pe Mimi.'],
       ['past', 'He didn’t say a word all evening.', 'N-a scos o vorbă toată seara.'],
@@ -700,13 +744,14 @@ export const VERB_BOOK = {
     ],
     phrases: [['say hello', 'a saluta'], ['say sorry', 'a-și cere scuze'], ['say yes', 'a spune da, a accepta']],
     traps: [
-      ['He said me his name.', 'He told me his name.', '`Say` nu ia persoana direct după el. Cu persoană: `tell me`.'],
-      ['What said Tom?', 'What did Tom say?', 'Întrebarea la trecut se face cu `did`, iar verbul rămâne `say`.'],
+      ['He said me his name.', 'He told me his name.', 'Spui cuiva: `tell me`.'],
+      ['What said Tom?', 'What did Tom say?', 'Întrebarea la trecut: cu `did`.'],
     ],
   },
   tell: {
     s: 'tells', ing: 'telling',
-    use: 'Înseamnă „a spune cuiva”: după `tell` vine aproape mereu persoana, fără `to` (`tell me`, `tell Tom`). Se mai folosește în `tell a story` și `tell the truth`.',
+    means: [['a spune cuiva', 'Please **tell** Tom I’m late.'], ['a povesti', '**Tell** me about your holiday.']],
+    tip: 'După `tell` vine persoana: `tell me`, `tell Tom`.',
     ex: [
       ['ps', 'My gran tells the best stories.', 'Bunica mea spune cele mai frumoase povești.'],
       ['past', 'Why didn’t you tell me?', 'De ce nu mi-ai spus?'],
@@ -716,13 +761,14 @@ export const VERB_BOOK = {
     ],
     phrases: [['tell the truth', 'a spune adevărul'], ['tell a story', 'a spune o poveste'], ['tell a lie', 'a spune o minciună']],
     traps: [
-      ['Tell to me what happened.', 'Tell me what happened.', 'Persoana vine direct după `tell`, fără `to`.'],
-      ['He told that he was tired.', 'He said that he was tired.', 'Fără persoană: `say`. Cu persoană: `tell me`, `tell Tom`.'],
+      ['Tell to me what happened.', 'Tell me what happened.', 'Fără `to`: `tell me`.'],
+      ['He told that he was tired.', 'He said that he was tired.', 'Fără persoană: `say`.'],
     ],
   },
   hear: {
     s: 'hears', ing: 'hearing',
-    use: 'Înseamnă „a auzi”: sunetul îți ajunge la ureche, fără să vrei. Când asculți cu atenție, se spune `listen to`. De obicei nu se folosește la prezentul continuu: ce auzi acum e `I can hear`.',
+    means: [['a auzi', 'I can **hear** the rain.']],
+    tip: 'Auzi fără să vrei: `hear`. Asculți: `listen to`.',
     ex: [
       ['ps', 'My grandad doesn’t hear very well.', 'Bunicul meu nu aude prea bine.'],
       ['can', 'Can you hear me?', 'Mă auzi?'],
@@ -732,13 +778,14 @@ export const VERB_BOOK = {
     ],
     phrases: [['hear from someone', 'a primi vești de la cineva'], ['hear about something', 'a afla despre ceva'], ['I can’t hear you.', 'Nu te aud.']],
     traps: [
-      ['I am hearing music.', 'I can hear music.', 'Ce auzi acum: `can hear`, nu `am hearing`.'],
-      ['Hear me, please.', 'Listen to me, please.', 'Când vrei atenția cuiva: `listen to`. `Hear` e doar „a auzi”.'],
+      ['I am hearing music.', 'I can hear music.', 'Acum: `can hear`.'],
+      ['Hear me, please.', 'Listen to me, please.', 'Cu atenție: `listen to`.'],
     ],
   },
   feel: {
     s: 'feels', ing: 'feeling',
-    use: 'Înseamnă „a simți” și „a se simți”. După el vine un adjectiv (`I feel tired`, `I feel better`), fără `myself`. Despre cum te simți acum se poate folosi și prezentul continuu: `How are you feeling?`',
+    means: [['a se simți', 'I **feel** a bit tired.'], ['a simți', 'I **felt** something on my arm.'], ['a avea chef de', 'I don’t **feel like** cooking tonight.']],
+    tip: '„Mă simt” = `I feel`, fără `myself`.',
     ex: [
       ['ps', 'I feel much better today.', 'Azi mă simt mult mai bine.'],
       ['pc', 'How are you feeling?', 'Cum te simți?'],
@@ -748,13 +795,14 @@ export const VERB_BOOK = {
     ],
     phrases: [['feel like a cup of tea', 'a avea chef de un ceai'], ['feel at home', 'a se simți ca acasă'], ['feel sorry for someone', 'a-i părea rău de cineva']],
     traps: [
-      ['I feel myself tired.', 'I feel tired.', '„Mă simt” e doar `I feel`, fără `myself`.'],
-      ['I don’t feel like to go out.', 'I don’t feel like going out.', 'După `feel like` vine forma cu `-ing`.'],
+      ['I feel myself tired.', 'I feel tired.', 'Fără `myself`: `I feel`.'],
+      ['I don’t feel like to go out.', 'I don’t feel like going out.', 'După `feel like`: `-ing`.'],
     ],
   },
   forget: {
     s: 'forgets', ing: 'forgetting',
-    use: 'Înseamnă „a uita”. `Forget to` + verb: uiți să faci ceva. Când spui și locul unde ai uitat un lucru, se folosește `leave`: `I left my keys at home`.',
+    means: [['a uita', 'Sorry, I **forgot** your name.']],
+    tip: '„Am uitat cheile acasă” = `I left my keys at home`.',
     ex: [
       ['ps', 'I often forget people’s names.', 'Uit des numele oamenilor.'],
       ['past', 'Did you forget your keys again?', 'Iar ți-ai uitat cheile?'],
@@ -764,13 +812,14 @@ export const VERB_BOOK = {
     ],
     phrases: [['forget to do something', 'a uita să faci ceva'], ['Forget it.', 'Lasă, nu contează.'], ['I almost forgot.', 'Era să uit.']],
     traps: [
-      ['I forgot my umbrella at home.', 'I left my umbrella at home.', 'Când spui locul, se folosește `leave`: `I left it at home`.'],
-      ['Don’t forget calling me.', 'Don’t forget to call me.', 'Ce ai de făcut: `forget to` + verb.'],
+      ['I forgot my umbrella at home.', 'I left my umbrella at home.', 'Uitat undeva: `left`, nu `forgot`.'],
+      ['Don’t forget calling me.', 'Don’t forget to call me.', 'Ce ai de făcut: `forget to`.'],
     ],
   },
   remember: {
     s: 'remembers', ing: 'remembering',
-    use: 'Înseamnă „a-și aminti”, „a ține minte”, fără pronume: „îmi amintesc” e `I remember`. `Remember to` + verb: să nu uiți să faci ceva. Nu se folosește la prezentul continuu.',
+    means: [['a-și aminti', 'Do you **remember** Sam’s number?'], ['a nu uita să', '**Remember** to lock the door.']],
+    tip: '„Amintește-mi” = `remind me`, nu `remember me`.',
     ex: [
       ['ps', 'I don’t remember his name.', 'Nu-mi amintesc cum îl cheamă.'],
       ['past', 'Did you remember to buy milk?', 'Ți-ai amintit să cumperi lapte?'],
@@ -780,14 +829,15 @@ export const VERB_BOOK = {
     ],
     phrases: [['remember to do something', 'a nu uita să faci ceva'], ['if I remember correctly', 'dacă îmi amintesc bine'], ['remember someone’s birthday', 'a ține minte ziua cuiva']],
     traps: [
-      ['I remember myself that day.', 'I remember that day.', '„Îmi amintesc” e doar `I remember`, fără `myself`.'],
-      ['Remember me to call Tom.', 'Remind me to call Tom.', 'Când altcineva te ajută să-ți amintești: `remind`.'],
-      ['I’m remembering her face.', 'I remember her face.', '`Remember` nu se folosește la prezentul continuu.'],
+      ['I remember myself that day.', 'I remember that day.', 'Fără `myself`: `I remember`.'],
+      ['Remember me to call Tom.', 'Remind me to call Tom.', '„Amintește-mi” = `remind me`.'],
+      ['I’m remembering her face.', 'I remember her face.', 'Fără `-ing`: `I remember`.'],
     ],
   },
   meet: {
     s: 'meets', ing: 'meeting',
-    use: 'Înseamnă „a se întâlni cu cineva” (`meet Tom at the café`) și „a cunoaște pe cineva” prima dată (`Nice to meet you`). Fără pronume: „ne întâlnim” e `we meet`.',
+    means: [['a se întâlni', 'Let’s **meet** at the café.'], ['a cunoaște (prima dată)', 'I **met** Priya on my first day here.']],
+    tip: 'Prima dată: `meet`. De mult: `know`.',
     ex: [
       ['ps', 'We meet at the café every Friday.', 'Ne vedem la cafenea în fiecare vineri.'],
       ['pc', 'I’m meeting Sam after work.', 'Mă văd cu Sam după serviciu.'],
@@ -797,13 +847,14 @@ export const VERB_BOOK = {
     ],
     phrases: [['Nice to meet you.', 'Încântat de cunoștință.'], ['meet new people', 'a cunoaște oameni noi'], ['meet for coffee', 'a se vedea la o cafea']],
     traps: [
-      ['I knew him last year.', 'I met him last year.', 'Când cunoști pe cineva prima dată: `meet`. `Know` e „a cunoaște” de mai mult timp.'],
-      ['We met us at the café.', 'We met at the café.', '„Ne-am întâlnit” e doar `we met`, fără `us`.'],
+      ['I knew him last year.', 'I met him last year.', 'Prima dată: `meet`, nu `know`.'],
+      ['We met us at the café.', 'We met at the café.', 'Fără `us`: `we met`.'],
     ],
   },
   know: {
     s: 'knows', ing: 'knowing',
-    use: 'Înseamnă „a ști” (`I know the answer`) și „a cunoaște” pe cineva sau un loc (`I know Tom`). Nu se folosește la prezentul continuu.',
+    means: [['a ști', 'I **know** her phone number.'], ['a cunoaște', 'I **know** Tom very well.']],
+    tip: 'De ani de zile: `I’ve known him for years`.',
     ex: [
       ['ps', 'Do you know Mrs Hughes?', 'O cunoști pe doamna Hughes?'],
       ['past', 'I didn’t know that.', 'Nu știam asta.'],
@@ -813,13 +864,14 @@ export const VERB_BOOK = {
     ],
     phrases: [['I don’t know.', 'Nu știu.'], ['Let me know.', 'Anunță-mă.'], ['as far as I know', 'din câte știu']],
     traps: [
-      ['I am knowing the answer.', 'I know the answer.', '`Know` nu se folosește la prezentul continuu.'],
-      ['I know him since 2010.', 'I’ve known him since 2010.', 'De atunci până acum: prezentul perfect, `I’ve known`.'],
+      ['I am knowing the answer.', 'I know the answer.', 'Fără `-ing`: `I know`.'],
+      ['I know him since 2010.', 'I’ve known him since 2010.', 'De atunci până acum: `I’ve known`.'],
     ],
   },
   plan: {
     s: 'plans', ing: 'planning',
-    use: 'Înseamnă „a plănui”, „a avea de gând”. Merge cu un substantiv (`plan a trip`) sau cu `to` + verb (`plan to visit`). La `-ing` și la trecut se dublează `n`: `planning`, `planned`.',
+    means: [['a plănui', 'I need to **plan** my week.'], ['a avea de gând', 'We **plan** to move next year.']],
+    tip: 'Se dublează `n`: `planning`, `planned`.',
     ex: [
       ['ps', 'We usually plan our holidays in January.', 'De obicei ne plănuim vacanțele în ianuarie.'],
       ['pc', 'What are you planning to do this weekend?', 'Ce ai de gând să faci weekendul ăsta?'],
@@ -829,13 +881,14 @@ export const VERB_BOOK = {
     ],
     phrases: [['plan a trip', 'a plănui o călătorie'], ['plan to do something', 'a avea de gând să faci ceva'], ['plan ahead', 'a plănui din timp']],
     traps: [
-      ['I planed everything.', 'I planned everything.', 'La trecut se dublează `n`: `planned`.'],
-      ['I’m planning visit my aunt.', 'I’m planning to visit my aunt.', 'După `plan` vine `to` + verb.'],
+      ['I planed everything.', 'I planned everything.', 'Cu doi `n`: `planned`.'],
+      ['I’m planning visit my aunt.', 'I’m planning to visit my aunt.', 'După `plan`: `to` + verb.'],
     ],
   },
   send: {
     s: 'sends', ing: 'sending',
-    use: 'Înseamnă „a trimite”: un mesaj, o scrisoare, un colet. Persoana poate veni direct după verb (`send me a photo`) sau la sfârșit, cu `to` (`send it to Tom`).',
+    means: [['a trimite', 'Can you **send** me the address?']],
+    tip: '`Send me the photo` = `send the photo to me`.',
     ex: [
       ['ps', 'My mum sends me a message every morning.', 'Mama îmi trimite un mesaj în fiecare dimineață.'],
       ['past', 'I sent you an email last night.', 'Ți-am trimis un e-mail aseară.'],
@@ -845,13 +898,14 @@ export const VERB_BOOK = {
     ],
     phrases: [['send a message', 'a trimite un mesaj'], ['send a parcel', 'a trimite un colet'], ['Send my love to your mum.', 'Transmite-i mamei tale salutări cu drag.']],
     traps: [
-      ['I sended the letter.', 'I sent the letter.', 'Trecutul lui `send` e `sent`.'],
-      ['Send to me the photo.', 'Send me the photo.', 'Persoana vine direct după `send`, fără `to`.'],
+      ['I sended the letter.', 'I sent the letter.', '`Send` e neregulat: `sent`.'],
+      ['Send to me the photo.', 'Send me the photo.', 'Fără `to`: `send me`.'],
     ],
   },
   decide: {
     s: 'decides', ing: 'deciding',
-    use: 'Înseamnă „a hotărî”, „a se decide”. Merge cu `to` + verb (`decide to stay`) sau cu un cuvânt de întrebare (`decide what to do`). Fără pronume: „mă hotărăsc” e `I decide`.',
+    means: [['a hotărî', 'I’ve **decided** to learn Spanish.']],
+    tip: '„M-am hotărât” = `I’ve decided`, fără `me`.',
     ex: [
       ['ps', 'My sister always decides where we go.', 'Mereu sora mea hotărăște unde mergem.'],
       ['past', 'We decided to stay at home.', 'Am hotărât să rămânem acasă.'],
@@ -861,14 +915,15 @@ export const VERB_BOOK = {
     ],
     phrases: [['decide to do something', 'a hotărî să faci ceva'], ['decide what to do', 'a hotărî ce să faci'], ['make a decision', 'a lua o hotărâre']],
     traps: [
-      ['I decided staying at home.', 'I decided to stay at home.', 'După `decide` vine `to` + verb.'],
-      ['I have decided yesterday.', 'I decided yesterday.', 'Cu `yesterday` se folosește trecutul simplu.'],
-      ['I can’t decide me.', 'I can’t decide.', '„Nu mă pot hotărî” e `I can’t decide`, fără `me`.'],
+      ['I decided staying at home.', 'I decided to stay at home.', 'După `decide`: `to` + verb.'],
+      ['I have decided yesterday.', 'I decided yesterday.', 'Cu `yesterday`: trecutul simplu.'],
+      ['I can’t decide me.', 'I can’t decide.', 'Fără `me`: `I can’t decide`.'],
     ],
   },
   prepare: {
     s: 'prepares', ing: 'preparing',
-    use: 'Înseamnă „a pregăti” ceva (`prepare dinner`, `prepare a room`). „A se pregăti pentru ceva” e `prepare for` sau, mai des în vorbire, `get ready for`.',
+    means: [['a pregăti', 'I’ll **prepare** dinner tonight.'], ['a se pregăti pentru', 'We’re **preparing for** the winter.']],
+    tip: 'Te pregătești: `prepare for` sau `get ready for`.',
     ex: [
       ['ps', 'Tom prepares the sandwiches every morning.', 'Tom pregătește sandvișurile în fiecare dimineață.'],
       ['pc', 'I’m preparing for an exam.', 'Mă pregătesc pentru un examen.'],
@@ -878,13 +933,14 @@ export const VERB_BOOK = {
     ],
     phrases: [['prepare dinner', 'a pregăti cina'], ['prepare for an exam', 'a se pregăti pentru un examen'], ['be prepared', 'a fi pregătit']],
     traps: [
-      ['We prepared us for the trip.', 'We got ready for the trip.', '„Ne-am pregătit” e `we got ready` sau `we prepared`, fără `us`.'],
-      ['I’m preparing my exam.', 'I’m preparing for my exam.', 'Când înveți pentru examen: `prepare for`. `Prepare an exam` face profesorul.'],
+      ['We prepared us for the trip.', 'We got ready for the trip.', 'Fără `us`. Mai firesc: `got ready`.'],
+      ['I’m preparing my exam.', 'I’m preparing for my exam.', 'Înveți pentru examen: `prepare for`.'],
     ],
   },
   promise: {
     s: 'promises', ing: 'promising',
-    use: 'Înseamnă „a promite”. Merge cu `to` + verb (`promise to call`) sau cu o propoziție (`I promise I’ll call`). Ce promiți pentru viitor se spune cu `will`.',
+    means: [['a promite', 'Sam **promised** to wait for me.']],
+    tip: '„Promit că vin” = `I promise I’ll come`.',
     ex: [
       ['ps', 'I promise I’ll be careful.', 'Promit că o să fiu atent.'],
       ['past', 'You promised to help me.', 'Ai promis că mă ajuți.'],
@@ -894,13 +950,14 @@ export const VERB_BOOK = {
     ],
     phrases: [['I promise.', 'Promit.'], ['keep a promise', 'a-și ține promisiunea'], ['break a promise', 'a nu-și ține promisiunea']],
     traps: [
-      ['I promise I come tomorrow.', 'I promise I’ll come tomorrow.', 'Ce promiți pentru viitor: `will`.'],
-      ['She promised to me a present.', 'She promised me a present.', 'Persoana vine direct după `promise`, fără `to`.'],
+      ['I promise I come tomorrow.', 'I promise I’ll come tomorrow.', 'Pentru viitor: `I’ll come`.'],
+      ['She promised to me a present.', 'She promised me a present.', 'Fără `to`: `promised me`.'],
     ],
   },
   return: {
     s: 'returns', ing: 'returning',
-    use: 'Înseamnă „a se întoarce” (`return home`) și „a da înapoi” (`return a book`). E puțin mai formal; în vorbire se spune des `come back`, `go back` sau `give back`.',
+    means: [['a se întoarce', 'We **returned** from Spain on Sunday.'], ['a da înapoi', 'I **returned** the jacket to the shop.']],
+    tip: 'În vorbire, mai des: `come back`, `give back`.',
     ex: [
       ['ps', 'Sam returns home at six in the morning.', 'Sam se întoarce acasă la șase dimineața.'],
       ['past', 'When did you return from your holiday?', 'Când te-ai întors din concediu?'],
@@ -910,14 +967,15 @@ export const VERB_BOOK = {
     ],
     phrases: [['return home', 'a se întoarce acasă'], ['return a book', 'a returna o carte'], ['return a call', 'a suna pe cineva înapoi'], ['a return ticket', 'un bilet dus-întors']],
     traps: [
-      ['I returned back home.', 'I returned home.', '`Return` înseamnă deja „a se întoarce”: fără `back`.'],
-      ['I’ll return you the book tomorrow.', 'I’ll return the book to you tomorrow.', 'Cu `return`, persoana vine la sfârșit, cu `to`.'],
+      ['I returned back home.', 'I returned home.', 'Fără `back`: `return` e deja „înapoi”.'],
+      ['I’ll return you the book tomorrow.', 'I’ll return the book to you tomorrow.', 'Persoana la sfârșit, cu `to`.'],
     ],
   },
 
   borrow: {
     s: 'borrows', ing: 'borrowing',
-    use: 'Iei ceva de la cineva și îl dai înapoi mai târziu: `borrow something from someone`. Când tu dai ceva cuiva, verbul e `lend`.',
+    means: [['a lua cu împrumut', 'I **borrowed** a book from Tom.']],
+    tip: 'Iei de la cineva: `borrow`. Dai cuiva: `lend`.',
     ex: [
       ['ps', 'My sister often borrows my clothes.', 'Sora mea îmi ia des hainele.'],
       ['can', 'Can I borrow your pen for a minute?', 'Îmi dai puțin pixul?'],
@@ -931,13 +989,14 @@ export const VERB_BOOK = {
       ['Can I borrow…?', 'Îmi împrumuți…?'],
     ],
     traps: [
-      ['Can you borrow me your pen?', 'Can you lend me your pen?', 'Când dai ceva cuiva se spune `lend`. `Borrow` înseamnă să iei.'],
-      ['Can I borrow from you a pen?', 'Can I borrow a pen from you?', 'Întâi ce iei, apoi de la cine: `borrow a pen from you`.'],
+      ['Can you borrow me your pen?', 'Can you lend me your pen?', 'Cel care dă: `lend`.'],
+      ['Can I borrow from you a pen?', 'Can I borrow a pen from you?', 'Întâi lucrul, apoi `from you`.'],
     ],
   },
   lend: {
     s: 'lends', ing: 'lending',
-    use: 'Dai ceva cuiva pentru o vreme, ca să ți-l dea înapoi: `lend someone something` sau `lend something to someone`. Când iei tu ceva de la cineva, verbul e `borrow`.',
+    means: [['a da cu împrumut', 'I can **lend** you a book.']],
+    tip: 'Dai cuiva: `lend`. Iei de la cineva: `borrow`.',
     ex: [
       ['ps', 'Priya never lends money to anyone.', 'Priya nu împrumută niciodată bani nimănui.'],
       ['can', 'Could you lend me your umbrella?', 'Mi-ai putea împrumuta umbrela?'],
@@ -951,13 +1010,14 @@ export const VERB_BOOK = {
       ['lend a book to a friend', 'a împrumuta o carte unui prieten'],
     ],
     traps: [
-      ['I lended him my bike.', 'I lent him my bike.', '`Lend` e neregulat: trecutul e `lent`.'],
-      ['Can you borrow me ten pounds?', 'Can you lend me ten pounds?', 'Dai cuiva: `lend`. Iei de la cineva: `borrow`.'],
+      ['I lended him my bike.', 'I lent him my bike.', 'Trecutul e `lent`.'],
+      ['Can you borrow me ten pounds?', 'Can you lend me ten pounds?', 'Cel care dă: `lend`.'],
     ],
   },
   allow: {
     s: 'allows', ing: 'allowing',
-    use: 'Lași pe cineva să facă ceva: `allow someone to do something`. Apare des la pasiv: `be allowed to`, „a avea voie să”.',
+    means: [['a permite, a lăsa', 'Priya doesn’t **allow** dogs in the shop.']],
+    tip: '„Am voie să” = `I’m allowed to`.',
     ex: [
       ['ps', 'Mimi isn’t allowed on the bed.', 'Mimi n-are voie în pat.'],
       ['past', 'My boss allowed me to leave early.', 'Șeful m-a lăsat să plec mai devreme.'],
@@ -971,14 +1031,15 @@ export const VERB_BOOK = {
       ['allow someone in', 'a lăsa pe cineva să intre'],
     ],
     traps: [
-      ['My mum doesn’t allow me go out.', 'My mum doesn’t allow me to go out.', 'După `allow someone` urmează `to` și verbul.'],
-      ['It’s not allowed to smoke here.', 'You aren’t allowed to smoke here.', 'Subiectul e cel care n-are voie: `you aren’t allowed to`.'],
-      ['I’m not allow to park here.', 'I’m not allowed to park here.', '„A avea voie” se spune `be allowed`, cu `-ed`.'],
+      ['My mum doesn’t allow me go out.', 'My mum doesn’t allow me to go out.', 'După `allow me` vine `to`.'],
+      ['It’s not allowed to smoke here.', 'You aren’t allowed to smoke here.', 'Cine n-are voie e subiectul: `you`.'],
+      ['I’m not allow to park here.', 'I’m not allowed to park here.', 'Se spune `allowed`, cu `-ed`.'],
     ],
   },
   climb: {
     s: 'climbs', ing: 'climbing',
-    use: 'Urci cu efort, adesea folosindu-te de mâini și de picioare: `climb a tree`, `climb a hill`, `climb the stairs`. Pentru lift, autobuz sau tren nu se folosește `climb`.',
+    means: [['a urca cu efort', 'Mimi **climbed** the tree.']],
+    tip: '`Climb` e cu efort. În autobuz: `get on`.',
     ex: [
       ['ps', 'Mimi climbs the fence every morning.', 'Mimi se cațără pe gard în fiecare dimineață.'],
       ['pc', 'Why is Tom climbing the ladder?', 'De ce se urcă Tom pe scară?'],
@@ -992,13 +1053,14 @@ export const VERB_BOOK = {
       ['climb into bed', 'a se băga în pat'],
     ],
     traps: [
-      ['I climbed in the bus.', 'I got on the bus.', 'În autobuz sau în tren urci cu `get on`, nu cu `climb`.'],
-      ['I climbed to the fifth floor by lift.', 'I went up to the fifth floor by lift.', 'Cu liftul nu e efort: `go up`. `Climb` e pe jos, cu efort.'],
+      ['I climbed in the bus.', 'I got on the bus.', 'În autobuz urci cu `get on`.'],
+      ['I climbed to the fifth floor by lift.', 'I went up to the fifth floor by lift.', 'Cu liftul, fără efort: `go up`.'],
     ],
   },
   check: {
     s: 'checks', ing: 'checking',
-    use: 'Te uiți dacă ceva e corect, sigur sau în regulă: `check the door`, `check your answers`. Se spune și pentru mesaje sau e-mail: `check your email`.',
+    means: [['a verifica', 'Please **check** your answers.'], ['a se uita la', 'I’ll just **check** my phone.']],
+    tip: '„A controla” (acte, bilete) = `check`.',
     ex: [
       ['ps', 'Tom checks the oven before he goes home.', 'Tom verifică cuptorul înainte să plece acasă.'],
       ['pc', 'Sorry, I’m just checking my messages.', 'Scuze, mă uit puțin la mesaje.'],
@@ -1012,13 +1074,14 @@ export const VERB_BOOK = {
       ['check in at the hotel', 'a te caza la hotel'],
     ],
     traps: [
-      ['The police controlled my passport.', 'The police checked my passport.', '„A controla” actele se spune `check`. `Control` înseamnă „a ține sub control”.'],
-      ['I can’t talk, I check my email.', 'I can’t talk, I’m checking my email.', 'Ce faci chiar acum: prezentul continuu, `I’m checking`.'],
+      ['The police controlled my passport.', 'The police checked my passport.', '`Control` nu înseamnă „a verifica”.'],
+      ['I can’t talk, I check my email.', 'I can’t talk, I’m checking my email.', 'Chiar acum: `I’m checking`.'],
     ],
   },
   repair: {
     s: 'repairs', ing: 'repairing',
-    use: 'Faci ca ceva stricat să meargă din nou: o mașină, un drum, un acoperiș. E puțin mai formal decât `fix`, care se aude mai des în vorbire.',
+    means: [['a repara', 'We need to **repair** the roof.']],
+    tip: 'În vorbire se aude mai des `fix`.',
     ex: [
       ['ps', 'Sam repairs old bikes in his free time.', 'Sam repară biciclete vechi în timpul liber.'],
       ['past', 'They repaired the road last summer.', 'Au reparat drumul vara trecută.'],
@@ -1032,13 +1095,14 @@ export const VERB_BOOK = {
       ['a repair shop', 'un atelier de reparații'],
     ],
     traps: [
-      ['I repaired my car at the garage.', 'I had my car repaired at the garage.', 'Dacă altcineva a reparat-o pentru tine: `have it repaired`.'],
-      ['We must to repair the door.', 'We must repair the door.', 'După `must` verbul vine fără `to`.'],
+      ['I repaired my car at the garage.', 'I had my car repaired at the garage.', 'L-a reparat mecanicul: `had it repaired`.'],
+      ['We must to repair the door.', 'We must repair the door.', 'După `must`, fără `to`.'],
     ],
   },
   compare: {
     s: 'compares', ing: 'comparing',
-    use: 'Te uiți prin ce se aseamănă și prin ce diferă două lucruri: `compare A with B` sau `compare A to B`. Se folosește des cu prețuri, oferte sau rezultate.',
+    means: [['a compara', 'I **compared** the two jackets.']],
+    tip: 'Cu ce compari: `with` sau `to`.',
     ex: [
       ['ps', 'Priya always compares prices before buying anything.', 'Priya compară mereu prețurile înainte să cumpere ceva.'],
       ['pc', 'We’re comparing two flats in the centre.', 'Comparăm două apartamente din centru.'],
@@ -1052,13 +1116,14 @@ export const VERB_BOOK = {
       ['compare notes', 'a face schimb de impresii'],
     ],
     traps: [
-      ['Let’s compare between the two phones.', 'Let’s compare the two phones.', 'După `compare` vin direct lucrurile comparate, fără `between`.'],
-      ['I compare always the prices.', 'I always compare the prices.', '`Always` stă înaintea verbului, nu după el.'],
+      ['Let’s compare between the two phones.', 'Let’s compare the two phones.', 'Direct, fără `between`.'],
+      ['I compare always the prices.', 'I always compare the prices.', '`Always` stă înaintea verbului.'],
     ],
   },
   grow: {
     s: 'grows', ing: 'growing',
-    use: 'Devine mai mare: un copil, o plantă, un oraș. Cu obiect înseamnă „a cultiva”: `grow tomatoes`. Despre oameni, „a crește mare” se spune `grow up`.',
+    means: [['a crește', 'Children **grow** very quickly.'], ['a cultiva', 'We **grow** tomatoes in the garden.']],
+    tip: 'Unde ai crescut: `I grew up in…`',
     ex: [
       ['ps', 'Mrs Hughes grows roses in her garden.', 'Doamna Hughes cultivă trandafiri în grădină.'],
       ['pc', 'My hair is growing really fast.', 'Îmi crește părul foarte repede.'],
@@ -1072,13 +1137,14 @@ export const VERB_BOOK = {
       ['grow a beard', 'a-și lăsa barbă'],
     ],
     traps: [
-      ['My grandparents grew me.', 'My grandparents brought me up.', 'Pe cineva îl crești cu `bring up`. `Grow up` e despre tine: `I grew up`.'],
-      ['I growed up in a village.', 'I grew up in a village.', '`Grow` e neregulat: `grew`, `grown`.'],
+      ['My grandparents grew me.', 'My grandparents brought me up.', 'Pe cineva îl crești: `bring up`.'],
+      ['I growed up in a village.', 'I grew up in a village.', 'Neregulat: `grew`, `grown`.'],
     ],
   },
   shine: {
     s: 'shines', ing: 'shining',
-    use: 'Dă lumină sau strălucește: soarele, luna, o lampă, ceva lucios. Despre soare se spune des la prezentul continuu: `The sun is shining.`',
+    means: [['a străluci, a lumina', 'The sun **shines** a lot in Spain.']],
+    tip: '„E soare” = `the sun is shining`.',
     ex: [
       ['ps', 'The moon shines through my window at night.', 'Noaptea, lumina lunii intră pe fereastra mea.'],
       ['pc', 'The sun is shining. Let’s go out.', 'E soare. Hai să ieșim.'],
@@ -1092,13 +1158,14 @@ export const VERB_BOOK = {
       ['rain or shine', 'pe orice vreme'],
     ],
     traps: [
-      ['The sun shined all day.', 'The sun shone all day.', '`Shine` e neregulat: `shone`.'],
-      ['Today is sun.', 'The sun is shining today.', '„E soare” nu se spune `is sun`, ci `the sun is shining` sau `it’s sunny`.'],
+      ['The sun shined all day.', 'The sun shone all day.', 'Trecutul e `shone`.'],
+      ['Today is sun.', 'The sun is shining today.', 'Nu `is sun`. Merge și `it’s sunny`.'],
     ],
   },
   rise: {
     s: 'rises', ing: 'rising',
-    use: 'Se ridică sau urcă singur, fără obiect: soarele, luna, prețurile, apa. Despre soare și lună înseamnă „a răsări”. Când ridici tu ceva, verbul e `raise` sau `lift`.',
+    means: [['a răsări', 'What time does the sun **rise**?'], ['a crește, a urca', 'Prices **rise** every year.']],
+    tip: '`Rise` urcă singur. Ridici tu: `raise`.',
     ex: [
       ['ps', 'The sun rises early in summer.', 'Vara, soarele răsare devreme.'],
       ['pc', 'The water in the river is rising.', 'Apa râului crește.'],
@@ -1112,13 +1179,14 @@ export const VERB_BOOK = {
       ['a pay rise', 'o mărire de salariu'],
     ],
     traps: [
-      ['They rose the prices again.', 'They raised the prices again.', 'Când ridici tu ceva: `raise`. `Rise` urcă singur.'],
-      ['The sun rised at six.', 'The sun rose at six.', '`Rise` e neregulat: `rose`, `risen`.'],
+      ['They rose the prices again.', 'They raised the prices again.', 'Ridici tu ceva: `raise`.'],
+      ['The sun rised at six.', 'The sun rose at six.', 'Neregulat: `rose`, `risen`.'],
     ],
   },
   reach: {
     s: 'reaches', ing: 'reaching',
-    use: 'Ajungi la un loc, la capătul unui drum: `reach the station`, `reach the top`. Sau ajungi la ceva cu mâna: `reach the top shelf`. Locul vine direct după verb, fără prepoziție.',
+    means: [['a ajunge la', 'We **reached** London at ten.'], ['a ajunge cu mâna', 'Can you **reach** that cup?']],
+    tip: 'Fără `at`, fără `to`: `reach the station`.',
     ex: [
       ['ps', 'This bus reaches the centre in ten minutes.', 'Autobuzul ăsta ajunge în centru în zece minute.'],
       ['past', 'We reached the top of the hill at noon.', 'Am ajuns în vârful dealului la prânz.'],
@@ -1132,12 +1200,13 @@ export const VERB_BOOK = {
       ['out of reach', 'unde nu ajungi cu mâna'],
     ],
     traps: [
-      ['We reached at the hotel late.', 'We reached the hotel late.', 'După `reach` nu vine `at` sau `to`: `reach the hotel`.'],
+      ['We reached at the hotel late.', 'We reached the hotel late.', 'Fără `at`: `reach the hotel`.'],
     ],
   },
   win: {
     s: 'wins', ing: 'winning',
-    use: 'Ieși primul într-un joc, un meci sau un concurs, sau primești un premiu: `win a match`, `win a prize`. Banii de la muncă nu se câștigă cu `win`, ci cu `earn`.',
+    means: [['a câștiga', 'Our team **won** on Saturday.']],
+    tip: 'Banii de la muncă: `earn`, nu `win`.',
     ex: [
       ['ps', 'Tom always wins at cards.', 'Tom câștigă mereu la cărți.'],
       ['pc', 'Who’s winning the match?', 'Cine câștigă meciul?'],
@@ -1151,13 +1220,14 @@ export const VERB_BOOK = {
       ['win a game of chess', 'a câștiga o partidă de șah'],
     ],
     traps: [
-      ['How much do you win a month?', 'How much do you earn a month?', 'Banii de la muncă: `earn`. `Win` e pentru jocuri și concursuri.'],
-      ['We won them 3–0.', 'We beat them 3–0.', 'Meciul îl câștigi (`win`), dar pe adversar îl învingi (`beat`).'],
+      ['How much do you win a month?', 'How much do you earn a month?', 'Salariul se câștigă cu `earn`.'],
+      ['We won them 3–0.', 'We beat them 3–0.', 'Pe adversar îl învingi: `beat`.'],
     ],
   },
   'set off': {
     s: 'sets off', ing: 'setting off',
-    use: 'Pornești la drum, pleci într-o călătorie: `set off early`, `set off for the coast`. Formele nu se schimbă: `set off` e și trecutul, și participiul.',
+    means: [['a porni la drum', 'They **set off** for the coast.']],
+    tip: 'La trecut rămâne `set off`.',
     ex: [
       ['ps', 'Sam sets off for work at ten every night.', 'Sam pleacă la muncă în fiecare seară la zece.'],
       ['past', 'We set off early to miss the traffic.', 'Am plecat devreme ca să scăpăm de trafic.'],
@@ -1171,13 +1241,14 @@ export const VERB_BOOK = {
       ['set off for home', 'a o porni spre casă'],
     ],
     traps: [
-      ['We setted off at six.', 'We set off at six.', '`Set` nu se schimbă la trecut: `set off`.'],
-      ['When you set off?', 'When did you set off?', 'Întrebarea la trecut are nevoie de `did`.'],
+      ['We setted off at six.', 'We set off at six.', '`Set` nu se schimbă.'],
+      ['When you set off?', 'When did you set off?', 'Întrebare la trecut: cu `did`.'],
     ],
   },
   'come back': {
     s: 'comes back', ing: 'coming back',
-    use: 'Te întorci în locul de unde ai plecat sau unde e cel care vorbește: `come back home`, `come back later`. Dacă te întorci într-un loc unde nu ești acum, se spune `go back`.',
+    means: [['a se întoarce', 'When are you **coming back**?']],
+    tip: 'Aici: `come back`. Acolo: `go back`.',
     ex: [
       ['ps', 'What time does your dad come back from work?', 'La ce oră se întoarce tatăl tău de la muncă?'],
       ['past', 'She came back from Spain last week.', 'S-a întors din Spania săptămâna trecută.'],
@@ -1191,13 +1262,14 @@ export const VERB_BOOK = {
       ['come back later', 'a reveni mai târziu'],
     ],
     traps: [
-      ['Wait, I come back in five minutes.', 'Wait, I’ll come back in five minutes.', 'Când promiți pe loc, folosești `I’ll`, nu prezentul.'],
-      ['I loved Rome. I want to come back there.', 'I loved Rome. I want to go back there.', 'Acolo, unde nu ești acum: `go back`. `Come back` e spre locul unde ești.'],
+      ['I come back in five minutes.', 'I’ll come back in five minutes.', 'Promiți pe loc: `I’ll`.'],
+      ['I loved Rome. I want to come back there.', 'I loved Rome. I want to go back there.', 'Acolo, unde nu ești: `go back`.'],
     ],
   },
   'say goodbye': {
     s: 'says goodbye', ing: 'saying goodbye',
-    use: 'Îți iei rămas-bun de la cineva când pleci: `say goodbye to someone`. Merge cu `say`, nu cu `tell`.',
+    means: [['a-și lua rămas-bun', 'She left without **saying goodbye**.']],
+    tip: 'Rămas-bun de la Tom: `say goodbye to Tom`.',
     ex: [
       ['ps', 'My son never says goodbye when he leaves.', 'Fiul meu nu-și ia niciodată la revedere când pleacă.'],
       ['past', 'We said goodbye at the station.', 'Ne-am luat rămas-bun la gară.'],
@@ -1211,13 +1283,14 @@ export const VERB_BOOK = {
       ['Say hello to Tom for me.', 'Salută-l pe Tom din partea mea.'],
     ],
     traps: [
-      ['I said goodbye from my friends.', 'I said goodbye to my friends.', 'Rămas-bun „de la” cineva se spune `say goodbye to`.'],
-      ['I told goodbye to her.', 'I said goodbye to her.', 'Cu `goodbye` merge `say`, nu `tell`.'],
+      ['I said goodbye from my friends.', 'I said goodbye to my friends.', 'Cu `to`, nu cu `from`.'],
+      ['I told goodbye to her.', 'I said goodbye to her.', 'Cu `say`, nu cu `tell`.'],
     ],
   },
   'look forward to': {
     s: 'looks forward to', ing: 'looking forward to',
-    use: 'Aștepți ceva cu drag, te bucuri dinainte de el. După `to` vine un substantiv sau un verb cu `-ing`: `I’m looking forward to the weekend`, `to seeing you`. `I look forward to…` e mai formal, mai ales în scrisori.',
+    means: [['a aștepta cu drag', 'I’m **looking forward to** the party.']],
+    tip: 'După `to`, verbul ia `-ing`: `to seeing you`.',
     ex: [
       ['ps', 'Sam looks forward to his days off.', 'Sam își așteaptă cu drag zilele libere.'],
       ['pc', 'Are you looking forward to seeing your family?', 'Abia aștepți să-ți vezi familia?'],
@@ -1231,13 +1304,14 @@ export const VERB_BOOK = {
       ['look forward to the holidays', 'a aștepta cu drag vacanța'],
     ],
     traps: [
-      ['I’m looking forward to see you.', 'I’m looking forward to seeing you.', 'Aici `to` e prepoziție, așa că urmează `-ing`: `to seeing`.'],
-      ['We’re looking forward the weekend.', 'We’re looking forward to the weekend.', 'Verbul are trei părți: `look forward to`. Fără `to` nu merge.'],
+      ['I’m looking forward to see you.', 'I’m looking forward to seeing you.', '`To` e prepoziție: `to seeing`.'],
+      ['We’re looking forward the weekend.', 'We’re looking forward to the weekend.', 'Lipsește `to`.'],
     ],
   },
   miss: {
     s: 'misses', ing: 'missing',
-    use: 'Ți-e dor de cineva sau de ceva: `I miss you`, „mi-e dor de tine”; cel căruia îi e dor e subiectul. Mai înseamnă că pierzi ceva ce trebuia să prinzi: `miss the bus`, `miss a call`.',
+    means: [['a-i fi dor de', 'I **miss** my family.'], ['a pierde, a rata', 'Hurry, or we’ll **miss** the train.']],
+    tip: '„Mi-e dor de tine” = `I miss you`.',
     ex: [
       ['ps', 'I don’t miss my old job at all.', 'Nu-mi lipsește deloc vechiul serviciu.'],
       ['past', 'Sorry, I missed your call.', 'Scuze, n-am răspuns când m-ai sunat.'],
@@ -1251,13 +1325,14 @@ export const VERB_BOOK = {
       ['You can’t miss it.', 'N-ai cum să nu-l vezi.'],
     ],
     traps: [
-      ['I lost the bus.', 'I missed the bus.', '„Am pierdut autobuzul” se spune `missed`. `Lose` e când nu mai găsești ceva.'],
-      ['You miss me a lot.', 'I miss you a lot.', '„Îmi lipsești” = `I miss you`: cel căruia îi e dor e subiectul.'],
+      ['I lost the bus.', 'I missed the bus.', 'Un autobuz ratat: `miss`, nu `lose`.'],
+      ['You miss me a lot.', 'I miss you a lot.', '„Îmi lipsești” = `I miss you`.'],
     ],
   },
   fly: {
     s: 'flies', ing: 'flying',
-    use: 'Se mișcă prin aer: o pasăre, un avion. Sau călătorești cu avionul: `fly to Rome`. `Fly` spune singur „cu avionul”.',
+    means: [['a zbura', 'A bird **flew** into the kitchen.'], ['a merge cu avionul', 'We **flew** to Bucharest last summer.']],
+    tip: '`Fly` spune singur „cu avionul”.',
     ex: [
       ['ps', 'My sister flies to Spain every summer.', 'Sora mea merge cu avionul în Spania în fiecare vară.'],
       ['pc', 'Are you flying or going by train?', 'Mergi cu avionul sau cu trenul?'],
@@ -1271,9 +1346,9 @@ export const VERB_BOOK = {
       ['Time flies.', 'Timpul zboară.'],
     ],
     traps: [
-      ['I flied to Rome last year.', 'I flew to Rome last year.', '`Fly` e neregulat: `flew`, `flown`.'],
-      ['We went with the plane to Rome.', 'We flew to Rome.', '„Am mers cu avionul” se spune scurt: `we flew`.'],
-      ['She flys a lot for work.', 'She flies a lot for work.', 'Cu `he`, `she`, `it`: `flies`, cu `-ies`.'],
+      ['I flied to Rome last year.', 'I flew to Rome last year.', 'Neregulat: `flew`, `flown`.'],
+      ['We went with the plane to Rome.', 'We flew to Rome.', 'Nu `with the plane`: `we flew`.'],
+      ['She flys a lot for work.', 'She flies a lot for work.', 'Cu `she`: `flies`, cu `-ies`.'],
     ],
   },
 };

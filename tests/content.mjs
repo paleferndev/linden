@@ -60,26 +60,39 @@ export function checkContent(log = console.log) {
     }
   }
   for (const v of VERBS) if (!v.ro || !v.ex) bad(`verb ${v.base}`, 'missing Romanian or example');
-  // the book: a full page for every verb, a lesson for every grammar point, a lesson behind every note
+  // the book: a page for every verb, a lesson for every grammar point, a lesson behind every note. Romanian stays short
+  // (the pages are read at a glance): counted in words, English in backticks included.
   const ticks = s => (String(s).match(/`/g) || []).length % 2 === 0;
+  const words = s => String(s).trim().split(/\s+/).length;
+  const short = (W, s, max, what) => { if (!ticks(s)) bad(W, `unpaired backtick: ${s}`); if (words(s) > max) bad(W, `${what} longer than ${max} words: ${s}`); };
   const TENSE = new Set(['ps', 'pc', 'past', 'pp', 'will', 'going', 'can', 'imp']);
   for (const v of VERBS) {
     const p = VERB_BOOK[v.base], W = `verb page ${v.base}`;
     if (!p) { bad(W, 'missing'); continue; }
-    if (!p.s || !p.ing || !p.use) bad(W, 'needs s, ing and use');
+    if (!p.s || !p.ing || !(p.means?.length >= 1 && p.means.length <= 3)) bad(W, 'needs s, ing and 1–3 meanings');
+    for (const [ro, en] of p.means || []) { short(W, ro, 5, 'meaning'); if (!en) bad(W, `meaning without example: ${ro}`); }
+    if (p.tip) short(W, p.tip, 12, 'tip');
     if (p.ex?.length !== 5) bad(W, `needs 5 examples, has ${p.ex?.length}`);
     for (const t of ['ps', 'past', 'pp']) if (!p.ex?.some(x => x[0] === t)) bad(W, `no ${t} example`);
     for (const [t, en, ro] of p.ex || []) if (!TENSE.has(t) || !en || !ro) bad(W, `bad example: ${t} ${en}`);
     if (!p.phrases?.length || !p.traps?.length) bad(W, 'needs phrases and traps');
-    for (const r of [p.use, ...(p.traps || []).map(t => t[2])]) if (!ticks(r)) bad(W, `unpaired backtick: ${r}`);
+    for (const [, , why] of p.traps || []) short(W, why, 8, 'why');
   }
   for (const k of Object.keys(VERB_BOOK)) if (!VERBS.some(v => v.base === k)) bad(`verb page ${k}`, 'not a verb of the season');
+  const BLOCK = { forms: b => b.rows?.length, turn: b => b.from && b.to, formula: b => b.parts?.length >= 2, pair: b => b.items?.length >= 2, grid: b => b.cols?.length && b.rows?.length, words: b => b.items?.length, tip: b => b.ro };
   for (const k of Object.keys(GRAMMAR)) {
     const L = LESSONS[k], W = `lesson ${k}`;
     if (!L) { bad(W, 'missing'); continue; }
-    if (!(L.rule?.length >= 2) || !(L.ex?.length >= 3) || !(L.traps?.length >= 2)) bad(W, 'needs rules, examples and traps');
-    if (L.table && L.table.some(r => r.length !== L.table[0].length)) bad(W, 'table rows of different lengths');
-    for (const r of [...L.rule, ...L.traps.map(t => t[2])]) if (!ticks(r)) bad(W, `unpaired backtick: ${r}`);
+    if (!L.gist) bad(W, 'needs a gist'); else short(W, L.gist, 9, 'gist');
+    if (!(L.blocks?.length >= 2 && L.blocks.length <= 6)) bad(W, `needs 2–6 blocks, has ${L.blocks?.length}`);
+    for (const b of L.blocks || []) {
+      if (!BLOCK[b.t]?.(b)) bad(W, `bad block: ${JSON.stringify(b).slice(0, 80)}`);
+      if (b.title) short(W, b.title, 5, 'title');
+      if (b.t === 'tip') short(W, b.ro, 12, 'tip');
+      if (b.note) short(W, b.note, 7, 'note');
+    }
+    if (!(L.ex?.length >= 3) || !(L.traps?.length >= 2)) bad(W, 'needs examples and traps');
+    for (const [, , why] of L.traps || []) short(W, why, 8, 'why');
   }
   for (const e of EPISODES) for (const x of e.script) if (x.t === 'note' && !LESSONS[x.g]) bad(`episode ${e.n}`, `note "${x.title}" has no lesson (wrap it in g(point, note(…)))`);
   // every line of the episodes has a recording (lines without one fall back to the phone's voice)

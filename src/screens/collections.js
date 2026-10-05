@@ -7,7 +7,7 @@ import { lanternSVG } from '../art/stranger.js';
 import { Store, epDone, epsDone } from '../app/store.js';
 import { $, $$, esc, openSheet, closeSheet } from '../app/ui.js';
 import { say } from '../app/sound.js';
-import { openVerb, openLesson } from './book.js';
+import { openVerb, openLesson, titleHTML } from './book.js';
 
 // Colecții: what the season has given you. The album (a picture for every finished episode), the verb album (every
 // verb met; each opens its page in the book), the grammar (the lesson of every point met), and the lantern with the
@@ -64,7 +64,7 @@ export function renderCollections(view, tab = 'album') {
         const ps = pointsOf(e.n);
         if (!ps.length) return '';
         if (!epDone(e.n)) return `<p class="v-locked">Episodul ${e.n} · ${ps.length === 1 ? 'o lecție' : `${ps.length} lecții`}</p>`;
-        return `<h3 class="v-ep">Episodul ${e.n} · <span class="en">${esc(e.title)}</span></h3><div class="lessons">${ps.map(p => `<button type="button" class="lesson" data-p="${esc(p)}"><b>${esc(GRAMMAR[p].title)}</b><small>${esc(GRAMMAR[p].note[0])}</small>${ICONS.chev}</button>`).join('')}</div>`;
+        return `<h3 class="v-ep">Episodul ${e.n} · <span class="en">${esc(e.title)}</span></h3><div class="lessons">${ps.map(p => `<button type="button" class="lesson" data-p="${esc(p)}"><b>${titleHTML(GRAMMAR[p].title)}</b><small>${esc(GRAMMAR[p].note[0])}</small>${ICONS.chev}</button>`).join('')}</div>`;
       }).join('')}`;
     $$('[data-p]', body).forEach(b => b.addEventListener('click', () => openLesson(b.dataset.p)));
   }

@@ -91,4 +91,18 @@ export function photo(who, prop) {
   return svg('0 0 120 150', `<rect width="120" height="150" fill="var(${c.bg})"/><g transform="translate(0 -4)">${person(c)}${hide ? `<g><circle cx="51" cy="64" r="4" fill="var(${c.skin})"/><circle cx="69" cy="64" r="4" fill="var(${c.skin})"/>${hide}</g>` : ''}</g>${PROPS[prop] || ''}`);
 }
 
+/* ---------------------------------------------------------------- where is the ball? (the lesson on in, on, under…) */
+const box = (x, y, w = 28, h = 24) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="2" fill="var(--kraft)" stroke="var(--wood-line)" stroke-width="1.5"/>`;
+const ball = (x, y) => `<circle cx="${x}" cy="${y}" r="6.5" fill="var(--postbox)"/><path d="M${x - 3} ${y - 3}a4 4 0 0 1 3-1.6" stroke="#fff" stroke-width="1.6" fill="none" opacity=".6" stroke-linecap="round"/>`;
+const floor = '<path d="M4 41h52" stroke="var(--line)" stroke-width="2" stroke-linecap="round"/>';
+export const WHERE = {
+  in: () => svg('0 0 60 44', `${floor}<rect x="16" y="16" width="28" height="24" rx="2" fill="var(--wood-line)"/>${ball(30, 25)}<rect x="16" y="26" width="28" height="14" rx="2" fill="var(--kraft)" stroke="var(--wood-line)" stroke-width="1.5"/>`),
+  on: () => svg('0 0 60 44', `${floor}${box(16, 17)}${ball(30, 10)}`),
+  under: () => svg('0 0 60 44', `${floor}<rect x="10" y="12" width="40" height="5" rx="2" fill="var(--wood)"/><path d="M14 17v24M46 17v24" stroke="var(--wood-line)" stroke-width="3"/>${ball(30, 34)}`),
+  behind: () => svg('0 0 60 44', `${floor}${ball(38, 15)}${box(16, 17)}`),
+  front: () => svg('0 0 60 44', `${floor}${box(16, 9)}${ball(30, 34)}`),
+  next: () => svg('0 0 60 44', `${floor}${box(8, 17)}${ball(46, 34)}`),
+  between: () => svg('0 0 60 44', `${floor}${box(3, 21, 20, 20)}${box(37, 21, 20, 20)}${ball(30, 34)}`),
+};
+
 export { busstop };

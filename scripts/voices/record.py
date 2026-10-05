@@ -53,6 +53,10 @@ SAME = {w: k for k, ws in {
     'their': ['there', 'theyre'], 'whole': ['hole'], 'eight': ['ate'], 'read': ['red'], 'meet': ['meat'], 'flew': ['flu'],
     'threw': ['through'], 'blue': ['blew'], 'road': ['rode'], 'grown': ['groan'], 'sun': ['son'], 'weather': ['whether'],
     'its': ['it s'], 'for': ['four'], 'been': ['bean'], 'wear': ['where'], 'week': ['weak'], 'hour': ['our'],
+    # Whisper spells the American way
+    'neighbours': ['neighbors'], 'neighbour': ['neighbor'], 'colour': ['color'], 'favourite': ['favorite'], 'centre': ['center'],
+    'theatre': ['theater'], 'grey': ['gray'], 'mum': ['mom'], 'kilometres': ['kilometers'], 'metres': ['meters'],
+    'travelling': ['traveling'], 'cancelled': ['canceled'], 'jewellery': ['jewelry'], 'cheque': ['check'],
 }.items() for w in [k, *ws]}
 NUM = {'1': 'one', '2': 'two', '3': 'three', '4': 'four', '5': 'five', '6': 'six', '7': 'seven', '8': 'eight', '9': 'nine',
        '10': 'ten', '11': 'eleven', '12': 'twelve', '20': 'twenty', '50': 'fifty', '60': 'sixty', '1966': 'nineteen sixty six', '2010': 'twenty ten'}

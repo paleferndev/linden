@@ -98,7 +98,7 @@ export function checkContent(log = console.log) {
   // every line of the episodes has a recording (lines without one fall back to the phone's voice)
   const missing = [];
   for (const e of EPISODES) for (const x of e.script) {
-    const who = x.t === 'signal' ? 'voice' : x.who;
+    const who = x.t === 'signal' ? x.who || 'voice' : x.who;
     if (['msg', 'voice', 'signal'].includes(x.t) && !VOICED.has(voiceKey(who, x.en))) missing.push(`episode ${e.n}: ${x.en}`);
   }
   log(`recordings: ${missing.length ? `${missing.length} lines of the episodes have none and use the phone's voice` : 'every line of the episodes has one'}`);

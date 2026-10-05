@@ -43,8 +43,9 @@ export const fix = (q, right, wrong, why) => ({ t: 'fix', q, right, wrong: [].co
 export const quiz = (...items) => ({ t: 'quiz', items: items.map(([text, right, wrong, why]) => ({ text, right, wrong: [].concat(wrong), why: why || '' })) });
 /** A minigame, with its data set (src/content/games.js). */
 export const game = (kind, set) => ({ t: 'game', kind, set });
-/** The radio transmission at the end: type what you hear. `clue` (Romanian) says what it means for the story. */
-export const signal = (en, ro, clue) => ({ t: 'signal', en, ro, clue });
+/** The radio transmission at the end: type what you hear. `clue` (Romanian) says what it means for the story.
+ *  `who`: whose voice it is, 'voice' (the others, far away) or 'oldvoice' (someone much nearer). */
+export const signal = (en, ro, clue, who = 'voice') => ({ t: 'signal', en, ro, clue, who });
 
 /** Tasks carry their grammar point for the review: `g('do-does', complete(…))`. */
 export const g = (point, task) => ({ ...task, g: point });

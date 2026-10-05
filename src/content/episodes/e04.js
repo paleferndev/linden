@@ -3,7 +3,7 @@ import { m, story, sys, note, voice, spark, complete, choose, write, dictate, qu
 export default {
   n: 4, title: 'That night', ro: 'Noaptea aceea', place: 'bus', chat: 'Stația de autobuz', cast: ['sam', 'stranger'],
   points: ['past-ed', 'was-were'], game: 'order',
-  hook: 'Sam a văzut două lumini. A doua a mers pe jos până la magazinul lui Priya.',
+  hook: 'Sam a văzut două lumini. A doua mergea pe jos, ca un bătrân cu o lanternă.',
   memory: ['I remember others. Many small lights, like me.', 'Îmi amintesc de alții. Multe lumini mici, ca mine.'],
   caption: ['Sam saw two lights that night.', 'Sam a văzut două lumini în noaptea aceea.'],
   script: [
@@ -52,6 +52,6 @@ export default {
     voice('sam', 'I called Priya. She wants to talk to you.', 'Am sunat-o pe Priya. Vrea să vorbească cu voi.'),
     dictate('Scrie ce spune Sam:'),
     m('stranger', 'Priya’s shop. The walking light went there.', 'Magazinul lui Priya. Acolo s-a dus lumina care merge.'),
-    signal('The other light is old. It stopped here a long time ago.', 'Cealaltă lumină e veche. S-a oprit aici acum mult timp.', 'Cealaltă lumină nu e nouă pe stradă. E aici de mult.'),
+    signal('The other light is old. It stopped here a long time ago.', 'Cealaltă lumină e veche. S-a oprit aici acum mult timp.', 'Cealaltă lumină nu e nouă pe stradă. E aici de mult.', 'oldvoice'),
   ],
 };

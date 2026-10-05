@@ -19,6 +19,8 @@ export const CAST = {
   moss: { name: 'Mr Moss', bg: '--moss', voice: { pitch: .7, rate: .86 },
     huh: [['Hm. Say it again, slowly.', 'Hm. Mai spune o dată, rar.']] },
   voice: { name: 'Vocea', bg: '--b-navy', voice: { pitch: .62, rate: .84 }, huh: [] },
+  // the voice on the radio in the first episodes: the same name, another voice (whose, the story tells later)
+  oldvoice: { name: 'Vocea', bg: '--b-navy', voice: { pitch: .7, rate: .86 }, huh: [] },
   mimi: { name: 'Mimi', bg: '--b-blue', voice: { pitch: 1.6, rate: 1 }, huh: [['Mrrp?', '(Mimi te privește nedumerită.)']] },
 };
 

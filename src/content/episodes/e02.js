@@ -67,6 +67,6 @@ export default {
     m('stranger', 'Thank you, Tom. Your tea is warm, and so are you.', 'Mulțumesc, Tom. Ceaiul tău e cald, și tu la fel.'),
     m('tom', 'Ha! See you later, you two.', 'Ha! Pe mai târziu, voi doi.'),
     sys('Seara, acasă. Radioul pârâie din nou.'),
-    signal('Well done. Now watch your cat. She is playing with something bright.', 'Bravo. Acum fii atent la pisica ta. Se joacă cu ceva strălucitor.', 'Mimi se joacă cu ceva. Poate e o scânteie.'),
+    signal('Well done. Now watch your cat. She is playing with something bright.', 'Bravo. Acum fii atent la pisica ta. Se joacă cu ceva strălucitor.', 'Mimi se joacă cu ceva. Poate e o scânteie.', 'oldvoice'),
   ],
 };

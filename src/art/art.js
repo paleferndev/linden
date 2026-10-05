@@ -35,7 +35,7 @@ export function face(who) {
   if (who === 'stranger') return `<svg viewBox="26 14 68 68" aria-hidden="true">${stranger('calm', { light: .6, lantern: false })}</svg>`;
   if (who === 'moss') return `<svg viewBox="26 14 68 68" aria-hidden="true">${moss({ awake: true })}</svg>`;
   if (who === 'mimi') return `<svg viewBox="-2 6 50 50" aria-hidden="true">${cat()}</svg>`;
-  if (who === 'voice') return `<svg viewBox="-12 -14 94 80" aria-hidden="true">${radio()}</svg>`;
+  if (who === 'voice' || who === 'oldvoice') return `<svg viewBox="-12 -14 94 80" aria-hidden="true">${radio()}</svg>`;
   const c = PEOPLE[who];
   return c ? `<svg viewBox="28 24 64 64" aria-hidden="true">${person(c)}</svg>` : '';
 }

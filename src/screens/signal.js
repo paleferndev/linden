@@ -27,7 +27,7 @@ export function playSignal(host, x, { n } = {}) {
   const draw = () => {
     out.innerHTML = tokens.map((t, i) => shown[i] ? `<span class="w got">${esc(t)}</span>` : `<span class="w">${'▒'.repeat(Math.max(2, t.replace(/[.,!?]/g, '').length))}</span>`).join(' ');
   };
-  const play = async slowly => { wave.classList.add('on'); await say(x.en, { who: 'voice', rate: slowly ? .62 : undefined }); wave.classList.remove('on'); };
+  const play = async slowly => { wave.classList.add('on'); await say(x.en, { who: x.who || 'voice', rate: slowly ? .62 : undefined }); wave.classList.remove('on'); };
   draw();
   return new Promise(resolve => {
     const finish = () => {

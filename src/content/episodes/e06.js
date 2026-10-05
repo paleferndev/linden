@@ -3,7 +3,7 @@ import { m, story, sys, note, voice, spark, complete, choose, build, write, dict
 export default {
   n: 6, title: 'The garden at No. 9', ro: 'Grădina de la No. 9', place: 'no9', chat: 'No. 9', cast: ['hughes', 'stranger'],
   points: ['prep'], game: 'room',
-  hook: 'Piticul lui Mrs Hughes are aceeași pălărie ca Străinul. Și noaptea se mișcă.',
+  hook: 'Vocea de la radio a spus: „Nu dormi într-o grădină, ca mine.” Cine vorbește?',
   memory: ['This hat is not mine. I found it. It belongs to someone.', 'Pălăria asta nu e a mea. Am găsit-o. E a cuiva.'],
   caption: ['The gnome had the same hat.', 'Piticul avea aceeași pălărie.'],
   script: [
@@ -34,16 +34,18 @@ export default {
     g('prep', write('Scrie unde era ieri piticul:', 'Yesterday Mr Moss was {} the roses.', ['behind'], 'În spatele = behind.')),
     m('stranger', 'Hello, Mr Moss. Can you hear me?', 'Bună ziua, Mr Moss. Mă auziți?'),
     sys('Nimic. Apoi, pentru o clipă, sub pălăria lui se aprind două puncte de lumină.'),
+    m('stranger', 'Mrs Hughes… his light is almost gone. Is he like me?', 'Mrs Hughes… lumina lui aproape s-a stins. E ca mine?'),
     m('hughes', 'Tea! Who wants tea? I’ll put the kettle on.', 'Ceai! Cine vrea ceai? Pun apa la fiert.'),
     sys('Mrs Hughes intră în casă foarte repede.'),
     g('ps-s', build('Spune-i Străinului: „Cred că ea știe ceva.”', 'I think she knows something.', ['know', 'is'], 'She: knows, cu -s.')),
     m('stranger', 'Yes. She knows something.', 'Da. Ea știe ceva.'),
+    sys('Lanterna lui Aster pâlpâie. De data asta, mai mult.'),
     g('prep', complete('Spune-i ce faceți acum:', 'Let’s wait for her {} the bench.', 'on',
       ['in', 'In = înăuntru. Pe o suprafață: on.'],
       ['into', 'Into = spre înăuntru. Pe bancă: on the bench.'])),
     quiz(['The key is {} the pot.', 'under', 'below of'], ['Wait {} the café.', 'in front of', 'in front'], ['She sat {} me.', 'next to', 'next']),
     voice('hughes', 'Your tea is on the table, next to the roses.', 'Ceaiul vostru e pe masă, lângă trandafiri.'),
     dictate('Scrie ce spune Mrs Hughes:'),
-    signal('Our old friend is sleeping in that garden. Wake him gently.', 'Vechiul nostru prieten doarme în grădina aceea. Treziți-l cu blândețe.', 'Mr Moss nu e un pitic oarecare. E un vechi prieten al lor.'),
+    signal('Hurry. Your light is getting weaker. Don’t sleep in a garden, like me.', 'Grăbește-te. Lumina ta slăbește. Nu dormi într-o grădină, ca mine.', 'Lumina lui Aster slăbește. Iar vocea de la radio… a adormit și ea cândva într-o grădină.', 'oldvoice'),
   ],
 };

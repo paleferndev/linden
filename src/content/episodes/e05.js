@@ -55,6 +55,6 @@ export default {
       ['Let’s take her some teas and ask her.', 'Tea nu se numără: some tea, fără -s.'])),
     quiz(['How {} eggs?', 'many', 'much'], ['There {} some milk.', 'is', 'are'], ['I haven’t got {} bread.', 'any', 'some']),
     m('stranger', 'No. 9. Let’s go.', 'No. 9. Hai să mergem.'),
-    signal('There is someone in the garden at No. 9. Someone old.', 'E cineva în grădina de la No. 9. Cineva bătrân.', 'În grădina lui Mrs Hughes e cineva. Cineva bătrân.'),
+    signal('There is someone in the garden at No. 9. Someone old.', 'E cineva în grădina de la No. 9. Cineva bătrân.', 'În grădina lui Mrs Hughes e cineva. Cineva bătrân.', 'oldvoice'),
   ],
 };

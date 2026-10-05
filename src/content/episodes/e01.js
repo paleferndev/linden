@@ -3,7 +3,7 @@ import { m, story, sys, note, spark, complete, choose, build, fix, quiz, game, s
 export default {
   n: 1, title: 'Something in the garden', ro: 'Ceva în grădină', place: 'home', chat: 'Grădina de la No. 1', cast: ['stranger'],
   points: ['be', 'have-got', 'this-that'], game: 'thisthat',
-  hook: 'Vocea de la radio spune că următoarea scânteie e undeva lângă ceai.',
+  hook: 'Cineva vorbește la radio și știe unde e următoarea scânteie. Dar cine?',
   memory: ['I remember falling. It was cold, and very fast.', 'Îmi amintesc că am căzut. Era frig și totul a fost foarte repede.'],
   caption: ['Something came down in the garden.', 'Ceva a căzut în grădină.'],
   script: [
@@ -21,6 +21,7 @@ export default {
     m('stranger', 'Hungry? No. I don’t eat. I only need light.', 'Foame? Nu. Eu nu mănânc. Am nevoie doar de lumină.'),
     m('stranger', 'Look. This is my lantern. It has got room for twelve sparks.', 'Uite. Asta e lanterna mea. Are loc pentru douăsprezece scântei.', { mark: ['has got'] }),
     m('stranger', 'But now it is empty. It has got no sparks.', 'Dar acum e goală. Nu are nicio scânteie.'),
+    m('stranger', 'And without sparks, I am cold and very tired.', 'Și fără scântei, mi-e frig și sunt foarte obosit.'),
     g('have-got', note('have got', 'Ce ai: I have got (I’ve got). La he, she, it: has got.', ['I**’ve got** a cat.', 'It **has got** no sparks.'])),
     m('stranger', 'Have you got a lantern?', 'Tu ai o lanternă?'),
     g('have-got', choose('Răspunde:', 'No, I haven’t. But I’ve got a torch on my phone.',
@@ -72,6 +73,6 @@ export default {
       ['Of course you can. Good evening!', 'Good evening se spune când ajungi. Când pleci sau te duci la culcare: Good night.'],
       ['Of course you can. Sleep good!', 'Se spune sleep well. Good descrie un lucru, well descrie cum faci ceva.'])),
     m('stranger', 'Good night, {name}. Wait… listen. Your radio.', 'Noapte bună, {name}. Stai… ascultă. Radioul tău.'),
-    signal('Can you hear us? Look for your next spark near the tea.', 'Ne auzi? Caută următoarea scânteie lângă ceai.', 'Vocea de la radio știe unde sunt scânteile. Următoarea e lângă ceai.'),
+    signal('Can you hear me? Look for your next spark near the tea.', 'Mă auzi? Caută următoarea scânteie lângă ceai.', 'Cineva vorbește la radio și știe unde sunt scânteile. Următoarea e lângă ceai.', 'oldvoice'),
   ],
 };

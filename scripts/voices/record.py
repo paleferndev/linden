@@ -32,6 +32,7 @@ MANIFEST = os.path.join(OUT, 'manifest.json')
 CAST = {
     'stranger': ('F2', 0.6), 'tom': ('M1', 0.8), 'hughes': ('F1', 0.85), 'sam': ('M3', 0.85), 'priya': ('F5', 0.8),
     'okafor': ('F4', 0.7), 'moss': ('M5', 0.55), 'voice': ('M2', 0.5), 'narrator': ('F3', 0.45),
+    'oldvoice': ('M5', 0.5),  # Mr Moss on the radio, before the story says so
 }
 # what each mood sample says (said in that mood, it sets the tone of the lines read from it)
 MOODS = {
@@ -65,7 +66,7 @@ NUM = {'1': 'one', '2': 'two', '3': 'three', '4': 'four', '5': 'five', '6': 'six
 
 def mood_of(line):
     who, say = line['who'], line['say']
-    if who == 'voice':
+    if who in ('voice', 'oldvoice'):
         return 'radio'
     if who == 'narrator':
         return 'teach'
@@ -129,7 +130,7 @@ def finish(w, sr, who):
     w, _ = librosa.effects.trim(w, top_db=40)
     pad = np.zeros(int(sr * 0.06), dtype=np.float32)
     w = np.concatenate([pad, w, pad])
-    if who == 'voice':
+    if who in ('voice', 'oldvoice'):
         w = radio(w, sr)
     rms = np.sqrt(np.mean(w ** 2)) or 1
     w = w * (0.08 / rms)

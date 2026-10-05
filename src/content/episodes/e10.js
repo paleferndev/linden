@@ -3,7 +3,7 @@ import { m, story, sys, note, voice, spark, complete, choose, write, listen, qui
 export default {
   n: 10, title: 'Can you help us?', ro: 'Ne puteți ajuta?', place: 'office', chat: 'Biroul', cast: ['okafor', 'stranger'],
   points: ['can', 'must'], game: 'signs',
-  hook: 'Vin nori. Lumina lui Aster trebuie să fie mai puternică decât ei.',
+  hook: 'Vin nori. Iar lumina lui Aster nu mai poate aștepta mult.',
   memory: ['I remember how to fly. You need a lot of light.', 'Îmi amintesc cum se zboară. Ai nevoie de multă lumină.'],
   caption: ['Only the roof is high enough.', 'Doar acoperișul e destul de sus.'],
   script: [
@@ -24,7 +24,8 @@ export default {
     story('Acoperișul. Vânt, stele și telescopul de alamă al lui Dr Okafor.', 'night:roof'),
     m('okafor', 'Look through the telescope, Aster. What can you see?', 'Uită-te prin telescop, Aster. Ce vezi?'),
     m('stranger', 'I can see… home. Many small lights. They are waiting for me.', 'Văd… acasă. Multe lumini mici. Mă așteaptă.'),
-    m('okafor', 'Stars. You are looking at stars, Aster.', 'Stele. Te uiți la stele, Aster.'),
+    sys('Dr Okafor se uită prin telescop. Apoi se uită lung la Aster.'),
+    m('okafor', 'Hmm. Very interesting. Aster, can I ask you something? No… not tonight.', 'Hmm. Foarte interesant. Aster, pot să te întreb ceva? Nu… nu în seara asta.'),
     sys('Aster tace mult timp.'),
     m('okafor', 'Something is shining on the telescope. Did you drop something?', 'Ceva strălucește pe telescop. Ai scăpat ceva?'),
     spark(),
@@ -45,6 +46,8 @@ export default {
       ['Telescopul nu merge.', 'Ascultă din nou: vorbește despre vreme.']),
     m('stranger', 'Clouds? But the others must see my light!', 'Nori? Dar ceilalți trebuie să-mi vadă lumina!'),
     m('okafor', 'Then your light must be brighter than the clouds. Much brighter.', 'Atunci lumina ta trebuie să fie mai puternică decât norii. Mult mai puternică.'),
+    sys('Lanterna lui Aster pâlpâie. Dr Okafor observă, dar nu spune nimic.'),
+    m('stranger', 'And it must be on Friday. My light can’t wait much longer.', 'Și trebuie să fie vineri. Lumina mea nu mai poate aștepta mult.'),
     quiz(['You {} smoke here.', 'mustn’t', 'don’t have to'], ['{} you help me?', 'Could', 'Should'], ['She {} work tomorrow.', 'has to', 'have to']),
     signal('Clouds are coming. You need all your sparks. Look higher.', 'Vin nori. Ai nevoie de toate scânteile. Caută mai sus.', 'Mai lipsesc două scântei. Una e undeva sus.'),
   ],

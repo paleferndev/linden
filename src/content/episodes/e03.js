@@ -3,7 +3,7 @@ import { m, story, sys, note, spark, complete, choose, build, write, fix, quiz, 
 export default {
   n: 3, title: 'What is it doing?', ro: 'Ce face?', place: 'home', chat: 'No. 1', cast: ['stranger'],
   points: ['pc', 'pc-ps'], game: 'photos',
-  hook: 'Radioul spune că omul din autobuzul de noapte a văzut ceva.',
+  hook: 'Șoferul autobuzului de noapte a văzut tot. Iar lanterna lui Aster a pâlpâit.',
   memory: ['I remember my home. It is dark there, and very quiet.', 'Îmi amintesc casa mea. Acolo e întuneric și foarte liniștit.'],
   caption: ['Mimi was playing with something bright.', 'Mimi se juca cu ceva strălucitor.'],
   script: [
@@ -19,6 +19,8 @@ export default {
       ['A fork? OK… but why do you working at two in the morning?', 'Why are you working: are + -ing. Do nu merge cu -ing.'],
       ['A fork? OK… but why you are working at two in the morning?', 'La întrebare, are trece în fața lui you: why are you working?'])),
     m('stranger', 'I don’t sleep. I never sleep.', 'Eu nu dorm. Nu dorm niciodată.'),
+    sys('Pentru o clipă, lumina din lanternă pâlpâie. Străinul o acoperă repede cu mâna.'),
+    m('stranger', 'It is nothing. I am just a little tired.', 'Nu e nimic. Sunt doar puțin obosit.'),
     m('stranger', 'But Mimi isn’t sleeping either. Look. What is she doing?', 'Dar nici Mimi nu doarme. Uite. Ce face?'),
     sys('Sub canapea, Mimi lovește ceva cu laba. Ceva care strălucește.'),
     g('pc', build('Spune-i: „Se joacă cu ceva.”', 'She is playing with something.', ['plays', 'are'], 'Chiar acum: she is playing.')),
@@ -49,6 +51,6 @@ export default {
       ['Tom get up at five every day. He’s usually asleep now.', 'Tom = he: gets up, cu -s.'])),
     quiz(['Look! It {} raining.', 'is', 'does'], ['I usually {} coffee.', 'drink', 'am drinking'], ['What {} Mimi doing?', 'is', 'does']),
     m('stranger', 'Listen! The radio is working. Someone is talking!', 'Ascultă! Radioul merge. Vorbește cineva!'),
-    signal('We can see you. Ask the night bus driver. He saw us.', 'Te vedem. Întreabă-l pe șoferul autobuzului de noapte. Ne-a văzut.', 'Sam, șoferul autobuzului de noapte, a văzut ceva în noaptea aceea.'),
+    signal('I can see your light. Ask the night bus driver. He saw everything.', 'Îți văd lumina. Întreabă-l pe șoferul autobuzului de noapte. A văzut tot.', 'Sam, șoferul autobuzului de noapte, a văzut ceva în noaptea aceea.', 'oldvoice'),
   ],
 };

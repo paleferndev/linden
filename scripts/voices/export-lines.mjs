@@ -31,7 +31,7 @@ for (const e of EPISODES) {
   for (const x of e.script) {
     if (x.t === 'msg') { add(x.who, x.en, 'message'); if (x.who !== 'mimi') last = x.who; }
     if (x.t === 'voice') add(x.who, x.en, 'voice note', true);
-    if (x.t === 'signal') add('voice', x.en, 'signal', true);
+    if (x.t === 'signal') add(x.who || 'voice', x.en, 'signal', true);
     // a wrong reply's own reaction is said by whoever spoke last
     for (const w of x.wrong || []) if (w.re) add(last, w.re[0], 'reaction');
   }

@@ -35,6 +35,12 @@
   "mood": "ask",
   "take": 1
  },
+ "0169cd83": {
+  "who": "moss",
+  "say": "Not tonight, young one. Everyone! Light the lane!",
+  "mood": "excited",
+  "take": 1
+ },
  "018639e7": {
   "who": "narrator",
   "say": "I saw Tom at the café this morning.",
@@ -75,6 +81,12 @@
   "who": "narrator",
   "say": "I’ve already said sorry twice.",
   "mood": "teach",
+  "take": 1
+ },
+ "027b23f6": {
+  "who": "oldvoice",
+  "say": "I can see your light. Ask the night bus driver. He saw everything.",
+  "mood": "radio",
   "take": 1
  },
  "0296b1ce": {
@@ -273,6 +285,12 @@
   "who": "narrator",
   "say": "The tomatoes haven’t grown much this year.",
   "mood": "teach",
+  "take": 1
+ },
+ "087e0436": {
+  "who": "stranger",
+  "say": "Mr Moss… was it you? On the radio?",
+  "mood": "ask",
   "take": 1
  },
  "0892a8a2": {
@@ -521,6 +539,12 @@
   "mood": "warm",
   "take": 1
  },
+ "15bf3a52": {
+  "who": "stranger",
+  "say": "He answers, Mrs Hughes. At night, on the radio. Listen.",
+  "mood": "wonder",
+  "take": 1
+ },
  "16129303": {
   "who": "narrator",
   "say": "fly. flew. flown.",
@@ -707,11 +731,23 @@
   "mood": "teach",
   "take": 1
  },
+ "1e193899": {
+  "who": "stranger",
+  "say": "And it must be on Friday. My light can’t wait much longer.",
+  "mood": "wonder",
+  "take": 1
+ },
  "1e7a254c": {
   "who": "narrator",
   "say": "decide what to do",
   "mood": "teach",
   "take": 2
+ },
+ "1ef66a51": {
+  "who": "tom",
+  "say": "Not you, Aster. We won’t let that happen.",
+  "mood": "warm",
+  "take": 1
  },
  "1ef6d47f": {
   "who": "narrator",
@@ -843,12 +879,6 @@
   "who": "narrator",
   "say": "Aster went home. One spark stayed in the tree.",
   "mood": "teach",
-  "take": 1
- },
- "2533ff7e": {
-  "who": "voice",
-  "say": "There is someone in the garden at No. 9. Someone old.",
-  "mood": "radio",
   "take": 1
  },
  "25704972": {
@@ -1151,6 +1181,12 @@
   "mood": "teach",
   "take": 1
  },
+ "309932b1": {
+  "who": "hughes",
+  "say": "I think you are the next one, dear.",
+  "mood": "warm",
+  "take": 1
+ },
  "30a6c1f6": {
   "who": "narrator",
   "say": "We’re going to repair the fence in spring.",
@@ -1209,6 +1245,12 @@
   "who": "narrator",
   "say": "The train arrives at ten past six.",
   "mood": "teach",
+  "take": 1
+ },
+ "32adfbc3": {
+  "who": "stranger",
+  "say": "Two sparks! The lost one, and a new one. The new one came with my name.",
+  "mood": "excited",
   "take": 1
  },
  "32f53aa3": {
@@ -1319,6 +1361,12 @@
   "mood": "teach",
   "take": 1
  },
+ "3625e0e8": {
+  "who": "stranger",
+  "say": "My light is going out. If the clouds don’t move, I will fall asleep, like Mr Moss.",
+  "mood": "gentle",
+  "take": 1
+ },
  "362c82e9": {
   "who": "narrator",
   "say": "We went to the seaside last summer.",
@@ -1355,12 +1403,6 @@
   "mood": "teach",
   "take": 1
  },
- "37bdcef5": {
-  "who": "voice",
-  "say": "Can you hear us? Look for your next spark near the tea.",
-  "mood": "radio",
-  "take": 1
- },
  "37d41647": {
   "who": "narrator",
   "say": "Have you seen my keys?",
@@ -1383,6 +1425,12 @@
   "who": "narrator",
   "say": "I’d like a coffee, please.",
   "mood": "teach",
+  "take": 1
+ },
+ "38d0c53a": {
+  "who": "oldvoice",
+  "say": "Can you hear me? Look for your next spark near the tea.",
+  "mood": "radio",
   "take": 1
  },
  "399f2358": {
@@ -1551,6 +1599,12 @@
   "who": "narrator",
   "say": "How much sugar do you want?",
   "mood": "teach",
+  "take": 1
+ },
+ "400cec72": {
+  "who": "stranger",
+  "say": "And without sparks, I am cold and very tired.",
+  "mood": "wonder",
   "take": 1
  },
  "405a389f": {
@@ -1769,6 +1823,12 @@
   "mood": "teach",
   "take": 1
  },
+ "47f73262": {
+  "who": "moss",
+  "say": "Yes. I was asleep, but I was dreaming. And in my dreams, I talked to you.",
+  "mood": "gentle",
+  "take": 2
+ },
  "4816197b": {
   "who": "narrator",
   "say": "Can you grow lemons in England?",
@@ -1785,12 +1845,6 @@
   "who": "narrator",
   "say": "The letter won’t arrive before Monday.",
   "mood": "teach",
-  "take": 1
- },
- "48762937": {
-  "who": "hughes",
-  "say": "He said: “Keep it for the next one.” I think you are the next one, dear.",
-  "mood": "warm",
   "take": 1
  },
  "48a37d72": {
@@ -2199,6 +2253,12 @@
   "who": "narrator",
   "say": "I feel much better today.",
   "mood": "teach",
+  "take": 1
+ },
+ "5b944745": {
+  "who": "stranger",
+  "say": "Mrs Hughes… his light is almost gone. Is he like me?",
+  "mood": "ask",
   "take": 1
  },
  "5bc6c870": {
@@ -2843,12 +2903,6 @@
   "mood": "ask",
   "take": 1
  },
- "796767f5": {
-  "who": "stranger",
-  "say": "Let’s try. Everyone, help me. Light the lane!",
-  "mood": "excited",
-  "take": 1
- },
  "796d7585": {
   "who": "stranger",
   "say": "Went, took, gave, told… Your language is full of surprises.",
@@ -3047,6 +3101,12 @@
   "mood": "teach",
   "take": 2
  },
+ "7f21b4bf": {
+  "who": "stranger",
+  "say": "Someone opened my lantern last night. One of my sparks is gone!",
+  "mood": "excited",
+  "take": 1
+ },
  "7f338201": {
   "who": "narrator",
   "say": "be. was, were. been.",
@@ -3167,6 +3227,12 @@
   "mood": "ask",
   "take": 1
  },
+ "832d9eb3": {
+  "who": "hughes",
+  "say": "His light was too weak to go home. Every night it was weaker. And one morning, he didn’t wake up.",
+  "mood": "gentle",
+  "take": 1
+ },
  "839c10f8": {
   "who": "narrator",
   "say": "Do you have to wear a uniform?",
@@ -3203,6 +3269,12 @@
   "mood": "ask",
   "take": 1
  },
+ "84e26903": {
+  "who": "okafor",
+  "say": "Hmm. Very interesting. Aster, can I ask you something? No… not tonight.",
+  "mood": "ask",
+  "take": 4
+ },
  "850e4b90": {
   "who": "sam",
   "say": "That’s it. My wife laughed. But I know what I saw.",
@@ -3221,6 +3293,12 @@
   "mood": "teach",
   "take": 1
  },
+ "85c1f797": {
+  "who": "moss",
+  "say": "Priya’s candles too. I will pay her back. With new coins.",
+  "mood": "warm",
+  "take": 3
+ },
  "85ccf0f7": {
   "who": "narrator",
   "say": "Have you sent the card to your gran?",
@@ -3232,6 +3310,18 @@
   "say": "Send my love to your mum.",
   "mood": "teach",
   "take": 2
+ },
+ "86e2dba2": {
+  "who": "oldvoice",
+  "say": "Hurry. Your light is getting weaker.",
+  "mood": "radio",
+  "take": 1
+ },
+ "86f9215d": {
+  "who": "stranger",
+  "say": "So that is what happens. When the light goes out, we fall asleep.",
+  "mood": "gentle",
+  "take": 1
  },
  "8706397d": {
   "who": "narrator",
@@ -3261,12 +3351,6 @@
   "who": "narrator",
   "say": "We had breakfast at Tom’s café.",
   "mood": "teach",
-  "take": 1
- },
- "8875c2c3": {
-  "who": "voice",
-  "say": "Well done. Now watch your cat. She is playing with something bright.",
-  "mood": "radio",
   "take": 1
  },
  "890c68fc": {
@@ -3827,6 +3911,12 @@
   "mood": "warm",
   "take": 1
  },
+ "a0bad5d5": {
+  "who": "stranger",
+  "say": "Wait… this is a different voice. So who spoke to us before?",
+  "mood": "ask",
+  "take": 1
+ },
  "a0d2a6aa": {
   "who": "narrator",
   "say": "There’s a cat in the garden.",
@@ -3892,6 +3982,12 @@
   "say": "do your best",
   "mood": "teach",
   "take": 2
+ },
+ "a4ef5af0": {
+  "who": "moss",
+  "say": "And your spark in the radio… I took it. The radio needs light to call the others. I am sorry.",
+  "mood": "gentle",
+  "take": 1
  },
  "a5061bdc": {
   "who": "narrator",
@@ -4151,6 +4247,12 @@
   "mood": "teach",
   "take": 1
  },
+ "af171803": {
+  "who": "hughes",
+  "say": "It was his last spark. He said: “Keep it for the next one.” That night, he fell asleep.",
+  "mood": "gentle",
+  "take": 2
+ },
  "af2d2b99": {
   "who": "narrator",
   "say": "Did you like the film?",
@@ -4283,6 +4385,12 @@
   "mood": "wonder",
   "take": 1
  },
+ "b328a991": {
+  "who": "stranger",
+  "say": "It is nothing. I am just a little tired.",
+  "mood": "wonder",
+  "take": 1
+ },
  "b38e5e3b": {
   "who": "narrator",
   "say": "borrow. borrowed.",
@@ -4312,6 +4420,12 @@
   "say": "return home",
   "mood": "teach",
   "take": 2
+ },
+ "b3f1cb08": {
+  "who": "oldvoice",
+  "say": "Well done. Now watch your cat. She is playing with something bright.",
+  "mood": "radio",
+  "take": 1
  },
  "b453c52d": {
   "who": "narrator",
@@ -4427,6 +4541,12 @@
   "mood": "teach",
   "take": 1
  },
+ "b7dd34ef": {
+  "who": "oldvoice",
+  "say": "The other light is old. It stopped here a long time ago.",
+  "mood": "radio",
+  "take": 1
+ },
  "b8438d15": {
   "who": "stranger",
   "say": "A spark! My lantern isn’t dark now. Thank you.",
@@ -4491,6 +4611,12 @@
   "who": "narrator",
   "say": "set off early",
   "mood": "teach",
+  "take": 1
+ },
+ "ba68133e": {
+  "who": "hughes",
+  "say": "He has always talked in his sleep, dear.",
+  "mood": "warm",
   "take": 1
  },
  "ba6d65d5": {
@@ -4660,12 +4786,6 @@
   "say": "need. needed.",
   "mood": "teach",
   "take": 2
- },
- "c21440f8": {
-  "who": "stranger",
-  "say": "My seventh spark. It came back with my name.",
-  "mood": "wonder",
-  "take": 1
  },
  "c21c8fc4": {
   "who": "narrator",
@@ -5159,12 +5279,6 @@
   "mood": "wonder",
   "take": 1
  },
- "d33b8a21": {
-  "who": "voice",
-  "say": "Our old friend is sleeping in that garden. Wake him gently.",
-  "mood": "radio",
-  "take": 1
- },
  "d3535b3d": {
   "who": "narrator",
   "say": "Has anyone repaired the lift yet?",
@@ -5187,12 +5301,6 @@
   "who": "narrator",
   "say": "Don’t look down.",
   "mood": "teach",
-  "take": 1
- },
- "d428a580": {
-  "who": "voice",
-  "say": "The other light is old. It stopped here a long time ago.",
-  "mood": "radio",
   "take": 1
  },
  "d4575efe": {
@@ -5483,6 +5591,12 @@
   "mood": "teach",
   "take": 1
  },
+ "de3364b1": {
+  "who": "okafor",
+  "say": "So did I. I saw it in my telescope.",
+  "mood": "warm",
+  "take": 1
+ },
  "de5fea28": {
   "who": "narrator",
   "say": "say yes",
@@ -5493,12 +5607,6 @@
   "who": "priya",
   "say": "Brilliant! Thank you. You’re faster than my nephew.",
   "mood": "excited",
-  "take": 1
- },
- "de706645": {
-  "who": "voice",
-  "say": "We can see you. Ask the night bus driver. He saw us.",
-  "mood": "radio",
   "take": 1
  },
  "de72bd24": {
@@ -5753,6 +5861,12 @@
   "mood": "teach",
   "take": 1
  },
+ "e8ac2844": {
+  "who": "tom",
+  "say": "The gnome talks on the radio? In his sleep?",
+  "mood": "ask",
+  "take": 1
+ },
  "e8d78d82": {
   "who": "narrator",
   "say": "return a book",
@@ -6005,6 +6119,12 @@
   "mood": "teach",
   "take": 1
  },
+ "f3c2b073": {
+  "who": "oldvoice",
+  "say": "There is someone in the garden at No. 9. Someone old.",
+  "mood": "radio",
+  "take": 2
+ },
  "f3ee7c32": {
   "who": "narrator",
   "say": "I can’t see the moon tonight.",
@@ -6233,12 +6353,6 @@
   "mood": "teach",
   "take": 1
  },
- "fadd9f66": {
-  "who": "hughes",
-  "say": "His light was too weak to go home. So he decided to stay. And to sleep, in my garden, near me.",
-  "mood": "gentle",
-  "take": 1
- },
  "fb1b0184": {
   "who": "narrator",
   "say": "I’ve forgotten my password.",
@@ -6341,16 +6455,16 @@
   "mood": "ask",
   "take": 1
  },
- "fd7fb30d": {
-  "who": "okafor",
-  "say": "Stars. You are looking at stars, Aster.",
-  "mood": "warm",
-  "take": 1
- },
  "fdb628a9": {
   "who": "narrator",
   "say": "Have you met Priya?",
   "mood": "teach",
+  "take": 1
+ },
+ "fe1061f8": {
+  "who": "stranger",
+  "say": "But who put my spark in the radio? And why?",
+  "mood": "ask",
   "take": 1
  },
  "fe486477": {
@@ -6363,6 +6477,12 @@
   "who": "narrator",
   "say": "Are there any candles in the drawer?",
   "mood": "teach",
+  "take": 1
+ },
+ "fe4eec12": {
+  "who": "hughes",
+  "say": "Oh! I know that voice. I have heard it every day for a year. It’s him. It’s Mr Moss!",
+  "mood": "excited",
   "take": 1
  },
  "fe5bf549": {
@@ -6399,6 +6519,12 @@
   "who": "stranger",
   "say": "Tonight I will tell you what I am. On the roof. At midnight.",
   "mood": "wonder",
+  "take": 1
+ },
+ "ff51cb83": {
+  "who": "oldvoice",
+  "say": "Hurry. Your light is getting weaker. Don’t sleep in a garden, like me.",
+  "mood": "radio",
   "take": 1
  },
  "ff80725f": {

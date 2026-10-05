@@ -9,7 +9,7 @@ export default {
   script: [
     story('The Kettle, la ora ceaiului. Mrs Hughes scoate din geantă o fotografie veche.', 'ep:8'),
     m('hughes', 'I have lived on Linden Lane since 1966.', 'Locuiesc pe Linden Lane din 1966.', { mark: ['have lived', 'since'] }),
-    note('prezentul perfect', 'Ceva început în trecut care ține până acum: have, has + participiu. Since = din (un moment), for = de (cât timp).', ['I **have lived** here **since** 1966.', 'I**’ve known** him **for** sixty years.']),
+    g('pp', note('prezentul perfect', 'Ceva început în trecut care ține până acum: have, has + participiu. Since = din (un moment), for = de (cât timp).', ['I **have lived** here **since** 1966.', 'I**’ve known** him **for** sixty years.'])),
     m('hughes', 'And I have seen this light before. Once. In the autumn of 1966.', 'Și am mai văzut lumina asta. O dată. În toamna lui 1966.'),
     g('pp', choose('Întreab-o:', 'Have you ever told anyone?',
       ['Did you ever told anyone?', 'După did vine tell, nu told. Și pentru „până acum”: Have you ever told…?'],
@@ -18,7 +18,7 @@ export default {
     m('hughes', 'A light came down. And in the morning, there was a little man in a big hat in my garden.', 'A coborât o lumină. Iar dimineața, în grădina mea era un omuleț cu o pălărie mare.'),
     m('stranger', 'Mr Moss.', 'Mr Moss.'),
     m('hughes', 'Yes. He lived at No. 1 for a year. Your house, {name}. He was my best friend.', 'Da. A locuit la No. 1 un an. Casa ta, {name}. A fost cel mai bun prieten al meu.'),
-    note('trecut sau prezent perfect?', 'Cu un moment exact din trecut (in 1966, yesterday): trecutul simplu. Fără moment, sau până acum: prezentul perfect.', ['I **met** him **in 1966**.', 'I**’ve known** him **since then**.']),
+    g('pp-past', note('trecut sau prezent perfect?', 'Cu un moment exact din trecut (in 1966, yesterday): trecutul simplu. Fără moment, sau până acum: prezentul perfect.', ['I **met** him **in 1966**.', 'I**’ve known** him **since then**.'])),
     g('pp-past', complete('Întreab-o:', 'When {} you meet him?', 'did',
       ['have', 'When întreabă de un moment exact: when did you meet.'],
       ['were', 'Meet e verb obișnuit: when did you meet.'])),

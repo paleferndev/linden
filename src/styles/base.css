@@ -92,3 +92,45 @@ body.in-run .toast{bottom:calc(24px + env(safe-area-inset-bottom))}
   *,*::before,*::after{animation-duration:1ms!important;animation-iteration-count:1!important;transition-duration:1ms!important}
   .clouds .cloud,.cattail,.steam path,.waves,.treeglow,.ring{animation:none!important}
 }
+
+/* ---------- the book: a verb's page, a grammar lesson (screens/book.js), in the sheet */
+.sheet:has(.bk) .sh-head{position:sticky;top:-10px;z-index:1;background:var(--card);padding:6px 0 8px;margin-bottom:-8px}
+.sh-head .kick{margin-bottom:3px}
+.bk{display:grid;gap:18px}
+.bk section{display:grid;gap:8px}
+.bk h4{font:700 11.5px/1.2 var(--f-ui);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.bk p{font-size:15px;line-height:1.5}
+.bk small{font-size:13.5px;line-height:1.4;color:var(--muted)}
+.bk-forms{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:6px}
+.bk-forms>div{border-radius:12px;background:var(--sunk);padding:8px 10px;display:grid;gap:2px;align-content:start}
+.bk-forms small{font-size:11.5px}
+.bk-forms b{font:700 17px/1.25 var(--f-en);overflow-wrap:anywhere}
+.bk-forms .ghost-btn{grid-column:1/-1;justify-self:start;margin-top:2px}
+.bk-ex,.bk-ph,.bk-traps{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.bk-ex li,.bk-ph li{display:grid;gap:1px}
+.bk-tag{font:650 11.5px/1.3 var(--f-ui);color:var(--signal-ink)}
+.bk-say{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;width:100%;text-align:left;font:500 16.5px/1.4 var(--f-en);color:var(--ink)}
+.bk-say svg{width:17px;height:17px;color:var(--pen);flex:none;margin-top:4px}
+.bk-say b{color:var(--postbox);font-weight:700}
+.bk-ph{gap:8px}
+.bk-ph .bk-say{font-size:16px}
+.bk-traps li{border-radius:12px;background:var(--sunk);padding:9px 12px;display:grid;gap:3px}
+.bk-traps p{display:flex;gap:6px;align-items:baseline}
+.bk-traps .mk{flex:none;width:14px;font:700 14px var(--f-ui)}
+.bk-traps .no .mk{color:var(--plum)}
+.bk-traps .yes .mk{color:var(--leaf)}
+.bk-traps .no .en{font-size:15.5px;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--plum)}
+.bk-traps .yes .en{font-size:16px;font-weight:600}
+.bk-table{overflow-x:auto;border-radius:12px;border:1px solid var(--line)}
+.bk-table table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.35}
+.bk-table th{font:650 12px/1.2 var(--f-ui);color:var(--muted);text-align:left;padding:8px 10px 6px;background:var(--sunk)}
+.bk-table td{padding:7px 10px;border-top:1px solid var(--line);vertical-align:top}
+.bk-mine{border-radius:14px;background:var(--plum-soft);padding:10px 12px;display:grid;gap:4px}
+.bk-mine .lbl{font:650 12px var(--f-ui);color:var(--plum);margin-right:8px}
+.bk-mine .en{font:500 16px/1.4 var(--f-en);text-decoration:line-through;text-decoration-color:var(--plum)}
+.bk-verbs{display:flex;flex-wrap:wrap;gap:6px}
+.bk-story{font:500 16px/1.45 var(--f-en)}
+/* the links into the book: "De ce?" after a wrong answer, a verb in the chat, a note's lesson */
+.why-more{display:inline;margin-left:6px;padding:2px 4px;font:650 13.5px var(--f-ui);color:var(--pen);text-decoration:underline;text-underline-offset:3px}
+.vb{text-decoration:underline dotted var(--pen);text-decoration-thickness:2px;text-underline-offset:3px;cursor:pointer}
+.note-more{margin-left:auto;padding:3px 9px;border-radius:999px;border:1px solid currentColor;font:650 12px/1.2 var(--f-ui);letter-spacing:0;text-transform:none}

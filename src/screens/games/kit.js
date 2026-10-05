@@ -1,10 +1,11 @@
 import { ICONS } from '../../art/icons.js';
 import { $, $$, esc, sub, shuffle, wait, hook, fillGap } from '../../app/ui.js';
 import { tone, buzz } from '../../app/sound.js';
+import { openLesson, openVerb, hasLesson, hasVerb } from '../book.js';
 
 // What every game shares: an intro card, the header with the score and a combo, the board, a line for feedback,
 // the options, and the result card. A round is right only if it was right the first time; a wrong option is marked,
-// its one-line why is shown, and you pick again.
+// its one-line why is shown (with "De ce?", the lesson in the book), and you pick again.
 
 export function shell(host, G, { total }) {
   host.innerHTML = `<div class="game" data-active>
@@ -15,6 +16,12 @@ export function shell(host, G, { total }) {
     <div class="g-opts" data-opts></div>
   </div>`;
   const root = $('.game', host);
+  root.addEventListener('click', e => {
+    const b = e.target.closest('.why-more');
+    if (!b) return;
+    if (b.dataset.verbpage) openVerb(b.dataset.verbpage);
+    else openLesson(b.dataset.lesson, b.dataset.said ? { said: b.dataset.said, why: b.dataset.why } : null);
+  });
   const S = {
     root, total, right: 0, done: 0, combo: 0, best: 0,
     board: $('[data-board]', root), opts: $('[data-opts]', root),
@@ -77,6 +84,13 @@ export function fitTall(art, w, h) {
   }
 }
 
+/** The line after a miss, as HTML: the why, and "De ce?" when the book has a page for it (the lesson of `g`, or the
+ *  page of `verb`). `said` is what was sent; `html` replaces the escaped text on screen. */
+export function whyHTML(text, { g, verb, said = '', html = '' } = {}) {
+  const link = verb && hasVerb(verb) ? `data-verbpage="${esc(verb)}"` : hasLesson(g) ? `data-lesson="${esc(g)}" data-said="${esc(said)}" data-why="${esc(text)}"` : '';
+  return `${ICONS.hint}<span>${html || esc(text)}${link ? `<button type="button" class="why-more" ${link}>De ce?</button>` : ''}</span>`;
+}
+
 /** Sentence with a gap, as HTML. */
 export const gapHTML = text => esc(sub(text)).replace('{}', '<span class="gap">&nbsp;</span>');
 export const filled = (text, word) => {
@@ -108,7 +122,7 @@ export function pick(S, r, { record, onWrong, fixed } = {}) {
       }
       first = false;
       b.disabled = true; b.classList.add('no');
-      S.msg(`${ICONS.hint}<span>${esc(r.why || '')}</span>`, 'why');
+      S.msg(whyHTML(r.why || '', { g: r.g, said: r.text ? fillGap(sub(r.text), b.dataset.o) : b.dataset.o }), 'why');
       onWrong?.(b.dataset.o);
     }));
   });

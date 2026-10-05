@@ -13,7 +13,7 @@ export default {
     m('stranger', 'Mrs Hughes, did a light fall in your garden?', 'Mrs Hughes, a căzut o lumină în grădina dumneavoastră?'),
     m('hughes', 'A light? Oh, lots of things fall in my garden. Leaves, apples, cats…', 'O lumină? Vai, multe cad în grădina mea. Frunze, mere, pisici…'),
     m('hughes', 'But first, can you help me? I can’t find my things. I put them somewhere…', 'Dar întâi, mă ajutați? Nu-mi găsesc lucrurile. Le-am pus pe undeva…'),
-    note('unde e?', 'In = în, on = pe, under = sub, behind = în spatele, in front of = în fața, next to = lângă, between = între.', ['The key is **under** the pot.', 'The cat is **on** the bench.']),
+    g('prep', note('unde e?', 'In = în, on = pe, under = sub, behind = în spatele, in front of = în fața, next to = lângă, between = între.', ['The key is **under** the pot.', 'The cat is **on** the bench.'])),
     g('prep', complete('Întreab-o:', 'Are your glasses {} your bag?', 'in',
       ['on', 'Înăuntru: in the bag.'],
       ['at', 'În geantă: in, nu at.'])),

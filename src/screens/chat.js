@@ -6,11 +6,15 @@ import { sparkSVG } from '../art/stranger.js';
 import { $, $$, esc, sub, bold, shuffle, wait, FAST, reduceMotion, hook, fillGap } from '../app/ui.js';
 import { say, tone, buzz, hush, autoVoice } from '../app/sound.js';
 import { check, words } from '../app/grade.js';
+import { verbsOf } from '../content/verbs.js';
+import { openLesson, openVerb, hasLesson, hasVerb, markVerbs } from './book.js';
 
 // The chat: an episode (or a training session) played as a conversation. Other people's lines arrive one at a time
 // with "typing…" and their voice; your replies are the exercises, in the box at the bottom. A wrong reply is sent
 // anyway, the other person reacts in character, a one-line note says why, and you pick again.
 // Nothing moves on until your reply is right. Tap any message to hear it again and see it in Romanian.
+// The book is a tap away: the episode's verbs are underlined the first time they come up (their page), a note opens
+// its lesson, and the line after a wrong answer has "De ce?" (the lesson of the task's grammar point).
 
 const PLAY = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>`;
 const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -26,6 +30,8 @@ export function runChat(host, script, o) {
   host.innerHTML = `<div class="chat"><div class="log" data-log role="log" aria-live="polite"></div><div class="comp" data-comp data-active></div></div>`;
   const log = $('[data-log]', host), comp = $('[data-comp]', host);
   const names = {};
+  // the episode's six verbs, marked the first time each comes up
+  const verbs = o.ep ? verbsOf(o.ep).map(v => v.base) : [], seenVerbs = new Set();
   const C = { alive: true, right: o.right || 0, total: o.total || 0, last: 'stranger', prevWho: '' };
   let hurry = null;
 
@@ -34,6 +40,12 @@ export function runChat(host, script, o) {
   // A pause the learner can cut short by tapping the conversation.
   const pause = ms => new Promise(r => { const t = setTimeout(done, FAST ? Math.min(ms, 20) : ms); function done() { clearTimeout(t); hurry = null; r(); } hurry = done; });
   log.addEventListener('click', e => { if (!e.target.closest('button, .gw') && hurry) { hush(); hurry(); } });
+  log.addEventListener('click', e => {
+    const b = e.target.closest('[data-lesson], [data-verbpage]');
+    if (!b) return;
+    if (b.dataset.verbpage) openVerb(b.dataset.verbpage);
+    else openLesson(b.dataset.lesson, b.dataset.said ? { said: b.dataset.said, why: b.dataset.why } : null);
+  });
   const add = html => { log.insertAdjacentHTML('beforeend', html); scroll(); return log.lastElementChild; };
   const ava = who => `<span class="ava" style="--c:var(${CAST[who]?.bg || '--sunk'})">${face(who)}</span>`;
   const graded = (x, ok) => { C.total++; if (ok) C.right++; o.record?.(gOf(x), ok, x); };
@@ -49,9 +61,11 @@ export function runChat(host, script, o) {
     const group = C.prevWho === x.who;
     C.prevWho = x.who;
     const row = add(`<div class="row them${group ? ' group' : ''}${instant ? ' still' : ''}">${group ? '<span class="ava-sp"></span>' : ava(x.who)}
-      <button type="button" class="m" data-who="${x.who}">${group ? '' : `<span class="who-l">${esc(name(x.who))}</span>`}<span class="en" data-en>${x.glitch ? glitchHTML(x) : markText(x.en, x.mark)}</span><small class="ro" hidden>${esc(sub(x.ro))}</small></button></div>`);
+      <button type="button" class="m" data-who="${x.who}">${group ? '' : `<span class="who-l">${esc(name(x.who))}</span>`}<span class="en" data-en>${x.glitch ? glitchHTML(x) : markVerbs(markText(x.en, x.mark), verbs, seenVerbs)}</span><small class="ro" hidden>${esc(sub(x.ro))}</small></button></div>`);
     const b = $('.m', row);
     b.addEventListener('click', e => {
+      const vb = e.target.closest('.vb');
+      if (vb) { openVerb(vb.dataset.verb); return; }
       if (e.target.closest('.gw')) return;
       const ro = $('.ro', b); ro.hidden = !ro.hidden; scroll();
       say(x.en, { who: x.who, el: b });
@@ -67,7 +81,14 @@ export function runChat(host, script, o) {
     C.prevWho = '';
     return add(`<div class="row me"><div class="m${bad ? ' bad' : ''}"><span class="en">${esc(sub(text))}</span></div></div>`);
   }
-  const why = (text, kind = 'why', html = false) => text && add(`<div class="why ${kind}"><span class="k">${ICONS.hint}</span><p>${html ? text : esc(sub(text))}</p></div>`);
+  /** The line after a miss. `more`: { g, verb, said }, for "De ce?": the lesson of g (or the page of a verb), with what was sent. */
+  const why = (text, kind = 'why', html = false, more = null) => {
+    if (!text) return;
+    const link = more?.verb && hasVerb(more.verb) ? `data-verbpage="${esc(more.verb)}"` : hasLesson(more?.g) ? `data-lesson="${esc(more.g)}" data-said="${esc(more.said || '')}" data-why="${esc(html ? '' : text)}"` : '';
+    return add(`<div class="why ${kind}"><span class="k">${ICONS.hint}</span><p>${html ? text : esc(sub(text))}${link ? `<button type="button" class="why-more" ${link}>De ce?</button>` : ''}</p></div>`);
+  };
+  /** The book page for a task: its own grammar point (not the episode's fallback), or the verb it asks about. */
+  const moreOf = (x, said) => x.verb ? { verb: x.verb } : x.g ? { g: x.g, said } : null;
   /** The answer with only the words you got shown, the rest hidden: "I called ▒▒▒▒▒. She wants…" */
   const partial = (given, answer) => { const got = new Set(words(given)); return answer.split(' ').map(t => words(t).every(w => got.has(w)) ? esc(t) : `<span class="hid">${'▒'.repeat(Math.max(2, t.replace(/[.,!?]/g, '').length))}</span>`).join(' '); };
   const sysLine = t => add(`<p class="sys">${esc(sub(t))}</p>`);
@@ -96,7 +117,7 @@ export function runChat(host, script, o) {
   }
   function note(x) {
     C.prevWho = '';
-    return add(`<div class="note"><p class="nh">${ICONS.hint}<span>Notă · ${esc(x.title)}</span></p><p>${esc(x.ro)}</p>${x.ex.length ? `<p class="ex en">${x.ex.map(bold).join('<br>')}</p>` : ''}</div>`);
+    return add(`<div class="note"><p class="nh">${ICONS.hint}<span>Notă · ${esc(x.title)}</span>${hasLesson(x.g) ? `<button type="button" class="note-more" data-lesson="${esc(x.g)}">Lecția</button>` : ''}</p><p>${esc(x.ro)}</p>${x.ex.length ? `<p class="ex en">${x.ex.map(bold).join('<br>')}</p>` : ''}</div>`);
   }
   function voiceNote(x, { instant = false } = {}) {
     C.prevWho = '';
@@ -156,7 +177,7 @@ export function runChat(host, script, o) {
       const w = x.wrong.find(t => t.text === p);
       await react(w?.re);
       if (!C.alive) return;
-      why(w?.why);
+      why(w?.why, 'why', false, moreOf(x, x.t === 'complete' ? fillGap(x.text, p) : p));
       options = options.filter(t => t !== p);
     }
   }
@@ -190,7 +211,7 @@ export function runChat(host, script, o) {
       if (ok) { tone('ok'); buzz(); await pause(350); return; }
       await react();
       if (!C.alive) return;
-      why(x.why);
+      why(x.why, 'why', false, moreOf(x, got.join(' ') + '.'));
     }
   }
 
@@ -231,9 +252,10 @@ export function runChat(host, script, o) {
         await react();
         if (!C.alive) return null;
       }
-      if (given == null || misses >= 2) why(`Răspunsul: ${answers[0]}. Scrie-l tu.`);
+      const more = frameText ? moreOf(x, given == null ? '' : stripHint(frameText).replace('{}', given.trim())) : null;
+      if (given == null || misses >= 2) why(`Răspunsul: ${answers[0]}. Scrie-l tu.`, 'why', false, more);
       else if (!frameText) why(`Aproape. Ai prins: ${partial(given, sub(answers[0]))}`, 'why', true);
-      else why(whyText);
+      else why(whyText, 'why', false, more);
     }
   }
 
@@ -295,7 +317,7 @@ export function runChat(host, script, o) {
         return;
       }
       clear();
-      why(x.why);
+      why(x.why, 'why', false, moreOf(x, p));
       options = options.filter(t => t !== p);
     }
   }

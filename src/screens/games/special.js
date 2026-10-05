@@ -2,7 +2,7 @@ import { face } from '../../art/art.js';
 import { no9Tall, NO9_TALL } from '../../art/night.js';
 import { ITEMS, LOST, NIGHT_PANELS, COMPARE, COMPARE_NAMES } from '../../art/props.js';
 import { say } from '../../app/sound.js';
-import { shell, intro, result, pick, gapHTML, filled, clearOpts, fitTall, wait, esc, sub, $, $$, shuffle, tone, hook } from './kit.js';
+import { shell, intro, result, pick, gapHTML, filled, clearOpts, fitTall, whyHTML, wait, esc, sub, $, $$, shuffle, tone, hook } from './kit.js';
 
 // The games with their own move: asking Tom the right questions (does), putting Sam's night in order (the past),
 // filling Priya's shelves (much and many), finding things in Mrs Hughes's garden (prepositions), and comparing the
@@ -115,7 +115,7 @@ export async function shelves(host, G, ctx) {
     b.classList.add(ok ? 'flash-ok' : 'flash-no');
     $('.got', right).insertAdjacentHTML('beforeend', `<span class="mini">${ITEMS[key]()}</span>`);
     $$('.got .mini', right).slice(0, -5).forEach(m => m.remove());
-    S.msg(ok ? `<span class="en">How ${kind} ${esc(word)}?</span>` : `<span>${esc(G.why[kind].replace('{w}', word[0].toUpperCase() + word.slice(1)))}</span>`, ok ? '' : 'why');
+    S.msg(ok ? `<span class="en">How ${kind} ${esc(word)}?</span>` : whyHTML(G.why[kind].replace('{w}', word[0].toUpperCase() + word.slice(1)), { g: G.g, said: `How ${kind === 'many' ? 'much' : 'many'} ${word}…?` }), ok ? '' : 'why');
     S.tally(ok);
     await wait(ok ? 500 : 1200);
   }
@@ -148,7 +148,7 @@ export async function room(host, G, ctx) {
     $('[data-marks]', svg).innerHTML = ok ? mark(r.at, 'ok') : `${hit ? mark(hit, 'no') : ''}${mark(r.at, 'show')}`;
     // what was lost, drawn big enough to see where it lies
     $('[data-found]', svg).insertAdjacentHTML('beforeend', `<g transform="translate(${cx} ${cy}) scale(${Math.min(1.8, rr / 14)}) translate(${-cx} ${-cy})">${LOST[r.item]?.(cx, cy) || ''}</g>`);
-    S.msg(ok ? '' : `<span>Era aici: <b class="en">${esc(r.at)}</b>.</span>`, ok ? '' : 'why');
+    S.msg(ok ? '' : whyHTML(`Era aici: ${r.at}.`, { g: G.g, html: `Era aici: <b class="en">${esc(r.at)}</b>.` }), ok ? '' : 'why');
     S.tally(ok);
     await wait(ok ? 800 : 1500);
     $('[data-marks]', svg).innerHTML = '';
@@ -172,7 +172,7 @@ export async function compare(host, G, ctx) {
       ok = true;
       S.msg('Atinge.');
       hook({ act: 'tap', sel: `.cmp-it[data-i="${r.at}"]` });
-      await tapOne(S.board, '.cmp-it', el => +el.dataset.i === r.at, () => { if (ok) ctx.record(r.g || G.g, false); ok = false; S.msg(esc(r.why), 'why'); });
+      await tapOne(S.board, '.cmp-it', el => +el.dataset.i === r.at, () => { if (ok) ctx.record(r.g || G.g, false); ok = false; S.msg(whyHTML(r.why, { g: r.g || G.g }), 'why'); });
       if (ok) ctx.record(r.g || G.g, true);
       $(`[data-i="${r.at}"]`, S.board).classList.add('found');
       S.msg('');

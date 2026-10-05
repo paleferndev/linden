@@ -9,7 +9,7 @@ export default {
   script: [
     story('Joi seara, sub tei. Toată strada se uită în sus.', 'ep:11'),
     m('okafor', '“Look higher,” the radio said. What is the highest thing on the lane?', '„Caută mai sus”, a spus radioul. Care e cel mai înalt lucru de pe stradă?', { mark: ['higher', 'highest'] }),
-    note('mai și cel mai', 'Cuvinte scurte: -er than, the -est (higher, the highest). Cuvinte lungi: more, the most. Good → better → the best.', ['The tree is **taller than** the house.', 'It’s **the brightest** spark.']),
+    g('comp', note('mai și cel mai', 'Cuvinte scurte: -er than, the -est (higher, the highest). Cuvinte lungi: more, the most. Good → better → the best.', ['The tree is **taller than** the house.', 'It’s **the brightest** spark.'])),
     g('comp', choose('Răspunde:', 'The linden tree! It’s taller than the houses.',
       ['The linden tree! It’s more tall than the houses.', 'Tall e scurt: taller than.'],
       ['The linden tree! It’s taller that the houses.', 'Comparația se face cu than, nu that.'])),

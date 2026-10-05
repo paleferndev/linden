@@ -5,9 +5,11 @@ import { ICONS } from '../art/icons.js';
 import { $, $$, esc, sub, wait, reduceMotion, hook } from '../app/ui.js';
 import { say, tone, buzz } from '../app/sound.js';
 import { epsDone } from '../app/store.js';
+import { openVerb } from './book.js';
 
 // The end of an episode: the album picture is drawn, the lamps light up, the lantern takes its new spark and the
-// Stranger remembers something, the new verbs go into the album, and the next episode shows as a dark card.
+// Stranger remembers something, the new verbs go into the album (tap one for its page), and the next episode shows
+// as a dark card.
 
 export function playEnding(host, n, { lamps, verbs, demo = false }) {
   const e = EP[n], next = EP[n + 1];
@@ -25,7 +27,7 @@ export function playEnding(host, n, { lamps, verbs, demo = false }) {
     </div>
     <div class="en-foot"><button type="button" class="btn" data-done data-enter>Gata</button></div>
   </div>`;
-  $$('[data-v]', host).forEach(b => b.addEventListener('click', () => say(b.dataset.v, { el: b })));
+  $$('[data-v]', host).forEach(b => b.addEventListener('click', () => openVerb(b.dataset.v)));
   $('[data-mem]', host).addEventListener('click', ev => say(e.memory[0], { who: 'stranger', el: ev.currentTarget }));
   (async () => {
     const quick = reduceMotion();

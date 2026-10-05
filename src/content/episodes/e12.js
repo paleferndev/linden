@@ -20,7 +20,7 @@ export default {
     m('stranger', 'Tonight I will tell you what I am. On the roof. At midnight.', 'În noaptea asta o să vă spun ce sunt. Pe acoperiș. La miezul nopții.'),
     story('Acoperișul biroului, la miezul nopții. Toată strada e acolo. Cerul e încă plin de nori.', 'night:roof'),
     m('okafor', 'The clouds are still here. If they don’t move, the others won’t see us.', 'Norii sunt încă aici. Dacă nu se mișcă, ceilalți nu ne vor vedea.', { mark: ['If', 'don’t move', 'won’t see'] }),
-    note('if … will', 'Dacă se întâmplă ceva, urmează altceva: if + prezent, apoi will. După if nu vine will.', ['**If** the sky **is** clear, Aster **will** go home.']),
+    g('if1', note('if … will', 'Dacă se întâmplă ceva, urmează altceva: if + prezent, apoi will. După if nu vine will.', ['**If** the sky **is** clear, Aster **will** go home.'])),
     g('if1', choose('Spune-le ce crezi:', 'If Aster lifts the lantern, the clouds will move.',
       ['If Aster will lift the lantern, the clouds will move.', 'După if: prezent, nu will: if Aster lifts.'],
       ['If Aster lifts the lantern, the clouds move will.', 'Will vine înaintea verbului: will move.'])),

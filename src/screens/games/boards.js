@@ -3,7 +3,7 @@ import { stranger } from '../../art/stranger.js';
 import { laneSVG, BUILDINGS, nextId } from '../../art/lane.js';
 import { reduceMotion } from '../../app/ui.js';
 import { photo, SIGNS, DOODLES } from '../../art/props.js';
-import { shell, intro, result, pick, gapHTML, filled, clearOpts, fitTall, wait, esc, $, $$, shuffle } from './kit.js';
+import { shell, intro, result, pick, gapHTML, filled, clearOpts, fitTall, whyHTML, wait, esc, $, $$, shuffle } from './kit.js';
 import { VERB, pastOf } from '../../content/verbs.js';
 
 // The games where the rule is a choice in a sentence, each with its own board: the lantern in the garden (this and
@@ -140,7 +140,7 @@ export async function machine(host, G, ctx) {
       onWrong: w => {
         streak = 0;
         const m = $('.mach', S.board); m.classList.remove('jam'); void m.getBoundingClientRect(); m.classList.add('jam');
-        S.msg(`<span>${esc(machineWhy(base, w))}</span>`, 'why');
+        S.msg(whyHTML(machineWhy(base, w), { verb: base }), 'why');
       },
     });
     if (ok) streak++;

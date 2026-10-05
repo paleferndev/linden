@@ -3,7 +3,8 @@
    - nothing scrolls sideways;
    - what has to be tapped next is fully on screen, and the reply box leaves room for the conversation;
    - a game board never overflows;
-   - no console errors.
+   - no console errors;
+   - the book opens from the chat: "De ce?" after a wrong answer, a note's lesson, an underlined verb (once each).
    The app tells the walk what it expects next through a test-only hook (window.__linden, set only in automated
    browsers). Every fifth answer is wrong on purpose first, so the wrong-reply path is walked too.
    Used by the smoke test; on its own: node tests/walk.mjs [url] [--shots] [--big|--small] [episode numbers…] [--extras]
@@ -94,7 +95,32 @@ export async function walk(browser, base, { sizes = [[390, 844], [320, 568]], sh
       }
     };
 
+    // The book, from the chat: opens the page behind `trigger`, checks it, closes it. Once per kind and size.
+    const booked = new Set();
+    const checkBook = async (kind, trigger, where) => {
+      if (booked.has(kind) || !(await trigger.count())) return;
+      // only when it can really be tapped: in view and not under a game or another layer
+      await trigger.scrollIntoViewIfNeeded().catch(() => {});
+      const free = await trigger.evaluate(el => {
+        const r = el.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2;
+        const t = r.width && y > 0 && y < innerHeight ? document.elementFromPoint(x, y) : null;
+        return !!t && (t === el || el.contains(t));
+      });
+      if (!free) return;
+      booked.add(kind);
+      await trigger.click();
+      await page.locator('.sheet .bk').waitFor({ timeout: 4000 });
+      await settle();
+      const i = await page.evaluate(() => { const s = document.querySelector('.sheet'); return { side: s.scrollWidth - s.clientWidth, h4: s.querySelectorAll('.bk h4').length }; });
+      ok(i.side <= 0, `${where}: ${kind} page scrolls sideways by ${i.side}px`);
+      ok(i.h4 >= 3, `${where}: ${kind} page has ${i.h4} sections`);
+      await page.locator('.sheet [data-close]').first().click();
+      await page.locator('#sheet').waitFor({ state: 'hidden', timeout: 4000 });
+    };
+
     const act = async (hk, where, wrongFirst) => {
+      await checkBook('note', page.locator('.log .note-more').last(), where);
+      await checkBook('verb', page.locator('.log .vb').last(), where);
       const vis = async sel => { const b = page.locator(sel).first(); await b.waitFor({ state: 'visible', timeout: 4000 }); await settle(); let r = await b.boundingBox(); const off = () => !r || r.y < -1 || r.y + r.height > page.viewportSize().height + 1; if (off()) { await page.waitForTimeout(350); r = await b.boundingBox(); } ok(!off(), `${where}: ${sel} is off screen`); return b; };
       switch (hk.act) {
         case 'go': return (await vis(hk.sel)).click();
@@ -103,7 +129,13 @@ export async function walk(browser, base, { sizes = [[390, 844], [320, 568]], sh
           const right = `[data-opt][data-o="${css(hk.o)}"]`;
           if (wrongFirst) {
             const wrong = page.locator(`[data-opt]:not([disabled]):not([data-o="${css(hk.o)}"])`).first();
-            if (await wrong.count()) { await wrong.click(); await page.waitForTimeout(60); }
+            if (await wrong.count()) {
+              await wrong.click(); await page.waitForTimeout(60);
+              if (!booked.has('lesson') && await page.locator('.log').count()) {
+                const more = page.locator('.log .why-more').last();
+                if (await more.waitFor({ state: 'visible', timeout: 1500 }).then(() => true, () => false)) await checkBook('lesson', more, where);
+              }
+            }
           }
           const b = page.locator(`${right}:not([disabled])`).first();
           if (await b.count()) { await vis(`${right}:not([disabled])`); await b.click(); }
@@ -139,6 +171,7 @@ export async function walk(browser, base, { sizes = [[390, 844], [320, 568]], sh
     const done = Object.values(state.eps || {}).filter(e => e.done).length;
     ok(done >= eps.length, `${size}: ${done} episodes done after a reload, expected ${eps.length}`);
     ok(Object.keys(state.verbs || {}).length >= eps.length * 6, `${size}: verb album has ${Object.keys(state.verbs || {}).length} verbs`);
+    for (const k of ['lesson', 'note', 'verb']) ok(booked.has(k), `${size}: the ${k} page was never opened from the chat`);
     if (shots) await page.screenshot({ path: `${dir}zz-home.png`, fullPage: true });
 
     if (extras) {
@@ -177,7 +210,7 @@ export async function walk(browser, base, { sizes = [[390, 844], [320, 568]], sh
       }
     }
 
-    for (const [tab, name] of [['#/', 'home'], ['#/antrenament', 'training'], ['#/colectii/album', 'album'], ['#/colectii/verbe', 'verbs'], ['#/colectii/lanterna', 'memories'], ['#/profil', 'profile'], ['#/exercitii', 'catalog']]) {
+    for (const [tab, name] of [['#/', 'home'], ['#/antrenament', 'training'], ['#/colectii/album', 'album'], ['#/colectii/verbe', 'verbs'], ['#/colectii/gramatica', 'grammar'], ['#/colectii/lanterna', 'memories'], ['#/profil', 'profile'], ['#/exercitii', 'catalog']]) {
       await page.evaluate(hh => { location.hash = hh; }, tab);
       await page.waitForTimeout(150);
       const side = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);

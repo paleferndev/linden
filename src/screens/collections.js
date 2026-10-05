@@ -1,16 +1,19 @@
 import { EPISODES } from '../content/episodes.js';
 import { VERBS, pastOf } from '../content/verbs.js';
+import { GRAMMAR, pointsOf } from '../content/grammar.js';
 import { ICONS } from '../art/icons.js';
 import { artBox } from '../art/art.js';
 import { lanternSVG } from '../art/stranger.js';
 import { Store, epDone, epsDone } from '../app/store.js';
 import { $, $$, esc, openSheet, closeSheet } from '../app/ui.js';
 import { say } from '../app/sound.js';
+import { openVerb, openLesson } from './book.js';
 
 // Colecții: what the season has given you. The album (a picture for every finished episode), the verb album (every
-// verb met, with its forms and the line where it came up), and the lantern with the Stranger's memories.
+// verb met; each opens its page in the book), the grammar (the lesson of every point met), and the lantern with the
+// Stranger's memories.
 
-const TABS = [['album', 'Album'], ['verbe', 'Verbe'], ['lanterna', 'Amintiri']];
+const TABS = [['album', 'Album'], ['verbe', 'Verbe'], ['gramatica', 'Gramatică'], ['lanterna', 'Amintiri']];
 let verbFilter = 'all';
 
 export function renderCollections(view, tab = 'album') {
@@ -42,20 +45,28 @@ export function renderCollections(view, tab = 'album') {
 
   if (tab === 'verbe') {
     const shown = verbFilter === 'irr' ? VERBS.filter(v => v.irregular) : VERBS;
-    body.innerHTML = `<p class="page-sub">${got.length} din ${VERBS.length} verbe. Atinge un verb ca să-l auzi.</p>
+    body.innerHTML = `<p class="page-sub">${got.length} din ${VERBS.length} verbe. Atinge un verb ca să-l studiezi.</p>
       <div class="seg-chips">${[['all', 'Toate'], ['irr', 'Neregulate']].map(([k, l]) => `<button type="button" class="${verbFilter === k ? 'on' : ''}" data-f="${k}">${l}</button>`).join('')}</div>
       ${EPISODES.map(e => {
         const vs = shown.filter(v => v.ep === e.n);
         if (!vs.length) return '';
         if (!epDone(e.n)) return `<p class="v-locked">Episodul ${e.n} · ${vs.length === 1 ? 'un verb' : `${vs.length} verbe`}</p>`;
-        return `<h3 class="v-ep">Episodul ${e.n} · <span class="en">${esc(e.title)}</span></h3><div class="verbs">${vs.map(v => `<button type="button" class="vcard${v.irregular ? ' irr' : ''}" data-v="${esc(v.base)}"><b class="en">${esc(v.base)}</b><span class="forms en">${esc(v.past)}${v.pp !== pastOf(v) || v.base === 'be' ? ` · ${esc(v.pp)}` : ''}</span><small>${esc(v.ro)}</small><span class="ex en" hidden>${esc(v.ex)}</span></button>`).join('')}</div>`;
+        return `<h3 class="v-ep">Episodul ${e.n} · <span class="en">${esc(e.title)}</span></h3><div class="verbs">${vs.map(v => `<button type="button" class="vcard${v.irregular ? ' irr' : ''}" data-v="${esc(v.base)}"><b class="en">${esc(v.base)}</b><span class="forms en">${esc(v.past)}${v.pp !== pastOf(v) || v.base === 'be' ? ` · ${esc(v.pp)}` : ''}</span><small>${esc(v.ro)}</small></button>`).join('')}</div>`;
       }).join('')}`;
     $$('[data-f]', body).forEach(b => b.addEventListener('click', () => { verbFilter = b.dataset.f; renderCollections(view, 'verbe'); }));
-    $$('[data-v]', body).forEach(b => b.addEventListener('click', () => {
-      const v = VERBS.find(x => x.base === b.dataset.v);
-      $$('.vcard .ex', body).forEach(x => { x.hidden = x.parentElement !== b; });
-      say(`${v.base}. ${v.past.replace(' / ', ', ')}. ${v.pp}. ${v.ex}`, { el: b });
-    }));
+    $$('[data-v]', body).forEach(b => b.addEventListener('click', () => openVerb(b.dataset.v)));
+  }
+
+  if (tab === 'gramatica') {
+    const met = EPISODES.filter(e => epDone(e.n)).flatMap(e => pointsOf(e.n));
+    body.innerHTML = `<p class="page-sub">${met.length} din ${Object.keys(GRAMMAR).length} lecții.</p>
+      ${EPISODES.map(e => {
+        const ps = pointsOf(e.n);
+        if (!ps.length) return '';
+        if (!epDone(e.n)) return `<p class="v-locked">Episodul ${e.n} · ${ps.length === 1 ? 'o lecție' : `${ps.length} lecții`}</p>`;
+        return `<h3 class="v-ep">Episodul ${e.n} · <span class="en">${esc(e.title)}</span></h3><div class="lessons">${ps.map(p => `<button type="button" class="lesson" data-p="${esc(p)}"><b>${esc(GRAMMAR[p].title)}</b><small>${esc(GRAMMAR[p].note[0])}</small>${ICONS.chev}</button>`).join('')}</div>`;
+      }).join('')}`;
+    $$('[data-p]', body).forEach(b => b.addEventListener('click', () => openLesson(b.dataset.p)));
   }
 
   if (tab === 'lanterna') {

@@ -46,6 +46,14 @@ MOODS = {
 GENTLE = re.compile(r"\b(sorry|poor|miss|goodbye|never|alone|sad|weak|forgotten|lost|asleep|quiet)\b", re.I)
 INTERJ = {'hm', 'hmm', 'ha', 'hah', 'oh', 'eh', 'ah', 'mm', 'uh', 'um', 'wow', 'mrrp', 'shh', 'ooh'}
 NAMES = {'hughes', 'okafor', 'priya', 'aster', 'mimi', 'moss', 'linden', 'kettle', 'sam', 'tom'}
+# words that sound the same: Whisper can't tell them apart, so neither does the check ("know. knew." heard as "no. new.")
+SAME = {w: k for k, ws in {
+    'know': ['no'], 'knew': ['new'], 'knows': ['nose'], 'youre': ['your'], 'two': ['to', 'too'], 'practise': ['practice'],
+    'won': ['one'], 'shone': ['shown'], 'hear': ['here'], 'right': ['write'], 'see': ['sea'], 'by': ['buy', 'bye'],
+    'their': ['there', 'theyre'], 'whole': ['hole'], 'eight': ['ate'], 'read': ['red'], 'meet': ['meat'], 'flew': ['flu'],
+    'threw': ['through'], 'blue': ['blew'], 'road': ['rode'], 'grown': ['groan'], 'sun': ['son'], 'weather': ['whether'],
+    'its': ['it s'], 'for': ['four'], 'been': ['bean'], 'wear': ['where'], 'week': ['weak'], 'hour': ['our'],
+}.items() for w in [k, *ws]}
 NUM = {'1': 'one', '2': 'two', '3': 'three', '4': 'four', '5': 'five', '6': 'six', '7': 'seven', '8': 'eight', '9': 'nine',
        '10': 'ten', '11': 'eleven', '12': 'twelve', '20': 'twenty', '50': 'fifty', '60': 'sixty', '1966': 'nineteen sixty six', '2010': 'twenty ten'}
 
@@ -73,7 +81,7 @@ def words(s):
     s = s.replace("'", '')
     s = re.sub(r'[^a-z0-9 ]', ' ', s)
     s = s.replace('okay', 'ok').replace('mister', 'mr').replace('missus', 'mrs').replace('doctor', 'dr')
-    return s.split()
+    return [SAME.get(w, w) for w in s.split()]
 
 
 def lev(a, b):

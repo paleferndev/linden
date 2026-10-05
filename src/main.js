@@ -41,7 +41,7 @@ app.innerHTML = `<div class="shell">
 const view = $('#view');
 
 /* ---------------------------------------------------------------- routing
-   #/ home · #/antrenament · #/colectii[/album|verbe|lanterna] · #/profil · #/exercitii
+   #/ home · #/antrenament · #/colectii[/album|verbe|gramatica|lanterna] · #/profil · #/exercitii
    Full screen: #/episod/<n> · #/antrenament/start · #/antrenament/liber · #/joc/<game> · #/incearca/<kind>
    In-app navigation pushes history and routes in the same tap, so the first line can be spoken right away (iOS only
    lets a page speak from inside a tap). The back gesture pops the history and closes whatever is full screen. */

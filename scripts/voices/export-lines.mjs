@@ -4,7 +4,9 @@ import fs from 'node:fs';
 import { EPISODES } from '../../src/content/episodes.js';
 import { GAMES } from '../../src/content/games.js';
 import { CAST } from '../../src/content/cast.js';
-import { VERBS } from '../../src/content/verbs.js';
+import { VERBS, formsLine } from '../../src/content/verbs.js';
+import { VERB_BOOK } from '../../src/content/verbbook.js';
+import { LESSONS } from '../../src/content/lessons.js';
 import { voiceKey } from '../../src/app/voicekey.js';
 
 // What the voice says where the script has the learner's name: the name is left out, or replaced where needed.
@@ -41,11 +43,14 @@ for (const r of GAMES.room.rounds) add('hughes', r.text, 'game', true);
 for (const r of GAMES.guesswho.rounds) add('tom', (r.yes || r.no)[0], 'game');
 for (const t of ['Let’s practise. Five minutes, no more.', 'Now the verb machine.', 'Well done. See you tomorrow.', 'Here are a few of these. Just to try.']) add('stranger', t, 'app');
 add('tom', 'Hello! Welcome to Linden Lane.', 'app');
-// the verb album: the verb alone, and its forms with the line where it came up
+// the book (last: it's read, not heard in the story): each verb's forms, examples and phrases; each lesson's examples
 for (const v of VERBS) {
-  add('narrator', v.base, 'verb');
-  add('narrator', `${v.base}. ${v.past.replace(' / ', ', ')}. ${v.pp}. ${v.ex}`, 'verb card');
+  const p = VERB_BOOK[v.base];
+  add('narrator', formsLine(v), 'verb forms');
+  for (const [, en] of p?.ex || []) add('narrator', en, 'verb example');
+  for (const [en] of p?.phrases || []) add('narrator', en, 'verb phrase');
 }
+for (const L of Object.values(LESSONS)) for (const [en] of L.ex) add('narrator', en.replace(/\*\*/g, ''), 'lesson example');
 
 const out = [...lines.values()];
 const file = process.argv[2];

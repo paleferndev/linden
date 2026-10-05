@@ -62,6 +62,7 @@ export const frameOpen = () => !!F;
 
 function onKey(e) {
   if (!F || e.altKey || e.ctrlKey || e.metaKey) return;
+  if (!$('#sheet').hidden) return;
   if (e.key === 'Escape') { e.preventDefault(); F.onExit(); return; }
   if (e.target.matches('input, textarea')) return;
   // the options of whatever is active: the chat's reply box or a game board

@@ -1,9 +1,33 @@
 {
+ "0023f904": {
+  "who": "narrator",
+  "say": "My gran tells the best stories.",
+  "mood": "teach",
+  "take": 5
+ },
+ "00294422": {
+  "who": "narrator",
+  "say": "climb into bed",
+  "mood": "teach",
+  "take": 2
+ },
+ "0032689d": {
+  "who": "narrator",
+  "say": "remember to do something",
+  "mood": "teach",
+  "take": 1
+ },
  "0036ab78": {
   "who": "tom",
   "say": "Are you awake? I can see a light in your window. What’s happening?",
   "mood": "ask",
   "take": 1
+ },
+ "00fa4e16": {
+  "who": "narrator",
+  "say": "send a message",
+  "mood": "teach",
+  "take": 2
  },
  "0159e55f": {
   "who": "stranger",
@@ -17,10 +41,46 @@
   "mood": "teach",
   "take": 1
  },
+ "01afd2f1": {
+  "who": "narrator",
+  "say": "allow. allowed.",
+  "mood": "teach",
+  "take": 1
+ },
+ "01cc032b": {
+  "who": "narrator",
+  "say": "Why is Tom climbing the ladder?",
+  "mood": "teach",
+  "take": 1
+ },
+ "01d3bd53": {
+  "who": "narrator",
+  "say": "I’m trying to sleep. Please be quiet.",
+  "mood": "teach",
+  "take": 2
+ },
+ "0202df5c": {
+  "who": "narrator",
+  "say": "get on the bus",
+  "mood": "teach",
+  "take": 2
+ },
  "020e88c2": {
   "who": "stranger",
   "say": "Let’s practise. Five minutes, no more.",
   "mood": "wonder",
+  "take": 1
+ },
+ "026e1e7d": {
+  "who": "narrator",
+  "say": "I’ve already said sorry twice.",
+  "mood": "teach",
+  "take": 1
+ },
+ "0296b1ce": {
+  "who": "narrator",
+  "say": "Do you think they’ll win?",
+  "mood": "teach",
   "take": 1
  },
  "02ae8f6c": {
@@ -41,11 +101,77 @@
   "mood": "teach",
   "take": 1
  },
+ "0394058d": {
+  "who": "narrator",
+  "say": "carry. carried.",
+  "mood": "teach",
+  "take": 1
+ },
+ "03a0cb45": {
+  "who": "narrator",
+  "say": "a return ticket",
+  "mood": "teach",
+  "take": 1
+ },
+ "03a8d386": {
+  "who": "narrator",
+  "say": "It won’t cost much to fix.",
+  "mood": "teach",
+  "take": 1
+ },
+ "03ca38e7": {
+  "who": "narrator",
+  "say": "My train leaves at half past seven.",
+  "mood": "teach",
+  "take": 1
+ },
+ "03d03d5c": {
+  "who": "narrator",
+  "say": "You must return the key by Friday.",
+  "mood": "teach",
+  "take": 1
+ },
+ "03e37980": {
+  "who": "narrator",
+  "say": "shine. shone.",
+  "mood": "teach",
+  "take": 3
+ },
+ "0446ff90": {
+  "who": "narrator",
+  "say": "My sister won a prize at school.",
+  "mood": "teach",
+  "take": 1
+ },
+ "0487e4d7": {
+  "who": "narrator",
+  "say": "Can you watch my bag for a minute?",
+  "mood": "teach",
+  "take": 1
+ },
  "04c374ac": {
   "who": "narrator",
   "say": "I’ve never been to Scotland.",
   "mood": "teach",
   "take": 2
+ },
+ "04df34ee": {
+  "who": "narrator",
+  "say": "prepare. prepared.",
+  "mood": "teach",
+  "take": 1
+ },
+ "04edf732": {
+  "who": "narrator",
+  "say": "She came back from Spain last week.",
+  "mood": "teach",
+  "take": 1
+ },
+ "05145187": {
+  "who": "narrator",
+  "say": "Mimi climbs the fence every morning.",
+  "mood": "teach",
+  "take": 1
  },
  "0584d7da": {
   "who": "okafor",
@@ -53,16 +179,52 @@
   "mood": "warm",
   "take": 2
  },
+ "0609a0af": {
+  "who": "narrator",
+  "say": "Tom checks the oven before he goes home.",
+  "mood": "teach",
+  "take": 1
+ },
+ "06756db3": {
+  "who": "narrator",
+  "say": "call. called.",
+  "mood": "teach",
+  "take": 2
+ },
+ "06940eca": {
+  "who": "narrator",
+  "say": "tell a lie",
+  "mood": "teach",
+  "take": 2
+ },
+ "06b4e236": {
+  "who": "narrator",
+  "say": "feel sorry for someone",
+  "mood": "teach",
+  "take": 1
+ },
  "06dfd9e5": {
   "who": "narrator",
   "say": "See you later!",
   "mood": "teach",
   "take": 2
  },
+ "06e4c28e": {
+  "who": "narrator",
+  "say": "It’s late. You shouldn’t drink coffee now.",
+  "mood": "teach",
+  "take": 1
+ },
  "06f4ff31": {
   "who": "stranger",
   "say": "A spark! But it’s his spark, not mine.",
   "mood": "excited",
+  "take": 1
+ },
+ "0729efb7": {
+  "who": "narrator",
+  "say": "I haven’t hidden anything from you.",
+  "mood": "teach",
   "take": 1
  },
  "077c85bb": {
@@ -71,10 +233,76 @@
   "mood": "ask",
   "take": 1
  },
+ "07a7edb5": {
+  "who": "narrator",
+  "say": "buy a ticket",
+  "mood": "teach",
+  "take": 1
+ },
+ "07b861fe": {
+  "who": "narrator",
+  "say": "come back home",
+  "mood": "teach",
+  "take": 2
+ },
+ "07dba02a": {
+  "who": "narrator",
+  "say": "grow a beard",
+  "mood": "teach",
+  "take": 2
+ },
  "07eb6e8b": {
   "who": "stranger",
   "say": "And Tom make very good tea.",
   "mood": "wonder",
+  "take": 1
+ },
+ "07f05893": {
+  "who": "narrator",
+  "say": "walk. walked.",
+  "mood": "teach",
+  "take": 1
+ },
+ "07f6a2ab": {
+  "who": "narrator",
+  "say": "My dad carried me on his shoulders.",
+  "mood": "teach",
+  "take": 1
+ },
+ "0847f93f": {
+  "who": "narrator",
+  "say": "The tomatoes haven’t grown much this year.",
+  "mood": "teach",
+  "take": 1
+ },
+ "0892a8a2": {
+  "who": "narrator",
+  "say": "try on",
+  "mood": "teach",
+  "take": 1
+ },
+ "08a428ec": {
+  "who": "narrator",
+  "say": "What do you want for dinner?",
+  "mood": "teach",
+  "take": 1
+ },
+ "0918e958": {
+  "who": "narrator",
+  "say": "buy someone a present",
+  "mood": "teach",
+  "take": 1
+ },
+ "09f6e8cd": {
+  "who": "narrator",
+  "say": "fall asleep",
+  "mood": "teach",
+  "take": 2
+ },
+ "0a1a60af": {
+  "who": "narrator",
+  "say": "I tried to call you twice.",
+  "mood": "teach",
   "take": 1
  },
  "0a31dcaa": {
@@ -89,10 +317,34 @@
   "mood": "wonder",
   "take": 1
  },
+ "0ad98ce6": {
+  "who": "narrator",
+  "say": "We usually stay with my aunt in summer.",
+  "mood": "teach",
+  "take": 1
+ },
  "0af66c80": {
   "who": "tom",
   "say": "Your spark? What are you, a firefly?",
   "mood": "ask",
+  "take": 1
+ },
+ "0b250b04": {
+  "who": "narrator",
+  "say": "We haven’t prepared anything yet.",
+  "mood": "teach",
+  "take": 1
+ },
+ "0b9769e7": {
+  "who": "narrator",
+  "say": "give someone a hand",
+  "mood": "teach",
+  "take": 1
+ },
+ "0c671e58": {
+  "who": "narrator",
+  "say": "Don’t move. There’s a bee on your arm.",
+  "mood": "teach",
   "take": 1
  },
  "0cf5eae9": {
@@ -101,10 +353,40 @@
   "mood": "warm",
   "take": 1
  },
+ "0d5a365c": {
+  "who": "narrator",
+  "say": "fly to London",
+  "mood": "teach",
+  "take": 2
+ },
+ "0d83dcf5": {
+  "who": "narrator",
+  "say": "We moved to a bigger flat last year.",
+  "mood": "teach",
+  "take": 1
+ },
  "0d85f044": {
   "who": "okafor",
   "say": "Just your sparks. But you should check the weather first.",
   "mood": "warm",
+  "take": 1
+ },
+ "0db49c1f": {
+  "who": "narrator",
+  "say": "How much is it?",
+  "mood": "teach",
+  "take": 1
+ },
+ "0dca6147": {
+  "who": "narrator",
+  "say": "We met two years ago.",
+  "mood": "teach",
+  "take": 1
+ },
+ "0dd33117": {
+  "who": "narrator",
+  "say": "leave a message",
+  "mood": "teach",
   "take": 1
  },
  "0e1919a3": {
@@ -119,6 +401,24 @@
   "mood": "teach",
   "take": 1
  },
+ "0f0147c0": {
+  "who": "narrator",
+  "say": "Do you know Mrs Hughes?",
+  "mood": "teach",
+  "take": 1
+ },
+ "0f6ea054": {
+  "who": "narrator",
+  "say": "A taxi to the airport can cost fifty pounds.",
+  "mood": "teach",
+  "take": 1
+ },
+ "0fc7af31": {
+  "who": "narrator",
+  "say": "break a promise",
+  "mood": "teach",
+  "take": 1
+ },
  "1009efa8": {
   "who": "narrator",
   "say": "I haven’t opened the letter yet.",
@@ -129,6 +429,12 @@
   "who": "stranger",
   "say": "Look. This is my lantern. It has got room for twelve sparks.",
   "mood": "wonder",
+  "take": 1
+ },
+ "107cdae5": {
+  "who": "narrator",
+  "say": "tell the truth",
+  "mood": "teach",
   "take": 1
  },
  "108f0656": {
@@ -149,11 +455,11 @@
   "mood": "ask",
   "take": 1
  },
- "109d347a": {
+ "10f56f25": {
   "who": "narrator",
-  "say": "open. opened. opened.",
+  "say": "move out",
   "mood": "teach",
-  "take": 2
+  "take": 5
  },
  "112763d7": {
   "who": "stranger",
@@ -167,16 +473,136 @@
   "mood": "wonder",
   "take": 1
  },
+ "122c7a82": {
+  "who": "narrator",
+  "say": "The water in the river is rising.",
+  "mood": "teach",
+  "take": 1
+ },
+ "1245693b": {
+  "who": "narrator",
+  "say": "Who makes the coffee in your office?",
+  "mood": "teach",
+  "take": 1
+ },
+ "124a0667": {
+  "who": "narrator",
+  "say": "something to drink",
+  "mood": "teach",
+  "take": 1
+ },
+ "13216c91": {
+  "who": "narrator",
+  "say": "What’s it called?",
+  "mood": "teach",
+  "take": 1
+ },
+ "1395899c": {
+  "who": "narrator",
+  "say": "We should plan the trip together.",
+  "mood": "teach",
+  "take": 1
+ },
+ "1423fc27": {
+  "who": "narrator",
+  "say": "forget to do something",
+  "mood": "teach",
+  "take": 1
+ },
+ "1584b7c0": {
+  "who": "narrator",
+  "say": "Remember to take your keys.",
+  "mood": "teach",
+  "take": 1
+ },
  "15a77db2": {
   "who": "okafor",
   "say": "Let’s compare. We need the longest ladder, and the brightest lantern.",
   "mood": "warm",
   "take": 1
  },
+ "16129303": {
+  "who": "narrator",
+  "say": "fly. flew. flown.",
+  "mood": "teach",
+  "take": 1
+ },
+ "1615f67b": {
+  "who": "narrator",
+  "say": "fix a problem",
+  "mood": "teach",
+  "take": 2
+ },
+ "16a167e5": {
+  "who": "narrator",
+  "say": "Smoking isn’t allowed.",
+  "mood": "teach",
+  "take": 1
+ },
+ "16a2f3ed": {
+  "who": "narrator",
+  "say": "have. had.",
+  "mood": "teach",
+  "take": 2
+ },
+ "16cc0639": {
+  "who": "narrator",
+  "say": "go home",
+  "mood": "teach",
+  "take": 1
+ },
+ "16d90735": {
+  "who": "narrator",
+  "say": "It’s easy to fix.",
+  "mood": "teach",
+  "take": 1
+ },
+ "171af10a": {
+  "who": "narrator",
+  "say": "The doctor has allowed him to go home.",
+  "mood": "teach",
+  "take": 1
+ },
+ "17ad384d": {
+  "who": "narrator",
+  "say": "plan. planned.",
+  "mood": "teach",
+  "take": 1
+ },
+ "185d9e0e": {
+  "who": "narrator",
+  "say": "Has anyone carried the chairs inside?",
+  "mood": "teach",
+  "take": 1
+ },
+ "18630e6a": {
+  "who": "narrator",
+  "say": "walk to school",
+  "mood": "teach",
+  "take": 1
+ },
+ "18b31beb": {
+  "who": "narrator",
+  "say": "call someone back",
+  "mood": "teach",
+  "take": 2
+ },
  "18d69d00": {
   "who": "priya",
   "say": "A walking light? No. But there’s something strange. Look at these coins.",
   "mood": "ask",
+  "take": 1
+ },
+ "1900a8f7": {
+  "who": "narrator",
+  "say": "Say thank you to Mrs Hughes.",
+  "mood": "teach",
+  "take": 1
+ },
+ "1911f8ac": {
+  "who": "narrator",
+  "say": "walk the dog",
+  "mood": "teach",
   "take": 1
  },
  "191f2212": {
@@ -185,16 +611,130 @@
   "mood": "excited",
   "take": 1
  },
+ "1954b1ec": {
+  "who": "narrator",
+  "say": "I haven’t checked my email today.",
+  "mood": "teach",
+  "take": 1
+ },
+ "19586047": {
+  "who": "narrator",
+  "say": "I must say goodbye to Tom first.",
+  "mood": "teach",
+  "take": 1
+ },
+ "19fdb5e8": {
+  "who": "narrator",
+  "say": "hear. heard.",
+  "mood": "teach",
+  "take": 1
+ },
+ "1a4033da": {
+  "who": "narrator",
+  "say": "Can I pay in cash?",
+  "mood": "teach",
+  "take": 1
+ },
+ "1b19d835": {
+  "who": "narrator",
+  "say": "arrive on time",
+  "mood": "teach",
+  "take": 2
+ },
  "1b28499d": {
   "who": "stranger",
   "say": "What do I do? I look for sparks. But now…",
   "mood": "ask",
   "take": 1
  },
+ "1b3dee43": {
+  "who": "narrator",
+  "say": "Tom prepares the sandwiches every morning.",
+  "mood": "teach",
+  "take": 1
+ },
+ "1b680bdf": {
+  "who": "narrator",
+  "say": "build a sandcastle",
+  "mood": "teach",
+  "take": 2
+ },
+ "1be7a085": {
+  "who": "narrator",
+  "say": "I’ll come back in five minutes.",
+  "mood": "teach",
+  "take": 1
+ },
+ "1c0c3dcf": {
+  "who": "narrator",
+  "say": "repair the damage",
+  "mood": "teach",
+  "take": 1
+ },
+ "1c5e618a": {
+  "who": "narrator",
+  "say": "Can I sit here?",
+  "mood": "teach",
+  "take": 2
+ },
+ "1c8c3124": {
+  "who": "narrator",
+  "say": "check the time",
+  "mood": "teach",
+  "take": 1
+ },
+ "1d4f57c6": {
+  "who": "narrator",
+  "say": "Tom makes very good tea.",
+  "mood": "teach",
+  "take": 1
+ },
+ "1dbe8ba8": {
+  "who": "narrator",
+  "say": "I haven’t brought an umbrella.",
+  "mood": "teach",
+  "take": 1
+ },
  "1dbfdcd8": {
   "who": "okafor",
   "say": "Look through the telescope, Aster. What can you see?",
   "mood": "ask",
+  "take": 1
+ },
+ "1dfa7d30": {
+  "who": "narrator",
+  "say": "Has the rent risen again?",
+  "mood": "teach",
+  "take": 1
+ },
+ "1e7a254c": {
+  "who": "narrator",
+  "say": "decide what to do",
+  "mood": "teach",
+  "take": 2
+ },
+ "1ef6d47f": {
+  "who": "narrator",
+  "say": "I can’t hear you.",
+  "mood": "teach",
+  "take": 1
+ },
+ "1f0a732d": {
+  "who": "narrator",
+  "say": "check in at the hotel",
+  "mood": "teach",
+  "take": 1
+ },
+ "1fb6c42c": {
+  "who": "narrator",
+  "say": "pay. paid.",
+  "mood": "teach",
+  "take": 1
+ },
+ "20373424": {
+  "who": "narrator",
+  "say": "win the lottery",
+  "mood": "teach",
   "take": 1
  },
  "206b7558": {
@@ -209,10 +749,28 @@
   "mood": "warm",
   "take": 1
  },
+ "208dbc26": {
+  "who": "narrator",
+  "say": "Leave it. I’ll fix it.",
+  "mood": "teach",
+  "take": 1
+ },
  "209d2dc3": {
   "who": "sam",
   "say": "Eh? Come again?",
   "mood": "ask",
+  "take": 1
+ },
+ "20b449b9": {
+  "who": "narrator",
+  "say": "My sister has just got home.",
+  "mood": "teach",
+  "take": 1
+ },
+ "20e860f3": {
+  "who": "narrator",
+  "say": "I’ll call you if I’m late.",
+  "mood": "teach",
   "take": 1
  },
  "213c8707": {
@@ -221,10 +779,46 @@
   "mood": "ask",
   "take": 1
  },
+ "21644267": {
+  "who": "narrator",
+  "say": "feel like a cup of tea",
+  "mood": "teach",
+  "take": 1
+ },
  "2164893b": {
   "who": "sam",
   "say": "Not sure I follow, mate.",
   "mood": "warm",
+  "take": 1
+ },
+ "227f3b65": {
+  "who": "narrator",
+  "say": "We watched a film last night.",
+  "mood": "teach",
+  "take": 1
+ },
+ "22acf475": {
+  "who": "narrator",
+  "say": "Priya works in a shop.",
+  "mood": "teach",
+  "take": 1
+ },
+ "2327462d": {
+  "who": "narrator",
+  "say": "lose. lost.",
+  "mood": "teach",
+  "take": 2
+ },
+ "237e9d66": {
+  "who": "narrator",
+  "say": "Mrs Hughes always looked forward to Sundays.",
+  "mood": "teach",
+  "take": 1
+ },
+ "2384c876": {
+  "who": "narrator",
+  "say": "They repaired the road last summer.",
+  "mood": "teach",
   "take": 1
  },
  "241f05e1": {
@@ -238,6 +832,12 @@
   "say": "Mimi. I like Mimi.",
   "mood": "wonder",
   "take": 1
+ },
+ "245cb1db": {
+  "who": "narrator",
+  "say": "She’s lived here since 2010.",
+  "mood": "teach",
+  "take": 2
  },
  "24c2b753": {
   "who": "narrator",
@@ -257,9 +857,27 @@
   "mood": "ask",
   "take": 1
  },
+ "259c46e6": {
+  "who": "narrator",
+  "say": "climb a tree",
+  "mood": "teach",
+  "take": 1
+ },
+ "25aae1e8": {
+  "who": "narrator",
+  "say": "This trip has cost us a fortune.",
+  "mood": "teach",
+  "take": 1
+ },
  "25ed4e75": {
   "who": "narrator",
   "say": "I can’t open this jar.",
+  "mood": "teach",
+  "take": 1
+ },
+ "25f09e0c": {
+  "who": "narrator",
+  "say": "Have you found a new job?",
   "mood": "teach",
   "take": 1
  },
@@ -275,10 +893,46 @@
   "mood": "warm",
   "take": 1
  },
+ "26be945f": {
+  "who": "narrator",
+  "say": "These are my keys.",
+  "mood": "teach",
+  "take": 1
+ },
  "270dbcb0": {
   "who": "priya",
   "say": "All of them! Twenty candles. And he didn’t want any change.",
   "mood": "excited",
+  "take": 1
+ },
+ "271624d9": {
+  "who": "narrator",
+  "say": "I’ll bring the photos tomorrow.",
+  "mood": "teach",
+  "take": 1
+ },
+ "274e2748": {
+  "who": "narrator",
+  "say": "a repair shop",
+  "mood": "teach",
+  "take": 1
+ },
+ "27758f58": {
+  "who": "narrator",
+  "say": "Mimi hasn’t come back yet.",
+  "mood": "teach",
+  "take": 1
+ },
+ "2782b5f7": {
+  "who": "narrator",
+  "say": "Can I borrow your pen for a minute?",
+  "mood": "teach",
+  "take": 1
+ },
+ "2800ebf8": {
+  "who": "narrator",
+  "say": "I’ve known Tom for ten years.",
+  "mood": "teach",
   "take": 1
  },
  "28377f46": {
@@ -293,9 +947,39 @@
   "mood": "excited",
   "take": 1
  },
+ "28dd5bb8": {
+  "who": "narrator",
+  "say": "Priya never lends money to anyone.",
+  "mood": "teach",
+  "take": 1
+ },
+ "2902b97b": {
+  "who": "narrator",
+  "say": "Mimi isn’t going to like this.",
+  "mood": "teach",
+  "take": 1
+ },
+ "290461b8": {
+  "who": "narrator",
+  "say": "They aren’t watching TV.",
+  "mood": "teach",
+  "take": 1
+ },
  "2913649c": {
   "who": "narrator",
   "say": "Can I help you?",
+  "mood": "teach",
+  "take": 1
+ },
+ "291efee0": {
+  "who": "narrator",
+  "say": "I’m not going to borrow his car again.",
+  "mood": "teach",
+  "take": 1
+ },
+ "29224433": {
+  "who": "narrator",
+  "say": "Have you ever tried Indian food?",
   "mood": "teach",
   "take": 1
  },
@@ -311,10 +995,22 @@
   "mood": "wonder",
   "take": 1
  },
+ "2991cfd3": {
+  "who": "narrator",
+  "say": "We’re going to buy a flat next year.",
+  "mood": "teach",
+  "take": 1
+ },
  "29b178f0": {
   "who": "tom",
   "say": "Yes. Very strong tea, every morning.",
   "mood": "warm",
+  "take": 1
+ },
+ "29c67ed0": {
+  "who": "narrator",
+  "say": "You don’t need to.",
+  "mood": "teach",
   "take": 1
  },
  "2a2fc393": {
@@ -335,6 +1031,12 @@
   "mood": "teach",
   "take": 1
  },
+ "2b815965": {
+  "who": "narrator",
+  "say": "look forward to the holidays",
+  "mood": "teach",
+  "take": 1
+ },
  "2bd31b5c": {
   "who": "moss",
   "say": "I don’t know yet. I will decide on Friday.",
@@ -347,10 +1049,70 @@
   "mood": "warm",
   "take": 1
  },
+ "2c44d56c": {
+  "who": "narrator",
+  "say": "The car stopped in front of the house.",
+  "mood": "teach",
+  "take": 1
+ },
+ "2c941e24": {
+  "who": "narrator",
+  "say": "like. liked.",
+  "mood": "teach",
+  "take": 1
+ },
+ "2cd3373c": {
+  "who": "narrator",
+  "say": "There isn’t a bank on our street.",
+  "mood": "teach",
+  "take": 1
+ },
  "2d5260b0": {
   "who": "tom",
   "say": "Sam! Of course. He comes here at six every morning, after work.",
   "mood": "excited",
+  "take": 1
+ },
+ "2d70df75": {
+  "who": "narrator",
+  "say": "I’m cold.",
+  "mood": "teach",
+  "take": 2
+ },
+ "2d8de036": {
+  "who": "narrator",
+  "say": "Priya isn’t here. She’s gone home.",
+  "mood": "teach",
+  "take": 1
+ },
+ "2daed7cf": {
+  "who": "narrator",
+  "say": "rise. rose. risen.",
+  "mood": "teach",
+  "take": 1
+ },
+ "2ddecf8a": {
+  "who": "narrator",
+  "say": "You shouldn’t allow your dog on the sofa.",
+  "mood": "teach",
+  "take": 1
+ },
+ "2e22dc52": {
+  "who": "narrator",
+  "say": "My son never says goodbye when he leaves.",
+  "mood": "teach",
+  "take": 1
+ },
+ "2e39b3aa": {
+  "who": "narrator",
+  "say": "give up",
+  "mood": "teach",
+  "take": 3
+ },
+ "2e65f9b8": {
+  "who": "narrator",
+  "say": "decide. decided.",
+  "mood": "teach",
   "take": 1
  },
  "2ec2b663": {
@@ -365,10 +1127,58 @@
   "mood": "teach",
   "take": 2
  },
+ "2fb367a6": {
+  "who": "narrator",
+  "say": "stop smoking",
+  "mood": "teach",
+  "take": 1
+ },
  "2fbf191a": {
   "who": "stranger",
   "say": "Thank you. It is a little big.",
   "mood": "wonder",
+  "take": 1
+ },
+ "2ff87d11": {
+  "who": "narrator",
+  "say": "Could you say that again, please?",
+  "mood": "teach",
+  "take": 1
+ },
+ "304bc9d4": {
+  "who": "narrator",
+  "say": "I left my umbrella on the bus.",
+  "mood": "teach",
+  "take": 1
+ },
+ "30a6c1f6": {
+  "who": "narrator",
+  "say": "We’re going to repair the fence in spring.",
+  "mood": "teach",
+  "take": 1
+ },
+ "316645e4": {
+  "who": "narrator",
+  "say": "find time",
+  "mood": "teach",
+  "take": 1
+ },
+ "316ad249": {
+  "who": "narrator",
+  "say": "I didn’t feel well yesterday.",
+  "mood": "teach",
+  "take": 1
+ },
+ "3173caf7": {
+  "who": "narrator",
+  "say": "I can’t meet you tomorrow.",
+  "mood": "teach",
+  "take": 1
+ },
+ "31addddf": {
+  "who": "narrator",
+  "say": "It’s raining. Take an umbrella.",
+  "mood": "teach",
   "take": 1
  },
  "31ea2772": {
@@ -377,10 +1187,40 @@
   "mood": "ask",
   "take": 1
  },
+ "31ffc190": {
+  "who": "narrator",
+  "say": "The postman brings the letters at ten.",
+  "mood": "teach",
+  "take": 1
+ },
+ "322f1f92": {
+  "who": "narrator",
+  "say": "say sorry",
+  "mood": "teach",
+  "take": 2
+ },
+ "329d2e7b": {
+  "who": "narrator",
+  "say": "lose weight",
+  "mood": "teach",
+  "take": 2
+ },
+ "32a54cdf": {
+  "who": "narrator",
+  "say": "The train arrives at ten past six.",
+  "mood": "teach",
+  "take": 1
+ },
  "32f53aa3": {
   "who": "tom",
   "say": "So, where do you work?",
   "mood": "ask",
+  "take": 1
+ },
+ "334201c4": {
+  "who": "narrator",
+  "say": "I’ve told you a hundred times.",
+  "mood": "teach",
   "take": 1
  },
  "33bc02fe": {
@@ -389,16 +1229,106 @@
   "mood": "warm",
   "take": 1
  },
+ "33e51182": {
+  "who": "narrator",
+  "say": "The queue moves very slowly.",
+  "mood": "teach",
+  "take": 2
+ },
+ "33f14772": {
+  "who": "narrator",
+  "say": "get. got.",
+  "mood": "teach",
+  "take": 2
+ },
+ "33f35dab": {
+  "who": "narrator",
+  "say": "I look forward to hearing from you.",
+  "mood": "teach",
+  "take": 1
+ },
+ "3423d2cf": {
+  "who": "narrator",
+  "say": "I’ve never needed a car here.",
+  "mood": "teach",
+  "take": 1
+ },
+ "3446bc94": {
+  "who": "narrator",
+  "say": "We’re going to need more chairs.",
+  "mood": "teach",
+  "take": 1
+ },
  "344f071c": {
   "who": "hughes",
   "say": "I met him on a Tuesday. He was cold, so I gave him my husband’s old coat.",
   "mood": "warm",
   "take": 1
  },
+ "346782d5": {
+  "who": "narrator",
+  "say": "make a mistake",
+  "mood": "teach",
+  "take": 1
+ },
+ "34979629": {
+  "who": "narrator",
+  "say": "I need a break.",
+  "mood": "teach",
+  "take": 1
+ },
+ "34e70e46": {
+  "who": "narrator",
+  "say": "I’m not walking in this rain.",
+  "mood": "teach",
+  "take": 1
+ },
  "35128354": {
   "who": "stranger",
   "say": "What is your name?",
   "mood": "ask",
+  "take": 1
+ },
+ "357d45c7": {
+  "who": "narrator",
+  "say": "remember. remembered.",
+  "mood": "teach",
+  "take": 1
+ },
+ "35c7352f": {
+  "who": "narrator",
+  "say": "We haven’t got any bread.",
+  "mood": "teach",
+  "take": 1
+ },
+ "35f8246e": {
+  "who": "narrator",
+  "say": "We lost the match on Saturday.",
+  "mood": "teach",
+  "take": 1
+ },
+ "360820b8": {
+  "who": "narrator",
+  "say": "My sister brought a cake to the party.",
+  "mood": "teach",
+  "take": 1
+ },
+ "361d97fc": {
+  "who": "narrator",
+  "say": "When was this house built?",
+  "mood": "teach",
+  "take": 1
+ },
+ "362c82e9": {
+  "who": "narrator",
+  "say": "We went to the seaside last summer.",
+  "mood": "teach",
+  "take": 1
+ },
+ "36382de0": {
+  "who": "narrator",
+  "say": "Have they set off yet?",
+  "mood": "teach",
   "take": 1
  },
  "365d00ae": {
@@ -410,6 +1340,18 @@
  "37019b06": {
   "who": "narrator",
   "say": "The gnome had the same hat.",
+  "mood": "teach",
+  "take": 1
+ },
+ "371b9337": {
+  "who": "narrator",
+  "say": "plan a trip",
+  "mood": "teach",
+  "take": 1
+ },
+ "3772a22e": {
+  "who": "narrator",
+  "say": "Mimi is drinking from my glass again.",
   "mood": "teach",
   "take": 1
  },
@@ -425,16 +1367,58 @@
   "mood": "teach",
   "take": 1
  },
+ "37dc70df": {
+  "who": "narrator",
+  "say": "Will you help me with these boxes?",
+  "mood": "teach",
+  "take": 1
+ },
  "37ddc9b1": {
   "who": "stranger",
   "say": "He? Did you see him?",
   "mood": "ask",
   "take": 1
  },
+ "383d0e32": {
+  "who": "narrator",
+  "say": "I’d like a coffee, please.",
+  "mood": "teach",
+  "take": 1
+ },
+ "399f2358": {
+  "who": "narrator",
+  "say": "How are you feeling?",
+  "mood": "teach",
+  "take": 1
+ },
+ "39ba0e8a": {
+  "who": "narrator",
+  "say": "My hair is growing really fast.",
+  "mood": "teach",
+  "take": 1
+ },
  "39e2d125": {
   "who": "moss",
   "say": "Now. Where is a high place on this street?",
   "mood": "ask",
+  "take": 1
+ },
+ "39f0b1a6": {
+  "who": "narrator",
+  "say": "Sam didn’t work last night.",
+  "mood": "teach",
+  "take": 1
+ },
+ "39f2a262": {
+  "who": "narrator",
+  "say": "leave. left.",
+  "mood": "teach",
+  "take": 1
+ },
+ "3a30cd96": {
+  "who": "narrator",
+  "say": "Mimi is watching the rain.",
+  "mood": "teach",
   "take": 1
  },
  "3a606e23": {
@@ -449,10 +1433,46 @@
   "mood": "teach",
   "take": 2
  },
+ "3a9d9123": {
+  "who": "narrator",
+  "say": "I didn’t do much yesterday.",
+  "mood": "teach",
+  "take": 1
+ },
+ "3ab1bbe3": {
+  "who": "narrator",
+  "say": "find the way",
+  "mood": "teach",
+  "take": 1
+ },
  "3ae0cc58": {
   "who": "moss",
   "say": "Hello… Aster. Hello, young one.",
   "mood": "warm",
+  "take": 1
+ },
+ "3c4c80c7": {
+  "who": "narrator",
+  "say": "miss. missed.",
+  "mood": "teach",
+  "take": 1
+ },
+ "3cb2d5bb": {
+  "who": "narrator",
+  "say": "I’m looking forward to it.",
+  "mood": "teach",
+  "take": 1
+ },
+ "3cb84197": {
+  "who": "narrator",
+  "say": "look. looked.",
+  "mood": "teach",
+  "take": 1
+ },
+ "3cdec84a": {
+  "who": "narrator",
+  "say": "shine brightly",
+  "mood": "teach",
   "take": 1
  },
  "3d0d7493": {
@@ -473,15 +1493,87 @@
   "mood": "teach",
   "take": 2
  },
+ "3d4c0e3a": {
+  "who": "narrator",
+  "say": "I’ve never looked forward to Mondays.",
+  "mood": "teach",
+  "take": 1
+ },
+ "3e11dab8": {
+  "who": "narrator",
+  "say": "bring someone something",
+  "mood": "teach",
+  "take": 1
+ },
+ "3e52aed6": {
+  "who": "narrator",
+  "say": "Have you heard the news?",
+  "mood": "teach",
+  "take": 1
+ },
+ "3e7ab22d": {
+  "who": "narrator",
+  "say": "Sam goes to bed in the morning.",
+  "mood": "teach",
+  "take": 1
+ },
+ "3e857859": {
+  "who": "narrator",
+  "say": "bring a friend",
+  "mood": "teach",
+  "take": 2
+ },
+ "3ef29b60": {
+  "who": "narrator",
+  "say": "It was very quiet last night.",
+  "mood": "teach",
+  "take": 1
+ },
  "3ef6f2a9": {
   "who": "stranger",
   "say": "I have not got a plan.",
   "mood": "wonder",
   "take": 1
  },
+ "3f13d007": {
+  "who": "narrator",
+  "say": "Tom has just made some tea.",
+  "mood": "teach",
+  "take": 1
+ },
+ "3fbcf448": {
+  "who": "narrator",
+  "say": "Mimi always finds the warmest place in the house.",
+  "mood": "teach",
+  "take": 1
+ },
+ "3fbeb13e": {
+  "who": "narrator",
+  "say": "How much sugar do you want?",
+  "mood": "teach",
+  "take": 1
+ },
+ "405a389f": {
+  "who": "narrator",
+  "say": "I’ve lent my car to my brother.",
+  "mood": "teach",
+  "take": 1
+ },
  "4086660f": {
   "who": "narrator",
   "say": "have breakfast",
+  "mood": "teach",
+  "take": 1
+ },
+ "40ee7f5b": {
+  "who": "narrator",
+  "say": "Do you watch the news every evening?",
+  "mood": "teach",
+  "take": 1
+ },
+ "41159727": {
+  "who": "narrator",
+  "say": "check. checked.",
   "mood": "teach",
   "take": 1
  },
@@ -497,11 +1589,29 @@
   "mood": "warm",
   "take": 1
  },
+ "41783bfa": {
+  "who": "narrator",
+  "say": "We usually plan our holidays in January.",
+  "mood": "teach",
+  "take": 1
+ },
+ "41b61163": {
+  "who": "narrator",
+  "say": "I’ll work from home tomorrow.",
+  "mood": "teach",
+  "take": 1
+ },
  "41dd01d4": {
   "who": "moss",
   "say": "Hm. Say it again, slowly.",
   "mood": "warm",
   "take": 3
+ },
+ "41f406d4": {
+  "who": "narrator",
+  "say": "Did you get my message?",
+  "mood": "teach",
+  "take": 1
  },
  "420a9238": {
   "who": "priya",
@@ -521,10 +1631,22 @@
   "mood": "wonder",
   "take": 1
  },
+ "426a4007": {
+  "who": "narrator",
+  "say": "compare prices",
+  "mood": "teach",
+  "take": 2
+ },
  "4277d389": {
   "who": "stranger",
   "say": "Oh! Hello. Sorry. Am I making a noise?",
   "mood": "ask",
+  "take": 1
+ },
+ "42e60901": {
+  "who": "narrator",
+  "say": "make. made.",
+  "mood": "teach",
   "take": 1
  },
  "43083a9b": {
@@ -539,6 +1661,12 @@
   "mood": "ask",
   "take": 1
  },
+ "43c8c85c": {
+  "who": "narrator",
+  "say": "We’ve got a big garden.",
+  "mood": "teach",
+  "take": 1
+ },
  "43cb2ee6": {
   "who": "sam",
   "say": "Ha. Fair enough. Oh, and I found this on the back seat the next morning.",
@@ -549,6 +1677,12 @@
   "who": "stranger",
   "say": "Sixty years. And he has never gone home.",
   "mood": "gentle",
+  "take": 1
+ },
+ "447d4f02": {
+  "who": "narrator",
+  "say": "Please stop talking and listen.",
+  "mood": "teach",
   "take": 1
  },
  "44b1b20b": {
@@ -563,15 +1697,57 @@
   "mood": "wonder",
   "take": 1
  },
+ "44d40971": {
+  "who": "narrator",
+  "say": "know. knew. known.",
+  "mood": "teach",
+  "take": 2
+ },
  "44f1df91": {
   "who": "sam",
   "say": "I saw a little man in a hat. He went to Priya’s shop, then to No. 9.",
   "mood": "warm",
   "take": 5
  },
+ "45314fc2": {
+  "who": "narrator",
+  "say": "get better",
+  "mood": "teach",
+  "take": 2
+ },
+ "45b428e5": {
+  "who": "narrator",
+  "say": "The bank is between the shop and the café.",
+  "mood": "teach",
+  "take": 1
+ },
+ "461e338a": {
+  "who": "narrator",
+  "say": "say goodbye. said goodbye.",
+  "mood": "teach",
+  "take": 1
+ },
+ "46323555": {
+  "who": "narrator",
+  "say": "Priya works six days a week.",
+  "mood": "teach",
+  "take": 1
+ },
  "464a4cee": {
   "who": "narrator",
   "say": "Have a good weekend!",
+  "mood": "teach",
+  "take": 1
+ },
+ "46a00904": {
+  "who": "narrator",
+  "say": "carry on",
+  "mood": "teach",
+  "take": 3
+ },
+ "46d870f2": {
+  "who": "narrator",
+  "say": "reach a decision",
   "mood": "teach",
   "take": 1
  },
@@ -581,16 +1757,82 @@
   "mood": "teach",
   "take": 1
  },
+ "47bbe188": {
+  "who": "narrator",
+  "say": "take a photo",
+  "mood": "teach",
+  "take": 1
+ },
+ "47cc593c": {
+  "who": "narrator",
+  "say": "I’ve walked ten kilometres today.",
+  "mood": "teach",
+  "take": 1
+ },
+ "4816197b": {
+  "who": "narrator",
+  "say": "Can you grow lemons in England?",
+  "mood": "teach",
+  "take": 1
+ },
+ "481875bf": {
+  "who": "narrator",
+  "say": "Who fixed your bike?",
+  "mood": "teach",
+  "take": 1
+ },
+ "481e0170": {
+  "who": "narrator",
+  "say": "The letter won’t arrive before Monday.",
+  "mood": "teach",
+  "take": 1
+ },
  "48762937": {
   "who": "hughes",
   "say": "He said: “Keep it for the next one.” I think you are the next one, dear.",
   "mood": "warm",
   "take": 1
  },
+ "48a37d72": {
+  "who": "narrator",
+  "say": "Who took my umbrella?",
+  "mood": "teach",
+  "take": 1
+ },
+ "48bfbc35": {
+  "who": "narrator",
+  "say": "They haven’t fixed the lift yet.",
+  "mood": "teach",
+  "take": 1
+ },
  "48ea479c": {
   "who": "stranger",
   "say": "Well done. See you tomorrow.",
   "mood": "wonder",
+  "take": 1
+ },
+ "490f524f": {
+  "who": "narrator",
+  "say": "want. wanted.",
+  "mood": "teach",
+  "take": 1
+ },
+ "4922b2d6": {
+  "who": "narrator",
+  "say": "I haven’t paid the rent yet.",
+  "mood": "teach",
+  "take": 1
+ },
+ "492837c7": {
+  "who": "narrator",
+  "say": "I’m going to prepare the spare room for my sister.",
+  "mood": "teach",
+  "take": 1
+ },
+ "4954562e": {
+  "who": "narrator",
+  "say": "We said goodbye at the station.",
+  "mood": "teach",
   "take": 1
  },
  "49cd6d42": {
@@ -605,6 +1847,36 @@
   "mood": "ask",
   "take": 1
  },
+ "4a28c492": {
+  "who": "narrator",
+  "say": "My brother doesn’t like cats.",
+  "mood": "teach",
+  "take": 1
+ },
+ "4a687fc0": {
+  "who": "narrator",
+  "say": "hide from someone",
+  "mood": "teach",
+  "take": 2
+ },
+ "4adf6ef2": {
+  "who": "narrator",
+  "say": "We’re going to fly to Rome in May.",
+  "mood": "teach",
+  "take": 1
+ },
+ "4af5afc7": {
+  "who": "narrator",
+  "say": "return a call",
+  "mood": "teach",
+  "take": 1
+ },
+ "4b047243": {
+  "who": "narrator",
+  "say": "I walk to work every day.",
+  "mood": "teach",
+  "take": 1
+ },
  "4b2ca18d": {
   "who": "stranger",
   "say": "The warmest place I know is No. 1. My friend’s house.",
@@ -617,10 +1889,28 @@
   "mood": "gentle",
   "take": 2
  },
+ "4b87925c": {
+  "who": "narrator",
+  "say": "I miss you.",
+  "mood": "teach",
+  "take": 2
+ },
+ "4b8a5164": {
+  "who": "narrator",
+  "say": "Sam sets off for work at ten every night.",
+  "mood": "teach",
+  "take": 2
+ },
  "4bc1b3f6": {
   "who": "hughes",
   "say": "Hello, dears! Come in, come in. Mind the roses.",
   "mood": "excited",
+  "take": 1
+ },
+ "4c74901f": {
+  "who": "narrator",
+  "say": "I often forget people’s names.",
+  "mood": "teach",
   "take": 1
  },
  "4c773151": {
@@ -629,10 +1919,34 @@
   "mood": "teach",
   "take": 2
  },
+ "4c99623c": {
+  "who": "narrator",
+  "say": "What do you do on Sundays?",
+  "mood": "teach",
+  "take": 1
+ },
+ "4ca6eacf": {
+  "who": "narrator",
+  "say": "go for a walk",
+  "mood": "teach",
+  "take": 2
+ },
+ "4cbb6143": {
+  "who": "narrator",
+  "say": "We took the night bus home.",
+  "mood": "teach",
+  "take": 1
+ },
  "4d147383": {
   "who": "tom",
   "say": "Yes. Every night.",
   "mood": "warm",
+  "take": 1
+ },
+ "4d2215bf": {
+  "who": "narrator",
+  "say": "I’m tired. I’ll go to bed.",
+  "mood": "teach",
   "take": 1
  },
  "4d3c17c9": {
@@ -659,16 +1973,40 @@
   "mood": "ask",
   "take": 1
  },
+ "4f3c6318": {
+  "who": "narrator",
+  "say": "This is my phone.",
+  "mood": "teach",
+  "take": 1
+ },
  "4f7077d6": {
   "who": "stranger",
   "say": "Clouds? But the others must see my light!",
   "mood": "ask",
   "take": 1
  },
+ "502d5123": {
+  "who": "narrator",
+  "say": "Don’t try to fix it yourself.",
+  "mood": "teach",
+  "take": 1
+ },
+ "50447c73": {
+  "who": "narrator",
+  "say": "I hid the presents in the wardrobe.",
+  "mood": "teach",
+  "take": 3
+ },
  "506bf818": {
   "who": "priya",
   "say": "Look at the date: 1966!",
   "mood": "excited",
+  "take": 1
+ },
+ "5083a36b": {
+  "who": "narrator",
+  "say": "Tom made a cake for Mrs Hughes.",
+  "mood": "teach",
   "take": 1
  },
  "5106db0b": {
@@ -683,6 +2021,12 @@
   "mood": "warm",
   "take": 1
  },
+ "51d4c9c9": {
+  "who": "narrator",
+  "say": "build a fire",
+  "mood": "teach",
+  "take": 1
+ },
  "52985c9d": {
   "who": "moss",
   "say": "Yes. And I am going to miss her. That is the problem.",
@@ -695,15 +2039,69 @@
   "mood": "excited",
   "take": 1
  },
+ "53118a5a": {
+  "who": "narrator",
+  "say": "compare. compared.",
+  "mood": "teach",
+  "take": 1
+ },
+ "5313215b": {
+  "who": "narrator",
+  "say": "Hurry up, the guests are arriving.",
+  "mood": "teach",
+  "take": 1
+ },
+ "53320e55": {
+  "who": "narrator",
+  "say": "set off.",
+  "mood": "teach",
+  "take": 2
+ },
+ "5376431e": {
+  "who": "narrator",
+  "say": "wave goodbye",
+  "mood": "teach",
+  "take": 2
+ },
+ "53902788": {
+  "who": "narrator",
+  "say": "Tom’s tea is better than mine.",
+  "mood": "teach",
+  "take": 1
+ },
  "53a9e2d3": {
   "who": "okafor",
   "say": "“Look higher,” the radio said. What is the highest thing on the lane?",
   "mood": "ask",
   "take": 1
  },
+ "53ff2d58": {
+  "who": "narrator",
+  "say": "We can look forward to some sun this weekend.",
+  "mood": "teach",
+  "take": 2
+ },
+ "5414d93e": {
+  "who": "narrator",
+  "say": "put the kettle on",
+  "mood": "teach",
+  "take": 1
+ },
+ "5444737b": {
+  "who": "narrator",
+  "say": "Tom is putting the chairs outside.",
+  "mood": "teach",
+  "take": 1
+ },
  "54968dfa": {
   "who": "narrator",
   "say": "Mr Moss woke up.",
+  "mood": "teach",
+  "take": 1
+ },
+ "54d3c61b": {
+  "who": "narrator",
+  "say": "Are you looking forward to seeing your family?",
   "mood": "teach",
   "take": 1
  },
@@ -719,6 +2117,12 @@
   "mood": "warm",
   "take": 1
  },
+ "56785537": {
+  "who": "narrator",
+  "say": "Can we walk there, or is it too far?",
+  "mood": "teach",
+  "take": 1
+ },
  "573feb62": {
   "who": "stranger",
   "say": "But Mimi isn’t sleeping either. Look. What is she doing?",
@@ -729,6 +2133,12 @@
   "who": "stranger",
   "say": "So the walking light had my spark. Why?",
   "mood": "ask",
+  "take": 1
+ },
+ "575bd1e0": {
+  "who": "narrator",
+  "say": "Has anyone called the doctor?",
+  "mood": "teach",
   "take": 1
  },
  "57ce8aa1": {
@@ -749,16 +2159,70 @@
   "mood": "teach",
   "take": 1
  },
+ "59d272e4": {
+  "who": "narrator",
+  "say": "come back. came back.",
+  "mood": "teach",
+  "take": 1
+ },
+ "5abcf9ee": {
+  "who": "narrator",
+  "say": "Give me a minute, please.",
+  "mood": "teach",
+  "take": 1
+ },
+ "5ac079cc": {
+  "who": "narrator",
+  "say": "I have to get up at six.",
+  "mood": "teach",
+  "take": 1
+ },
+ "5aeff5ed": {
+  "who": "narrator",
+  "say": "I’ve never climbed a mountain.",
+  "mood": "teach",
+  "take": 1
+ },
+ "5b0c12d7": {
+  "who": "narrator",
+  "say": "My sister always decides where we go.",
+  "mood": "teach",
+  "take": 1
+ },
  "5b44f467": {
   "who": "tom",
   "say": "And you? What did you do last night?",
   "mood": "ask",
   "take": 1
  },
+ "5b80abfd": {
+  "who": "narrator",
+  "say": "I feel much better today.",
+  "mood": "teach",
+  "take": 1
+ },
  "5bc6c870": {
   "who": "stranger",
   "say": "Today I know a lot of new words. Know is never with -ing. Strange language.",
   "mood": "gentle",
+  "take": 1
+ },
+ "5c00200f": {
+  "who": "narrator",
+  "say": "Priya is going to open a second shop.",
+  "mood": "teach",
+  "take": 1
+ },
+ "5c09f6ea": {
+  "who": "narrator",
+  "say": "We walked home after the film.",
+  "mood": "teach",
+  "take": 1
+ },
+ "5c1b6356": {
+  "who": "narrator",
+  "say": "Don’t compare yourself to your sister.",
+  "mood": "teach",
   "take": 1
  },
  "5c3371b2": {
@@ -773,16 +2237,82 @@
   "mood": "teach",
   "take": 1
  },
+ "5c9b12d6": {
+  "who": "narrator",
+  "say": "I can feel the wind on my face.",
+  "mood": "teach",
+  "take": 1
+ },
+ "5cc051bc": {
+  "who": "narrator",
+  "say": "I fell off my bike yesterday.",
+  "mood": "teach",
+  "take": 1
+ },
+ "5cd7be25": {
+  "who": "narrator",
+  "say": "Do you want a lift?",
+  "mood": "teach",
+  "take": 2
+ },
  "5ce5fdac": {
   "who": "hughes",
   "say": "Oh dear. Say that again, love.",
   "mood": "warm",
   "take": 1
  },
+ "5d40f8b9": {
+  "who": "narrator",
+  "say": "I didn’t know that.",
+  "mood": "teach",
+  "take": 1
+ },
+ "5d77d746": {
+  "who": "narrator",
+  "say": "Watch your step.",
+  "mood": "teach",
+  "take": 1
+ },
+ "5e1aa516": {
+  "who": "narrator",
+  "say": "lose touch",
+  "mood": "teach",
+  "take": 2
+ },
+ "5e2310bb": {
+  "who": "narrator",
+  "say": "Look! Mimi is sleeping.",
+  "mood": "teach",
+  "take": 1
+ },
  "5ecefe65": {
   "who": "tom",
   "say": "At 2 a.m.? Funny friend. OK, good night!",
   "mood": "ask",
+  "take": 1
+ },
+ "5ff40a35": {
+  "who": "narrator",
+  "say": "Tom is making tea right now.",
+  "mood": "teach",
+  "take": 1
+ },
+ "60de39ad": {
+  "who": "narrator",
+  "say": "The shops were closed.",
+  "mood": "teach",
+  "take": 2
+ },
+ "611212f4": {
+  "who": "narrator",
+  "say": "It doesn’t work.",
+  "mood": "teach",
+  "take": 1
+ },
+ "616bf1c2": {
+  "who": "narrator",
+  "say": "Tom will want to see this.",
+  "mood": "teach",
   "take": 1
  },
  "61757d7d": {
@@ -803,10 +2333,22 @@
   "mood": "excited",
   "take": 1
  },
+ "620da8ec": {
+  "who": "narrator",
+  "say": "We meet at the café every Friday.",
+  "mood": "teach",
+  "take": 1
+ },
  "62164591": {
   "who": "voice",
   "say": "We are closer now. Tomorrow at midnight. Bring the last spark.",
   "mood": "radio",
+  "take": 1
+ },
+ "6270292d": {
+  "who": "narrator",
+  "say": "borrow a book from the library",
+  "mood": "teach",
   "take": 1
  },
  "62d9bd11": {
@@ -827,6 +2369,18 @@
   "mood": "ask",
   "take": 1
  },
+ "63b4da5a": {
+  "who": "narrator",
+  "say": "stay up late",
+  "mood": "teach",
+  "take": 2
+ },
+ "63d18521": {
+  "who": "narrator",
+  "say": "grow vegetables",
+  "mood": "teach",
+  "take": 2
+ },
  "640660b6": {
   "who": "priya",
   "say": "I did! At three in the morning somebody left a note under my door.",
@@ -839,6 +2393,48 @@
   "mood": "warm",
   "take": 1
  },
+ "6456c456": {
+  "who": "narrator",
+  "say": "Sorry, I missed your call.",
+  "mood": "teach",
+  "take": 1
+ },
+ "6517bb24": {
+  "who": "narrator",
+  "say": "climb the stairs",
+  "mood": "teach",
+  "take": 1
+ },
+ "6589c71e": {
+  "who": "narrator",
+  "say": "borrow money from the bank",
+  "mood": "teach",
+  "take": 1
+ },
+ "65b5f3e9": {
+  "who": "narrator",
+  "say": "We’re going to build a shed in the garden.",
+  "mood": "teach",
+  "take": 1
+ },
+ "65b85f8d": {
+  "who": "narrator",
+  "say": "Can you bring me a glass of water?",
+  "mood": "teach",
+  "take": 1
+ },
+ "66048e4e": {
+  "who": "narrator",
+  "say": "Who has drunk all the milk?",
+  "mood": "teach",
+  "take": 1
+ },
+ "66bae7d3": {
+  "who": "narrator",
+  "say": "I buy bread at Priya’s shop.",
+  "mood": "teach",
+  "take": 1
+ },
  "673ad13d": {
   "who": "moss",
   "say": "So. You want to go home. What is your plan?",
@@ -848,6 +2444,30 @@
  "679cce3a": {
   "who": "narrator",
   "say": "It’ll be cold tomorrow.",
+  "mood": "teach",
+  "take": 1
+ },
+ "679f1805": {
+  "who": "narrator",
+  "say": "cost.",
+  "mood": "teach",
+  "take": 5
+ },
+ "67d77eee": {
+  "who": "narrator",
+  "say": "if you want",
+  "mood": "teach",
+  "take": 2
+ },
+ "67e8e655": {
+  "who": "narrator",
+  "say": "prepare dinner",
+  "mood": "teach",
+  "take": 2
+ },
+ "67fbb1bf": {
+  "who": "narrator",
+  "say": "Dr Okafor has worked in that office for years.",
   "mood": "teach",
   "take": 1
  },
@@ -863,16 +2483,124 @@
   "mood": "gentle",
   "take": 1
  },
+ "68b6c009": {
+  "who": "narrator",
+  "say": "lend someone money",
+  "mood": "teach",
+  "take": 1
+ },
+ "68cb993c": {
+  "who": "narrator",
+  "say": "feel at home",
+  "mood": "teach",
+  "take": 2
+ },
+ "6924612f": {
+  "who": "narrator",
+  "say": "keep a promise",
+  "mood": "teach",
+  "take": 1
+ },
+ "695c0a32": {
+  "who": "narrator",
+  "say": "He didn’t say a word all evening.",
+  "mood": "teach",
+  "take": 1
+ },
+ "699e713e": {
+  "who": "narrator",
+  "say": "Sam returns home at six in the morning.",
+  "mood": "teach",
+  "take": 1
+ },
+ "69ba05e5": {
+  "who": "narrator",
+  "say": "Have you bought the tickets yet?",
+  "mood": "teach",
+  "take": 1
+ },
+ "6a7dd816": {
+  "who": "narrator",
+  "say": "Have you lost something?",
+  "mood": "teach",
+  "take": 1
+ },
+ "6adfc641": {
+  "who": "narrator",
+  "say": "Sorry. It won’t happen again.",
+  "mood": "teach",
+  "take": 1
+ },
+ "6b3d4186": {
+  "who": "narrator",
+  "say": "a pay rise",
+  "mood": "teach",
+  "take": 2
+ },
  "6b450e15": {
   "who": "okafor",
   "say": "Not quite. Check that again.",
   "mood": "warm",
   "take": 1
  },
+ "6b9d3ea9": {
+  "who": "narrator",
+  "say": "watch. watched.",
+  "mood": "teach",
+  "take": 1
+ },
+ "6bd89f7d": {
+  "who": "narrator",
+  "say": "get up",
+  "mood": "teach",
+  "take": 2
+ },
  "6c129a53": {
   "who": "okafor",
   "say": "The lantern is growing. Look, Aster. You’re brighter than the street lamps now.",
   "mood": "warm",
+  "take": 1
+ },
+ "6c1d7e43": {
+  "who": "narrator",
+  "say": "Have you reached the station yet?",
+  "mood": "teach",
+  "take": 1
+ },
+ "6c3bb43b": {
+  "who": "narrator",
+  "say": "shine a torch on something",
+  "mood": "teach",
+  "take": 1
+ },
+ "6c5fc861": {
+  "who": "narrator",
+  "say": "What are you doing?",
+  "mood": "teach",
+  "take": 1
+ },
+ "6d3a9b60": {
+  "who": "narrator",
+  "say": "I bought a new coat last week.",
+  "mood": "teach",
+  "take": 1
+ },
+ "6d4dd725": {
+  "who": "narrator",
+  "say": "set off for home",
+  "mood": "teach",
+  "take": 1
+ },
+ "6d4e488b": {
+  "who": "narrator",
+  "say": "I can still remember my first day at school.",
+  "mood": "teach",
+  "take": 1
+ },
+ "6d5c68f0": {
+  "who": "narrator",
+  "say": "The sun rises in the east.",
+  "mood": "teach",
   "take": 1
  },
  "6dc1b84f": {
@@ -893,9 +2621,33 @@
   "mood": "excited",
   "take": 2
  },
+ "6e81c7ce": {
+  "who": "narrator",
+  "say": "at work",
+  "mood": "teach",
+  "take": 1
+ },
  "6f660803": {
   "who": "narrator",
   "say": "have a good time",
+  "mood": "teach",
+  "take": 1
+ },
+ "70085b5c": {
+  "who": "narrator",
+  "say": "What happened?",
+  "mood": "teach",
+  "take": 1
+ },
+ "7048b84e": {
+  "who": "narrator",
+  "say": "if you need anything",
+  "mood": "teach",
+  "take": 1
+ },
+ "70c06492": {
+  "who": "narrator",
+  "say": "It doesn’t cost anything.",
   "mood": "teach",
   "take": 1
  },
@@ -903,6 +2655,12 @@
   "who": "tom",
   "say": "Poor thing. Hmm, wait. One of my regulars saw a light in the sky that night.",
   "mood": "gentle",
+  "take": 1
+ },
+ "71c1f514": {
+  "who": "narrator",
+  "say": "I can’t decide which one to buy.",
+  "mood": "teach",
   "take": 1
  },
  "71fa8da0": {
@@ -917,6 +2675,66 @@
   "mood": "teach",
   "take": 1
  },
+ "72bbe9c1": {
+  "who": "narrator",
+  "say": "Try again.",
+  "mood": "teach",
+  "take": 1
+ },
+ "7316d6b6": {
+  "who": "narrator",
+  "say": "win a game of chess",
+  "mood": "teach",
+  "take": 1
+ },
+ "731c9bcc": {
+  "who": "narrator",
+  "say": "fall in love",
+  "mood": "teach",
+  "take": 2
+ },
+ "7345f28a": {
+  "who": "narrator",
+  "say": "Time flies.",
+  "mood": "teach",
+  "take": 2
+ },
+ "736ffefb": {
+  "who": "narrator",
+  "say": "Come back later, please. We’re closed.",
+  "mood": "teach",
+  "take": 1
+ },
+ "739b61d6": {
+  "who": "narrator",
+  "say": "You’re going to lose your hat in this wind.",
+  "mood": "teach",
+  "take": 1
+ },
+ "73b179f0": {
+  "who": "narrator",
+  "say": "allow someone in",
+  "mood": "teach",
+  "take": 2
+ },
+ "73eaaaa8": {
+  "who": "narrator",
+  "say": "Nice to meet you.",
+  "mood": "teach",
+  "take": 1
+ },
+ "745b880c": {
+  "who": "narrator",
+  "say": "pay attention",
+  "mood": "teach",
+  "take": 2
+ },
+ "74ce0679": {
+  "who": "narrator",
+  "say": "cost a lot",
+  "mood": "teach",
+  "take": 2
+ },
  "74ddad99": {
   "who": "stranger",
   "say": "May I stay in your garden tonight?",
@@ -929,15 +2747,93 @@
   "mood": "ask",
   "take": 1
  },
+ "756d13ab": {
+  "who": "narrator",
+  "say": "The bus stopped at the corner.",
+  "mood": "teach",
+  "take": 1
+ },
+ "7576c535": {
+  "who": "narrator",
+  "say": "fly a kite",
+  "mood": "teach",
+  "take": 1
+ },
+ "75a54816": {
+  "who": "narrator",
+  "say": "I couldn’t get a taxi last night.",
+  "mood": "teach",
+  "take": 1
+ },
+ "75c06fbc": {
+  "who": "narrator",
+  "say": "leave someone alone",
+  "mood": "teach",
+  "take": 1
+ },
  "76583365": {
   "who": "sam",
   "say": "You?! Hang on. Let me tell it properly, from the start.",
   "mood": "ask",
   "take": 1
  },
+ "76c23522": {
+  "who": "narrator",
+  "say": "Did you remember to buy milk?",
+  "mood": "teach",
+  "take": 1
+ },
+ "76dba8cc": {
+  "who": "narrator",
+  "say": "I can’t stop thinking about it.",
+  "mood": "teach",
+  "take": 1
+ },
  "770137b3": {
   "who": "narrator",
   "say": "You’ll see the shop on your left.",
+  "mood": "teach",
+  "take": 1
+ },
+ "771f4701": {
+  "who": "narrator",
+  "say": "Has Mimi fallen asleep?",
+  "mood": "teach",
+  "take": 1
+ },
+ "7783c258": {
+  "who": "narrator",
+  "say": "We must be quiet. The baby’s sleeping.",
+  "mood": "teach",
+  "take": 1
+ },
+ "77dc3d9b": {
+  "who": "narrator",
+  "say": "We’re going to set off after breakfast.",
+  "mood": "teach",
+  "take": 1
+ },
+ "78b08386": {
+  "who": "narrator",
+  "say": "We’ll find a good flat soon.",
+  "mood": "teach",
+  "take": 1
+ },
+ "78e0cc65": {
+  "who": "narrator",
+  "say": "Did you check the back door?",
+  "mood": "teach",
+  "take": 1
+ },
+ "78f608f8": {
+  "who": "narrator",
+  "say": "I almost forgot.",
+  "mood": "teach",
+  "take": 2
+ },
+ "7944809e": {
+  "who": "narrator",
+  "say": "Prices rose a lot last year.",
   "mood": "teach",
   "take": 1
  },
@@ -971,6 +2867,12 @@
   "mood": "ask",
   "take": 1
  },
+ "7991e904": {
+  "who": "narrator",
+  "say": "Can you shine your torch over here?",
+  "mood": "teach",
+  "take": 1
+ },
  "79c71d72": {
   "who": "stranger",
   "say": "Mr Moss.",
@@ -995,10 +2897,46 @@
   "mood": "wonder",
   "take": 1
  },
+ "7a91a31e": {
+  "who": "narrator",
+  "say": "Be careful. You could fall.",
+  "mood": "teach",
+  "take": 1
+ },
+ "7af0725e": {
+  "who": "narrator",
+  "say": "It’s getting dark outside.",
+  "mood": "teach",
+  "take": 1
+ },
+ "7b208742": {
+  "who": "narrator",
+  "say": "Tom always says hello to Mimi.",
+  "mood": "teach",
+  "take": 1
+ },
  "7b29eea6": {
   "who": "stranger",
   "say": "And thank you, small animal.",
   "mood": "wonder",
+  "take": 1
+ },
+ "7b55c218": {
+  "who": "narrator",
+  "say": "give back",
+  "mood": "teach",
+  "take": 1
+ },
+ "7b63068f": {
+  "who": "narrator",
+  "say": "watch TV",
+  "mood": "teach",
+  "take": 1
+ },
+ "7b6b87b7": {
+  "who": "narrator",
+  "say": "open. opened.",
+  "mood": "teach",
   "take": 1
  },
  "7b856e80": {
@@ -1013,16 +2951,76 @@
   "mood": "warm",
   "take": 1
  },
+ "7cd91fca": {
+  "who": "narrator",
+  "say": "I’ve had this phone since Christmas.",
+  "mood": "teach",
+  "take": 1
+ },
  "7d0746d0": {
   "who": "stranger",
   "say": "I am a star. A small one. I came down because I wanted to hear you talk.",
   "mood": "wonder",
   "take": 1
  },
+ "7d26f4e8": {
+  "who": "narrator",
+  "say": "I’ve never flown before.",
+  "mood": "teach",
+  "take": 1
+ },
+ "7d3b806c": {
+  "who": "narrator",
+  "say": "Mimi doesn’t like the rain.",
+  "mood": "teach",
+  "take": 1
+ },
+ "7d904e93": {
+  "who": "narrator",
+  "say": "take a break",
+  "mood": "teach",
+  "take": 1
+ },
+ "7da42f13": {
+  "who": "narrator",
+  "say": "I sent you an email last night.",
+  "mood": "teach",
+  "take": 1
+ },
+ "7dbc52c7": {
+  "who": "narrator",
+  "say": "get home",
+  "mood": "teach",
+  "take": 3
+ },
  "7dd0a0a0": {
   "who": "stranger",
   "say": "My fifth spark! It was with the old coins.",
   "mood": "excited",
+  "take": 1
+ },
+ "7e44674c": {
+  "who": "narrator",
+  "say": "I’m not going to stay long.",
+  "mood": "teach",
+  "take": 1
+ },
+ "7e611b1d": {
+  "who": "narrator",
+  "say": "Don’t send it yet.",
+  "mood": "teach",
+  "take": 1
+ },
+ "7e6cced4": {
+  "who": "narrator",
+  "say": "Dr Okafor has just left the office.",
+  "mood": "teach",
+  "take": 1
+ },
+ "7ea7e0c5": {
+  "who": "narrator",
+  "say": "Your parcel has arrived.",
+  "mood": "teach",
   "take": 1
  },
  "7eb72aea": {
@@ -1031,9 +3029,45 @@
   "mood": "ask",
   "take": 1
  },
+ "7f050604": {
+  "who": "narrator",
+  "say": "When did you return from your holiday?",
+  "mood": "teach",
+  "take": 1
+ },
+ "7f06d8aa": {
+  "who": "narrator",
+  "say": "I went to the shop after work.",
+  "mood": "teach",
+  "take": 1
+ },
+ "7f14efb9": {
+  "who": "narrator",
+  "say": "make a decision",
+  "mood": "teach",
+  "take": 2
+ },
  "7f338201": {
   "who": "narrator",
   "say": "be. was, were. been.",
+  "mood": "teach",
+  "take": 1
+ },
+ "7fa07050": {
+  "who": "narrator",
+  "say": "Were there many people on the bus?",
+  "mood": "teach",
+  "take": 1
+ },
+ "7fb4e51b": {
+  "who": "narrator",
+  "say": "I’ll go with you.",
+  "mood": "teach",
+  "take": 2
+ },
+ "7fd8ee06": {
+  "who": "narrator",
+  "say": "You should check the bill before you pay.",
   "mood": "teach",
   "take": 1
  },
@@ -1055,11 +3089,41 @@
   "mood": "ask",
   "take": 1
  },
+ "80ca5045": {
+  "who": "narrator",
+  "say": "hear about something",
+  "mood": "teach",
+  "take": 1
+ },
+ "80df540b": {
+  "who": "narrator",
+  "say": "Is there any milk in the fridge?",
+  "mood": "teach",
+  "take": 1
+ },
+ "8127973e": {
+  "who": "narrator",
+  "say": "You can’t take photos in the museum.",
+  "mood": "teach",
+  "take": 1
+ },
  "8146f248": {
   "who": "narrator",
   "say": "Let’s see.",
   "mood": "teach",
   "take": 2
+ },
+ "815b4387": {
+  "who": "narrator",
+  "say": "Have you compared the two offers?",
+  "mood": "teach",
+  "take": 1
+ },
+ "81723705": {
+  "who": "narrator",
+  "say": "Don’t worry, I’ll lend you some money.",
+  "mood": "teach",
+  "take": 1
  },
  "81a0f723": {
   "who": "hughes",
@@ -1071,6 +3135,24 @@
   "who": "tom",
   "say": "Ha! Hello, stranger. Nice hat.",
   "mood": "excited",
+  "take": 1
+ },
+ "81bf7d4c": {
+  "who": "narrator",
+  "say": "carry the shopping",
+  "mood": "teach",
+  "take": 1
+ },
+ "81dec2f8": {
+  "who": "narrator",
+  "say": "hear from someone",
+  "mood": "teach",
+  "take": 1
+ },
+ "82613b38": {
+  "who": "narrator",
+  "say": "I’m meeting Sam after work.",
+  "mood": "teach",
   "take": 1
  },
  "828fc1bd": {
@@ -1085,6 +3167,12 @@
   "mood": "ask",
   "take": 1
  },
+ "839c10f8": {
+  "who": "narrator",
+  "say": "Do you have to wear a uniform?",
+  "mood": "teach",
+  "take": 1
+ },
  "83af1f26": {
   "who": "okafor",
   "say": "Then your light must be brighter than the clouds. Much brighter.",
@@ -1094,6 +3182,12 @@
  "83d9d163": {
   "who": "narrator",
   "say": "Don’t worry. I’ll help you.",
+  "mood": "teach",
+  "take": 1
+ },
+ "83dc8d69": {
+  "who": "narrator",
+  "say": "Mrs Hughes has the most beautiful roses.",
   "mood": "teach",
   "take": 1
  },
@@ -1115,10 +3209,52 @@
   "mood": "warm",
   "take": 1
  },
+ "8514c638": {
+  "who": "narrator",
+  "say": "I’ve always wanted a dog.",
+  "mood": "teach",
+  "take": 1
+ },
+ "85bf8d54": {
+  "who": "narrator",
+  "say": "hide something from someone",
+  "mood": "teach",
+  "take": 1
+ },
+ "85ccf0f7": {
+  "who": "narrator",
+  "say": "Have you sent the card to your gran?",
+  "mood": "teach",
+  "take": 2
+ },
+ "85faafc5": {
+  "who": "narrator",
+  "say": "Send my love to your mum.",
+  "mood": "teach",
+  "take": 2
+ },
+ "8706397d": {
+  "who": "narrator",
+  "say": "I’ve never won anything.",
+  "mood": "teach",
+  "take": 1
+ },
+ "87191941": {
+  "who": "narrator",
+  "say": "They still haven’t built the new bridge.",
+  "mood": "teach",
+  "take": 1
+ },
  "87ba142c": {
   "who": "stranger",
   "say": "That was me. I think.",
   "mood": "wonder",
+  "take": 1
+ },
+ "87fb3fb9": {
+  "who": "narrator",
+  "say": "Sam arrived at midnight.",
+  "mood": "teach",
   "take": 1
  },
  "88301384": {
@@ -1133,11 +3269,89 @@
   "mood": "radio",
   "take": 1
  },
+ "890c68fc": {
+  "who": "narrator",
+  "say": "What happened to your phone?",
+  "mood": "teach",
+  "take": 1
+ },
+ "89373c53": {
+  "who": "narrator",
+  "say": "I’ve taken lots of photos today.",
+  "mood": "teach",
+  "take": 1
+ },
+ "894a94ea": {
+  "who": "narrator",
+  "say": "win a race",
+  "mood": "teach",
+  "take": 1
+ },
+ "896b9970": {
+  "who": "narrator",
+  "say": "Is Tom at the café?",
+  "mood": "teach",
+  "take": 1
+ },
+ "89a13e95": {
+  "who": "narrator",
+  "say": "Tom has made tea for everyone.",
+  "mood": "teach",
+  "take": 1
+ },
  "89a5ca6c": {
   "who": "narrator",
   "say": "We were at home all evening.",
   "mood": "teach",
   "take": 1
+ },
+ "89bfabb3": {
+  "who": "narrator",
+  "say": "repair. repaired.",
+  "mood": "teach",
+  "take": 1
+ },
+ "89ee2cc9": {
+  "who": "narrator",
+  "say": "My sister is taller than me.",
+  "mood": "teach",
+  "take": 1
+ },
+ "8a3310eb": {
+  "who": "narrator",
+  "say": "buy something online",
+  "mood": "teach",
+  "take": 1
+ },
+ "8a60c23f": {
+  "who": "narrator",
+  "say": "I have felt tired all week.",
+  "mood": "teach",
+  "take": 1
+ },
+ "8a80eb80": {
+  "who": "narrator",
+  "say": "Can you promise me that?",
+  "mood": "teach",
+  "take": 1
+ },
+ "8a8d6843": {
+  "who": "narrator",
+  "say": "as far as I know",
+  "mood": "teach",
+  "take": 1
+ },
+ "8ab59329": {
+  "who": "narrator",
+  "say": "tell a story",
+  "mood": "teach",
+  "take": 2
+ },
+ "8ae86332": {
+  "who": "narrator",
+  "say": "arrive home",
+  "mood": "teach",
+  "take": 3
  },
  "8b568c00": {
   "who": "stranger",
@@ -1163,6 +3377,24 @@
   "mood": "ask",
   "take": 1
  },
+ "8c08e34b": {
+  "who": "narrator",
+  "say": "Where did you put the scissors?",
+  "mood": "teach",
+  "take": 1
+ },
+ "8c0e2d75": {
+  "who": "narrator",
+  "say": "Mimi hides under the bed when there’s a storm.",
+  "mood": "teach",
+  "take": 1
+ },
+ "8cc6630d": {
+  "who": "narrator",
+  "say": "move house",
+  "mood": "teach",
+  "take": 2
+ },
  "8d1b16cd": {
   "who": "narrator",
   "say": "We won’t have time tomorrow.",
@@ -1175,10 +3407,70 @@
   "mood": "ask",
   "take": 1
  },
+ "8d26a09c": {
+  "who": "narrator",
+  "say": "What are you planning to do this weekend?",
+  "mood": "teach",
+  "take": 1
+ },
+ "8d2fcc78": {
+  "who": "narrator",
+  "say": "I don’t know.",
+  "mood": "teach",
+  "take": 1
+ },
+ "8d4ada7a": {
+  "who": "narrator",
+  "say": "Put your money away. I’ll pay.",
+  "mood": "teach",
+  "take": 1
+ },
+ "8dddfb02": {
+  "who": "narrator",
+  "say": "take the bus",
+  "mood": "teach",
+  "take": 2
+ },
+ "8e07071f": {
+  "who": "narrator",
+  "say": "We mustn’t miss the last bus.",
+  "mood": "teach",
+  "take": 1
+ },
+ "8e45f8df": {
+  "who": "narrator",
+  "say": "We set off early to miss the traffic.",
+  "mood": "teach",
+  "take": 1
+ },
+ "8f07b887": {
+  "who": "narrator",
+  "say": "Please don’t call after ten.",
+  "mood": "teach",
+  "take": 1
+ },
+ "8f2459f2": {
+  "who": "narrator",
+  "say": "Do you need anything from the shop?",
+  "mood": "teach",
+  "take": 1
+ },
  "8fa72ecf": {
   "who": "stranger",
   "say": "Thank you. You are a very good teacher.",
   "mood": "wonder",
+  "take": 1
+ },
+ "8fbf94a8": {
+  "who": "narrator",
+  "say": "You’ll need an umbrella today.",
+  "mood": "teach",
+  "take": 1
+ },
+ "900eb06d": {
+  "who": "narrator",
+  "say": "say goodbye to someone",
+  "mood": "teach",
   "take": 1
  },
  "902c4bfb": {
@@ -1190,6 +3482,18 @@
  "90b27ba1": {
   "who": "narrator",
   "say": "I’m looking for my keys.",
+  "mood": "teach",
+  "take": 1
+ },
+ "90b85075": {
+  "who": "narrator",
+  "say": "Mrs Hughes has lived here for forty years.",
+  "mood": "teach",
+  "take": 1
+ },
+ "90e5d434": {
+  "who": "narrator",
+  "say": "If you hurry, you’ll catch the bus.",
   "mood": "teach",
   "take": 1
  },
@@ -1241,6 +3545,18 @@
   "mood": "teach",
   "take": 2
  },
+ "93ad01af": {
+  "who": "narrator",
+  "say": "Have you said goodbye to Grandma?",
+  "mood": "teach",
+  "take": 1
+ },
+ "93f8a3b9": {
+  "who": "narrator",
+  "say": "What did Tom say?",
+  "mood": "teach",
+  "take": 1
+ },
  "943251db": {
   "who": "hughes",
   "say": "Mimi’s ball is under the bench.",
@@ -1271,15 +3587,45 @@
   "mood": "warm",
   "take": 1
  },
+ "9540d59a": {
+  "who": "narrator",
+  "say": "Our neighbours are selling their house.",
+  "mood": "teach",
+  "take": 1
+ },
  "956a914c": {
   "who": "stranger",
   "say": "Aster… That is my name. I remember it!",
   "mood": "excited",
   "take": 1
  },
+ "959ea275": {
+  "who": "narrator",
+  "say": "What time did you arrive?",
+  "mood": "teach",
+  "take": 1
+ },
  "968d7a83": {
   "who": "narrator",
   "say": "Mimi was playing with something bright.",
+  "mood": "teach",
+  "take": 1
+ },
+ "96a12105": {
+  "who": "narrator",
+  "say": "Where are you going?",
+  "mood": "teach",
+  "take": 1
+ },
+ "96e1f48a": {
+  "who": "narrator",
+  "say": "Don’t forget to call your mum.",
+  "mood": "teach",
+  "take": 1
+ },
+ "970f9938": {
+  "who": "narrator",
+  "say": "The shop on the corner doesn’t sell stamps.",
   "mood": "teach",
   "take": 1
  },
@@ -1289,10 +3635,52 @@
   "mood": "wonder",
   "take": 3
  },
+ "9788029f": {
+  "who": "narrator",
+  "say": "make friends",
+  "mood": "teach",
+  "take": 2
+ },
+ "97fb10d3": {
+  "who": "narrator",
+  "say": "Drink up.",
+  "mood": "teach",
+  "take": 5
+ },
+ "97fde9d7": {
+  "who": "narrator",
+  "say": "What are you going to do tomorrow?",
+  "mood": "teach",
+  "take": 1
+ },
+ "98702a76": {
+  "who": "narrator",
+  "say": "sold out",
+  "mood": "teach",
+  "take": 5
+ },
+ "988eaf49": {
+  "who": "narrator",
+  "say": "The sun shone all day yesterday.",
+  "mood": "teach",
+  "take": 1
+ },
+ "98c784ff": {
+  "who": "narrator",
+  "say": "Why didn’t you tell me?",
+  "mood": "teach",
+  "take": 1
+ },
  "98d9b3e2": {
   "who": "stranger",
   "say": "Hm. Even my old radio never said it like that.",
   "mood": "gentle",
+  "take": 1
+ },
+ "99824787": {
+  "who": "narrator",
+  "say": "I’ve just remembered something.",
+  "mood": "teach",
   "take": 1
  },
  "99a2e15e": {
@@ -1300,6 +3688,24 @@
   "say": "Never. Who would believe an old lady? But I have never forgotten that night.",
   "mood": "ask",
   "take": 1
+ },
+ "99a355b9": {
+  "who": "narrator",
+  "say": "come back later",
+  "mood": "teach",
+  "take": 1
+ },
+ "99d76c2e": {
+  "who": "narrator",
+  "say": "Priya reads the paper every morning.",
+  "mood": "teach",
+  "take": 1
+ },
+ "9ac37bb2": {
+  "who": "narrator",
+  "say": "say. said.",
+  "mood": "teach",
+  "take": 3
  },
  "9aef05a3": {
   "who": "priya",
@@ -1311,6 +3717,24 @@
   "who": "voice",
   "say": "Clouds are coming. You need all your sparks. Look higher.",
   "mood": "radio",
+  "take": 1
+ },
+ "9b74b0f8": {
+  "who": "narrator",
+  "say": "Sorry, I made a mistake.",
+  "mood": "teach",
+  "take": 1
+ },
+ "9bc292a6": {
+  "who": "narrator",
+  "say": "These things happen.",
+  "mood": "teach",
+  "take": 1
+ },
+ "9c0b05da": {
+  "who": "narrator",
+  "say": "prepare for an exam",
+  "mood": "teach",
   "take": 1
  },
  "9c504373": {
@@ -1325,16 +3749,46 @@
   "mood": "warm",
   "take": 1
  },
- "9d10422b": {
+ "9c81c75a": {
   "who": "narrator",
-  "say": "look. looked. looked.",
+  "say": "be prepared",
   "mood": "teach",
   "take": 2
+ },
+ "9cbb89c5": {
+  "who": "narrator",
+  "say": "We drank tea in the garden.",
+  "mood": "teach",
+  "take": 1
+ },
+ "9d0c3497": {
+  "who": "narrator",
+  "say": "I like it here.",
+  "mood": "teach",
+  "take": 1
+ },
+ "9d767f28": {
+  "who": "narrator",
+  "say": "What happened last night?",
+  "mood": "teach",
+  "take": 1
  },
  "9e02f498": {
   "who": "stranger",
   "say": "Here are a few of these. Just to try.",
   "mood": "wonder",
+  "take": 1
+ },
+ "9e345d5c": {
+  "who": "narrator",
+  "say": "I always put sugar in my tea.",
+  "mood": "teach",
+  "take": 1
+ },
+ "9e401a59": {
+  "who": "narrator",
+  "say": "Tom has planned a party for Saturday.",
+  "mood": "teach",
   "take": 1
  },
  "9edaba77": {
@@ -1355,6 +3809,12 @@
   "mood": "wonder",
   "take": 1
  },
+ "a052e798": {
+  "who": "narrator",
+  "say": "Stop it!",
+  "mood": "teach",
+  "take": 2
+ },
  "a0588c9a": {
   "who": "voice",
   "say": "Friday, midnight, the highest place. We will see your light.",
@@ -1367,10 +3827,52 @@
   "mood": "warm",
   "take": 1
  },
+ "a0d2a6aa": {
+  "who": "narrator",
+  "say": "There’s a cat in the garden.",
+  "mood": "teach",
+  "take": 1
+ },
+ "a1601bc9": {
+  "who": "narrator",
+  "say": "fix. fixed.",
+  "mood": "teach",
+  "take": 2
+ },
+ "a19fe9d0": {
+  "who": "narrator",
+  "say": "Did you sleep well?",
+  "mood": "teach",
+  "take": 1
+ },
+ "a200b21c": {
+  "who": "narrator",
+  "say": "put on a coat",
+  "mood": "teach",
+  "take": 1
+ },
+ "a230d035": {
+  "who": "narrator",
+  "say": "This has never happened to me before.",
+  "mood": "teach",
+  "take": 1
+ },
  "a299f7b3": {
   "who": "okafor",
   "say": "Hmm. I’ve got a key. And a telescope up there. I go up every clear night.",
   "mood": "warm",
+  "take": 1
+ },
+ "a33c90c1": {
+  "who": "narrator",
+  "say": "Let’s say goodbye here.",
+  "mood": "teach",
+  "take": 1
+ },
+ "a39af38d": {
+  "who": "narrator",
+  "say": "play hide-and-seek",
+  "mood": "teach",
   "take": 1
  },
  "a39c10f2": {
@@ -1379,9 +3881,63 @@
   "mood": "ask",
   "take": 1
  },
+ "a40e930e": {
+  "who": "narrator",
+  "say": "decide to do something",
+  "mood": "teach",
+  "take": 1
+ },
+ "a4c1501a": {
+  "who": "narrator",
+  "say": "do your best",
+  "mood": "teach",
+  "take": 2
+ },
+ "a5061bdc": {
+  "who": "narrator",
+  "say": "I need some batteries.",
+  "mood": "teach",
+  "take": 1
+ },
+ "a50b97d6": {
+  "who": "narrator",
+  "say": "Have you given Mimi her dinner?",
+  "mood": "teach",
+  "take": 1
+ },
+ "a514d8b9": {
+  "who": "narrator",
+  "say": "The train is more expensive than the bus.",
+  "mood": "teach",
+  "take": 1
+ },
+ "a538e3dc": {
+  "who": "narrator",
+  "say": "We reached the top of the hill at noon.",
+  "mood": "teach",
+  "take": 6
+ },
+ "a549def8": {
+  "who": "narrator",
+  "say": "remember someone’s birthday",
+  "mood": "teach",
+  "take": 1
+ },
+ "a5511152": {
+  "who": "narrator",
+  "say": "Promise me you won’t tell anyone.",
+  "mood": "teach",
+  "take": 1
+ },
  "a572935c": {
   "who": "narrator",
   "say": "My sister often helps me with my English.",
+  "mood": "teach",
+  "take": 1
+ },
+ "a582fe93": {
+  "who": "narrator",
+  "say": "Have you decided what to order?",
   "mood": "teach",
   "take": 1
  },
@@ -1391,11 +3947,35 @@
   "mood": "wonder",
   "take": 1
  },
+ "a60acb03": {
+  "who": "narrator",
+  "say": "stop. stopped.",
+  "mood": "teach",
+  "take": 1
+ },
+ "a61eca0a": {
+  "who": "narrator",
+  "say": "for sale",
+  "mood": "teach",
+  "take": 2
+ },
  "a682874e": {
   "who": "stranger",
   "say": "Now the verb machine.",
   "mood": "wonder",
   "take": 2
+ },
+ "a686e9c7": {
+  "who": "narrator",
+  "say": "How many coins are in the jar?",
+  "mood": "teach",
+  "take": 1
+ },
+ "a6fa8d72": {
+  "who": "narrator",
+  "say": "Are you leaving already?",
+  "mood": "teach",
+  "take": 1
  },
  "a738bdc4": {
   "who": "okafor",
@@ -1409,10 +3989,46 @@
   "mood": "teach",
   "take": 1
  },
+ "a80796cf": {
+  "who": "narrator",
+  "say": "do some exercise",
+  "mood": "teach",
+  "take": 2
+ },
+ "a82088c6": {
+  "who": "narrator",
+  "say": "I heard a strange noise last night.",
+  "mood": "teach",
+  "take": 1
+ },
+ "a8b3f46a": {
+  "who": "narrator",
+  "say": "The sun is shining. Let’s go out.",
+  "mood": "teach",
+  "take": 1
+ },
+ "a9015d97": {
+  "who": "narrator",
+  "say": "Who prepared this lovely dinner?",
+  "mood": "teach",
+  "take": 1
+ },
  "a92fc6bc": {
   "who": "tom",
   "say": "I’ve got a ladder. Sam has got one too.",
   "mood": "warm",
+  "take": 1
+ },
+ "a94e540e": {
+  "who": "narrator",
+  "say": "promise. promised.",
+  "mood": "teach",
+  "take": 1
+ },
+ "a98bf553": {
+  "who": "narrator",
+  "say": "We’re comparing two flats in the centre.",
+  "mood": "teach",
   "take": 1
  },
  "aa59f1c4": {
@@ -1421,15 +4037,81 @@
   "mood": "warm",
   "take": 3
  },
+ "aa6159d5": {
+  "who": "narrator",
+  "say": "My sister isn’t going to come tonight.",
+  "mood": "teach",
+  "take": 1
+ },
+ "ab778e8f": {
+  "who": "narrator",
+  "say": "Who paid for the coffee?",
+  "mood": "teach",
+  "take": 1
+ },
+ "abd8c884": {
+  "who": "narrator",
+  "say": "I haven’t returned the book to the library yet.",
+  "mood": "teach",
+  "take": 1
+ },
+ "abfce057": {
+  "who": "narrator",
+  "say": "work. worked.",
+  "mood": "teach",
+  "take": 2
+ },
  "ac0bd37a": {
   "who": "hughes",
   "say": "That coat! Yes! He had two hats. One is on his head. The other one is on yours!",
   "mood": "excited",
   "take": 1
  },
+ "ac1a92a0": {
+  "who": "narrator",
+  "say": "meet for coffee",
+  "mood": "teach",
+  "take": 1
+ },
+ "ac267054": {
+  "who": "narrator",
+  "say": "We needed help, so I called Tom.",
+  "mood": "teach",
+  "take": 1
+ },
+ "ac704147": {
+  "who": "narrator",
+  "say": "Birds build their nests in spring.",
+  "mood": "teach",
+  "take": 1
+ },
  "ac770dbd": {
   "who": "narrator",
   "say": "There was a spark in Tom’s teapot.",
+  "mood": "teach",
+  "take": 1
+ },
+ "ac96cadc": {
+  "who": "narrator",
+  "say": "stop for a coffee",
+  "mood": "teach",
+  "take": 1
+ },
+ "ace1f7d0": {
+  "who": "narrator",
+  "say": "fall. fell. fallen.",
+  "mood": "teach",
+  "take": 1
+ },
+ "ace47700": {
+  "who": "narrator",
+  "say": "do. did. done.",
+  "mood": "teach",
+  "take": 1
+ },
+ "ad09e194": {
+  "who": "narrator",
+  "say": "The children are going to want ice cream.",
   "mood": "teach",
   "take": 1
  },
@@ -1439,16 +4121,58 @@
   "mood": "excited",
   "take": 1
  },
+ "ad700798": {
+  "who": "narrator",
+  "say": "Don’t lose the receipt.",
+  "mood": "teach",
+  "take": 1
+ },
  "ae147c52": {
   "who": "sam",
   "say": "No. Nobody. The street was empty. It was very quiet.",
   "mood": "gentle",
   "take": 1
  },
+ "ae68ea84": {
+  "who": "narrator",
+  "say": "Have you ever missed a flight?",
+  "mood": "teach",
+  "take": 1
+ },
+ "ae6fec16": {
+  "who": "narrator",
+  "say": "get something fixed",
+  "mood": "teach",
+  "take": 1
+ },
+ "ae8949a6": {
+  "who": "narrator",
+  "say": "This box is too heavy. I can’t carry it.",
+  "mood": "teach",
+  "take": 1
+ },
+ "af2d2b99": {
+  "who": "narrator",
+  "say": "Did you like the film?",
+  "mood": "teach",
+  "take": 1
+ },
  "afba59f9": {
   "who": "hughes",
   "say": "A light? Oh, lots of things fall in my garden. Leaves, apples, cats…",
   "mood": "ask",
+  "take": 1
+ },
+ "afdc3049": {
+  "who": "narrator",
+  "say": "reach. reached.",
+  "mood": "teach",
+  "take": 1
+ },
+ "afeb0427": {
+  "who": "narrator",
+  "say": "I didn’t hear anything.",
+  "mood": "teach",
   "take": 1
  },
  "aff83210": {
@@ -1461,6 +4185,18 @@
   "who": "voice",
   "say": "Aster, we are waiting for you. Remember the way home.",
   "mood": "radio",
+  "take": 1
+ },
+ "b0507233": {
+  "who": "narrator",
+  "say": "stay in bed",
+  "mood": "teach",
+  "take": 2
+ },
+ "b05d8f17": {
+  "who": "narrator",
+  "say": "take. took. taken.",
+  "mood": "teach",
   "take": 1
  },
  "b07236c3": {
@@ -1481,11 +4217,47 @@
   "mood": "wonder",
   "take": 1
  },
+ "b101ff7d": {
+  "who": "narrator",
+  "say": "They’re building a new school near us.",
+  "mood": "teach",
+  "take": 1
+ },
+ "b1141a20": {
+  "who": "narrator",
+  "say": "move. moved.",
+  "mood": "teach",
+  "take": 2
+ },
+ "b11b7d6b": {
+  "who": "narrator",
+  "say": "lend a hand",
+  "mood": "teach",
+  "take": 2
+ },
  "b140197a": {
   "who": "priya",
   "say": "Sorry, love? One more time.",
   "mood": "ask",
   "take": 1
+ },
+ "b15b4246": {
+  "who": "narrator",
+  "say": "I’ll send you the photos tomorrow.",
+  "mood": "teach",
+  "take": 1
+ },
+ "b1bf4f64": {
+  "who": "narrator",
+  "say": "Why are you hiding behind the door?",
+  "mood": "teach",
+  "take": 1
+ },
+ "b216a48e": {
+  "who": "narrator",
+  "say": "build a snowman",
+  "mood": "teach",
+  "take": 2
  },
  "b23b31f5": {
   "who": "hughes",
@@ -1493,10 +4265,82 @@
   "mood": "warm",
   "take": 1
  },
+ "b2ba8f63": {
+  "who": "narrator",
+  "say": "Are you flying or going by train?",
+  "mood": "teach",
+  "take": 1
+ },
+ "b2c1b04a": {
+  "who": "narrator",
+  "say": "sell. sold.",
+  "mood": "teach",
+  "take": 2
+ },
  "b3112c9f": {
   "who": "stranger",
   "say": "It is a good plan.",
   "mood": "wonder",
+  "take": 1
+ },
+ "b38e5e3b": {
+  "who": "narrator",
+  "say": "borrow. borrowed.",
+  "mood": "teach",
+  "take": 1
+ },
+ "b3ae1b28": {
+  "who": "narrator",
+  "say": "go for a drink",
+  "mood": "teach",
+  "take": 2
+ },
+ "b3b31a2f": {
+  "who": "narrator",
+  "say": "I can’t find my glasses.",
+  "mood": "teach",
+  "take": 1
+ },
+ "b3bfda82": {
+  "who": "narrator",
+  "say": "Why are you carrying an umbrella? It’s sunny.",
+  "mood": "teach",
+  "take": 1
+ },
+ "b3c3b871": {
+  "who": "narrator",
+  "say": "return home",
+  "mood": "teach",
+  "take": 2
+ },
+ "b453c52d": {
+  "who": "narrator",
+  "say": "I haven’t seen her since last summer.",
+  "mood": "teach",
+  "take": 1
+ },
+ "b4787642": {
+  "who": "narrator",
+  "say": "Don’t leave the door open.",
+  "mood": "teach",
+  "take": 1
+ },
+ "b48ab702": {
+  "who": "narrator",
+  "say": "tell. told.",
+  "mood": "teach",
+  "take": 3
+ },
+ "b4a391a1": {
+  "who": "narrator",
+  "say": "You can’t miss it.",
+  "mood": "teach",
+  "take": 1
+ },
+ "b4f5dbda": {
+  "who": "narrator",
+  "say": "My brother often loses his gloves.",
+  "mood": "teach",
   "take": 1
  },
  "b54b911b": {
@@ -1505,10 +4349,22 @@
   "mood": "warm",
   "take": 3
  },
+ "b5914d70": {
+  "who": "narrator",
+  "say": "sell well",
+  "mood": "teach",
+  "take": 5
+ },
  "b5bad1a3": {
   "who": "sam",
   "say": "And you? Where were you on Monday night?",
   "mood": "ask",
+  "take": 1
+ },
+ "b5f3e8b6": {
+  "who": "narrator",
+  "say": "Don’t worry. I won’t be late.",
+  "mood": "teach",
   "take": 1
  },
  "b61d2b99": {
@@ -1523,10 +4379,52 @@
   "mood": "warm",
   "take": 1
  },
+ "b697146c": {
+  "who": "narrator",
+  "say": "What happened to you?",
+  "mood": "teach",
+  "take": 1
+ },
+ "b6bdce6a": {
+  "who": "narrator",
+  "say": "What’s happening in the street?",
+  "mood": "teach",
+  "take": 1
+ },
+ "b6c27719": {
+  "who": "narrator",
+  "say": "There aren’t many people here.",
+  "mood": "teach",
+  "take": 1
+ },
+ "b6d08f67": {
+  "who": "narrator",
+  "say": "You’ll reach the village before dark.",
+  "mood": "teach",
+  "take": 1
+ },
+ "b6d09b42": {
+  "who": "narrator",
+  "say": "Don’t set off without a map.",
+  "mood": "teach",
+  "take": 1
+ },
+ "b74b6758": {
+  "who": "narrator",
+  "say": "I borrowed a ladder from Mrs Hughes.",
+  "mood": "teach",
+  "take": 1
+ },
  "b765b34e": {
   "who": "stranger",
   "say": "I don’t know what I am. That is my problem.",
   "mood": "wonder",
+  "take": 1
+ },
+ "b7b00dc0": {
+  "who": "narrator",
+  "say": "My phone isn’t working again.",
+  "mood": "teach",
   "take": 1
  },
  "b8438d15": {
@@ -1535,16 +4433,70 @@
   "mood": "excited",
   "take": 1
  },
+ "b86e71e4": {
+  "who": "narrator",
+  "say": "We decided to stay at home.",
+  "mood": "teach",
+  "take": 1
+ },
+ "b8cec5f4": {
+  "who": "narrator",
+  "say": "Sorry, I didn’t want to wake you.",
+  "mood": "teach",
+  "take": 1
+ },
+ "b8d86a6b": {
+  "who": "narrator",
+  "say": "stay in touch",
+  "mood": "teach",
+  "take": 1
+ },
+ "b91f65bb": {
+  "who": "narrator",
+  "say": "bring. brought.",
+  "mood": "teach",
+  "take": 2
+ },
  "b92f5587": {
   "who": "stranger",
   "say": "Always hot? Tom, where do you make the tea?",
   "mood": "ask",
   "take": 1
  },
+ "b9366cbd": {
+  "who": "narrator",
+  "say": "I can’t repair this old watch.",
+  "mood": "teach",
+  "take": 1
+ },
  "b998262a": {
   "who": "moss",
   "say": "No, young one. If I go, Mrs Hughes will be alone. I will stay.",
   "mood": "gentle",
+  "take": 1
+ },
+ "b9b0a6f9": {
+  "who": "narrator",
+  "say": "leave for work",
+  "mood": "teach",
+  "take": 1
+ },
+ "ba299bf6": {
+  "who": "narrator",
+  "say": "be allowed to",
+  "mood": "teach",
+  "take": 2
+ },
+ "ba318332": {
+  "who": "narrator",
+  "say": "set off early",
+  "mood": "teach",
+  "take": 1
+ },
+ "ba6d65d5": {
+  "who": "narrator",
+  "say": "I won’t tell anyone.",
+  "mood": "teach",
   "take": 1
  },
  "ba7d9983": {
@@ -1559,6 +4511,36 @@
   "mood": "wonder",
   "take": 1
  },
+ "baa4f3d4": {
+  "who": "narrator",
+  "say": "My grandma can’t climb the stairs any more.",
+  "mood": "teach",
+  "take": 1
+ },
+ "bb4589a1": {
+  "who": "narrator",
+  "say": "Don’t put your feet on the sofa.",
+  "mood": "teach",
+  "take": 1
+ },
+ "bb95ad1e": {
+  "who": "narrator",
+  "say": "win. won.",
+  "mood": "teach",
+  "take": 4
+ },
+ "bbb6ce1c": {
+  "who": "narrator",
+  "say": "carry a baby",
+  "mood": "teach",
+  "take": 1
+ },
+ "bc6a7eb6": {
+  "who": "narrator",
+  "say": "Tom hasn’t promised anything.",
+  "mood": "teach",
+  "take": 1
+ },
  "bc7cc2db": {
   "who": "okafor",
   "say": "Come. Let’s go up the stairs. Read the signs.",
@@ -1571,10 +4553,46 @@
   "mood": "ask",
   "take": 1
  },
+ "bccceb9c": {
+  "who": "narrator",
+  "say": "Sorry, I’m just checking my messages.",
+  "mood": "teach",
+  "take": 1
+ },
+ "bccf8b2e": {
+  "who": "narrator",
+  "say": "What will you do if she doesn’t come?",
+  "mood": "teach",
+  "take": 1
+ },
  "bcef0b83": {
   "who": "stranger",
   "say": "But one spark is still missing. The twelfth. The last one.",
   "mood": "wonder",
+  "take": 1
+ },
+ "bd35094e": {
+  "who": "narrator",
+  "say": "Don’t make a noise. Mimi is sleeping.",
+  "mood": "teach",
+  "take": 1
+ },
+ "bd65138a": {
+  "who": "narrator",
+  "say": "Mimi tries to catch birds every day.",
+  "mood": "teach",
+  "take": 1
+ },
+ "bee82d66": {
+  "who": "narrator",
+  "say": "I grew up in a small town.",
+  "mood": "teach",
+  "take": 1
+ },
+ "bf14449d": {
+  "who": "narrator",
+  "say": "I promise I’ll be careful.",
+  "mood": "teach",
   "take": 1
  },
  "bf195725": {
@@ -1589,9 +4607,27 @@
   "mood": "wonder",
   "take": 1
  },
+ "bf270c13": {
+  "who": "narrator",
+  "say": "The birds flew away when Mimi came out.",
+  "mood": "teach",
+  "take": 1
+ },
+ "c0275fc7": {
+  "who": "narrator",
+  "say": "My dad fixes everything in the house.",
+  "mood": "teach",
+  "take": 1
+ },
  "c02ce9dc": {
   "who": "narrator",
   "say": "The radio said a name: Aster.",
+  "mood": "teach",
+  "take": 1
+ },
+ "c04a5693": {
+  "who": "narrator",
+  "say": "I’ve always liked rainy days.",
   "mood": "teach",
   "take": 1
  },
@@ -1607,10 +4643,34 @@
   "mood": "warm",
   "take": 1
  },
+ "c0a421ac": {
+  "who": "narrator",
+  "say": "go to work",
+  "mood": "teach",
+  "take": 2
+ },
+ "c0a51322": {
+  "who": "narrator",
+  "say": "The sun rises early in summer.",
+  "mood": "teach",
+  "take": 1
+ },
+ "c0f0ce1b": {
+  "who": "narrator",
+  "say": "need. needed.",
+  "mood": "teach",
+  "take": 2
+ },
  "c21440f8": {
   "who": "stranger",
   "say": "My seventh spark. It came back with my name.",
   "mood": "wonder",
+  "take": 1
+ },
+ "c21c8fc4": {
+  "who": "narrator",
+  "say": "Tom lent me his bike last week.",
+  "mood": "teach",
   "take": 1
  },
  "c2377f8f": {
@@ -1625,16 +4685,52 @@
   "mood": "ask",
   "take": 1
  },
+ "c300a961": {
+  "who": "narrator",
+  "say": "lend a book to a friend",
+  "mood": "teach",
+  "take": 1
+ },
+ "c3ae33f5": {
+  "who": "narrator",
+  "say": "Can I borrow…?",
+  "mood": "teach",
+  "take": 1
+ },
  "c3c242f1": {
   "who": "stranger",
   "say": "I don’t sleep. I never sleep.",
   "mood": "gentle",
   "take": 1
  },
+ "c419655f": {
+  "who": "narrator",
+  "say": "I just wanted to say thank you.",
+  "mood": "teach",
+  "take": 1
+ },
  "c4403841": {
   "who": "hughes",
   "say": "Oh, my dear. I knew it.",
   "mood": "warm",
+  "take": 1
+ },
+ "c47137c9": {
+  "who": "narrator",
+  "say": "put.",
+  "mood": "teach",
+  "take": 5
+ },
+ "c4922bec": {
+  "who": "narrator",
+  "say": "I usually get home at six.",
+  "mood": "teach",
+  "take": 1
+ },
+ "c4adc69a": {
+  "who": "narrator",
+  "say": "I can’t give you an answer today.",
+  "mood": "teach",
   "take": 1
  },
  "c4df836f": {
@@ -1649,10 +4745,28 @@
   "mood": "ask",
   "take": 2
  },
+ "c5a5b872": {
+  "who": "narrator",
+  "say": "If Mimi is hungry, she’ll wake me up.",
+  "mood": "teach",
+  "take": 1
+ },
  "c5ca44aa": {
   "who": "tom",
   "say": "Ha! See you later, you two.",
   "mood": "excited",
+  "take": 1
+ },
+ "c5ce540a": {
+  "who": "narrator",
+  "say": "I met my best friend at school.",
+  "mood": "teach",
+  "take": 1
+ },
+ "c5d8a2c3": {
+  "who": "narrator",
+  "say": "I called you twice yesterday.",
+  "mood": "teach",
   "take": 1
  },
  "c61da0b6": {
@@ -1661,9 +4775,33 @@
   "mood": "teach",
   "take": 1
  },
+ "c687ff52": {
+  "who": "narrator",
+  "say": "I can’t find my phone anywhere.",
+  "mood": "teach",
+  "take": 1
+ },
  "c6995101": {
   "who": "narrator",
   "say": "I don’t drink coffee in the evening.",
+  "mood": "teach",
+  "take": 1
+ },
+ "c6ae3707": {
+  "who": "narrator",
+  "say": "prices rise",
+  "mood": "teach",
+  "take": 1
+ },
+ "c6b09e42": {
+  "who": "narrator",
+  "say": "try hard",
+  "mood": "teach",
+  "take": 5
+ },
+ "c75523a1": {
+  "who": "narrator",
+  "say": "I’ve put the milk in the fridge.",
   "mood": "teach",
   "take": 1
  },
@@ -1679,11 +4817,23 @@
   "mood": "warm",
   "take": 1
  },
+ "c7dbcdd8": {
+  "who": "narrator",
+  "say": "It was the worst film I’ve ever seen.",
+  "mood": "teach",
+  "take": 1
+ },
  "c80740eb": {
   "who": "tom",
   "say": "Early! Lucky you. Mrs Hughes, what about you?",
   "mood": "ask",
   "take": 1
+ },
+ "c8186057": {
+  "who": "narrator",
+  "say": "stay. stayed.",
+  "mood": "teach",
+  "take": 2
  },
  "c85378e4": {
   "who": "stranger",
@@ -1691,11 +4841,71 @@
   "mood": "excited",
   "take": 1
  },
+ "c883aec4": {
+  "who": "narrator",
+  "say": "You’ll like Tom. He’s very kind.",
+  "mood": "teach",
+  "take": 1
+ },
+ "c8d6f28f": {
+  "who": "narrator",
+  "say": "I sold my old bike last month.",
+  "mood": "teach",
+  "take": 1
+ },
+ "c8da644d": {
+  "who": "narrator",
+  "say": "We stayed at home all day.",
+  "mood": "teach",
+  "take": 1
+ },
  "c924a704": {
   "who": "narrator",
   "say": "I’m hungry.",
   "mood": "teach",
   "take": 2
+ },
+ "c926bc26": {
+  "who": "narrator",
+  "say": "forget. forgot. forgotten.",
+  "mood": "teach",
+  "take": 1
+ },
+ "c97c245f": {
+  "who": "narrator",
+  "say": "find out",
+  "mood": "teach",
+  "take": 2
+ },
+ "c982dcd6": {
+  "who": "narrator",
+  "say": "What do you do?",
+  "mood": "teach",
+  "take": 1
+ },
+ "c9865c38": {
+  "who": "narrator",
+  "say": "The moon shines through my window at night.",
+  "mood": "teach",
+  "take": 1
+ },
+ "c996830b": {
+  "who": "narrator",
+  "say": "We aren’t tired.",
+  "mood": "teach",
+  "take": 1
+ },
+ "ca11a27f": {
+  "who": "narrator",
+  "say": "bring something back",
+  "mood": "teach",
+  "take": 2
+ },
+ "ca2b2c51": {
+  "who": "narrator",
+  "say": "arrive at work",
+  "mood": "teach",
+  "take": 1
  },
  "ca911042": {
   "who": "stranger",
@@ -1715,11 +4925,71 @@
   "mood": "warm",
   "take": 1
  },
+ "cb6014b1": {
+  "who": "narrator",
+  "say": "Mrs Hughes grows roses in her garden.",
+  "mood": "teach",
+  "take": 1
+ },
+ "cba6c7f6": {
+  "who": "narrator",
+  "say": "work hard",
+  "mood": "teach",
+  "take": 1
+ },
+ "cbb0d77e": {
+  "who": "narrator",
+  "say": "Sam has to work at night.",
+  "mood": "teach",
+  "take": 1
+ },
+ "cbd92720": {
+  "who": "narrator",
+  "say": "Do you like coffee?",
+  "mood": "teach",
+  "take": 1
+ },
  "cbe36f4a": {
   "who": "okafor",
   "say": "The clouds are still here. If they don’t move, the others won’t see us.",
   "mood": "warm",
   "take": 1
+ },
+ "cc6c82ed": {
+  "who": "narrator",
+  "say": "The ball is under the table.",
+  "mood": "teach",
+  "take": 1
+ },
+ "ccbca1d3": {
+  "who": "narrator",
+  "say": "check the weather",
+  "mood": "teach",
+  "take": 2
+ },
+ "ccc47500": {
+  "who": "narrator",
+  "say": "go to bed",
+  "mood": "teach",
+  "take": 2
+ },
+ "ccd6c431": {
+  "who": "narrator",
+  "say": "Have you done your homework?",
+  "mood": "teach",
+  "take": 1
+ },
+ "cd936e15": {
+  "who": "narrator",
+  "say": "fall over",
+  "mood": "teach",
+  "take": 3
+ },
+ "ce1b3107": {
+  "who": "narrator",
+  "say": "How old are you?",
+  "mood": "teach",
+  "take": 2
  },
  "ce242711": {
   "who": "sam",
@@ -1739,6 +5009,18 @@
   "mood": "teach",
   "take": 2
  },
+ "ce887afa": {
+  "who": "narrator",
+  "say": "out of reach",
+  "mood": "teach",
+  "take": 2
+ },
+ "ce9b229d": {
+  "who": "narrator",
+  "say": "I usually pay by card.",
+  "mood": "teach",
+  "take": 1
+ },
  "ceb74faf": {
   "who": "tom",
   "say": "In the big blue teapot. I make fifty cups a day in it.",
@@ -1751,16 +5033,118 @@
   "mood": "warm",
   "take": 2
  },
+ "cf523145": {
+  "who": "narrator",
+  "say": "do the cleaning",
+  "mood": "teach",
+  "take": 1
+ },
+ "cf6352ac": {
+  "who": "narrator",
+  "say": "It has stopped raining.",
+  "mood": "teach",
+  "take": 1
+ },
+ "cf68a432": {
+  "who": "narrator",
+  "say": "I’ll call you tonight.",
+  "mood": "teach",
+  "take": 1
+ },
  "cf795f58": {
   "who": "stranger",
   "say": "Something bright… Mimi, is that my spark?",
   "mood": "ask",
   "take": 1
  },
+ "cf7e7431": {
+  "who": "narrator",
+  "say": "grow. grew. grown.",
+  "mood": "teach",
+  "take": 2
+ },
+ "cfc6e3aa": {
+  "who": "narrator",
+  "say": "Has Mimi got green eyes?",
+  "mood": "teach",
+  "take": 1
+ },
+ "cfd9e4d0": {
+  "who": "narrator",
+  "say": "Careful! You’re going to fall.",
+  "mood": "teach",
+  "take": 1
+ },
+ "cfda5f13": {
+  "who": "narrator",
+  "say": "Will they allow us to bring food?",
+  "mood": "teach",
+  "take": 1
+ },
+ "cffc209e": {
+  "who": "narrator",
+  "say": "Let me know.",
+  "mood": "teach",
+  "take": 2
+ },
+ "d07204bb": {
+  "who": "narrator",
+  "say": "I’ll sell you my old phone for twenty pounds.",
+  "mood": "teach",
+  "take": 1
+ },
+ "d07c3298": {
+  "who": "narrator",
+  "say": "rain or shine",
+  "mood": "teach",
+  "take": 2
+ },
+ "d0fefe05": {
+  "who": "narrator",
+  "say": "Can you tell me the way to the station?",
+  "mood": "teach",
+  "take": 1
+ },
  "d1221d2d": {
   "who": "stranger",
   "say": "Does Mimi usually play at night?",
   "mood": "ask",
+  "take": 1
+ },
+ "d15b5e09": {
+  "who": "narrator",
+  "say": "call a taxi",
+  "mood": "teach",
+  "take": 2
+ },
+ "d18566dd": {
+  "who": "narrator",
+  "say": "set off on a journey",
+  "mood": "teach",
+  "take": 1
+ },
+ "d1d035c1": {
+  "who": "narrator",
+  "say": "What time does your dad come back from work?",
+  "mood": "teach",
+  "take": 1
+ },
+ "d2313360": {
+  "who": "narrator",
+  "say": "grow up",
+  "mood": "teach",
+  "take": 1
+ },
+ "d294d6b5": {
+  "who": "narrator",
+  "say": "give. gave. given.",
+  "mood": "teach",
+  "take": 1
+ },
+ "d2a796e0": {
+  "who": "narrator",
+  "say": "move in",
+  "mood": "teach",
   "take": 1
  },
  "d2ad9222": {
@@ -1781,10 +5165,22 @@
   "mood": "radio",
   "take": 1
  },
+ "d3535b3d": {
+  "who": "narrator",
+  "say": "Has anyone repaired the lift yet?",
+  "mood": "teach",
+  "take": 1
+ },
  "d38a4050": {
   "who": "hughes",
   "say": "Her phone is in the wheelbarrow.",
   "mood": "warm",
+  "take": 1
+ },
+ "d3f62186": {
+  "who": "narrator",
+  "say": "give someone a call",
+  "mood": "teach",
   "take": 1
  },
  "d4135979": {
@@ -1799,11 +5195,47 @@
   "mood": "radio",
   "take": 1
  },
+ "d4575efe": {
+  "who": "narrator",
+  "say": "I’m making a cake for Sunday.",
+  "mood": "teach",
+  "take": 1
+ },
+ "d4a0d8c8": {
+  "who": "narrator",
+  "say": "arrive. arrived.",
+  "mood": "teach",
+  "take": 2
+ },
+ "d4b3a99b": {
+  "who": "narrator",
+  "say": "compared to last year",
+  "mood": "teach",
+  "take": 1
+ },
  "d4ec19e8": {
   "who": "narrator",
   "say": "Be careful!",
   "mood": "teach",
   "take": 2
+ },
+ "d5066d9e": {
+  "who": "narrator",
+  "say": "I always carry a book in my bag.",
+  "mood": "teach",
+  "take": 1
+ },
+ "d58b9fea": {
+  "who": "narrator",
+  "say": "I don’t eat meat.",
+  "mood": "teach",
+  "take": 1
+ },
+ "d58c51ae": {
+  "who": "narrator",
+  "say": "You can reach me on this number.",
+  "mood": "teach",
+  "take": 1
  },
  "d5dadc72": {
   "who": "priya",
@@ -1811,10 +5243,58 @@
   "mood": "ask",
   "take": 1
  },
+ "d5dcf53d": {
+  "who": "narrator",
+  "say": "hide. hid. hidden.",
+  "mood": "teach",
+  "take": 3
+ },
+ "d63f37eb": {
+  "who": "narrator",
+  "say": "feel. felt.",
+  "mood": "teach",
+  "take": 2
+ },
  "d6a25d77": {
   "who": "tom",
   "say": "Aster! Beautiful name. Welcome to Linden Lane, Aster.",
   "mood": "excited",
+  "take": 1
+ },
+ "d7988430": {
+  "who": "narrator",
+  "say": "Sam repairs old bikes in his free time.",
+  "mood": "teach",
+  "take": 1
+ },
+ "d7a81c69": {
+  "who": "narrator",
+  "say": "I found my keys in my coat.",
+  "mood": "teach",
+  "take": 3
+ },
+ "d7b83a7d": {
+  "who": "narrator",
+  "say": "Stay here. I’ll be back in a minute.",
+  "mood": "teach",
+  "take": 1
+ },
+ "d7bcc57f": {
+  "who": "narrator",
+  "say": "return. returned.",
+  "mood": "teach",
+  "take": 1
+ },
+ "d7c367f1": {
+  "who": "narrator",
+  "say": "pay someone back",
+  "mood": "teach",
+  "take": 2
+ },
+ "d7dd1e4c": {
+  "who": "narrator",
+  "say": "Tom always wins at cards.",
+  "mood": "teach",
   "take": 1
  },
  "d8431c06": {
@@ -1823,9 +5303,51 @@
   "mood": "ask",
   "take": 1
  },
+ "d848fb90": {
+  "who": "narrator",
+  "say": "Have they sold all the tickets?",
+  "mood": "teach",
+  "take": 1
+ },
+ "d84d5724": {
+  "who": "narrator",
+  "say": "You should drink more water.",
+  "mood": "teach",
+  "take": 1
+ },
+ "d88ba029": {
+  "who": "narrator",
+  "say": "We climbed the hill behind the village.",
+  "mood": "teach",
+  "take": 1
+ },
+ "d89b2df9": {
+  "who": "narrator",
+  "say": "put away",
+  "mood": "teach",
+  "take": 1
+ },
+ "d8d06652": {
+  "who": "narrator",
+  "say": "go shopping",
+  "mood": "teach",
+  "take": 2
+ },
  "d8de1ecc": {
   "who": "narrator",
   "say": "Someone paid with coins from 1966.",
+  "mood": "teach",
+  "take": 1
+ },
+ "d8f88057": {
+  "who": "narrator",
+  "say": "get the car repaired",
+  "mood": "teach",
+  "take": 1
+ },
+ "d92ed288": {
+  "who": "narrator",
+  "say": "What time does the bus come?",
   "mood": "teach",
   "take": 1
  },
@@ -1835,16 +5357,46 @@
   "mood": "excited",
   "take": 1
  },
+ "d958c3c0": {
+  "who": "narrator",
+  "say": "We’ll know the results tomorrow.",
+  "mood": "teach",
+  "take": 1
+ },
  "d962242d": {
   "who": "voice",
   "say": "This is Aster. I am home. Thank you, Linden Lane.",
   "mood": "radio",
   "take": 1
  },
+ "d969301f": {
+  "who": "narrator",
+  "say": "I compared my answers with Tom’s.",
+  "mood": "teach",
+  "take": 1
+ },
+ "d9b0d6d2": {
+  "who": "narrator",
+  "say": "You promised to help me.",
+  "mood": "teach",
+  "take": 1
+ },
  "da30b639": {
   "who": "tom",
   "say": "What…?! There’s a little light in my teapot!",
   "mood": "ask",
+  "take": 1
+ },
+ "da6c6783": {
+  "who": "narrator",
+  "say": "Tom is fixing the coffee machine.",
+  "mood": "teach",
+  "take": 1
+ },
+ "dad9d181": {
+  "who": "narrator",
+  "say": "Who is the tallest in your family?",
+  "mood": "teach",
   "take": 1
  },
  "dadfc4a9": {
@@ -1871,6 +5423,12 @@
   "mood": "ask",
   "take": 1
  },
+ "db6dbaeb": {
+  "who": "narrator",
+  "say": "Who’s winning the match?",
+  "mood": "teach",
+  "take": 1
+ },
  "db890709": {
   "who": "stranger",
   "say": "And my sixth spark. It was in front of your gnome.",
@@ -1883,17 +5441,53 @@
   "mood": "teach",
   "take": 1
  },
+ "dc6b5349": {
+  "who": "narrator",
+  "say": "try. tried.",
+  "mood": "teach",
+  "take": 1
+ },
  "dcc8b175": {
   "who": "hughes",
   "say": "Come for tea tomorrow. All of you. I’ve got a story to tell.",
   "mood": "warm",
   "take": 2
  },
+ "dce5d036": {
+  "who": "narrator",
+  "say": "compare notes",
+  "mood": "teach",
+  "take": 3
+ },
  "dcf4ec83": {
   "who": "stranger",
   "say": "My tenth spark! It was on the telescope. Maybe it wanted to see home too.",
   "mood": "excited",
   "take": 1
+ },
+ "dd79e734": {
+  "who": "narrator",
+  "say": "Can you hear me?",
+  "mood": "teach",
+  "take": 1
+ },
+ "dddb3d5d": {
+  "who": "narrator",
+  "say": "Have you ever borrowed money from a friend?",
+  "mood": "teach",
+  "take": 1
+ },
+ "de1be6d3": {
+  "who": "narrator",
+  "say": "make a phone call",
+  "mood": "teach",
+  "take": 1
+ },
+ "de5fea28": {
+  "who": "narrator",
+  "say": "say yes",
+  "mood": "teach",
+  "take": 2
  },
  "de6ac01b": {
   "who": "priya",
@@ -1906,6 +5500,24 @@
   "say": "We can see you. Ask the night bus driver. He saw us.",
   "mood": "radio",
   "take": 1
+ },
+ "de72bd24": {
+  "who": "narrator",
+  "say": "Forget it.",
+  "mood": "teach",
+  "take": 3
+ },
+ "deee6b09": {
+  "who": "narrator",
+  "say": "My mum calls me every Sunday.",
+  "mood": "teach",
+  "take": 1
+ },
+ "df0f1574": {
+  "who": "narrator",
+  "say": "Don’t worry, the ladder won’t fall.",
+  "mood": "teach",
+  "take": 2
  },
  "df15c8cd": {
   "who": "tom",
@@ -1925,10 +5537,34 @@
   "mood": "ask",
   "take": 1
  },
+ "dffc6560": {
+  "who": "narrator",
+  "say": "Hide the chocolate before the children see it.",
+  "mood": "teach",
+  "take": 1
+ },
  "dfffd1ec": {
   "who": "hughes",
   "say": "My glasses! My key! You’re angels, both of you.",
   "mood": "excited",
+  "take": 1
+ },
+ "e0251a03": {
+  "who": "narrator",
+  "say": "Who are those people?",
+  "mood": "teach",
+  "take": 1
+ },
+ "e06844f9": {
+  "who": "narrator",
+  "say": "You should see a doctor.",
+  "mood": "teach",
+  "take": 1
+ },
+ "e06e7c83": {
+  "who": "narrator",
+  "say": "I don’t miss my old job at all.",
+  "mood": "teach",
   "take": 1
  },
  "e0972580": {
@@ -1937,10 +5573,34 @@
   "mood": "wonder",
   "take": 1
  },
+ "e0a6eab5": {
+  "who": "narrator",
+  "say": "We’ll decide after dinner.",
+  "mood": "teach",
+  "take": 1
+ },
+ "e0b969a5": {
+  "who": "narrator",
+  "say": "The sun hasn’t shone for days.",
+  "mood": "teach",
+  "take": 1
+ },
  "e0fa995f": {
   "who": "sam",
   "say": "Lucky you. I stayed on the bus and waited.",
   "mood": "warm",
+  "take": 1
+ },
+ "e1530cba": {
+  "who": "narrator",
+  "say": "Would you like some tea?",
+  "mood": "teach",
+  "take": 1
+ },
+ "e16d28bb": {
+  "who": "narrator",
+  "say": "Sam looks forward to his days off.",
+  "mood": "teach",
   "take": 1
  },
  "e1c0d1ae": {
@@ -1949,16 +5609,64 @@
   "mood": "wonder",
   "take": 1
  },
+ "e2aa77ac": {
+  "who": "narrator",
+  "say": "It takes ten minutes to walk to the café.",
+  "mood": "teach",
+  "take": 1
+ },
+ "e2cf5193": {
+  "who": "narrator",
+  "say": "say hello",
+  "mood": "teach",
+  "take": 2
+ },
  "e3766fb3": {
   "who": "stranger",
   "say": "I remember falling. It was cold, and very fast.",
   "mood": "wonder",
   "take": 1
  },
+ "e3b3e7a0": {
+  "who": "narrator",
+  "say": "It takes an hour.",
+  "mood": "teach",
+  "take": 1
+ },
+ "e43e7c25": {
+  "who": "narrator",
+  "say": "We usually have dinner at seven.",
+  "mood": "teach",
+  "take": 1
+ },
+ "e4f3bc4a": {
+  "who": "narrator",
+  "say": "My sister hasn’t called me.",
+  "mood": "teach",
+  "take": 1
+ },
+ "e52fa111": {
+  "who": "narrator",
+  "say": "miss the bus",
+  "mood": "teach",
+  "take": 2
+ },
  "e5b1a818": {
   "who": "hughes",
   "say": "And the spark… is in front of the gnome.",
   "mood": "warm",
+  "take": 1
+ },
+ "e5c9363a": {
+  "who": "narrator",
+  "say": "Watch out!",
+  "mood": "teach",
+  "take": 1
+ },
+ "e5d40f2b": {
+  "who": "narrator",
+  "say": "Could you lend me your umbrella?",
+  "mood": "teach",
   "take": 1
  },
  "e681ed5c": {
@@ -1967,10 +5675,34 @@
   "mood": "warm",
   "take": 1
  },
+ "e68a84d3": {
+  "who": "narrator",
+  "say": "happen. happened.",
+  "mood": "teach",
+  "take": 1
+ },
  "e69a47b7": {
   "who": "stranger",
   "say": "Where is my sparks? Are they far?",
   "mood": "ask",
+  "take": 1
+ },
+ "e6de4382": {
+  "who": "narrator",
+  "say": "Mrs Hughes gives me roses every summer.",
+  "mood": "teach",
+  "take": 1
+ },
+ "e6f7e6c6": {
+  "who": "narrator",
+  "say": "Look up! That’s the moon.",
+  "mood": "teach",
+  "take": 1
+ },
+ "e6fcd170": {
+  "who": "narrator",
+  "say": "It happens to everyone.",
+  "mood": "teach",
   "take": 1
  },
  "e72d67fc": {
@@ -1985,9 +5717,63 @@
   "mood": "warm",
   "take": 1
  },
+ "e7cd9a83": {
+  "who": "narrator",
+  "say": "I can’t reach the top shelf.",
+  "mood": "teach",
+  "take": 1
+ },
+ "e7ce5ef7": {
+  "who": "narrator",
+  "say": "Dr Okafor will return on Monday.",
+  "mood": "teach",
+  "take": 1
+ },
  "e7fbf54f": {
   "who": "narrator",
   "say": "Have you had lunch yet?",
+  "mood": "teach",
+  "take": 1
+ },
+ "e8149f37": {
+  "who": "narrator",
+  "say": "I’ll do the shopping tomorrow.",
+  "mood": "teach",
+  "take": 1
+ },
+ "e850fb27": {
+  "who": "narrator",
+  "say": "My grandad doesn’t hear very well.",
+  "mood": "teach",
+  "take": 1
+ },
+ "e87820ff": {
+  "who": "narrator",
+  "say": "Where was Sam at midnight?",
+  "mood": "teach",
+  "take": 1
+ },
+ "e8d78d82": {
+  "who": "narrator",
+  "say": "return a book",
+  "mood": "teach",
+  "take": 1
+ },
+ "e975376c": {
+  "who": "narrator",
+  "say": "meet new people",
+  "mood": "teach",
+  "take": 1
+ },
+ "e97c94b6": {
+  "who": "narrator",
+  "say": "Look! Mrs Hughes is watering her roses.",
+  "mood": "teach",
+  "take": 1
+ },
+ "e9944a0c": {
+  "who": "narrator",
+  "say": "The keys are in my bag.",
   "mood": "teach",
   "take": 1
  },
@@ -1997,11 +5783,29 @@
   "mood": "ask",
   "take": 1
  },
+ "eacd737b": {
+  "who": "narrator",
+  "say": "There are some coins in the jar.",
+  "mood": "teach",
+  "take": 1
+ },
  "ead32b08": {
   "who": "stranger",
   "say": "Today I am knowing a lot of new words.",
   "mood": "wonder",
   "take": 1
+ },
+ "eb10f1e8": {
+  "who": "narrator",
+  "say": "I found some money in my old coat.",
+  "mood": "teach",
+  "take": 1
+ },
+ "eb42a86c": {
+  "who": "narrator",
+  "say": "lend. lent.",
+  "mood": "teach",
+  "take": 3
  },
  "eb8dad72": {
   "who": "tom",
@@ -2015,15 +5819,81 @@
   "mood": "teach",
   "take": 2
  },
+ "ebba199b": {
+  "who": "narrator",
+  "say": "I called my mum last night.",
+  "mood": "teach",
+  "take": 1
+ },
  "ebcc58bd": {
   "who": "stranger",
   "say": "Goodbye. Thank you for teaching me your words. I look forward to hearing you again.",
   "mood": "gentle",
   "take": 1
  },
+ "ec08d0fd": {
+  "who": "narrator",
+  "say": "Ask Sam. He should know the way.",
+  "mood": "teach",
+  "take": 1
+ },
+ "ec2c481f": {
+  "who": "narrator",
+  "say": "Did you forget your keys again?",
+  "mood": "teach",
+  "take": 1
+ },
+ "ec8fed64": {
+  "who": "narrator",
+  "say": "How much does this lamp cost?",
+  "mood": "teach",
+  "take": 1
+ },
+ "ecaf7628": {
+  "who": "narrator",
+  "say": "My sister often borrows my clothes.",
+  "mood": "teach",
+  "take": 1
+ },
  "ecd02319": {
   "who": "narrator",
   "say": "She looked at the photo and smiled.",
+  "mood": "teach",
+  "take": 1
+ },
+ "ed00e45d": {
+  "who": "narrator",
+  "say": "Take a coat. It’s cold outside.",
+  "mood": "teach",
+  "take": 1
+ },
+ "ed07421a": {
+  "who": "narrator",
+  "say": "if I remember correctly",
+  "mood": "teach",
+  "take": 1
+ },
+ "ed9c903d": {
+  "who": "narrator",
+  "say": "meet. met.",
+  "mood": "teach",
+  "take": 2
+ },
+ "edef2135": {
+  "who": "narrator",
+  "say": "climb. climbed.",
+  "mood": "teach",
+  "take": 1
+ },
+ "ee29aea7": {
+  "who": "narrator",
+  "say": "Sorry, we haven’t got any milk.",
+  "mood": "teach",
+  "take": 1
+ },
+ "ee2de10d": {
+  "who": "narrator",
+  "say": "My dad gave me this watch.",
   "mood": "teach",
   "take": 1
  },
@@ -2039,10 +5909,70 @@
   "mood": "gentle",
   "take": 1
  },
+ "eec2c341": {
+  "who": "narrator",
+  "say": "The leaves fall in autumn.",
+  "mood": "teach",
+  "take": 1
+ },
  "eed21e5d": {
   "who": "stranger",
   "say": "Can you help me? I want to learn the names of things.",
   "mood": "ask",
+  "take": 1
+ },
+ "eeecc510": {
+  "who": "narrator",
+  "say": "Can you help me move the sofa?",
+  "mood": "teach",
+  "take": 1
+ },
+ "ef9fb7cc": {
+  "who": "narrator",
+  "say": "Maybe Tom will come later.",
+  "mood": "teach",
+  "take": 1
+ },
+ "f0a6dbaf": {
+  "who": "narrator",
+  "say": "Say hello to Tom for me.",
+  "mood": "teach",
+  "take": 1
+ },
+ "f0a81645": {
+  "who": "narrator",
+  "say": "buy. bought.",
+  "mood": "teach",
+  "take": 2
+ },
+ "f0b2114a": {
+  "who": "narrator",
+  "say": "I drink tea with milk.",
+  "mood": "teach",
+  "take": 1
+ },
+ "f0e73675": {
+  "who": "narrator",
+  "say": "come back from holiday",
+  "mood": "teach",
+  "take": 1
+ },
+ "f1014cbf": {
+  "who": "narrator",
+  "say": "Have you ever lost your keys?",
+  "mood": "teach",
+  "take": 1
+ },
+ "f1078b2f": {
+  "who": "narrator",
+  "say": "look forward to. looked forward to.",
+  "mood": "teach",
+  "take": 1
+ },
+ "f1159dce": {
+  "who": "narrator",
+  "say": "I’ll never forget that day.",
+  "mood": "teach",
   "take": 1
  },
  "f1be32bb": {
@@ -2051,10 +5981,28 @@
   "mood": "warm",
   "take": 1
  },
+ "f1e1e226": {
+  "who": "narrator",
+  "say": "Mimi is sleeping on the sofa.",
+  "mood": "teach",
+  "take": 1
+ },
+ "f2089cb2": {
+  "who": "narrator",
+  "say": "We weren’t on the bus.",
+  "mood": "teach",
+  "take": 1
+ },
  "f20b63d0": {
   "who": "moss",
   "say": "Aster. It is time. They are here.",
   "mood": "warm",
+  "take": 1
+ },
+ "f3048c97": {
+  "who": "narrator",
+  "say": "Priya always compares prices before buying anything.",
+  "mood": "teach",
   "take": 1
  },
  "f3ee7c32": {
@@ -2069,10 +6017,28 @@
   "mood": "ask",
   "take": 1
  },
+ "f42ed12e": {
+  "who": "narrator",
+  "say": "plan ahead",
+  "mood": "teach",
+  "take": 1
+ },
  "f469c71a": {
   "who": "hughes",
   "say": "Neither have I, love. And I lived it.",
   "mood": "warm",
+  "take": 1
+ },
+ "f4a2d342": {
+  "who": "narrator",
+  "say": "My boss allowed me to leave early.",
+  "mood": "teach",
+  "take": 1
+ },
+ "f4ef95fd": {
+  "who": "narrator",
+  "say": "I can’t buy it. It’s too expensive.",
+  "mood": "teach",
   "take": 1
  },
  "f56559bc": {
@@ -2081,10 +6047,58 @@
   "mood": "wonder",
   "take": 1
  },
+ "f5671664": {
+  "who": "narrator",
+  "say": "I promise.",
+  "mood": "teach",
+  "take": 2
+ },
+ "f608c30c": {
+  "who": "narrator",
+  "say": "send. sent.",
+  "mood": "teach",
+  "take": 2
+ },
+ "f6394ea8": {
+  "who": "narrator",
+  "say": "I’m doing the washing-up.",
+  "mood": "teach",
+  "take": 1
+ },
  "f648eeca": {
   "who": "sam",
   "say": "I saw two.",
   "mood": "warm",
+  "take": 1
+ },
+ "f64d210c": {
+  "who": "narrator",
+  "say": "drink. drank. drunk.",
+  "mood": "teach",
+  "take": 3
+ },
+ "f65dce3b": {
+  "who": "narrator",
+  "say": "I stayed at home all weekend.",
+  "mood": "teach",
+  "take": 1
+ },
+ "f6ab1e42": {
+  "who": "narrator",
+  "say": "We’ve never seen snow here.",
+  "mood": "teach",
+  "take": 1
+ },
+ "f7b39ae4": {
+  "who": "narrator",
+  "say": "This bus reaches the centre in ten minutes.",
+  "mood": "teach",
+  "take": 1
+ },
+ "f7b9d301": {
+  "who": "narrator",
+  "say": "plan to do something",
+  "mood": "teach",
   "take": 1
  },
  "f7de4ed4": {
@@ -2099,6 +6113,18 @@
   "mood": "warm",
   "take": 1
  },
+ "f878f620": {
+  "who": "narrator",
+  "say": "My new phone cost a lot of money.",
+  "mood": "teach",
+  "take": 1
+ },
+ "f8a7d869": {
+  "who": "narrator",
+  "say": "My mum sends me a message every morning.",
+  "mood": "teach",
+  "take": 6
+ },
  "f8c9612b": {
   "who": "narrator",
   "say": "see. saw. seen.",
@@ -2111,10 +6137,34 @@
   "mood": "warm",
   "take": 1
  },
+ "f8ec8783": {
+  "who": "narrator",
+  "say": "Have you ever stayed in a hotel by the sea?",
+  "mood": "teach",
+  "take": 1
+ },
+ "f9276754": {
+  "who": "narrator",
+  "say": "build. built.",
+  "mood": "teach",
+  "take": 2
+ },
+ "f93c06e2": {
+  "who": "narrator",
+  "say": "send a parcel",
+  "mood": "teach",
+  "take": 1
+ },
  "f940b780": {
   "who": "stranger",
   "say": "I remember why I came. I wanted to hear you talk.",
   "mood": "wonder",
+  "take": 1
+ },
+ "f94f681a": {
+  "who": "narrator",
+  "say": "Mimi doesn’t go out when it rains.",
+  "mood": "teach",
   "take": 1
  },
  "f95acfd2": {
@@ -2129,6 +6179,24 @@
   "mood": "wonder",
   "take": 1
  },
+ "f9a56103": {
+  "who": "narrator",
+  "say": "You’ll hear from me soon.",
+  "mood": "teach",
+  "take": 1
+ },
+ "f9c1e039": {
+  "who": "narrator",
+  "say": "You’ll miss Mimi when you’re away.",
+  "mood": "teach",
+  "take": 1
+ },
+ "f9d44d5b": {
+  "who": "narrator",
+  "say": "go. went. gone.",
+  "mood": "teach",
+  "take": 2
+ },
  "f9ea8d2f": {
   "who": "stranger",
   "say": "Nine! This one was inside your radio all this time.",
@@ -2141,16 +6209,76 @@
   "mood": "excited",
   "take": 1
  },
+ "fa5d55a1": {
+  "who": "narrator",
+  "say": "My sister has got two children.",
+  "mood": "teach",
+  "take": 1
+ },
  "fa9dc1d3": {
   "who": "sam",
   "say": "Me? No way. I stayed on my bus and locked the doors!",
   "mood": "ask",
   "take": 1
  },
+ "faa51d6b": {
+  "who": "narrator",
+  "say": "help. helped.",
+  "mood": "teach",
+  "take": 3
+ },
+ "faad8249": {
+  "who": "narrator",
+  "say": "We haven’t got much time.",
+  "mood": "teach",
+  "take": 1
+ },
  "fadd9f66": {
   "who": "hughes",
   "say": "His light was too weak to go home. So he decided to stay. And to sleep, in my garden, near me.",
   "mood": "gentle",
+  "take": 1
+ },
+ "fb1b0184": {
+  "who": "narrator",
+  "say": "I’ve forgotten my password.",
+  "mood": "teach",
+  "take": 2
+ },
+ "fb2dfc19": {
+  "who": "narrator",
+  "say": "I don’t remember his name.",
+  "mood": "teach",
+  "take": 1
+ },
+ "fb43640f": {
+  "who": "narrator",
+  "say": "The bread won’t rise in a cold kitchen.",
+  "mood": "teach",
+  "take": 1
+ },
+ "fb4b379a": {
+  "who": "narrator",
+  "say": "pay the bill",
+  "mood": "teach",
+  "take": 2
+ },
+ "fb749c1e": {
+  "who": "narrator",
+  "say": "I haven’t watched TV for weeks.",
+  "mood": "teach",
+  "take": 1
+ },
+ "fba6b83d": {
+  "who": "narrator",
+  "say": "Does this bus stop near the station?",
+  "mood": "teach",
+  "take": 1
+ },
+ "fbbc2755": {
+  "who": "narrator",
+  "say": "Have you ever moved house?",
+  "mood": "teach",
   "take": 1
  },
  "fbd94393": {
@@ -2165,6 +6293,12 @@
   "mood": "excited",
   "take": 1
  },
+ "fc4e907e": {
+  "who": "narrator",
+  "say": "Mimi isn’t allowed on the bed.",
+  "mood": "teach",
+  "take": 1
+ },
  "fc6b4f15": {
   "who": "narrator",
   "say": "Don’t be late, please.",
@@ -2175,6 +6309,18 @@
   "who": "stranger",
   "say": "Thank you, Tom. Your tea is warm, and so are you.",
   "mood": "wonder",
+  "take": 1
+ },
+ "fca64a4f": {
+  "who": "narrator",
+  "say": "find. found.",
+  "mood": "teach",
+  "take": 1
+ },
+ "fcaa4420": {
+  "who": "narrator",
+  "say": "I didn’t plan to stay so long.",
+  "mood": "teach",
   "take": 1
  },
  "fcc7081d": {
@@ -2201,10 +6347,22 @@
   "mood": "warm",
   "take": 1
  },
+ "fdb628a9": {
+  "who": "narrator",
+  "say": "Have you met Priya?",
+  "mood": "teach",
+  "take": 1
+ },
  "fe486477": {
   "who": "stranger",
   "say": "Have I… what? Hungry?",
   "mood": "ask",
+  "take": 1
+ },
+ "fe4eba8e": {
+  "who": "narrator",
+  "say": "Are there any candles in the drawer?",
+  "mood": "teach",
   "take": 1
  },
  "fe5bf549": {
@@ -2212,6 +6370,18 @@
   "say": "Me? I didn’t see anything, dears. I was asleep.",
   "mood": "ask",
   "take": 1
+ },
+ "fe68790a": {
+  "who": "narrator",
+  "say": "I’m preparing for an exam.",
+  "mood": "teach",
+  "take": 1
+ },
+ "fec86433": {
+  "who": "narrator",
+  "say": "lose your way",
+  "mood": "teach",
+  "take": 2
  },
  "fed002a2": {
   "who": "narrator",
@@ -2229,6 +6399,18 @@
   "who": "stranger",
   "say": "Tonight I will tell you what I am. On the roof. At midnight.",
   "mood": "wonder",
+  "take": 1
+ },
+ "ff80725f": {
+  "who": "narrator",
+  "say": "My sister flies to Spain every summer.",
+  "mood": "teach",
+  "take": 1
+ },
+ "ff873d1a": {
+  "who": "narrator",
+  "say": "Did you work late yesterday?",
+  "mood": "teach",
   "take": 1
  }
 }

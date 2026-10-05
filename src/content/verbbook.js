@@ -790,7 +790,7 @@ export const VERB_BOOK = {
       ['ps', 'I feel much better today.', 'Azi mă simt mult mai bine.'],
       ['pc', 'How are you feeling?', 'Cum te simți?'],
       ['past', 'I didn’t feel well yesterday.', 'Ieri nu m-am simțit bine.'],
-      ['pp', 'I’ve felt tired all week.', 'M-am simțit obosit toată săptămâna.'],
+      ['pp', 'I have felt tired all week.', 'M-am simțit obosit toată săptămâna.'],
       ['can', 'I can feel the wind on my face.', 'Simt vântul pe față.'],
     ],
     phrases: [['feel like a cup of tea', 'a avea chef de un ceai'], ['feel at home', 'a se simți ca acasă'], ['feel sorry for someone', 'a-i părea rău de cineva']],

@@ -56,10 +56,11 @@ SAME = {w: k for k, ws in {
     # Whisper spells the American way
     'neighbours': ['neighbors'], 'neighbour': ['neighbor'], 'colour': ['color'], 'favourite': ['favorite'], 'centre': ['center'],
     'theatre': ['theater'], 'grey': ['gray'], 'mum': ['mom'], 'kilometres': ['kilometers'], 'metres': ['meters'],
-    'travelling': ['traveling'], 'cancelled': ['canceled'], 'jewellery': ['jewelry'], 'cheque': ['check'],
+    'travelling': ['traveling'], 'cancelled': ['canceled'], 'jewellery': ['jewelry'], 'cheque': ['check'], 'grandad': ['granddad'],
 }.items() for w in [k, *ws]}
 NUM = {'1': 'one', '2': 'two', '3': 'three', '4': 'four', '5': 'five', '6': 'six', '7': 'seven', '8': 'eight', '9': 'nine',
-       '10': 'ten', '11': 'eleven', '12': 'twelve', '20': 'twenty', '50': 'fifty', '60': 'sixty', '1966': 'nineteen sixty six', '2010': 'twenty ten'}
+       '10': 'ten', '11': 'eleven', '12': 'twelve', '20': 'twenty', '30': 'thirty', '40': 'forty', '50': 'fifty', '60': 'sixty',
+       '70': 'seventy', '80': 'eighty', '90': 'ninety', '100': 'a hundred', '1966': 'nineteen sixty six', '2010': 'twenty ten'}
 
 
 def mood_of(line):
@@ -82,7 +83,7 @@ def words(s):
     s = re.sub(r'\bno\.\s*(\d+)', r'number \1', s)
     s = re.sub(r'\ba\.m\.', 'am', s)
     s = re.sub(r'\d+', lambda m: NUM.get(m.group(0), m.group(0)), s)
-    s = s.replace("'", '')
+    s = s.replace("'", '').replace('anymore', 'any more')
     s = re.sub(r'[^a-z0-9 ]', ' ', s)
     s = s.replace('okay', 'ok').replace('mister', 'mr').replace('missus', 'mrs').replace('doctor', 'dr')
     return [SAME.get(w, w) for w in s.split()]
@@ -140,6 +141,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--limit', type=int, default=0, help='record at most this many lines')
     ap.add_argument('--only', default='', help='comma-separated keys to record (again)')
+    ap.add_argument('--seed', type=int, default=1000, help='first seed of the takes (another seed, other takes)')
     a = ap.parse_args()
 
     lines = json.load(open(os.path.join(MODELS, 'lines.json'), encoding='utf-8'))
@@ -183,7 +185,7 @@ def main():
         tries = [(live, 0.4, 0.7)] * 4 + [(max(0.3, live - 0.15), 0.5, 0.6)] * 3
         best = None
         for k, (ex, cfg, temp) in enumerate(tries):
-            torch.manual_seed(1000 + k)
+            torch.manual_seed(a.seed + k)
             w = gen(line['say'], ref, ex, cfg, temp)
             heard = hear(w)
             err = errors(line['say'], heard)

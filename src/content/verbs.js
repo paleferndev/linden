@@ -98,7 +98,8 @@ export const VERBS = [
 
 export const VERB = Object.fromEntries(VERBS.map(v => [v.base, v]));
 export const verbsOf = ep => VERBS.filter(v => v.ep === ep);
-/** The forms said in one breath, for the verb's page: "see. saw. seen." */
-export const formsLine = v => `${v.base}. ${v.past.replace(' / ', ', ')}. ${v.pp}.`;
+/** The forms said in one breath, for the verb's page: "see. saw. seen." A form isn't said twice in a row ("have. had."):
+ *  the voice stumbles on the repeat. */
+export const formsLine = v => [v.base, v.past.replace(' / ', ', '), v.pp].filter((f, i, a) => f !== a[i - 1]).join('. ') + '.';
 /** The first past form, for games and checks ("was / were" → "was"). */
 export const pastOf = v => v.past.split(' / ')[0];

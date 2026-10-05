@@ -7,6 +7,7 @@ import './styles/street.css';
 import './styles/home.css';
 import './styles/chat.css';
 import './styles/games.css';
+import './styles/book.css';
 import { EP } from './content/episodes.js';
 import { GAMES } from './content/games.js';
 import { ICONS } from './art/icons.js';

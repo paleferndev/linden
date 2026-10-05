@@ -1,0 +1,99 @@
+/* ---------- the book: a verb's page and a grammar lesson (screens/book.js), in the sheet.
+   Made of the app's own things, so it reads like a page of Linden, not a schoolbook: the picture of the episode where
+   you met it, a handwritten line, the word tiles of the chat, the chat's bubbles (a mistake shows the way the chat
+   shows it), notes pinned like on the plan board, and the words that depend on two questions in the lit windows of a
+   house at night. */
+.sheet:has(.bk) .sh-head{position:sticky;top:-10px;z-index:2;background:var(--card);padding:6px 0 8px;margin-bottom:-8px}
+.sh-head .kick{margin-bottom:3px}
+.bk{display:grid;gap:20px}
+.bk section{display:grid;gap:9px}
+.bk h4{font:600 21px/1 var(--f-hand);color:var(--muted)}
+.bk p{font-size:15px;line-height:1.5}
+
+/* the episode where you met it */
+.bk-band{position:relative;margin:0;border-radius:16px;overflow:hidden;aspect-ratio:36/13;background:var(--sky)}
+.bk-band .art{position:absolute;inset:0}
+.bk-band .art svg{width:100%;height:100%}
+.bk-band figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px 12px 7px;font:600 12.5px/1.2 var(--f-ui);color:#F3E9D2;background:linear-gradient(transparent,rgba(12,18,30,.62))}
+
+/* a line written by hand at the top of the page */
+.bk p.bk-gist{font:600 26px/1.15 var(--f-hand);color:var(--pen);transform:rotate(-1.2deg);transform-origin:left;padding:2px 2px 0}
+.bk p.bk-gist .en{font:600 26px/1.15 var(--f-hand)}
+.bk .hand-note{font:600 18px/1.2 var(--f-hand);color:var(--muted)}
+
+/* the chat's word tiles */
+.bk .tile{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:10px;background:var(--paper);border:1px solid var(--line);box-shadow:0 2px 0 var(--line);font:600 17px/1.2 var(--f-en);color:var(--ink);min-width:0;overflow-wrap:anywhere}
+.bk .tile .en{font:inherit}
+.bk .arr{flex:none;width:24px;height:12px;color:var(--faint)}
+.bk .plus{font:600 26px/1 var(--f-hand);color:var(--muted)}
+
+/* forms as a map: who → tile */
+.bk-map{display:grid;grid-template-columns:max-content repeat(var(--n),minmax(0,max-content));gap:8px 6px;align-items:center}
+.bk-map .who{font:500 16px/1.2 var(--f-en);color:var(--muted);padding-right:4px}
+.bk-map .f{display:flex;align-items:center;gap:6px;min-width:0}
+
+/* the chat's bubbles: what someone says, what you send, a mistake */
+.bk .bub{display:block;width:fit-content;max-width:94%;padding:8px 12px 9px;border-radius:18px;border-bottom-left-radius:6px;background:var(--paper);border:1px solid var(--line);font:500 16.5px/1.4 var(--f-en);color:var(--ink);text-align:left;overflow-wrap:anywhere}
+.bk .bub b{background:var(--marker-a);color:inherit;font-weight:inherit;border-radius:3px;padding:0 2px}
+.bk .bub.me{margin-left:auto;background:var(--pen);color:var(--on-pen);border-color:transparent;border-radius:18px;border-bottom-right-radius:6px}
+.bk .bub.bad{background:var(--plum-soft);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--plum);text-decoration:line-through;text-decoration-color:var(--plum);text-decoration-thickness:2px}
+.bk .bub .who-l{display:block;font:650 11.5px/1.2 var(--f-ui);color:var(--muted);margin-bottom:3px}
+.bk .bub .ro{display:block;font:italic 400 13.5px/1.35 var(--f-ui);color:var(--muted);margin-top:3px}
+.bk button.bub{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:10px;cursor:pointer}
+.bk button.bub>*{grid-column:1}
+.bk button.bub>svg{grid-column:2;grid-row:1/4;width:17px;height:17px;color:var(--pen);margin-top:3px}
+.bk-bubs{display:grid;gap:8px}
+
+/* a sentence turned into another */
+.bk-turn{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.bk-turn .bub{max-width:100%}
+
+/* how it's built */
+.bk-formula{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.bk-formula .tile{font:650 15px/1.2 var(--f-ui)}
+.bk-formula .tile .en{font:700 17px/1.2 var(--f-en)}
+
+/* notes pinned like on the plan board: paper stays paper at night */
+.bk-pins{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:12px 10px;padding-top:4px}
+.pin{position:relative;background:#FFF8DC;color:#1B2433;border-radius:3px;padding:16px 12px 11px;transform:rotate(var(--r,0deg));box-shadow:0 8px 16px -10px rgba(0,0,0,.55);display:grid;gap:3px;align-content:start}
+.pin::before{content:"";position:absolute;top:5px;left:50%;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:#CF4430;box-shadow:0 1px 2px rgba(0,0,0,.35)}
+.pin .pl{font:600 19px/1.1 var(--f-hand);color:#27469A}
+.pin .pl .en{font:inherit}
+.pin p.en{font:500 16px/1.35 var(--f-en);color:#1B2433}
+.pin p.en b{color:#CF4430;font-weight:700}
+.pin p.tp{font:500 15px/1.4 var(--f-ui);color:#1B2433}
+.pin p.tp .en{font-weight:600}
+.pin.wide{margin:4px 2px 0}
+
+/* the house at night: two questions, and the word in the window where they meet */
+.bk-house{position:relative;margin:24px 6px 0;border-radius:4px 4px 8px 8px;background:var(--b-navy);padding:14px 12px 14px}
+.bk-house::before{content:"";position:absolute;left:-8px;right:-8px;top:-22px;height:23px;background:var(--roof);clip-path:polygon(3% 100%,50% 0,97% 100%)}
+.bk-house .g{display:grid;grid-template-columns:auto repeat(var(--cols),minmax(0,1fr));gap:8px;align-items:center}
+.bk-house .hl{font:600 18px/1.05 var(--f-hand);color:#F3E4C0;text-align:center}
+.bk-house .hl .en{font:inherit}
+.bk-house .win{border-radius:4px;background:var(--lit);color:#3A2A0C;padding:11px 6px;text-align:center;font:700 18px/1.2 var(--f-en);box-shadow:0 0 18px var(--lit-glow),inset 0 0 0 3px rgba(255,255,255,.28)}
+
+/* words to recognise, as tiles; the little pictures of where things are */
+.bk-words{display:grid;grid-template-columns:repeat(auto-fill,minmax(98px,1fr));gap:8px}
+.bk-words .tile{display:grid;justify-items:center;gap:2px;padding:8px 6px 9px;text-align:center}
+.bk-words .tile b{font:600 17px/1.2 var(--f-en)}
+.bk-words .tile small{font:400 12.5px/1.25 var(--f-ui);color:var(--muted)}
+.bk-words svg{width:76px;height:56px}
+
+/* a verb: its forms as tiles, each with its name written under it */
+.bk-forms{display:flex;flex-wrap:wrap;gap:12px 8px;align-items:flex-start}
+.bk-forms .fm{display:grid;justify-items:center;gap:3px}
+.bk-forms .fm small{font:600 16px/1 var(--f-hand);color:var(--muted)}
+.bk-forms .fm small .en{font:inherit}
+.bk-forms+.ghost-btn{justify-self:start}
+.bk-means{display:grid;gap:10px}
+.bk-means .hl{font:600 19px/1 var(--f-hand);color:var(--pen)}
+.bk-means .hl .en{font:inherit}
+
+/* a mistake, the way the chat shows it */
+.bk-traps{display:grid;gap:16px}
+.bk-trap{display:grid;gap:5px}
+.bk .why-l{display:grid;grid-template-columns:20px minmax(0,1fr);gap:8px;align-items:start;border-radius:14px;padding:8px 12px;background:var(--plum-soft)}
+.bk .why-l svg{width:18px;height:18px;color:var(--plum);margin-top:1px}
+.bk .why-l p{font-size:14px;line-height:1.45}
+.bk-verbs{display:flex;flex-wrap:wrap;gap:8px}

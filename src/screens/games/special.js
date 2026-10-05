@@ -1,8 +1,8 @@
 import { face } from '../../art/art.js';
-import { no9, NO9 } from '../../art/night.js';
+import { no9Tall, NO9_TALL } from '../../art/night.js';
 import { ITEMS, LOST, NIGHT_PANELS, COMPARE, COMPARE_NAMES } from '../../art/props.js';
 import { say } from '../../app/sound.js';
-import { shell, intro, result, pick, gapHTML, filled, clearOpts, wait, esc, sub, $, $$, shuffle, tone, hook } from './kit.js';
+import { shell, intro, result, pick, gapHTML, filled, clearOpts, fitTall, wait, esc, sub, $, $$, shuffle, tone, hook } from './kit.js';
 
 // The games with their own move: asking Tom the right questions (does), putting Sam's night in order (the past),
 // filling Priya's shelves (much and many), finding things in Mrs Hughes's garden (prepositions), and comparing the
@@ -127,14 +127,15 @@ export async function shelves(host, G, ctx) {
 /* ---------------------------------------------------------------- 6 · Mrs Hughes's garden */
 export async function room(host, G, ctx) {
   const S = shell(host, G, { total: G.rounds.length });
-  const spots = Object.entries(NO9).map(([k, [x, y, w, h]]) => `<rect class="spot-hit" data-spot="${k}" x="${x - 4}" y="${y - 4}" width="${w + 8}" height="${h + 8}" rx="6" fill="transparent"/>`).join('');
+  const spots = Object.entries(NO9_TALL).map(([k, [x, y, r]]) => `<circle class="spot-hit" data-spot="${k}" cx="${x}" cy="${y}" r="${r + 4}" fill="transparent"/>`).join('');
   S.board.innerHTML = `<div class="instr"><button type="button" class="spk" data-hear aria-label="Ascultă">${'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4.2 4.2 0 0 1 0 6"/></svg>'}</button><span class="en" data-say></span></div>
-    <div class="gb-art garden9"><svg viewBox="0 0 360 250" preserveAspectRatio="xMidYMax meet" aria-hidden="true">${no9()}<g data-found></g><g data-marks></g>${spots}</svg></div>`;
+    <div class="gb-art pic garden9"><svg viewBox="0 0 360 412" preserveAspectRatio="xMidYMax meet" aria-hidden="true">${no9Tall()}<g data-found></g><g data-marks></g>${spots}</svg></div>`;
   await intro(host, G);
   const svg = $('.garden9 svg', S.board);
   for (const [k, r] of G.rounds.entries()) {
     S.board.dataset.round = k;
     $('[data-say]', S.board).textContent = sub(r.text);
+    fitTall($('.garden9', S.board), 360, 412);
     $('[data-hear]', S.board).onclick = () => say(r.text, { who: 'hughes' });
     say(r.text, { who: 'hughes', auto: true });
     hook({ act: 'tap', sel: `[data-spot="${r.at}"]` });
@@ -142,10 +143,11 @@ export async function room(host, G, ctx) {
     svg.onclick = null;
     const ok = hit === r.at;
     ctx.record(G.g, ok);
-    const [x, y, w, h] = NO9[r.at], cx = x + w / 2, cy = y + h / 2;
-    $('[data-marks]', svg).innerHTML = ok ? `<circle cx="${cx}" cy="${cy}" r="16" class="mk ok"/>`
-      : `${hit ? `<circle cx="${NO9[hit][0] + NO9[hit][2] / 2}" cy="${NO9[hit][1] + NO9[hit][3] / 2}" r="14" class="mk no"/>` : ''}<circle cx="${cx}" cy="${cy}" r="16" class="mk show"/>`;
-    $('[data-found]', svg).insertAdjacentHTML('beforeend', LOST[r.item]?.(cx, cy) || '');
+    const [cx, cy, rr] = NO9_TALL[r.at];
+    const mark = (k, cls) => `<circle cx="${NO9_TALL[k][0]}" cy="${NO9_TALL[k][1]}" r="${NO9_TALL[k][2]}" class="mk ${cls}"/>`;
+    $('[data-marks]', svg).innerHTML = ok ? mark(r.at, 'ok') : `${hit ? mark(hit, 'no') : ''}${mark(r.at, 'show')}`;
+    // what was lost, drawn big enough to see where it lies
+    $('[data-found]', svg).insertAdjacentHTML('beforeend', `<g transform="translate(${cx} ${cy}) scale(${Math.min(1.8, rr / 14)}) translate(${-cx} ${-cy})">${LOST[r.item]?.(cx, cy) || ''}</g>`);
     S.msg(ok ? '' : `<span>Era aici: <b class="en">${esc(r.at)}</b>.</span>`, ok ? '' : 'why');
     S.tally(ok);
     await wait(ok ? 800 : 1500);

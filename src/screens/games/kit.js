@@ -62,6 +62,21 @@ export function result(host, S, { lines = '' } = {}) {
   });
 }
 
+/** A tall picture (w × h) that fills its board: on a taller board the sky grows upwards, on a wider one the board
+ *  narrows to the picture. The board's own rounded corners clip it. Call it once the round's options are shown. */
+export function fitTall(art, w, h) {
+  art.style.width = '';
+  const svg = $('svg', art), box = art.getBoundingClientRect();
+  if (!svg || !box.width || !box.height) return;
+  if (box.height / box.width >= h / w) {
+    const vh = Math.min(w * box.height / box.width, h * 1.6);
+    svg.setAttribute('viewBox', `0 ${h - vh} ${w} ${vh}`);
+  } else {
+    svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+    art.style.width = `${Math.round(box.height * w / h)}px`;
+  }
+}
+
 /** Sentence with a gap, as HTML. */
 export const gapHTML = text => esc(sub(text)).replace('{}', '<span class="gap">&nbsp;</span>');
 export const filled = (text, word) => {

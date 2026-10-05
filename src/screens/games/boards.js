@@ -1,9 +1,9 @@
-import { garden, linden } from '../../art/night.js';
+import { linden } from '../../art/night.js';
 import { stranger } from '../../art/stranger.js';
-import { laneSVG, BUILDINGS } from '../../art/lane.js';
+import { laneSVG, BUILDINGS, nextId } from '../../art/lane.js';
 import { reduceMotion } from '../../app/ui.js';
 import { photo, SIGNS, DOODLES } from '../../art/props.js';
-import { shell, intro, result, pick, gapHTML, filled, clearOpts, wait, esc, $, $$, shuffle } from './kit.js';
+import { shell, intro, result, pick, gapHTML, filled, clearOpts, fitTall, wait, esc, $, $$, shuffle } from './kit.js';
 import { VERB, pastOf } from '../../content/verbs.js';
 
 // The games where the rule is a choice in a sentence, each with its own board: the lantern in the garden (this and
@@ -11,36 +11,74 @@ import { VERB, pastOf } from '../../content/verbs.js';
 // the finale that lights up the street.
 
 /* ---------------------------------------------------------------- 1 · the lantern in the garden */
-// The table is drawn 1.25× bigger than the rest (nearer), so its spots are scaled too.
-const T = ([x, y]) => [x * 1.25, y * 1.25 - 62.5];
-const SPOTS = { cup: T([42, 198]), keys: T([76, 212]), apples: T([112, 202]), book: T([146, 214]), moon: [318, 38], stars: [184, 30], tree: [262, 88], birds: [176, 164] };
-const near = { cup: 1, keys: 1, apples: 1, book: 1 };
-function gardenBoard() {
-  const table = `<g transform="translate(0 -62.5) scale(1.25)"><rect x="10" y="216" width="170" height="40" rx="4" fill="var(--wood)"/><rect x="10" y="212" width="170" height="8" rx="3" fill="var(--wood-top)"/>
-    <g transform="translate(30 186)"><path d="M0 4h22c-1 12-5 18-11 18S1 16 0 4z" fill="var(--china)" stroke="var(--china-line)"/><path d="M22 8c7 0 7 9-1 9" stroke="var(--china-line)" stroke-width="2.4" fill="none"/><ellipse cx="11" cy="4.5" rx="11" ry="2.4" fill="var(--tea-brown)"/></g>
-    <g transform="translate(64 204)"><circle cx="5" cy="5" r="4.5" fill="none" stroke="var(--brass)" stroke-width="2.4"/><path d="M9 5h14M19 5v4M22 5v3" stroke="var(--brass)" stroke-width="2.4"/><circle cx="13" cy="10" r="4" fill="none" stroke="var(--faint)" stroke-width="2"/><path d="M16 12l8 4" stroke="var(--faint)" stroke-width="2.2"/></g>
-    ${[[104, 206], [116, 206], [110, 197]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="7" fill="var(--postbox)"/><path d="M${x} ${y - 7}l1-3" stroke="var(--wood-line)" stroke-width="1.4"/>`).join('')}
-    <g transform="translate(132 204) rotate(-6)"><rect width="30" height="10" rx="1.5" fill="var(--pen)"/><rect x="2" y="2" width="26" height="4" fill="var(--china)"/></g></g>
-    ${[[162, 166], [176, 164], [190, 167]].map(([x, y]) => `<g transform="translate(${x} ${y})"><ellipse cx="0" cy="0" rx="5" ry="3.6" fill="var(--b-navy)"/><circle cx="4" cy="-3" r="2.4" fill="var(--b-navy)"/><path d="M6 -3l2.4 .8" stroke="var(--sun)" stroke-width="1.2"/></g>`).join('')}`;
-  return `<svg viewBox="0 0 360 250" preserveAspectRatio="xMidYMax meet" aria-hidden="true">${garden({ tree: .45, door: false })}${table}
-    <g transform="translate(276 128) scale(.66)">${stranger('calm', { light: .6 })}</g>
-    <g data-beam></g></svg>`;
+// A tall picture, so it fills a phone: the table in front of you (this, these) and the garden and the sky beyond it
+// (that, those). The lantern dims everything but what it points at, and a ring sized to the thing goes round it.
+const LW = 360, LH = 412;
+const LANTERN = [300, 284];
+// where each thing is, and the radius of its ring
+const SPOTS = { cup: [56, 318, 36], keys: [128, 333, 36], apples: [206, 318, 38], book: [288, 334, 40], moon: [298, 64, 38], stars: [92, 62, 48], tree: [128, 186, 70], birds: [212, 146, 42] };
+const twinkle = (x, y, s) => `<path d="M${x} ${y - s}q${s * .18} ${s * .82} ${s} ${s}q${-s * .82} ${s * .18} ${-s} ${s}q${-s * .18} ${-s * .82} ${-s} ${-s}q${s * .82} ${-s * .18} ${s} ${-s}z" fill="var(--sun)"/>`;
+const bird = (x, y, s = 1) => `<path d="M${x - 12 * s} ${y - 2 * s}q${6 * s} ${-7 * s} ${12 * s} ${2 * s}q${6 * s} ${-9 * s} ${12 * s} ${-2 * s}" stroke="var(--cream)" stroke-width="${2.6 * s}" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+function lanternBoard() {
+  const warm = nextId('lw');
+  const sky = `<rect y="-${LH}" width="${LW}" height="${LH * 2}" fill="var(--sky)"/>
+    <g opacity=".55">${[[24, 120], [160, 30], [190, 92], [246, 30], [340, 120], [30, 200], [258, 110], [350, 20], [142, 110], [60, -30], [200, -60], [310, -20], [130, -120], [280, -150], [30, -180], [220, -200]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="1.2" fill="var(--sun)"/>`).join('')}</g>
+    ${[[70, 46, 6], [104, 36, 7.5], [120, 70, 6], [84, 86, 5.5], [58, 70, 4.5], [98, 62, 8]].map(([x, y, s]) => twinkle(x, y, s)).join('')}
+    <circle cx="298" cy="64" r="44" fill="var(--sun)" opacity=".07"/><circle cx="298" cy="64" r="24" fill="var(--sun)"/><circle cx="309" cy="56" r="21" fill="var(--sky)"/>
+    ${bird(194, 152, 1)}${bird(216, 136, 1.1)}${bird(236, 156, .9)}`;
+  const far = `<g fill="var(--b-navy)" opacity=".8"><rect x="200" y="214" width="44" height="52"/><path d="M196 216l26-18 26 18z"/><rect x="292" y="206" width="68" height="60"/><rect x="0" y="222" width="40" height="44"/></g>
+    <g fill="var(--lit)"><rect x="210" y="226" width="8" height="10" rx="1"/><rect x="306" y="220" width="8" height="10" rx="1"/><rect x="334" y="240" width="8" height="10" rx="1"/></g>
+    ${linden(128, 236, 1.05, { glow: .45 })}
+    <g fill="var(--b-cream)" opacity=".9">${Array.from({ length: 23 }, (_, k) => `<path d="M${k * 16 + 2} 274v-34l5-6 5 6v34z"/>`).join('')}<rect x="0" y="246" width="360" height="4"/><rect x="0" y="262" width="360" height="4"/></g>
+    <rect x="0" y="272" width="360" height="56" fill="var(--tree)"/><path d="M0 272h360" stroke="var(--tree-2)" stroke-width="3" opacity=".6"/>
+    <g transform="translate(232 186) scale(.74)">${stranger('calm', { light: .7 })}</g>`;
+  // the table, seen a little from above so what lies on it shows
+  const table = `<path d="M-4 312h368v44H-4z" fill="var(--wood-top)"/><path d="M-4 356h368v12H-4z" fill="var(--wood-line)"/><rect x="-4" y="368" width="368" height="50" fill="var(--wood)"/>
+    <path d="M0 326h360M0 341h360" stroke="var(--wood-line)" stroke-width="1" opacity=".35"/><path d="M60 368v50M180 368v50M300 368v50" stroke="var(--wood-line)" stroke-width="2" opacity=".5"/>
+    <ellipse cx="180" cy="330" rx="230" ry="70" fill="url(#${warm})"/>`;
+  const cup = `<g transform="translate(56 318)"><ellipse cx="0" cy="22" rx="30" ry="7" fill="var(--china-line)"/><ellipse cx="0" cy="20" rx="28" ry="6" fill="var(--china)"/>
+    <path d="M-20 -10h40c-1 22-8 30-20 30s-19-8-20-30z" fill="var(--china)" stroke="var(--china-line)" stroke-width="1.5"/>
+    <path d="M19 -4c11-1 12 14-1 15" stroke="var(--china-line)" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <ellipse cx="0" cy="-10" rx="20" ry="4.5" fill="var(--tea-brown)"/><path d="M-12 2h24" stroke="var(--postbox)" stroke-width="2.4" opacity=".7"/>
+    <path d="M-6 -18q-5-7 0-13M5 -18q-5-7 0-13" stroke="var(--cream)" stroke-width="2" fill="none" stroke-linecap="round" opacity=".7"/></g>`;
+  const keys = `<g transform="translate(130 334) scale(1.35)"><circle cx="-12" cy="-6" r="10" fill="none" stroke="var(--brass)" stroke-width="3.2"/>
+    <g transform="rotate(14 -4 -2)"><circle cx="0" cy="-2" r="6.5" fill="var(--brass)"/><circle cx="0" cy="-2" r="2.4" fill="var(--wood-top)"/><path d="M5 -2h22v4h-3v4h-3v-4h-4v5h-3v-5H5z" fill="var(--brass)"/></g>
+    <g transform="rotate(-18 -14 4)"><circle cx="-12" cy="8" r="6" fill="var(--china-line)"/><circle cx="-12" cy="8" r="2.2" fill="var(--wood-top)"/><path d="M-7 8h19v3.6h-3v3.6h-3v-3.6h-3v3h-3v-3h-7z" fill="var(--china-line)"/></g></g>`;
+  const apple = (x, y) => `<circle cx="${x}" cy="${y}" r="13" fill="var(--postbox)"/><path d="M${x - 6} ${y - 6}a7 7 0 0 1 6-3" stroke="#fff" stroke-width="2.4" stroke-linecap="round" opacity=".55" fill="none"/>
+    <path d="M${x} ${y - 12}l1-6" stroke="var(--trunk)" stroke-width="2.2" stroke-linecap="round"/><path d="M${x + 1} ${y - 16}c4-5 10-4 11-1-4 3-8 3-11 1z" fill="var(--tree-2)"/>`;
+  const apples = `<g><ellipse cx="206" cy="342" rx="34" ry="7" fill="var(--wood-line)" opacity=".5"/>${apple(192, 330)}${apple(220, 330)}${apple(206, 309)}</g>`;
+  const book = `<g transform="translate(288 334) rotate(-6)"><path d="M-32 -14h64l4 26h-64z" fill="var(--cream)"/><path d="M-34 -16h64l4 26h-64z" fill="#7B4A2E"/>
+    <path d="M-28 -12h52l3 18h-52z" fill="none" stroke="var(--brass)" stroke-width="1.6"/><path d="M-6 -6h18M-5 0h16" stroke="var(--brass)" stroke-width="1.6"/>
+    <path d="M-34 -16l-2 2 4 26 2-2z" fill="#5E3721"/><path d="M14 10l2 14 3-3 3 3-2-14" fill="var(--postbox)"/></g>`;
+  return `<svg viewBox="0 0 ${LW} ${LH}" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+    <defs><radialGradient id="${warm}"><stop offset="0" style="stop-color:var(--lit);stop-opacity:.22"/><stop offset="1" style="stop-color:var(--lit);stop-opacity:0"/></radialGradient></defs>
+    ${sky}${far}${table}${cup}${keys}${apples}${book}<g data-beam></g></svg>`;
 }
 function point(root, at) {
-  const [x, y] = SPOTS[at];
-  const [lx, ly] = [276 + 92 * .66, 128 + 132 * .66];
-  $('[data-beam]', root).innerHTML = `<path d="M${lx} ${ly}L${x - 16} ${y}L${x + 16} ${y}z" fill="var(--spark)" opacity=".18"/><circle cx="${x}" cy="${y}" r="${near[at] ? 16 : 22}" fill="none" stroke="var(--spark)" stroke-width="3" class="ring"/>`;
+  const [x, y, r] = SPOTS[at];
+  const [lx, ly] = LANTERN;
+  const hole = nextId('lh'), mask = nextId('lm');
+  // the beam: from the lantern to the two sides of the ring
+  const a = Math.atan2(y - ly, x - lx), px = Math.cos(a + Math.PI / 2) * r * .8, py = Math.sin(a + Math.PI / 2) * r * .8;
+  $('[data-beam]', root).innerHTML = `<defs><radialGradient id="${hole}"><stop offset=".72" stop-color="#000"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+      <mask id="${mask}"><rect y="-${LH}" width="${LW}" height="${LH * 2}" fill="#fff"/><circle cx="${x}" cy="${y}" r="${r * 1.35}" fill="url(#${hole})"/></mask></defs>
+    <rect y="-${LH}" width="${LW}" height="${LH * 2}" fill="#05080F" opacity=".5" mask="url(#${mask})"/>
+    <path d="M${lx} ${ly}L${x + px} ${y + py}L${x - px} ${y - py}z" fill="var(--spark)" opacity=".12"/>
+    <circle cx="${x}" cy="${y}" r="${r}" fill="none" stroke="var(--spark)" stroke-width="7" opacity=".22"/>
+    <circle cx="${x}" cy="${y}" r="${r}" fill="none" stroke="var(--spark)" stroke-width="3" class="ring"/>`;
 }
 export async function thisthat(host, G, ctx) {
   const rounds = G.rounds;
   const S = shell(host, G, { total: rounds.length });
-  S.board.innerHTML = `<div class="gb-art night">${gardenBoard()}</div><p class="gb-line en" data-line></p>`;
+  S.board.innerHTML = `<div class="gb-art pic night">${lanternBoard()}</div><p class="gb-line en" data-line></p>`;
   await intro(host, G);
   for (const [k, r] of rounds.entries()) {
     S.board.dataset.round = k;
     point(S.board, r.at);
     $('[data-line]', S.board).innerHTML = gapHTML(r.text);
-    const ok = await pick(S, { ...r, wrong: G.options.filter(o => o !== r.right), g: G.g }, { record: ctx.record, fixed: G.options });
+    const pending = pick(S, { ...r, wrong: G.options.filter(o => o !== r.right), g: G.g }, { record: ctx.record, fixed: G.options });
+    fitTall($('.gb-art', S.board), LW, LH);
+    const ok = await pending;
     $('[data-line]', S.board).innerHTML = filled(r.text, r.right);
     S.tally(ok);
     await wait(650);

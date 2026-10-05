@@ -102,6 +102,45 @@ export function no9() {
     <g><path d="M10 206h28v18H10z" fill="var(--leaf)"/><path d="M38 210l14-10" stroke="var(--leaf)" stroke-width="4" stroke-linecap="round"/><path d="M14 206q10-14 20 0" stroke="var(--leaf)" stroke-width="3" fill="none"/></g>`;
 }
 
+/** The same garden drawn tall for the prepositions game, so it fills a phone and every place is big enough to tap:
+ *  the house, the tree and the shed at the back; the bench, the birdbath and the gnome in the middle; the watering
+ *  can, the pots and the wheelbarrow in front. 360 × 412. */
+export const NO9_TALL = {
+  // [centre x, centre y, radius] of each place
+  'in the tree': [52, 80, 44], 'on the shed roof': [300, 92, 30],
+  'on the bench': [86, 244, 34], 'under the bench': [86, 292, 26], 'in the birdbath': [196, 216, 28], 'next to the birdbath': [232, 288, 18],
+  'in front of the gnome': [290, 326, 20], 'next to the gnome': [342, 296, 16],
+  'under the watering can': [42, 382, 26], 'between the pots': [132, 372, 20], 'in the wheelbarrow': [292, 380, 30],
+};
+export function no9Tall() {
+  const pot = x => `<path d="M${x - 20} 352h40l-5 40h-30z" fill="var(--postbox)"/><rect x="${x - 23}" y="346" width="46" height="9" rx="3" fill="var(--awning-a)"/>
+    <circle cx="${x}" cy="332" r="15" fill="var(--tree)"/><circle cx="${x - 8}" cy="326" r="5" fill="var(--sun)"/><circle cx="${x + 8}" cy="330" r="5" fill="var(--b-rose)"/><circle cx="${x + 1}" cy="320" r="4.5" fill="var(--postbox)"/>`;
+  const cloud = (x, y, k = 1) => `<g fill="var(--cloud)" opacity="var(--cloud-o)" transform="translate(${x} ${y}) scale(${k})"><ellipse cx="0" cy="10" rx="34" ry="10"/><circle cx="-12" cy="4" r="12"/><circle cx="8" cy="0" r="15"/></g>`;
+  return `<rect y="-412" width="360" height="824" fill="var(--sky)"/>
+    ${cloud(290, 20)}${cloud(70, -70, .8)}${cloud(250, -150, 1.1)}${cloud(120, -230, .9)}
+    <rect x="98" y="34" width="164" height="132" fill="var(--b-rose)"/><path d="M90 38h180" stroke="var(--roof)" stroke-width="12"/>
+    <rect x="114" y="58" width="36" height="44" rx="3" class="win"/><rect x="210" y="58" width="36" height="44" rx="3" class="win"/>
+    <rect x="166" y="104" width="30" height="62" rx="3" fill="var(--door-2)"/><circle cx="190" cy="136" r="2.2" fill="var(--sun)"/>
+    <rect x="172" y="88" width="18" height="11" rx="2" fill="var(--card)"/><text x="181" y="96.5" text-anchor="middle" class="plate">9</text>
+    <circle cx="52" cy="72" r="40" fill="var(--tree)"/><circle cx="24" cy="98" r="26" fill="var(--tree)"/><circle cx="80" cy="100" r="26" fill="var(--tree)"/><rect x="45" y="108" width="14" height="80" fill="var(--trunk)"/>
+    ${[[34, 60], [64, 52], [50, 84], [22, 90], [80, 88]].map(([x, y]) => heart(x, y, 1, 'var(--tree-2)')).join('')}
+    <g><rect x="252" y="104" width="94" height="96" fill="var(--wood)"/><path d="M244 108l56-22 56 22z" fill="var(--roof)"/><rect x="282" y="138" width="32" height="62" fill="var(--wood-line)"/><circle cx="308" cy="170" r="2.2" fill="var(--sun)"/>
+      <path d="M252 122h94M252 140h30M314 140h32M252 158h30M314 158h32M252 176h30M314 176h32" stroke="var(--wood-line)" stroke-width="1.5" opacity=".7"/></g>
+    <g fill="var(--b-cream)">${Array.from({ length: 23 }, (_, k) => `<path d="M${k * 16} 198v-44l5-6 5 6v44z"/>`).join('')}<rect x="0" y="160" width="360" height="4"/><rect x="0" y="186" width="360" height="4"/></g>
+    <rect x="0" y="196" width="360" height="216" fill="var(--tree-2)"/><path d="M0 196h360" stroke="var(--tree)" stroke-width="3"/>
+    ${[[150, 236, 16], [170, 262, 18], [196, 300, 20], [214, 340, 22], [226, 384, 24]].map(([x, y, r]) => `<ellipse cx="${x}" cy="${y}" rx="${r}" ry="${r * .36}" fill="var(--pave)" opacity=".8"/>`).join('')}
+    <g><rect x="22" y="222" width="128" height="9" rx="3" fill="var(--wood)"/><rect x="22" y="236" width="128" height="9" rx="3" fill="var(--wood)"/><path d="M30 220v40M142 220v40" stroke="var(--wood-line)" stroke-width="5"/>
+      <rect x="18" y="256" width="136" height="11" rx="3" fill="var(--wood-top)"/><path d="M30 266v40M142 266v40" stroke="var(--wood-line)" stroke-width="6" stroke-linecap="round"/></g>
+    <g><path d="M170 210h52l-9 14h-34z" fill="var(--stone)"/><ellipse cx="196" cy="211" rx="25" ry="4.5" fill="var(--sky)"/><rect x="190" y="224" width="12" height="62" fill="var(--stone)"/><rect x="180" y="284" width="32" height="8" rx="3" fill="var(--stone-dark)"/>
+      <path d="M210 196q4-6 9-2l-4 3z" fill="var(--b-navy)"/><circle cx="209" cy="200" r="5" fill="var(--b-navy)"/><path d="M206 205h8" stroke="var(--b-navy)" stroke-width="2"/></g>
+    <g transform="translate(253 230) scale(.62)">${moss()}</g>
+    <g><path d="M14 368c0-12 6-18 26-18s26 6 26 18v20c0 6-4 8-26 8s-26-2-26-8z" fill="var(--leaf)"/><path d="M64 372l26-20" stroke="var(--leaf)" stroke-width="6" stroke-linecap="round"/><path d="M84 346l10 2-4 8z" fill="var(--leaf)"/>
+      <path d="M22 352q18-22 36 0" stroke="var(--leaf)" stroke-width="5" fill="none"/><path d="M20 374h40" stroke="#fff" stroke-width="2" opacity=".3"/></g>
+    ${pot(100)}${pot(166)}
+    <g><path d="M240 356h104l-10 32h-82z" fill="var(--pen)"/><path d="M244 360h96" stroke="#fff" stroke-width="2" opacity=".25"/><path d="M240 356l-18-14M334 384l20 12" stroke="var(--b-navy)" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="292" cy="398" r="12" fill="var(--b-navy)"/><circle cx="292" cy="398" r="4" fill="var(--china-line)"/><path d="M262 388v14M322 388v14" stroke="var(--b-navy)" stroke-width="4"/></g>`;
+}
+
 /* ---------------------------------------------------------------- the office roof, with Dr Okafor's telescope */
 export function roof({ okafor = false } = {}) {
   const gid = nextId('rg');

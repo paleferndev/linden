@@ -21,6 +21,8 @@ const add = (who, text, kind, strict = false) => {
   else if (strict) lines.get(key).strict = true;
 };
 
+// the in-character reactions to a wrong reply (first: they come up in every episode)
+for (const [who, c] of Object.entries(CAST)) for (const [en] of c.huh || []) if (who !== 'mimi') add(who, en, 'reaction');
 // the episodes: messages, voice notes (typed back in dictation, so they must be exact), the radio signals
 for (const e of EPISODES) {
   let last = 'stranger';
@@ -34,8 +36,6 @@ for (const e of EPISODES) {
   add('stranger', e.memory[0], 'memory');
   add('narrator', e.caption[0], 'caption');
 }
-// the in-character reactions to a wrong reply
-for (const [who, c] of Object.entries(CAST)) for (const [en] of c.huh || []) if (who !== 'mimi') add(who, en, 'reaction');
 // the games that speak, training, the exercise list, the voice test in Profil
 for (const r of GAMES.room.rounds) add('hughes', r.text, 'game', true);
 for (const r of GAMES.guesswho.rounds) add('tom', (r.yes || r.no)[0], 'game');
